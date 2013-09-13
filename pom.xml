@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.levelup</groupId>
-	<artifactId>java-java-examples</artifactId>
+	<artifactId>levelup-java-examples</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
