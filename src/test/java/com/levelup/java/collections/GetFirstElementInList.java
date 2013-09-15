@@ -5,6 +5,7 @@ import static org.junit.Assert.assertEquals;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.commons.collections.CollectionUtils;
 import org.junit.Test;
 
 import com.google.common.collect.Iterables;
@@ -47,6 +48,18 @@ public class GetFirstElementInList {
 		
 		//firstElement = one
 		assertEquals("one", firstElement);
+	}
+	
+	@Test
+	public void get_first_element_in_list_with_apachecommons () {
+		List<String> strings = Lists.newArrayList("one", "two", "three");
+
+		String firstElement = (String) CollectionUtils.get(strings, 0);
+
+		//firstElement = one
+		
+		assertEquals("one", firstElement);
+		
 	}
 	
 	

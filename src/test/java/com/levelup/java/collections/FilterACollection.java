@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import org.apache.commons.collections.CollectionUtils;
 import org.junit.Test;
 
 import com.google.common.base.Objects;
@@ -35,13 +36,15 @@ public class FilterACollection {
 		nflTeams.add(new NFLTeam("Chicago Bears", true));
 		nflTeams.add(new NFLTeam("Detroit Lions", false));
 
-		//  [NFLTeam{name=Green Bay Packers, wonsuperbow=true}, NFLTeam{name=Chicago Bears, wonsuperbow=true}]
 		Collection<NFLTeam> superBowlWinners = new ArrayList<NFLTeam>();
 		for (NFLTeam team : nflTeams) {
 			if (team.hasWonSuperBowl) {
 				superBowlWinners.add(team);
 			}
 		}
+
+		//  [NFLTeam{name=Green Bay Packers, wonsuperbow=true}, NFLTeam{name=Chicago Bears, wonsuperbow=true}]
+
 		assertTrue(superBowlWinners.size() == 2);
 	}
 	
@@ -55,14 +58,37 @@ public class FilterACollection {
 		nflTeams.add(new NFLTeam("Chicago Bears", true));
 		nflTeams.add(new NFLTeam("Detroit Lions", false));
 
-		// superBowlWinners = [NFLTeam{name=Green Bay Packers, wonsuperbow=true}, NFLTeam{name=Chicago Bears, wonsuperbow=true}]
 		Collection<NFLTeam> superBowlWinners = Collections2.filter(nflTeams, new Predicate<NFLTeam> () {
 			public boolean apply(NFLTeam nflTeam) {
 				return nflTeam.hasWonSuperBowl;
 			}
 		});
+
+		// superBowlWinners = [NFLTeam{name=Green Bay Packers, wonsuperbow=true}, NFLTeam{name=Chicago Bears, wonsuperbow=true}]
+
 		assertTrue(superBowlWinners.size() == 2);
 	}
+	
+	@Test
+	public void filter_items_in_list_with_apache_commons () {
+		
+		List<NFLTeam> nflTeams = Lists.newArrayList();
+		nflTeams.add(new NFLTeam("Green Bay Packers", true));
+		nflTeams.add(new NFLTeam("Chicago Bears", true));
+		nflTeams.add(new NFLTeam("Detroit Lions", false));
+
+		CollectionUtils.filter(nflTeams, new org.apache.commons.collections.Predicate() {
+			public boolean evaluate(Object nflTeam) {
+				return ((NFLTeam) nflTeam).hasWonSuperBowl;
+			}
+		});
+		
+		//superbowl teams = [NFLTeam{name=Green Bay Packers, wonsuperbow=true}, NFLTeam{name=Chicago Bears, wonsuperbow=true}]
+		
+		assertTrue(nflTeams.size() == 2);
+	}
+	
+	
 	
 	class NFLTeam {
 		

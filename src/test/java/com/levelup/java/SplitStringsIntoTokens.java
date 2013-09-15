@@ -5,6 +5,7 @@ import static org.junit.Assert.assertTrue;
 import java.util.List;
 import java.util.StringTokenizer;
 
+import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
 import com.google.common.base.Splitter;
@@ -51,4 +52,13 @@ public class SplitStringsIntoTokens {
 		// elementsInString = [The, Dog, goes, woof,, The, cat, goes, meow,, the, cow, says, moo,, the, duck, says, quack]
 		assertTrue(elementsInString.size() == 16);
 	}
+	
+	@Test
+	public void split_string_using_apache_commons () {
+		String[] elementsInString = StringUtils.split(CONSTANT_STRING);
+		
+		// elementsInString = [The, Dog, goes, woof,, The, cat, goes, meow,, the, cow, says, moo,, the, duck, says, quack]
+		assertTrue(elementsInString.length == 16);
+	}
+	
 }

@@ -3,23 +3,27 @@ package com.levelup.java.collections;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
-import java.math.BigDecimal;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.google.common.base.Function;
 import com.google.common.base.Objects;
-import com.google.common.collect.Collections2;
+import com.google.common.collect.ImmutableListMultimap;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
+import com.google.common.collect.Multimaps;
 import com.google.common.collect.Ordering;
 import com.google.common.primitives.Doubles;
 import com.google.common.primitives.Ints;
 
 public class SortACollection {
+	
+	private static final Logger logger = Logger.getLogger(SortACollection.class);
 
 //	In this exercise we are going to sort a list of transaction by
 //	transactions decending.  While a collection maintains order
@@ -28,170 +32,202 @@ public class SortACollection {
 // keywords: sort a collection in java, how to order a collection list in java	
 //	http://www.polygenelubricants.com/2010/10/elegant-comparison-logic-with-guava.html
 	
-	class Transaction {
-		
-		private BigDecimal id;
-		private double amount;
-		
-		public Transaction(BigDecimal id, double amount) {
+	
+	public class Wrestler {
+
+		private String name;
+		private double weightClass;
+		private int wins;
+
+		public Wrestler(String name, double weightClass, int wins) {
 			super();
-			this.id = id;
-			this.amount = amount;
+			this.name = name;
+			this.weightClass = weightClass;
+			this.wins = wins;
 		}
 
-		public BigDecimal getId() {
-			return id;
+		public String getName() {
+			return name;
 		}
-		public double getAmount() {
-			return amount;
+
+		public double getWeightClass() {
+			return weightClass;
 		}
-		
+
+		public int getWins() {
+			return wins;
+		}
+
 		@Override
 		public String toString() {
-			return Objects.toStringHelper(this).add("id", id).add("amount", amount).toString();
+			return Objects.toStringHelper(this).add("name", name)
+					.add("weightClass", weightClass).add("wins", wins)
+					.toString();
 		}
 
 	}
-
-	private List<Transaction> checkBook = Lists.newArrayList();
 	
+	private List<Wrestler> wrestlers = Lists.newArrayList();
+
 	@Before 
 	public void setup () {
+		wrestlers.add(new Wrestler("Abe", 151, 5));
+		wrestlers.add(new Wrestler("Steve", 151, 7));
+		wrestlers.add(new Wrestler("Jack", 151, 1));
 		
-		checkBook.add(new Transaction(new BigDecimal(1), 500));
-		checkBook.add(new Transaction(new BigDecimal(2), 25));
-		checkBook.add(new Transaction(new BigDecimal(3), 78));
-		checkBook.add(new Transaction(new BigDecimal(4), 222));
-		checkBook.add(new Transaction(new BigDecimal(5), 903));
-		checkBook.add(new Transaction(new BigDecimal(6), 0));
+		wrestlers.add(new Wrestler("Jim", 215, 15));
+		wrestlers.add(new Wrestler("Jack", 215, 1));
+		wrestlers.add(new Wrestler("Joe", 215, 8));
 		
+		wrestlers.add(new Wrestler("Harry", 119, 6));
+		wrestlers.add(new Wrestler("Sally", 119, 9));
+
 	}
 	
+	
+	// display wrestlers by weight class
 	@Test
 	public void sort_collection_with_java () {
 		
-		Comparator<Transaction> byAmount = new Comparator<Transaction>() {
-		    public int compare(Transaction left, Transaction right) {
-		        return Double.compare(left.getAmount(), right.getAmount()) ; // use your logic
+		Comparator<Wrestler> byWeightClass = new Comparator<Wrestler>() {
+		    public int compare(Wrestler left, Wrestler right) {
+		        return Double.compare(left.getWeightClass(), right.getWeightClass()) ; // use your logic
 		    }
 		};
 		
-//		1. figure out how to chain comparators with standard java
-//		Lists
-//		Collections.reverseOrder() byAmount
-
-//		Collections.sort(checkBook, ); // use the comparator as much as u want
-
-		//[Transaction{id=903.0}, Transaction{id=500.0}, Transaction{id=222.0}, Transaction{id=78.0}, Transaction{id=25.0}]
-
-		System.out.println(checkBook);
+		Collections.sort(wrestlers, byWeightClass);
+		
+		logger.info(wrestlers);
+		
 	}
 	
 //	The ordering class is an enhanced comparator, with additional methods to support common operations. 
 //	If are familiar with the FluentIterable, FluentIterable is to Iterable as Ordering is to comparator.
 	
-	Ordering<Transaction> byAmount = new Ordering<Transaction>() {
-	  public int compare(Transaction left, Transaction right) {
-	    return Doubles.compare(left.getAmount(), right.getAmount());
-	  }
+	// Lets first create a couple of comparators
+	static final Ordering<Wrestler> byWeightClass = new Ordering<Wrestler>() {
+		public int compare(Wrestler left, Wrestler right) {
+			return Doubles.compare(left.getWeightClass(),
+					right.getWeightClass());
+		}
+	};
+
+	static final Ordering<Wrestler> byName = new Ordering<Wrestler>() {
+		public int compare(Wrestler left, Wrestler right) {
+			return left.getName().equals(right.getName()) ? 1 : 0;
+		}
+	};
+
+	static final Ordering<Wrestler> byWins = new Ordering<Wrestler>() {
+		public int compare(Wrestler left, Wrestler right) {
+			return Ints.compare(left.getWins(), right.getWins());
+		}
 	};
 	
-	// TODO determine right way to compare BigDecimal
 	
-	Ordering<Transaction> byId = new Ordering<Transaction>() {
-	  public int compare(Transaction left, Transaction right) {
-	    return Doubles.compare(left.getId().intValue(), right.getId().intValue());
-	  }
-	};
-	
+	// display wrestlers by weight class
 	@Test
 	public void sort_collection_with_guava () {
 		
-		List<Transaction> highestTransactions = byAmount.greatestOf(checkBook, 3);
+		Collections.sort(wrestlers, byWeightClass);
 		
-		//[Transaction{id=903.0}, Transaction{id=500.0}, Transaction{id=222.0}]
+		//wrestlers = [Wrestler{name=Harry, weightClass=119.0}, Wrestler{name=Sally, weightClass=119.0}, Wrestler{name=Abe, weightClass=151.0}, Wrestler{name=Steve, weightClass=151.0}, Wrestler{name=Jack, weightClass=151.0}, Wrestler{name=Jim, weightClass=215.0}, Wrestler{name=Jack, weightClass=215.0}, Wrestler{name=Joe, weightClass=215.0}]
 		
-		Transaction highestTransaction = Iterables.getFirst(highestTransactions, null);
+		Wrestler aWrestlerWithLowestWeight  = Iterables.getFirst(wrestlers, null);
 
-		assertNotNull(highestTransaction);
-		assertEquals(903, highestTransaction.getAmount(), 0);
+		assertNotNull(aWrestlerWithLowestWeight);
+		assertEquals(119, aWrestlerWithLowestWeight.getWeightClass(), 0);
 	}
 	
+	// Display a wrestlers by name and show weight class
 	@Test
-	public void sort_collection_with_guava_least () {
-		
-		List<Transaction> lowestTransactions = byAmount.leastOf(checkBook, 3);
+	public void display_wrestlers_by_weightclass_and_in_alphabetical_order () {
 
-//		System.out.println(lowestTransactions);
+		Collections.sort(wrestlers, byName);
 		
-		// lowestTransactions = [Transaction{id=6, amount=0.0}, Transaction{id=2, amount=25.0}, Transaction{id=3, amount=78.0}]
-
-		Transaction lowestTransaction = Iterables.getFirst(lowestTransactions, null);
+		for (Wrestler wrestler : wrestlers) {
+			logger.info(wrestler.toString());
+		}
 		
-		assertNotNull(lowestTransactions);
-		assertEquals(0, lowestTransaction.getAmount(), 0);
+//		Abe : 151.0
+//		Steve : 151.0
+//		Jack : 151.0
+//		Jim : 215.0
+//		Jack : 215.0
+//		Joe : 215.0
+//		Harry : 119.0
+//		Sally : 119.0
 		
 	}
-	
-	// In the instance you want to chain multiple iterators together you can easily do this with guava
-	// lets validate that the ordering of ids w/ comparables
-	
+
+
+	// Display wrestlers from highest weight class to lowest
 	@Test
-	public void sort_collection_with_guava_byId () {
-		List<Transaction> lowestTransactionById = byId.leastOf(checkBook, 1);
-
-		// lowestTransactionById = [Transaction{id=1, amount=500.0}]
-
-		Transaction lowestTransaction = Iterables.getFirst(lowestTransactionById, null);
+	public void sort_collection_in_reverse_with_guava () {
 		
-		assertNotNull(lowestTransactionById);
-		assertEquals(new BigDecimal(1), lowestTransaction.getId());
+		Collections.sort(wrestlers, byWeightClass.reverse());
+		
+		//wrestlers = [Wrestler{name=Harry, weightClass=119.0}, Wrestler{name=Sally, weightClass=119.0}, Wrestler{name=Abe, weightClass=151.0}, Wrestler{name=Steve, weightClass=151.0}, Wrestler{name=Jack, weightClass=151.0}, Wrestler{name=Jim, weightClass=215.0}, Wrestler{name=Jack, weightClass=215.0}, Wrestler{name=Joe, weightClass=215.0}]
+		
+		Wrestler aWrestlerWithHighestWeightClass  = Iterables.getFirst(wrestlers, null);
+
+		assertNotNull(aWrestlerWithHighestWeightClass);
+		assertEquals(215, aWrestlerWithHighestWeightClass.getWeightClass(), 0);
 	}
-	
-	
+
+	// display a list of wrestlers by order of weight class and wins
 	@Test
-	public void chaining_multiple_comparables_with_guava () {
+	public void sort_collection_with_multiple_comparables_guava () {
 		
-		// the byAmount comparator is set up to order ascending
-		// 		[Transaction{id=6, amount=0.0}, Transaction{id=2, amount=25.0}, Transaction{id=3, amount=78.0}, Transaction{id=4, amount=222.0}, Transaction{id=1, amount=500.0}, Transaction{id=5, amount=903.0}]
-		//		[Transaction{id=6, amount=0.0}, Transaction{id=2, amount=25.0}, Transaction{id=3, amount=78.0}, Transaction{id=4, amount=222.0}, Transaction{id=1, amount=500.0}, Transaction{id=5, amount=903.0}]
-
-		// if we compund muliple comparables (byAmount and byId)
-		// we should get the lowest amount and id
-
-
-		// byid
-		//		[Transaction{id=1, amount=500.0}, Transaction{id=2, amount=25.0}, Transaction{id=3, amount=78.0}, Transaction{id=4, amount=222.0}, Transaction{id=5, amount=903.0}, Transaction{id=6, amount=0.0}]
-		//		[Transaction{id=1, amount=500.0}, Transaction{id=2, amount=25.0}, Transaction{id=3, amount=78.0}, Transaction{id=4, amount=222.0}, Transaction{id=5, amount=903.0}, Transaction{id=6, amount=0.0}]
-
-//		[Transaction{id=6, amount=0.0}, Transaction{id=2, amount=25.0}, Transaction{id=3, amount=78.0}, Transaction{id=4, amount=222.0}, Transaction{id=1, amount=500.0}, Transaction{id=5, amount=903.0}]
-
-//		[Transaction{id=5, amount=903.0}, Transaction{id=1, amount=500.0}, Transaction{id=4, amount=222.0}, Transaction{id=3, amount=78.0}, Transaction{id=2, amount=25.0}, Transaction{id=6, amount=0.0}]
-
-//		Collections.sort(checkBook, byAmount	
-//										.compound(
-//												byId.reverse())
-//										.reverse());
-//		System.out.println(checkBook);
+		Collections.sort(wrestlers, byWeightClass.compound(byWins));
 		
-//		System.out.println(byAmount.greatestOf(checkBook, 10));
-//		System.out.println(byAmount.compound(byId.greatestOf(checkBook, k)).greatestOf(checkBook, 10));
+//		wrestlers = 
+//		[Wrestler{name=Sally, weightClass=119.0, wins=9}, 
+//		 Wrestler{name=Harry, weightClass=119.0, wins=6}, 
+//		 Wrestler{name=Steve, weightClass=151.0, wins=7}, 
+//		 Wrestler{name=Abe, weightClass=151.0, wins=5}, 
+//		 Wrestler{name=Jack, weightClass=151.0, wins=1}, 
+//		 Wrestler{name=Jim, weightClass=215.0, wins=15}, 
+//		 Wrestler{name=Joe, weightClass=215.0, wins=8}, 
+//		 Wrestler{name=Jack, weightClass=215.0, wins=1}]
 		
-//		Ordering.compound()
-		
-//		System.out.println(checkBook);
-		
-		// by default our comparator will byAmount
-//		byAmount.compound(byId);
-		
-//		List<Transaction> orderedByAmountAndId = byAmount.com(checkBook, 3);
+		Wrestler aLowestWeightClassWrestler  = Iterables.getFirst(wrestlers, null);
 
+		assertNotNull(aLowestWeightClassWrestler);
+		assertEquals(119, aLowestWeightClassWrestler.getWeightClass(), 0);
 		
 	}
 	
-//	@Test 
-//	public void  
+	// Display top wrestlers in each weight class
+	@Test
+	public void sort_collection_with_multiple_comparables_guava_getfirstElement () {
 	
+		// first order elements
+		Collections.sort(wrestlers, byWeightClass.compound(byWins.reverse()));
 		
+		// next get the first wrestler in each weight class which should have the most wins
+		ImmutableListMultimap<Double, Wrestler> wrestlersMappedByWeightClass = Multimaps.index(wrestlers, new Function <Wrestler, Double> () {
+			  public Double apply(Wrestler from) {
+			    return new Double(from.getWeightClass()); 
+		}});
+
+//		wrestlersMappedByWeightClass = 
+//		{119.0=[Wrestler{name=Sally, weightClass=119.0, wins=9}, Wrestler{name=Harry, weightClass=119.0, wins=6}], 
+//		 151.0=[Wrestler{name=Steve, weightClass=151.0, wins=7}, Wrestler{name=Abe, weightClass=151.0, wins=5}, Wrestler{name=Jack, weightClass=151.0, wins=1}], 
+//		 215.0=[Wrestler{name=Jim, weightClass=215.0, wins=15}, Wrestler{name=Joe, weightClass=215.0, wins=8}, Wrestler{name=Jack, weightClass=215.0, wins=1}]}
+
+		// for each weight class get the first element which should be wrestler with most wins
+		for (Double weightClass : wrestlersMappedByWeightClass.keySet()) {
+
+			List<Wrestler> weightClassWrestlers = wrestlersMappedByWeightClass.get(weightClass);
+			logger.info(weightClass + " - " + Iterables.getFirst(weightClassWrestlers, null));
+		}
+		
+//		119.0 - Wrestler{name=Sally, weightClass=119.0, wins=9}
+//		151.0 - Wrestler{name=Steve, weightClass=151.0, wins=7}
+//		215.0 - Wrestler{name=Jim, weightClass=215.0, wins=15}
+	}
+	
+	
 	
 }

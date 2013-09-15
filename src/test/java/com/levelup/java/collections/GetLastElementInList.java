@@ -5,6 +5,7 @@ import static org.junit.Assert.assertEquals;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.commons.collections.CollectionUtils;
 import org.junit.Test;
 
 import com.google.common.collect.Iterables;
@@ -49,4 +50,18 @@ public class GetLastElementInList {
 		
 		assertEquals("three", lastElement);
 	}
+	
+	@Test
+	public void get_last_element_in_list_with_apachecommons () {
+
+		List<String> strings = Lists.newArrayList("one", "two", "three");
+		
+		String lastElement = (String) CollectionUtils.get(strings, (strings.size() - 1));
+		
+		// lastElement = three
+		
+		assertEquals("three", lastElement);
+
+	}
+	
 }

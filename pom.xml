@@ -12,6 +12,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<com.fasterxml.jackson.version>2.2.3</com.fasterxml.jackson.version>
 	</properties>
 
 	<dependencies>
@@ -29,12 +30,17 @@
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-math3</artifactId>
 			<version>3.0</version>
-		</dependency>		
+		</dependency>
 		<dependency>
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
 			<version>2.4</version>
 		</dependency>
+		<dependency>
+			<groupId>commons-collections</groupId>
+			<artifactId>commons-collections</artifactId>
+			<version>3.0</version>
+		</dependency>		
 		<dependency>
 			<groupId>net.sf.opencsv</groupId>
 			<artifactId>opencsv</artifactId>
@@ -44,12 +50,33 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-web</artifactId>
 			<version>3.2.4.RELEASE</version>
-		</dependency>		
+		</dependency>
 		<dependency>
 			<groupId>commons-codec</groupId>
 			<artifactId>commons-codec</artifactId>
 			<version>1.8</version>
 		</dependency>
+		
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.2.4</version>
+		</dependency>	
+		
+		 <!-- the core, which includes Streaming API, shared low-level abstractions (but NOT data-binding) -->
+		 <dependency>
+		   <groupId>com.fasterxml.jackson.core</groupId>
+		   <artifactId>jackson-core</artifactId>
+		  <version>${com.fasterxml.jackson.version}</version>
+		 </dependency>
+		
+		<!-- databinding; ObjectMapper, JsonNode and related classes are here -->
+		<dependency>
+		  <groupId>com.fasterxml.jackson.core</groupId>
+		  <artifactId>jackson-databind</artifactId>
+		  <version>${com.fasterxml.jackson.version}</version>
+		</dependency>		
+		
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
@@ -62,17 +89,35 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-	<!-- <build>
+
+	<!--<build>
 		<plugins>
-	      <plugin>
-	        <groupId>org.apache.maven.plugins</groupId>
-	        <artifactId>maven-compiler-plugin</artifactId>
-	        <version>3.1</version>
-	        <configuration>
-	          <source>1.6</source>
-	          <target>1.6</target>
-	        </configuration>
-	      </plugin>
-	    </plugins>	
-	</build> -->
+			 Turn on error-prone 
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<compilerId>javac-with-errorprone</compilerId>
+					<forceJavacCompilerUse>true</forceJavacCompilerUse>
+				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>org.codehaus.plexus</groupId>
+						<artifactId>plexus-compiler-javac</artifactId>
+						<version>2.3</version>
+					</dependency>
+					<dependency>
+						<groupId>org.codehaus.plexus</groupId>
+						<artifactId>plexus-compiler-javac-errorprone</artifactId>
+						<version>2.3</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+		</plugins>
+	</build>-->
+	<!-- <build> <plugins> <plugin> <groupId>org.apache.maven.plugins</groupId> 
+		<artifactId>maven-compiler-plugin</artifactId> <version>3.1</version> <configuration> 
+		<source>1.6</source> <target>1.6</target> </configuration> </plugin> </plugins> 
+		</build> -->
 </project>

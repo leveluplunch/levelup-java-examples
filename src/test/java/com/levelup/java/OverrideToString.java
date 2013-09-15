@@ -20,7 +20,7 @@ public class OverrideToString {
 	private static final String CAPITAL = "Madison";
 	private static final String STATE_CODE = "WI";
 	
-	class OverrideTooString {
+	class OverrideTooStringWithJava {
 		
 		private String capital = null;
 		private String stateCode = null;
@@ -47,8 +47,32 @@ public class OverrideToString {
 		}
 	}
 	
+	class OverrideToStringWithGuava {
+		
+		private String capital = null;
+		private String stateCode = null;
+		
+		@Override
+		public String toString() {
+			return Objects.toStringHelper(this)
+					.add("state capital", capital)
+					.add("state code", stateCode)
+					.toString();
+		}
 
-	class ApacheCommonsToString {
+		public void setCapital(String capital) {
+			this.capital = capital;
+		}
+
+		public void setStateCode(String stateCode) {
+			this.stateCode = stateCode;
+		}
+		
+	}
+	
+	
+
+	class OverrideToStringWithApacheCommons {
 		
 		private String capital = null;
 		private String stateCode = null;
@@ -74,32 +98,10 @@ public class OverrideToString {
 		
 	}
 	
-	class GuavaOverrideToString {
-		
-		private String capital = null;
-		private String stateCode = null;
-		
-		@Override
-		public String toString() {
-			return Objects.toStringHelper(this)
-					.add("state capital", capital)
-					.add("state code", stateCode)
-					.toString();
-		}
-
-		public void setCapital(String capital) {
-			this.capital = capital;
-		}
-
-		public void setStateCode(String stateCode) {
-			this.stateCode = stateCode;
-		}
-		
-	}
 	
 	@Test 
-	public void override_ToString_With_Java () {
-		OverrideTooString overrideTooString = new OverrideTooString();
+	public void override_toString_With_java () {
+		OverrideTooStringWithJava overrideTooString = new OverrideTooStringWithJava();
 		overrideTooString.setCapital(CAPITAL);
 		overrideTooString.setStateCode(STATE_CODE);
 
@@ -108,24 +110,23 @@ public class OverrideToString {
 	}
 	
 	@Test 
-	public void apachecommons_toString () {
-		ApacheCommonsToString apacheCommonsToString = new ApacheCommonsToString();
+	public void override_toString_with_guava () {
+		OverrideToStringWithGuava guavaOverrideToString = new OverrideToStringWithGuava();
+		guavaOverrideToString.setCapital(CAPITAL);
+		guavaOverrideToString.setStateCode(STATE_CODE);
+
+		assertEquals("OverrideToStringWithGuava{state capital=Madison, state code=WI}", guavaOverrideToString.toString());
+	}
+	
+	@Test 
+	public void override_toString_with_apachecommons () {
+		OverrideToStringWithApacheCommons apacheCommonsToString = new OverrideToStringWithApacheCommons();
 		apacheCommonsToString.setCapital(CAPITAL);
 		apacheCommonsToString.setStateCode(STATE_CODE);
 
 		assertTrue(apacheCommonsToString.toString().contains("[state capital=Madison,state code=WI]"));
-
-		
 	}
 
-	@Test 
-	public void guava_override_toString () {
-		GuavaOverrideToString guavaOverrideToString = new GuavaOverrideToString();
-		guavaOverrideToString.setCapital(CAPITAL);
-		guavaOverrideToString.setStateCode(STATE_CODE);
-
-		assertEquals("GuavaOverrideToString{state capital=Madison, state code=WI}", guavaOverrideToString.toString());
-	}
 
 	
 	

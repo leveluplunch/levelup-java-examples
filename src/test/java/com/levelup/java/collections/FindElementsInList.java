@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.List;
 
+import org.apache.commons.collections.CollectionUtils;
 import org.junit.Test;
 
 import com.google.common.base.Predicate;
@@ -54,4 +55,19 @@ public class FindElementsInList {
 		
 		assertEquals(new Integer(3), value);
 	}
+	
+	@Test
+	public void find_elements_in_list_with_apachecommons () {
+		
+		List <Integer> numbers = Lists.newArrayList(new Integer(1), new Integer(2), new Integer(3));
+		
+		Integer value = (Integer) CollectionUtils.find(numbers, new org.apache.commons.collections.Predicate() {
+			public boolean evaluate(Object number) {
+				return ((Integer)number).intValue() == 3 ;
+			}
+		});
+
+		assertEquals(new Integer(3), value);
+	}
+	
 }

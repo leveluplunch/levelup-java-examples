@@ -39,7 +39,7 @@ public class AverageFromListOfNumbers {
 	}
 
 	@Test
-	public void calculate_average_from_list () {
+	public void calculate_average_from_list_with_java () {
 		
 		Double sum = 0d;
 		for (Double vals : NUMBERS_FOR_AVERAGE) {
@@ -52,6 +52,11 @@ public class AverageFromListOfNumbers {
 		assertEquals(new Double(10), sum);
 	}
 	
+	@Test
+	public void average_from_list_of_numbers_with_google_guava () {
+		double average = DoubleMath.mean(NUMBERS_FOR_AVERAGE);
+		assertEquals(10, average, 0);
+	}
 	
 	@Test
 	public void average_from_list_of_numbers_with_apache_commons () {
@@ -61,13 +66,5 @@ public class AverageFromListOfNumbers {
 		double average = mean.evaluate(elements);
 		assertEquals(10, average, 0);
 	}
-
-	
-	@Test
-	public void average_from_list_of_numbers_with_google_guava () {
-		double average = DoubleMath.mean(NUMBERS_FOR_AVERAGE);
-		assertEquals(10, average, 0);
-	}
-	
 	
 }
