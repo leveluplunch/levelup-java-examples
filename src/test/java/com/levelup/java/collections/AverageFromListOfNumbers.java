@@ -1,4 +1,4 @@
-package com.levelup.java;
+package com.levelup.java.collections;
 
 import static org.junit.Assert.assertEquals;
 
