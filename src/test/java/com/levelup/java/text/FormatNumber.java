@@ -10,17 +10,28 @@ public class FormatNumber {
 
 	@Test
 	public void format_a_number_with_Java () {
-//		NumberFormat	
+
+		double nflSalaryCap2013 = 123000000;
+		
+		NumberFormat formatter = NumberFormat.getIntegerInstance();
+		String salaryCapFormated = formatter.format(nflSalaryCap2013);
+		
+		assertEquals("123,000,000", salaryCapFormated);
 	}
 	
+	@Test
 	public void format_currency_with_java () {
 		
+		double moMoney = 1000.01;
+		NumberFormat formatter = NumberFormat.getCurrencyInstance();
+		String moneyString = formatter.format(moMoney);
+		
+		assertEquals("$1,000.01", moneyString);
 	}
 	
 	@Test
 	public void format_a_percent_with_java () {
 		NumberFormat formatter = NumberFormat.getPercentInstance();
-//		formatter.setMinimumFractionDigits(3);
 		
 		double perfectScore = 1.00;
 		String perfectScoreFormatted = formatter.format(perfectScore);

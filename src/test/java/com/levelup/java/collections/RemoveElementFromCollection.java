@@ -1,4 +1,4 @@
-package com.levelup.java.array;
+package com.levelup.java.collections;
 
 import static org.junit.Assert.assertTrue;
 
@@ -16,7 +16,7 @@ import com.google.common.collect.Lists;
  * @see <a href='http://www.leveluplunch.com/java/'></a>
  * 
  */
-public class RemoveElementFromArray {
+public class RemoveElementFromCollection {
 
 	@Test
 	public void remove_element_from_array_to_arraylist () {

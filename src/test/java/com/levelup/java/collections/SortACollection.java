@@ -21,6 +21,13 @@ import com.google.common.collect.Ordering;
 import com.google.common.primitives.Doubles;
 import com.google.common.primitives.Ints;
 
+/**
+ * This java snippet will demonstrate how to sort a collection
+ * 
+ * @author Justin Musgrove
+ * @see <a href='http://www.leveluplunch.com/java/'></a>
+ * 
+ */
 public class SortACollection {
 	
 	private static final Logger logger = Logger.getLogger(SortACollection.class);
