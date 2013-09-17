@@ -14,7 +14,7 @@ import com.google.common.primitives.Ints;
  * @see <a href='http://www.leveluplunch.com/java/'></a>
  * 
  */
-public class LowestValueInArray {
+public class MinValueInArray {
 
 	int[] numbers = {1, 24, 45, 62, 85, 8, 91, 3, 5, 56, 9};
 	
