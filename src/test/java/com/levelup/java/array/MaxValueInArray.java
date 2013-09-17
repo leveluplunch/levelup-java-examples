@@ -19,7 +19,7 @@ public class MaxValueInArray {
 	int[] numbers = {1, 24, 45, 62, 85, 8, 91, 3, 5, 56, 9};
 	
 	@Test
-	public void find_highest_value_in_numeric_array_with_java () {
+	public void find_max_value_in_numeric_array_with_java () {
 
 		int highest = numbers[0];
 		for (int index = 1; index < numbers.length; index ++) {
@@ -31,13 +31,13 @@ public class MaxValueInArray {
 	}
 
 	@Test
-	public void find_highest_value_in_numeric_array_with_guava () {
+	public void find_max_value_in_numeric_array_with_guava () {
 		int highest = Ints.max(numbers);
 		assertEquals(91, highest);
 	}
 	
 	@Test
-	public void find_highest_value_in_array_with_apache_commons () {
+	public void find_max_value_in_array_with_apache_commons () {
 		int highest = NumberUtils.max(numbers);
 		assertEquals(91, highest);
 	}
