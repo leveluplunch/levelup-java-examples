@@ -38,6 +38,26 @@ public class FormatDate {
 	}
 	
 	@Test
+	public void format_date_in_java_using_printf() {
+
+		Calendar cal = Calendar.getInstance();
+		cal.set(Calendar.MONTH, Calendar.JANUARY);
+		cal.set(Calendar.DAY_OF_MONTH, 15);
+		cal.set(Calendar.YEAR, 1967);
+		cal.set(Calendar.SECOND, 0);
+		cal.set(Calendar.MINUTE, 0);
+		cal.set(Calendar.MILLISECOND, 0);
+
+		// display time and date using toString()
+		String str = String.format("Current Date/Time : %tc", cal.getTime());
+
+		//System.out.printf(str)
+		
+		assertEquals("Current Date/Time : Sun Jan 15 20:00:00 CST 1967", str);
+	}
+	
+	
+	@Test
 	public void format_date_in_java_with_yoda () {
 		
 		DateTime dateFirstSuperBowlWasPlayed = new DateTime(1967, 1, 15, 0, 0);
