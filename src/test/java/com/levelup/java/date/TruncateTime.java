@@ -42,7 +42,7 @@ public class TruncateTime {
 	}
 
 	@Test
-	public void truncate_time_in_apache_yoda () {
+	public void truncate_time_in_java_with_yoda () {
 		
 		DateTime dt = new DateTime().dayOfMonth().roundFloorCopy();
 
@@ -56,7 +56,7 @@ public class TruncateTime {
 	}
 
 	@Test
-	public void truncate_time_in_apache_commons () {
+	public void truncate_time_in_java_with_apache_commons () {
 		
 		Calendar cal = Calendar.getInstance();
 		Date someRandomTruncatedDate = DateUtils.truncate(cal.getTime(), Calendar.DATE);
