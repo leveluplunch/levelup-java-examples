@@ -19,7 +19,7 @@ import com.google.common.collect.TreeRangeMap;
 public class RangeMapExample {
 
 	@Test
-	public void googleRangeMapExample () {
+	public void google_guava_range_map_example () {
 	
 		RangeMap<Integer, String> gradeScale = TreeRangeMap.create();
 		gradeScale.put(Range.closed(0, 60), "F");
