@@ -77,4 +77,5 @@ public class JoinerExample {
 		assertEquals("Cirrus has type Cirrus, Cirrus has type Cirrostratus, Cirrus has type Cirrocumulus, Vertical Growth has type Cumulus, Vertical Growth has type Cumulonimbus, Alto has type Altostratus, Alto has type Altocumulus, Stratus has type Stratus, Stratus has type Stratocumulus, Stratus has type Nimbostratus, Special Clouds has type Mammatus, Special Clouds has type Lenticular, Special Clouds has type Fog, Special Clouds has type Contrails", 
 				keysAndValuesJoined);
 	}
+	
 }
