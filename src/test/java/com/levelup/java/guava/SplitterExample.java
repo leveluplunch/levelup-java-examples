@@ -3,6 +3,7 @@ package com.levelup.java.guava;
 import static org.junit.Assert.assertEquals;
 
 import java.util.List;
+import java.util.Map;
 
 import org.junit.Test;
 
@@ -56,6 +57,19 @@ public class SplitterExample {
 		
 		assertEquals(10, digits.size());
 
+	}
+	
+	@Test
+	public void split_string_to_map () {
+		
+		String str = "firstName:John , lastName:Doe, age:56, address:1234 Elm Street";
+		Map<String, String> demographics = Splitter.on(",")
+			  .trimResults()
+			  .withKeyValueSeparator(":")
+			  .split(str);
+		
+		assertEquals(4, demographics.size());
+		
 	}
 	
 	
