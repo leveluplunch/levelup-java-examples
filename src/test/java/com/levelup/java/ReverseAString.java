@@ -5,6 +5,13 @@ import static org.junit.Assert.assertEquals;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
+/**
+ * This java snippet will demonstrate reversing a string
+ * 
+ * @author Justin Musgrove
+ * @see <a href='http://www.leveluplunch.com/java/'></a>
+ * 
+ */
 public class ReverseAString {
 
 	private static final String PHRASE = "The dog barked at the mail man";
