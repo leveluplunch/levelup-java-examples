@@ -21,7 +21,14 @@ public class CharMatcherExample {
 		
 		String allButLowerCase = CharMatcher.JAVA_LOWER_CASE.negate().retainFrom("B-double E double R U-N beer run");
 		
-		assertEquals("B- E  R U-N ", allButLowerCase);
+		assertEquals("B- E  R U-N  ", allButLowerCase);
 	}
+	
+	@Test
+	public void is_digits () {
+		int val = CharMatcher.JAVA_DIGIT.countIn("123123");
+		System.out.println(val);
+	}
+	
 	
 }

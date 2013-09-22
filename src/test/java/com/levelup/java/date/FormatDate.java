@@ -1,4 +1,4 @@
-package com.levelup.java.text;
+package com.levelup.java.date;
 
 import static org.junit.Assert.assertEquals;
 

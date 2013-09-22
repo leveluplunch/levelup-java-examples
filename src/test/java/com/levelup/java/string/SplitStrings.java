@@ -22,7 +22,7 @@ import com.google.common.collect.Lists;
  * @see <a href='http://www.leveluplunch.com/java/'>Split String Into Tokens</a>
  * 
  */
-public class SplitStringsByTokens {
+public class SplitStrings {
 
 	private static final String CONSTANT_STRING = "The Dog goes woof, The cat goes meow, the cow says moo, the duck says quack";
 	
