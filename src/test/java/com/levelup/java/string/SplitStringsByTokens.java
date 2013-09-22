@@ -1,4 +1,4 @@
-package com.levelup.java;
+package com.levelup.java.string;
 
 import static org.junit.Assert.assertTrue;
 
@@ -22,7 +22,7 @@ import com.google.common.collect.Lists;
  * @see <a href='http://www.leveluplunch.com/java/'>Split String Into Tokens</a>
  * 
  */
-public class SplitStringsIntoTokens {
+public class SplitStringsByTokens {
 
 	private static final String CONSTANT_STRING = "The Dog goes woof, The cat goes meow, the cow says moo, the duck says quack";
 	
