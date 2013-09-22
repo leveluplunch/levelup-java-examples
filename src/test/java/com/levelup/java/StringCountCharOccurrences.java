@@ -16,7 +16,7 @@ import com.google.common.collect.Iterables;
  * @see <a href='http://www.leveluplunch.com/java/'>Number of Occurrences of charchaters in string</a>
  * 
  */
-public class CountOccurrencesOfString {
+public class StringCountCharOccurrences {
 
 	@Test
 	public void number_of_cccurrences_of_char_in_string_java() {

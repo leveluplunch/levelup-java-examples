@@ -7,13 +7,18 @@ import org.junit.Test;
 
 import com.google.common.base.Optional;
 
+/**
+ * This java snippet will demonstrate Google
+ * Optional.  
+ * 
+ * @author Justin Musgrove
+ * @see <a href='http://www.leveluplunch.com/java/'></a>
+ * 
+ */
 public class OptionalExample {
 	
 	private static final Logger logger = Logger.getLogger(OptionalExample.class);
 
-//	https://code.google.com/p/guava-libraries/wiki/UsingAndAvoidingNullExplained
-//	When you return list, you should always return a new list
-	
 	class PullRequest {
 		
 		String person;
