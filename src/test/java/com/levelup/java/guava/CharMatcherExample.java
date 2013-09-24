@@ -1,6 +1,7 @@
 package com.levelup.java.guava;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 
 import org.junit.Test;
 
@@ -25,9 +26,42 @@ public class CharMatcherExample {
 	}
 	
 	@Test
-	public void is_digits () {
-		int val = CharMatcher.JAVA_DIGIT.countIn("123123");
-		System.out.println(val);
+	public void trim_leading_spaces_from_string () {
+		
+		String leftTrimmedString = CharMatcher.WHITESPACE.trimLeadingFrom("       Some String       ");
+		assertEquals("Some String       ", leftTrimmedString);
+		
+	}
+	
+	@Test
+	public void trim_trailing_spaces_from_string () {
+		
+		String rightTrimmedString = CharMatcher.WHITESPACE.trimTrailingFrom("       Some String       ");
+		assertEquals("       Some String", rightTrimmedString);
+		
+	}
+	
+	@Test
+	public void trim_all_spaces_from_string () {
+		
+		String trimmedString = CharMatcher.WHITESPACE.trimFrom("       Some String       ");
+		assertEquals("Some String", trimmedString);
+		
+	}
+	
+	@Test
+	public void remove_all_asterisk_from_string () {
+		
+		String stringWithoutAstricks = CharMatcher.is('*').removeFrom("(* This is a comment.  The compiler will ignore it. *)");
+		assertEquals("( This is a comment.  The compiler will ignore it. )", stringWithoutAstricks);
+	}
+	
+	@Test 
+	public void validate_all_charachters_in_string_is_digit_or_letter () {
+		
+		boolean randomPharse = CharMatcher.JAVA_LETTER_OR_DIGIT.matchesAllOf("wefwewef3r343fwdSVD()I#KMFI");
+		
+		assertFalse(randomPharse);
 	}
 	
 	
