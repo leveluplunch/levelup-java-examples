@@ -11,7 +11,7 @@ import com.google.common.base.CharMatcher;
  * Guava Charmatcher
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/'></a>
+ * @see <a href='http://www.leveluplunch.com/java/example/guava-charmatcher-example/'></a>
  * 
  */
 public class CharMatcherExample {
