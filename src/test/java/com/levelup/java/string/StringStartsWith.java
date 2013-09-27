@@ -25,13 +25,14 @@ public class StringStartsWith {
 	}
 	
 	@Test
-	public void string_start_swith_regular_expression_with_java () {
+	public void string_starts_with_regular_expression_with_java () {
 		
 		boolean startsWithHttpsOrFTP = "http://www.leveluplunch.com".startsWith("^(https?|ftp)://.*$");
 		
 		assertFalse(startsWithHttpsOrFTP);
 		
 	}
+
 	
 	@Test
 	public void string_starts_with_apache_commons () {

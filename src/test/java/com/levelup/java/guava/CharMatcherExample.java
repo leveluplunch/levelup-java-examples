@@ -64,5 +64,14 @@ public class CharMatcherExample {
 		assertFalse(randomPharse);
 	}
 	
+	@Test
+	public void grade_within_passing_range () {
+		
+		boolean failedGrade = CharMatcher.inRange('A', 'C').apply('F');
+		
+		assertFalse(failedGrade);
+
+	}
+	
 	
 }
