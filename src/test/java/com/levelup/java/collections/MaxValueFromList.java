@@ -37,14 +37,14 @@ public class MaxValueFromList {
 	@Test
 	public void find_max_value_from_list_of_integers_guava_ordering() {
 
-		Ordering<Integer> maxElement = new Ordering<Integer>() {
+		Ordering<Integer> byYear = new Ordering<Integer>() {
 		    @Override
 		    public int compare(Integer left, Integer right) {
 		        return Ints.compare(left, right);
 		    }
 		};		
 		
-		assertEquals(new Integer (1988), maxElement.max(CENTERS_ROOKIE_YEAR));
+		assertEquals(new Integer (1988), byYear.max(CENTERS_ROOKIE_YEAR));
 	}
 	
 	@Test
