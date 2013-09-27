@@ -20,7 +20,7 @@ import com.google.common.math.DoubleMath;
  * @see <a href='http://www.leveluplunch.com/java/examples'>Average From List Of Numbers</a>
  * 
  */
-public class AverageFromListOfNumbers {
+public class AverageFromList {
 
 	private static List<Double> NUMBERS_FOR_AVERAGE = new ArrayList<Double>();
 	
@@ -50,6 +50,7 @@ public class AverageFromListOfNumbers {
 		
 		// sum = 10
 		assertEquals(new Double(10), sum);
+		
 	}
 	
 	@Test
