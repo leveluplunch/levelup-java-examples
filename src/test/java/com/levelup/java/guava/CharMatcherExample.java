@@ -73,5 +73,19 @@ public class CharMatcherExample {
 
 	}
 	
+	@Test
+	public void obtain_digits_from_telephone_number () {
+		
+		String telephoneNumber = CharMatcher.inRange('0','9').retainFrom("123-456-7890");
+		assertEquals("1234567890", telephoneNumber);
+		
+		// worried about performance
+		CharMatcher digits = CharMatcher.inRange('0','9').precomputed();
+		String teleNumber = digits.retainFrom("123-456-7890");
+		assertEquals("1234567890", teleNumber);
+		
+	}
+	
+	
 	
 }
