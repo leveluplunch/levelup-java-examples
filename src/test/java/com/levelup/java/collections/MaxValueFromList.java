@@ -12,8 +12,8 @@ import com.google.common.collect.Ordering;
 import com.google.common.primitives.Ints;
 
 /**
- * This java snippet will demonstrate getting max value of a list
- * of integers and strings.
+ * This java snippet will demonstrate getting max value 
+ * from a list.
  * 
  * @author Justin Musgrove
  * @see <a href='http://www.leveluplunch.com/java/'></a>
