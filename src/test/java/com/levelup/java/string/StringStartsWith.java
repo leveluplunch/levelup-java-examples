@@ -47,5 +47,14 @@ public class StringStartsWith {
 		assertTrue(startsWithHttpProtocol);
 
 	}
+
+	@Test
+	public void string_starts_with_spring () {
+		
+		boolean startsWithHttp = org.springframework.util.StringUtils
+				.startsWithIgnoreCase("http://www.leveluplunch.com", "http");
+		
+		assertTrue(startsWithHttp);
+	}
 	
 }
