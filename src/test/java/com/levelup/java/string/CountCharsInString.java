@@ -16,7 +16,7 @@ import com.google.common.collect.Iterables;
  * @see <a href='http://www.leveluplunch.com/java/'>Number of Occurrences of charchaters in string</a>
  * 
  */
-public class StringCountOccurrences {
+public class CountCharsInString {
 
 	@Test
 	public void number_of_cccurrences_of_char_in_string_java() {
@@ -57,4 +57,16 @@ public class StringCountOccurrences {
 		assertEquals(14, count);
 		
 	}
+	
+	@Test
+	public void number_of_cccurrences_of_char_in_string_springframework () {
+		String stringToSearch = "she saw a fish on the seashore and I'm sure The fish she saw on the seashore was a saw-fish.";
+		String letter = "s";
+
+		int count = org.springframework.util.
+				StringUtils.countOccurrencesOf(stringToSearch, letter);
+
+		assertEquals(14, count);
+	}
+	
 }
