@@ -1,4 +1,4 @@
-package com.levelup.java.date;
+package com.levelup.java.date.math;
 
 import static org.junit.Assert.assertTrue;
 
@@ -14,10 +14,12 @@ import org.joda.time.format.DateTimeFormatter;
 import org.junit.Test;
 
 /**
- * This java snippet will demonstrate subtracting days from a date
+ * This java snippet will demonstrate subtracting days from a date.
+ * 
+ * This java example will demonstrate finding the difference in days between two dates.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/'></a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/subtract-days-from-date/'>Subtract days from date</a>
  * 
  */
 public class DateMinusDays {
@@ -45,8 +47,6 @@ public class DateMinusDays {
 		
 	}
 
-	
-	
 	@Test
 	public void subtract_days_from_date_in_java_yoda () {
 		

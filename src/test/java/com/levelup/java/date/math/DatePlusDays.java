@@ -1,4 +1,4 @@
-package com.levelup.java.date;
+package com.levelup.java.date.math;
 
 import static org.junit.Assert.assertTrue;
 
@@ -14,66 +14,68 @@ import org.joda.time.format.DateTimeFormatter;
 import org.junit.Test;
 
 /**
- * This java snippet will demonstrate subtracting years from a date
+ * This java snippet will demonstrate adding days to date
  * 
  * @author Justin Musgrove
  * @see <a href='http://www.leveluplunch.com/java/'></a>
  * 
  */
-public class DateMinusYears {
-	
-	private static final Logger logger = Logger.getLogger(DateMinusYears.class);
+public class DatePlusDays {
 
+	private static final Logger logger = Logger.getLogger(DatePlusDays.class);
+
+	
 	@Test
-	public void subtract_years_from_date_in_java () {
+	public void add_days_to_date_in_java () {
 		
 		Calendar superBowlXLV = Calendar.getInstance();
 		superBowlXLV.set(2011, 1, 6, 0, 0);
 		
-		Calendar numberFour = Calendar.getInstance();
-		numberFour.setTimeInMillis(superBowlXLV.getTimeInMillis());
-		numberFour.add(Calendar.YEAR, -14);		
+		Calendar celebration = Calendar.getInstance();
+		celebration.setTimeInMillis(superBowlXLV.getTimeInMillis());
+		celebration.add(Calendar.DATE, 1);		
+		
 		
 		SimpleDateFormat dateFormatter = new SimpleDateFormat("MM/dd/yyyy");
 
 		logger.info(dateFormatter.format(superBowlXLV.getTime()));
-		logger.info(dateFormatter.format(numberFour.getTime()));
+		logger.info(dateFormatter.format(celebration.getTime()));
 
-		assertTrue(numberFour.before(superBowlXLV));
-
+		assertTrue(celebration.after(superBowlXLV));
+		
 	}
 
+	
 	@Test
-	public void subtract_years_from_date_in_java_yoda () {
+	public void add_days_to_date_in_java_with_yoda () {
 
 		DateTime superBowlXLV = new DateTime(2011, 2, 6, 0, 0, 0, 0);
-		DateTime numberFour = superBowlXLV.minusYears(14);
+		DateTime celebration = superBowlXLV.plusDays(1);
 
 		DateTimeFormatter fmt = DateTimeFormat.forPattern("MM/dd/yyyy");
 		
 		logger.info(superBowlXLV.toString(fmt));
-		logger.info(numberFour.toString(fmt));
+		logger.info(celebration.toString(fmt));
 
-		assertTrue(numberFour.isBefore(superBowlXLV));
-		
+		assertTrue(celebration.isAfter(superBowlXLV));
 	}
 
 	
 	@Test
-	public void subtract_years_from_date_in_java_apachecommons () {
-		
+	public void add_days_to_date_in_java_with_apachecommons () {
+
 		Calendar superBowlXLV = Calendar.getInstance();
 		superBowlXLV.set(2011, 1, 6, 0, 0);
 		
-		Date numberFour = DateUtils.addYears(superBowlXLV.getTime(), -14);
+		Date celebration = DateUtils.addDays(superBowlXLV.getTime(), 1);
 		
 		SimpleDateFormat dateFormatter = new SimpleDateFormat("MM/dd/yyyy");
 
 		logger.info(dateFormatter.format(superBowlXLV.getTime()));
-		logger.info(dateFormatter.format(numberFour));
+		logger.info(dateFormatter.format(celebration));
 
-		assertTrue(numberFour.before(superBowlXLV.getTime()));		
-		
+		assertTrue(celebration.after(superBowlXLV.getTime()));
+
 	}
 
 	

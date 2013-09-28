@@ -1,4 +1,4 @@
-package com.levelup.java.date;
+package com.levelup.java.date.math;
 
 import static org.junit.Assert.assertTrue;
 
@@ -14,69 +14,66 @@ import org.joda.time.format.DateTimeFormatter;
 import org.junit.Test;
 
 /**
- * This java snippet will demonstrate adding days to date
+ * This java snippet will demonstrate adding years to a date
  * 
  * @author Justin Musgrove
  * @see <a href='http://www.leveluplunch.com/java/'></a>
  * 
  */
-public class DatePlusDays {
-
-	private static final Logger logger = Logger.getLogger(DatePlusDays.class);
-
+public class DatePlusYears {
 	
+	private static final Logger logger = Logger.getLogger(DatePlusYears.class);
+
 	@Test
-	public void add_days_to_date_in_java () {
-		
+	public void add_years_to_date_in_java () {
+
 		Calendar superBowlXLV = Calendar.getInstance();
 		superBowlXLV.set(2011, 1, 6, 0, 0);
 		
-		Calendar celebration = Calendar.getInstance();
-		celebration.setTimeInMillis(superBowlXLV.getTimeInMillis());
-		celebration.add(Calendar.DATE, 1);		
-		
+		Calendar fortyNinersSuck = Calendar.getInstance();
+		fortyNinersSuck.setTimeInMillis(superBowlXLV.getTimeInMillis());
+		fortyNinersSuck.add(Calendar.YEAR, 2);		
 		
 		SimpleDateFormat dateFormatter = new SimpleDateFormat("MM/dd/yyyy");
 
 		logger.info(dateFormatter.format(superBowlXLV.getTime()));
-		logger.info(dateFormatter.format(celebration.getTime()));
+		logger.info(dateFormatter.format(fortyNinersSuck.getTime()));
 
-		assertTrue(celebration.after(superBowlXLV));
+		assertTrue(fortyNinersSuck.after(superBowlXLV));
 		
 	}
-
 	
 	@Test
-	public void add_days_to_date_in_java_with_yoda () {
+	public void add_years_to_date_in_java_yoda () {
 
 		DateTime superBowlXLV = new DateTime(2011, 2, 6, 0, 0, 0, 0);
-		DateTime celebration = superBowlXLV.plusDays(1);
+		DateTime fortyNinersSuck = superBowlXLV.plusYears(2);
 
 		DateTimeFormatter fmt = DateTimeFormat.forPattern("MM/dd/yyyy");
 		
 		logger.info(superBowlXLV.toString(fmt));
-		logger.info(celebration.toString(fmt));
+		logger.info(fortyNinersSuck.toString(fmt));
 
-		assertTrue(celebration.isAfter(superBowlXLV));
+		assertTrue(fortyNinersSuck.isAfter(superBowlXLV));
+	
 	}
 
-	
 	@Test
-	public void add_days_to_date_in_java_with_apachecommons () {
+	public void add_years_to_date_in_java_apachecommons () {
 
 		Calendar superBowlXLV = Calendar.getInstance();
 		superBowlXLV.set(2011, 1, 6, 0, 0);
 		
-		Date celebration = DateUtils.addDays(superBowlXLV.getTime(), 1);
+		Date fortyNinersSuck = DateUtils.addYears(superBowlXLV.getTime(), 2);
 		
 		SimpleDateFormat dateFormatter = new SimpleDateFormat("MM/dd/yyyy");
 
 		logger.info(dateFormatter.format(superBowlXLV.getTime()));
-		logger.info(dateFormatter.format(celebration));
+		logger.info(dateFormatter.format(fortyNinersSuck));
 
-		assertTrue(celebration.after(superBowlXLV.getTime()));
-
+		assertTrue(fortyNinersSuck.after(superBowlXLV.getTime()));
+		
 	}
 
-	
+
 }

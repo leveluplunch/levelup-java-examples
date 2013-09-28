@@ -1,4 +1,4 @@
-package com.levelup.java.date;
+package com.levelup.java.date.math;
 
 import static org.junit.Assert.assertTrue;
 

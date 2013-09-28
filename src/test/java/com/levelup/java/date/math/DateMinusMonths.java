@@ -1,4 +1,4 @@
-package com.levelup.java.date;
+package com.levelup.java.date.math;
 
 import static org.junit.Assert.assertTrue;
 
@@ -17,7 +17,7 @@ import org.junit.Test;
  * This java snippet will demonstrate subtracting months from a date
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/'></a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/subtract-months-from-date/'>Subtract months from date</a>
  * 
  */
 public class DateMinusMonths {
