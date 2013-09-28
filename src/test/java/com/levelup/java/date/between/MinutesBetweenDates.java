@@ -3,7 +3,6 @@ package com.levelup.java.date.between;
 import static org.junit.Assert.assertEquals;
 
 import org.joda.time.DateTime;
-import org.joda.time.Hours;
 import org.joda.time.Minutes;
 import org.junit.Test;
 
