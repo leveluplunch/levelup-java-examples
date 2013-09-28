@@ -22,4 +22,12 @@ public class CompareStrings {
 		assertTrue(stringEquals);
 	}
 
+	@Test
+	public void compare_strings_ignoring_case_in_java () {
+		
+		boolean stringEquals = "test".equalsIgnoreCase("TEST");
+		
+		assertTrue(stringEquals);
+	}
+	
 }
