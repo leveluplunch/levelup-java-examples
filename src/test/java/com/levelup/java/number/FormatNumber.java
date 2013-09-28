@@ -1,4 +1,4 @@
-package com.levelup.java.text;
+package com.levelup.java.number;
 
 import static org.junit.Assert.assertEquals;
 
