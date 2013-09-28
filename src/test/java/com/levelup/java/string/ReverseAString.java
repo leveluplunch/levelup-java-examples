@@ -6,7 +6,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
 /**
- * This java snippet will demonstrate reversing a string
+ * This java example will demonstrate reversing a string
  * 
  * @author Justin Musgrove
  * @see <a href='http://www.leveluplunch.com/java/'></a>
