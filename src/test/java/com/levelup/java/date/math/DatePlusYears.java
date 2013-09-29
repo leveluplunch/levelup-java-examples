@@ -17,7 +17,7 @@ import org.junit.Test;
  * This java snippet will demonstrate adding years to a date
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/'></a>
+ * @see <a href='http://www.leveluplunch.com/java/example/add-years-to-date/'>Add years to date</a>
  * 
  */
 public class DatePlusYears {
@@ -34,7 +34,7 @@ public class DatePlusYears {
 		fortyNinersSuck.setTimeInMillis(superBowlXLV.getTimeInMillis());
 		fortyNinersSuck.add(Calendar.YEAR, 2);		
 		
-		SimpleDateFormat dateFormatter = new SimpleDateFormat("MM/dd/yyyy");
+		SimpleDateFormat dateFormatter = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss z");
 
 		logger.info(dateFormatter.format(superBowlXLV.getTime()));
 		logger.info(dateFormatter.format(fortyNinersSuck.getTime()));
@@ -49,7 +49,7 @@ public class DatePlusYears {
 		DateTime superBowlXLV = new DateTime(2011, 2, 6, 0, 0, 0, 0);
 		DateTime fortyNinersSuck = superBowlXLV.plusYears(2);
 
-		DateTimeFormatter fmt = DateTimeFormat.forPattern("MM/dd/yyyy");
+		DateTimeFormatter fmt = DateTimeFormat.forPattern("MM/dd/yyyy HH:mm:ss z");
 		
 		logger.info(superBowlXLV.toString(fmt));
 		logger.info(fortyNinersSuck.toString(fmt));
@@ -66,7 +66,7 @@ public class DatePlusYears {
 		
 		Date fortyNinersSuck = DateUtils.addYears(superBowlXLV.getTime(), 2);
 		
-		SimpleDateFormat dateFormatter = new SimpleDateFormat("MM/dd/yyyy");
+		SimpleDateFormat dateFormatter = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss z");
 
 		logger.info(dateFormatter.format(superBowlXLV.getTime()));
 		logger.info(dateFormatter.format(fortyNinersSuck));

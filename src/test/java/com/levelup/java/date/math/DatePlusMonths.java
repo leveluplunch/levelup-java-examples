@@ -17,7 +17,7 @@ import org.junit.Test;
  * This java snippet will demonstrate adding months to a date
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/'></a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/add-months-to-date/'>Add months to date</a>
  * 
  */
 public class DatePlusMonths {
@@ -34,7 +34,7 @@ public class DatePlusMonths {
 		sippinFruityDrinksInMexico.setTimeInMillis(superBowlXLV.getTimeInMillis());
 		sippinFruityDrinksInMexico.add(Calendar.MONTH, 1);		
 		
-		SimpleDateFormat dateFormatter = new SimpleDateFormat("MM/dd/yyyy");
+		SimpleDateFormat dateFormatter = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss z");
 
 		logger.info(dateFormatter.format(superBowlXLV.getTime()));
 		logger.info(dateFormatter.format(sippinFruityDrinksInMexico.getTime()));
@@ -50,7 +50,7 @@ public class DatePlusMonths {
 		DateTime superBowlXLV = new DateTime(2011, 2, 6, 0, 0, 0, 0);
 		DateTime sippinFruityDrinksInMexico = superBowlXLV.plusMonths(1);
 
-		DateTimeFormatter fmt = DateTimeFormat.forPattern("MM/dd/yyyy");
+		DateTimeFormatter fmt = DateTimeFormat.forPattern("MM/dd/yyyy HH:mm:ss z");
 		
 		logger.info(superBowlXLV.toString(fmt));
 		logger.info(sippinFruityDrinksInMexico.toString(fmt));
@@ -67,7 +67,7 @@ public class DatePlusMonths {
 		
 		Date sippinFruityDrinksInMexico = DateUtils.addMonths(superBowlXLV.getTime(), 1);
 		
-		SimpleDateFormat dateFormatter = new SimpleDateFormat("MM/dd/yyyy");
+		SimpleDateFormat dateFormatter = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss z");
 
 		logger.info(dateFormatter.format(superBowlXLV.getTime()));
 		logger.info(dateFormatter.format(sippinFruityDrinksInMexico));

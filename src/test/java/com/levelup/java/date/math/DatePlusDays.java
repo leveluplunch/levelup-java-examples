@@ -36,7 +36,7 @@ public class DatePlusDays {
 		celebration.add(Calendar.DATE, 1);		
 		
 		
-		SimpleDateFormat dateFormatter = new SimpleDateFormat("MM/dd/yyyy");
+		SimpleDateFormat dateFormatter = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss z");
 
 		logger.info(dateFormatter.format(superBowlXLV.getTime()));
 		logger.info(dateFormatter.format(celebration.getTime()));
@@ -52,7 +52,7 @@ public class DatePlusDays {
 		DateTime superBowlXLV = new DateTime(2011, 2, 6, 0, 0, 0, 0);
 		DateTime celebration = superBowlXLV.plusDays(1);
 
-		DateTimeFormatter fmt = DateTimeFormat.forPattern("MM/dd/yyyy");
+		DateTimeFormatter fmt = DateTimeFormat.forPattern("MM/dd/yyyy HH:mm:ss z");
 		
 		logger.info(superBowlXLV.toString(fmt));
 		logger.info(celebration.toString(fmt));
@@ -69,7 +69,7 @@ public class DatePlusDays {
 		
 		Date celebration = DateUtils.addDays(superBowlXLV.getTime(), 1);
 		
-		SimpleDateFormat dateFormatter = new SimpleDateFormat("MM/dd/yyyy");
+		SimpleDateFormat dateFormatter = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss z");
 
 		logger.info(dateFormatter.format(superBowlXLV.getTime()));
 		logger.info(dateFormatter.format(celebration));
