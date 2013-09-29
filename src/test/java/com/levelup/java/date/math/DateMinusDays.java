@@ -16,8 +16,6 @@ import org.junit.Test;
 /**
  * This java snippet will demonstrate subtracting days from a date.
  * 
- * This java example will demonstrate finding the difference in days between two dates.
- * 
  * @author Justin Musgrove
  * @see <a href='http://www.leveluplunch.com/java/examples/subtract-days-from-date/'>Subtract days from date</a>
  * 
@@ -38,7 +36,7 @@ public class DateMinusDays {
 		pregame.add(Calendar.DATE, -1);		
 		
 		
-		SimpleDateFormat dateFormatter = new SimpleDateFormat("MM/dd/yyyy");
+		SimpleDateFormat dateFormatter = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss z");
 
 		logger.info(dateFormatter.format(superBowlXLV.getTime()));
 		logger.info(dateFormatter.format(pregame.getTime()));
@@ -53,7 +51,7 @@ public class DateMinusDays {
 		DateTime superBowlXLV = new DateTime(2011, 2, 6, 0, 0, 0, 0);
 		DateTime pregame = superBowlXLV.minusDays(1);
 
-		DateTimeFormatter fmt = DateTimeFormat.forPattern("MM/dd/yyyy");
+		DateTimeFormatter fmt = DateTimeFormat.forPattern("MM/dd/yyyy HH:mm:ss z");
 		
 		logger.info(superBowlXLV.toString(fmt));
 		logger.info(pregame.toString(fmt));
@@ -70,7 +68,7 @@ public class DateMinusDays {
 		
 		Date pregame = DateUtils.addDays(superBowlXLV.getTime(), -1);
 		
-		SimpleDateFormat dateFormatter = new SimpleDateFormat("MM/dd/yyyy");
+		SimpleDateFormat dateFormatter = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss z");
 
 		logger.info(dateFormatter.format(superBowlXLV.getTime()));
 		logger.info(dateFormatter.format(pregame));

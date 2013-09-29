@@ -35,7 +35,7 @@ public class DateMinusMonths {
 		championshipWeekend.setTimeInMillis(superBowlXLV.getTimeInMillis());
 		championshipWeekend.add(Calendar.MONTH, -1);		
 		
-		SimpleDateFormat dateFormatter = new SimpleDateFormat("MM/dd/yyyy");
+		SimpleDateFormat dateFormatter = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss z");
 
 		logger.info(dateFormatter.format(superBowlXLV.getTime()));
 		logger.info(dateFormatter.format(championshipWeekend.getTime()));
@@ -50,7 +50,7 @@ public class DateMinusMonths {
 		DateTime superBowlXLV = new DateTime(2011, 2, 6, 0, 0, 0, 0);
 		DateTime championshipWeekend = superBowlXLV.minusMonths(1);
 
-		DateTimeFormatter fmt = DateTimeFormat.forPattern("MM/dd/yyyy");
+		DateTimeFormatter fmt = DateTimeFormat.forPattern("MM/dd/yyyy HH:mm:ss z");
 		
 		logger.info(superBowlXLV.toString(fmt));
 		logger.info(championshipWeekend.toString(fmt));
@@ -67,7 +67,7 @@ public class DateMinusMonths {
 		
 		Date championshipWeekend = DateUtils.addMonths(superBowlXLV.getTime(), -1);
 		
-		SimpleDateFormat dateFormatter = new SimpleDateFormat("MM/dd/yyyy");
+		SimpleDateFormat dateFormatter = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss z");
 
 		logger.info(dateFormatter.format(superBowlXLV.getTime()));
 		logger.info(dateFormatter.format(championshipWeekend));

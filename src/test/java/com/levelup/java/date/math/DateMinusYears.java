@@ -34,7 +34,7 @@ public class DateMinusYears {
 		numberFour.setTimeInMillis(superBowlXLV.getTimeInMillis());
 		numberFour.add(Calendar.YEAR, -14);		
 		
-		SimpleDateFormat dateFormatter = new SimpleDateFormat("MM/dd/yyyy");
+		SimpleDateFormat dateFormatter = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss z");
 
 		logger.info(dateFormatter.format(superBowlXLV.getTime()));
 		logger.info(dateFormatter.format(numberFour.getTime()));
@@ -49,7 +49,7 @@ public class DateMinusYears {
 		DateTime superBowlXLV = new DateTime(2011, 2, 6, 0, 0, 0, 0);
 		DateTime numberFour = superBowlXLV.minusYears(14);
 
-		DateTimeFormatter fmt = DateTimeFormat.forPattern("MM/dd/yyyy");
+		DateTimeFormatter fmt = DateTimeFormat.forPattern("MM/dd/yyyy HH:mm:ss z");
 		
 		logger.info(superBowlXLV.toString(fmt));
 		logger.info(numberFour.toString(fmt));
@@ -67,7 +67,7 @@ public class DateMinusYears {
 		
 		Date numberFour = DateUtils.addYears(superBowlXLV.getTime(), -14);
 		
-		SimpleDateFormat dateFormatter = new SimpleDateFormat("MM/dd/yyyy");
+		SimpleDateFormat dateFormatter = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss z");
 
 		logger.info(dateFormatter.format(superBowlXLV.getTime()));
 		logger.info(dateFormatter.format(numberFour));
