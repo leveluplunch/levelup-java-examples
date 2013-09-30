@@ -8,7 +8,7 @@ import org.junit.Test;
 import com.google.common.base.Optional;
 
 /**
- * This java snippet will demonstrate Google
+ * This java example will demonstrate Google
  * Optional.  
  * 
  * @author Justin Musgrove

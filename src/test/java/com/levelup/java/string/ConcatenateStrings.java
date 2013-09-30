@@ -5,7 +5,7 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 /**
- * This java snippet will demonstrate how to 
+ * This java example will demonstrate how to 
  * concatenate strings.  It is recommended that
  * when concatenating large strings to use {@link StringBuffer}
  * OR {@link StringBuilder}.  The difference b/t

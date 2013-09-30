@@ -10,7 +10,7 @@ import org.junit.Test;
 import com.google.common.collect.Lists;
 
 /**
- * This java snippet will demonstrate removing an element from array
+ * This java example will demonstrate removing an element from array
  * 
  * @author Justin Musgrove
  * @see <a href='http://www.leveluplunch.com/java/'></a>

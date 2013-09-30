@@ -8,7 +8,7 @@ import java.util.Random;
 import org.junit.Test;
 
 /** 
- * This java snippet will demonstrate generating a random number with java.
+ * This java example will demonstrate generating a random number with java.
  * 
  * @author Justin Musgrove
  * @see <a href='http://www.leveluplunch.com/java/'></a>

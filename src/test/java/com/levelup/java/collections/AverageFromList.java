@@ -13,7 +13,7 @@ import org.junit.Test;
 import com.google.common.math.DoubleMath;
 
 /**
- * This java snippet will demonstrate calculating the average
+ * This java example will demonstrate calculating the average
  * from a list of numbers.
  * 
  * @author Justin Musgrove

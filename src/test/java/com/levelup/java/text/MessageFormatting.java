@@ -11,7 +11,7 @@ import org.joda.time.DateTime;
 import org.junit.Test;
 
 /**
- * This java snippet will demonstrate formatting messages in java
+ * This java example will demonstrate formatting messages in java
  * 
  * @author Justin Musgrove
  * @see <a href='http://www.leveluplunch.com/java/'></a>

@@ -8,7 +8,7 @@ import org.junit.Test;
 import com.google.common.primitives.Ints;
 
 /**
- * This java snippet will demonstrate finding the lowest value in array
+ * This java example will demonstrate finding the lowest value in array
  * 
  * @author Justin Musgrove
  * @see <a href='http://www.leveluplunch.com/java/'></a>

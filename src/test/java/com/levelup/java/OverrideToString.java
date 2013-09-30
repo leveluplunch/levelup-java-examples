@@ -9,7 +9,7 @@ import org.junit.Test;
 import com.google.common.base.Objects;
 
 /**
- * This java snippet will demonstrate how to override the toString in java with 
+ * This java example will demonstrate how to override the toString in java with 
  * straight up java, google guava and apache commons.
  * 
  * @author Justin Musgrove

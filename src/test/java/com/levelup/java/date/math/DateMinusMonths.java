@@ -14,7 +14,7 @@ import org.joda.time.format.DateTimeFormatter;
 import org.junit.Test;
 
 /**
- * This java snippet will demonstrate subtracting months from a date
+ * This java example will demonstrate subtracting months from a date
  * 
  * @author Justin Musgrove
  * @see <a href='http://www.leveluplunch.com/java/examples/subtract-months-from-date/'>Subtract months from date</a>

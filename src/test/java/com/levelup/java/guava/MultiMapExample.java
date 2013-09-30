@@ -14,7 +14,7 @@ import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.Multimap;
 
 /**
- * This java snippet will demonstrate multimap example.
+ * This java example will demonstrate multimap example.
  * 
  * If you haven't already you will face working with Map<K, List<V>>, basically the need 
  * to have 1 key to many elements.  Guava's Multimap to the rescue!  It does just that by 

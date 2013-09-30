@@ -13,7 +13,7 @@ import com.google.common.collect.Lists;
 
 
 /**
- * This java snippet will demonstrate finding an element in lists 
+ * This java example will demonstrate finding an element in lists 
  * with straight up java and google Guava.
  * 
  * @author Justin Musgrove

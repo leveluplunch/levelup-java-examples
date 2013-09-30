@@ -9,7 +9,7 @@ import com.google.common.base.Splitter;
 import com.google.common.collect.Iterables;
 
 /**
- * This java snippet will demonstrate counting the number of occurrences of
+ * This java example will demonstrate counting the number of occurrences of
  * characters in a string
  * 
  * @author Justin Musgrove

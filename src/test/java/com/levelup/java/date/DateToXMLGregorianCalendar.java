@@ -11,7 +11,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
 import org.junit.Test;
 
 /**
- * This java snippet will demonstrate converting a date to XMLGregorianCalendar
+ * This java example will demonstrate converting a date to XMLGregorianCalendar
  * 
  * @author Justin Musgrove
  * @see <a href='http://www.leveluplunch.com/java/'></a>

@@ -13,7 +13,7 @@ import com.google.common.primitives.Ints;
 
 
 /**
- * This java snippet will demonstrate combining or joining two arrays.
+ * This java example will demonstrate combining or joining two arrays.
  * 
  * @author Justin Musgrove
  * @see <a href='http://www.leveluplunch.com/java/'></a>

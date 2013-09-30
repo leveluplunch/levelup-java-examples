@@ -12,7 +12,7 @@ import com.google.common.base.Splitter;
 import com.google.common.collect.Lists;
 
 /**
- * This java snippet will demonstrate splitting of a string based on a delimiter. 
+ * This java example will demonstrate splitting of a string based on a delimiter. 
  * 
  * It is likely if you are dealing with single field with multiple  
  * values such as select_139393_494949, you may need to parse string values.  

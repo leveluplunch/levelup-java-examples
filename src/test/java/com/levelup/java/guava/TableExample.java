@@ -9,7 +9,7 @@ import com.google.common.collect.HashBasedTable;
 import com.google.common.collect.Table;
 
 /**
- * This java snippet demonstrate how to use 
+ * This java example demonstrate how to use 
  * Google Guava Tables.  Tables can be thought a <table>
  * on a web page (columns, rows, and values).  
  * 

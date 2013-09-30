@@ -11,7 +11,7 @@ import com.google.common.base.Joiner;
 import com.google.common.collect.Lists;
 
 /**
- * This java snippet will demonstrate printing a List<String 
+ * This java example will demonstrate printing a List<String 
  * with a delimiter.  AKA pretty printing a list.
  * 
  * @author Justin Musgrove

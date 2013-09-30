@@ -10,7 +10,7 @@ import org.junit.Test;
 import com.google.common.base.Strings;
 
 /**
- * This java snippet will demonstrate left padding a string
+ * This java example will demonstrate left padding a string
  * of size 10 with spaces and zeros.
  * 
  * @author Justin Musgrove

@@ -12,7 +12,7 @@ import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 
 /**
- * This java snippet will demonstrate combining or joining two lists.
+ * This java example will demonstrate combining or joining two lists.
  * 
  * @author Justin Musgrove
  * @see <a href='http://www.leveluplunch.com/java/'></a>

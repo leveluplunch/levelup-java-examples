@@ -6,7 +6,7 @@ import org.apache.commons.math3.stat.StatUtils;
 import org.junit.Test;
 
 /**
- * This java snippet will demonstrate summing values in array.
+ * This java example will demonstrate summing values in array.
  * 
  * @author Justin Musgrove
  * @see <a href='http://www.leveluplunch.com/java/'></a>

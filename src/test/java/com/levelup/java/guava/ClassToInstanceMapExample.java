@@ -8,7 +8,7 @@ import com.google.common.collect.ClassToInstanceMap;
 import com.google.common.collect.MutableClassToInstanceMap;
 
 /**
- * This java snippet will demonstrate a use case for ClassToInstanceMap.
+ * This java example will demonstrate a use case for ClassToInstanceMap.
  * 
  * In many cases you need to gather multiple objects that relate to each other.  You may make 
  * 1:M db calls to get a set of objects, make web service requests, etc.  For instance, 

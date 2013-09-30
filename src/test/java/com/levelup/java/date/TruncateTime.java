@@ -12,7 +12,7 @@ import org.joda.time.DateTime;
 import org.junit.Test;
 
 /**
- * This java snippet will demonstrate truncating time in java
+ * This java example will demonstrate truncating time in java
  * 
  * @author Justin Musgrove
  * @see <a href='http://www.leveluplunch.com/java/'></a>

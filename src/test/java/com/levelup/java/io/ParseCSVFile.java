@@ -12,7 +12,7 @@ import org.junit.Test;
 import au.com.bytecode.opencsv.CSVReader;
 
 /**
- * This java snippet will demonstrate how to read a csv file.
+ * This java example will demonstrate how to read a csv file.
  * 
  * There are a few util libs for reading in csv files, a more popular 
  * one is <a href="http://opencsv.sourceforge.net/">OpenCSV</a>.   

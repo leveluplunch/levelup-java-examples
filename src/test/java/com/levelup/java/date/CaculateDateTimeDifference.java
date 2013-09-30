@@ -13,7 +13,7 @@ import org.joda.time.chrono.GregorianChronology;
 import org.junit.Test;
 
 /**
- * This java snippet will demonstrate finding the difference between two dates.
+ * This java example will demonstrate finding the difference between two dates.
  * 
  * @author Justin Musgrove
  * @see <a href='http://www.leveluplunch.com/java/'></a>

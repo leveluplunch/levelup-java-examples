@@ -11,7 +11,7 @@ import com.google.common.collect.Lists;
 import com.google.common.primitives.Doubles;
 
 /**
- * This java snippet will demonstrate converting a collection to array
+ * This java example will demonstrate converting a collection to array
  * 
  * @author Justin Musgrove
  * @see <a href='http://www.leveluplunch.com/java/'></a>

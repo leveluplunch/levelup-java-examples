@@ -19,7 +19,7 @@ import com.google.common.base.Charsets;
 import com.google.common.io.Files;
 
 /**
- * This java snippet will demonstrate how to read a text file.
+ * This java example will demonstrate how to read a text file.
  * 
  * Effective Java Item 47: Know and use the libraries recommends using
  * library such as Google Guava or Apache Commons.
