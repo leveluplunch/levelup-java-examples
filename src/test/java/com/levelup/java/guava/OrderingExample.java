@@ -2,6 +2,7 @@ package com.levelup.java.guava;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 
 import java.util.Collections;
 import java.util.List;
@@ -183,6 +184,50 @@ public class OrderingExample {
 
 	}	
 	
+	@Test
+	public void is_list_of_numbers_sorted_in_java_with_guava () {
+
+		List<Integer> uwConferenceTitles = Lists.newArrayList(
+				1896, 1897, 1901, 1906, 1912, 
+				1952, 1959, 1962, 1993, 1998, 
+				1999, 2010, 2011, 2012);
+		
+		boolean isSorted = Ordering.natural().isOrdered(uwConferenceTitles);
+		
+		assertTrue(isSorted);
+
+	}
+
+	@Test
+	public void is_list_of_strings_sorted_in_java_with_guava () {
+
+		List<String> secConferenceEast = Lists.newArrayList(
+				"Florida",
+				"Georgia",
+				"Missouri",
+				"South Carolina",
+				"Tennessee",
+				"Vanderbilt");
+		
+		boolean isSorted = Ordering.natural().isOrdered(secConferenceEast);
+		
+		assertTrue(isSorted);
+
+	}
+	
+	@Test
+	public void is_list_of_strings_sorted_case_insensitive_in_java_with_guava () {
+
+		List<String> secConferenceEast = Lists.newArrayList(
+				"alabama",
+				"Alabama",
+				"ALABAMA");
+		
+		boolean isSorted = Ordering.from(String.CASE_INSENSITIVE_ORDER).isOrdered(secConferenceEast);
+		
+		assertTrue(isSorted);
+
+	}
 
 
 }
