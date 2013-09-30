@@ -11,7 +11,7 @@ import com.google.common.base.CharMatcher;
 import com.google.common.base.Splitter;
 
 /**
- * This java snippet will demonstrate examples of 
+ * This java example will demonstrate examples of 
  * Google Guava Splitter
  * 
  * @author Justin Musgrove

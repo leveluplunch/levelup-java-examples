@@ -9,7 +9,7 @@ import com.google.common.collect.RangeMap;
 import com.google.common.collect.TreeRangeMap;
 
 /**
- * This java snippet will use Google Guava RangeMap to 
+ * This java example will use Google Guava RangeMap to 
  * demonstrate grade scale.
  * 
  * @author Justin Musgrove

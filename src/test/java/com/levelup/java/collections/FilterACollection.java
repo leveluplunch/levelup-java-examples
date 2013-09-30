@@ -15,7 +15,7 @@ import com.google.common.collect.Collections2;
 import com.google.common.collect.Lists;
 
 /**
- * This java snippet will demonstrate how to filter items from a list with 
+ * This java example will demonstrate how to filter items from a list with 
  * straight up java and google guava.  
  * 
  * Please note, the order of the teams listed is the overall ranking

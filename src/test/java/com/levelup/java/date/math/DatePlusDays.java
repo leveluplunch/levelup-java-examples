@@ -14,7 +14,7 @@ import org.joda.time.format.DateTimeFormatter;
 import org.junit.Test;
 
 /**
- * This java snippet will demonstrate adding days to date
+ * This java example will demonstrate adding days to date
  * 
  * @author Justin Musgrove
  * @see <a href='http://www.leveluplunch.com/java/'></a>

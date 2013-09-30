@@ -7,7 +7,7 @@ import java.util.Arrays;
 import org.junit.Test;
 
 /**
- * This java snippet will demonstrate shifting the values in array
+ * This java example will demonstrate shifting the values in array
  * 
  * @author Justin Musgrove
  * @see <a href='http://www.leveluplunch.com/java/'></a>

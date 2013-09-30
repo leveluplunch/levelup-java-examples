@@ -11,7 +11,7 @@ import org.junit.Test;
 import com.google.common.base.Stopwatch;
 
 /**
- * This java snippet will demonstrate calculating elapsed time in java.
+ * This java example will demonstrate calculating elapsed time in java.
  * 
  * @author Justin Musgrove
  * @see <a href='http://www.leveluplunch.com/java/'></a>

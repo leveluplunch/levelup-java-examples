@@ -22,7 +22,7 @@ import com.google.common.primitives.Doubles;
 import com.google.common.primitives.Ints;
 
 /**
- * This java snippet will demonstrate how to sort a collection
+ * This java example will demonstrate how to sort a collection
  * 
  * @author Justin Musgrove
  * @see <a href='http://www.leveluplunch.com/java/'></a>

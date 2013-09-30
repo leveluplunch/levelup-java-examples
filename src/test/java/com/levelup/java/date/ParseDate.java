@@ -13,7 +13,7 @@ import org.joda.time.format.DateTimeFormatter;
 import org.junit.Test;
 
 /**
- * This java snippet will demonstrate parsing a date strings
+ * This java example will demonstrate parsing a date strings
  * 
  * @author Justin Musgrove
  * @see <a href='http://www.leveluplunch.com/java/examples/parse-date-with-java/'>Parse date</a>

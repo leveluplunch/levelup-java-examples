@@ -55,7 +55,7 @@ public class NumberIsPrime {
 		Random rnd = new Random();
 		BigInteger isPrimeNumber = BigInteger.probablePrime(3, rnd);
 		
-		assertEquals(7, isPrimeNumber.intValue());
+		assertEquals(5, isPrimeNumber.intValue());
 	}
 
 	

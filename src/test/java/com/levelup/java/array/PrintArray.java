@@ -7,7 +7,7 @@ import java.util.Arrays;
 import org.junit.Test;
 
 /**
- * This java snippet will demonstrate printing an array and multidimensional array
+ * This java example will demonstrate printing an array and multidimensional array
  * 
  * @author Justin Musgrove
  * @see <a href='http://www.leveluplunch.com/java/'></a>

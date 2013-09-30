@@ -14,7 +14,7 @@ import com.google.common.collect.Lists;
 import com.google.gson.Gson;
 
 /**
- * This java snippet will demonstrate marshalling java object and java list to json
+ * This java example will demonstrate marshalling java object and java list to json
  * 
  * @author Justin Musgrove
  * @see <a href='http://www.leveluplunch.com/java/'></a>

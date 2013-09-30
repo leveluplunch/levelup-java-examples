@@ -8,7 +8,7 @@ import org.junit.Test;
 import com.google.common.base.CharMatcher;
 
 /**
- * This java snippet will demonstrate trimming all
+ * This java example will demonstrate trimming all
  * leading and trailing spaces in a string.
  * 
  * @author Justin Musgrove

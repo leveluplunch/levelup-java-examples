@@ -53,12 +53,11 @@ public class IsStringANumber {
 
 	
 	@Test
-	public void is_string_a_number_char_array_java () {
+	public void is_string_a_number_java_with_char_array () {
 
 		boolean isANumber = true;
-		String numberString = "1234.54";
+		String numberString = "1234";
 		
-
 		for (char c : numberString.toCharArray()) {
 	        if (!Character.isDigit(c)) {
 	        	isANumber = false;
@@ -68,7 +67,7 @@ public class IsStringANumber {
 	}
 
 	@Test
-	public void is_string_a_number_regular_expression_java () {
+	public void is_string_a_number_java_with_regular_expression () {
 
 		boolean isANumber = false;
 		String numberString = "1234.54";

@@ -10,7 +10,7 @@ import org.joda.time.chrono.GregorianChronology;
 import org.junit.Test;
 
 /**
- * This java snippet will demonstrate how to compare two dates
+ * This java example will demonstrate how to compare two dates
  * 
  * @author Justin Musgrove
  * @see <a href='http://www.leveluplunch.com/java/'></a>

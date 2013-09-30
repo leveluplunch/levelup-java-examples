@@ -12,7 +12,7 @@ import org.joda.time.format.DateTimeFormatter;
 import org.junit.Test;
 
 /**
- * This java snippet will demonstrate formatting a date of January 15, 1967.
+ * This java example will demonstrate formatting a date of January 15, 1967.
  * 
  * @author Justin Musgrove
  * @see <a href='http://www.leveluplunch.com/java/examples/format-date/'></a>

@@ -11,7 +11,7 @@ import org.junit.Test;
 import com.google.common.collect.Lists;
 
 /**
- * This java snippet will demonstrate the variety ways
+ * This java example will demonstrate the variety ways
  * to initialize a list
  * 
  * @author Justin Musgrove

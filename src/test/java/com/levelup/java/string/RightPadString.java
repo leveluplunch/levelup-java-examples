@@ -10,7 +10,7 @@ import org.junit.Test;
 import com.google.common.base.Strings;
 
 /**
- * This java snippet will demonstrate right padding a string
+ * This java example will demonstrate right padding a string
  * of size 10 with spaces and 0
  * 
  * @author Justin Musgrove

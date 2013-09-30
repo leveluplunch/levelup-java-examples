@@ -15,7 +15,7 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 
 /**
- * This java snippet will demonstrate converting a list to map with 
+ * This java example will demonstrate converting a list to map with 
  * straight up java and google guava.
  * 
  * @author Justin Musgrove

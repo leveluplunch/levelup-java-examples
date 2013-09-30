@@ -18,7 +18,7 @@ import com.google.common.collect.Multiset;
 import com.google.common.collect.Multisets;
 
 /**
- * This java snippet will demonstrate counting the number
+ * This java example will demonstrate counting the number
  * of elements in a list.
  * 
  * @author Justin Musgrove

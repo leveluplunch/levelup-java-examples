@@ -35,12 +35,12 @@ public class CapitalizeWordsInSentence {
 	@Test
 	public void capitalize_each_word_in_sentence_java () {
 
-		String superWhySnippet = "Come along With the Super Readers.";
+		String superWhyexample = "Come along With the Super Readers.";
 		
-		String[] snippetSplit = superWhySnippet.split(" ");
+		String[] exampleSplit = superWhyexample.split(" ");
 		
 		StringBuffer sb = new StringBuffer();
-		for (String word : snippetSplit) {
+		for (String word : exampleSplit) {
 			sb.append(word.substring(0, 1).toUpperCase() + word.substring(1));
 			sb.append(" ");
 		}

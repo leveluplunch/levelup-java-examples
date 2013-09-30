@@ -8,7 +8,7 @@ import org.junit.Test;
 import com.google.common.base.CharMatcher;
 
 /**
- * This java snippet will demonstrate Google
+ * This java example will demonstrate Google
  * Guava Charmatcher
  * 
  * @author Justin Musgrove

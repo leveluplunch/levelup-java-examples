@@ -8,7 +8,7 @@ import org.junit.Test;
 import com.google.common.base.Strings;
 
 /**
- * This java snippet will demonstrate repeating a string
+ * This java example will demonstrate repeating a string
  * 
  * @author Justin Musgrove
  * @see <a href='http://www.leveluplunch.com/java/'></a>

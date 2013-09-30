@@ -12,7 +12,7 @@ import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 
 /**
- * This java snippet will demonstrate getting the first element 
+ * This java example will demonstrate getting the first element 
  * in list with straight up java and google guava.
  * 
  * @author Justin Musgrove

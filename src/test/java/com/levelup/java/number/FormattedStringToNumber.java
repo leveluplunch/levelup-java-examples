@@ -8,7 +8,7 @@ import java.text.ParseException;
 import org.junit.Test;
 
 /**
- * This java snippet will demonstrate converting
+ * This java example will demonstrate converting
  * a formatted string to a number
  * 
  * @author Justin Musgrove

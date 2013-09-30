@@ -15,7 +15,7 @@ import com.google.common.collect.Lists;
 import com.google.common.primitives.Ints;
 
 /**
- * This java snippet will demonstrate converting an array
+ * This java example will demonstrate converting an array
  * to list.
  * 
  * @author Justin Musgrove

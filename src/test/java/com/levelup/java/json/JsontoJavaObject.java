@@ -15,7 +15,7 @@ import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
 
 /**
- * This java snippet will demonstrate converting json to a java object.
+ * This java example will demonstrate converting json to a java object.
  * 
  * @author Justin Musgrove
  * @see <a href='http://www.leveluplunch.com/java/'></a>

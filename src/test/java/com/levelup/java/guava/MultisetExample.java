@@ -8,7 +8,7 @@ import com.google.common.collect.HashMultiset;
 import com.google.common.collect.Multiset;
 
 /**
- * This java snippet will demonstrate Google MultiSet.
+ * This java example will demonstrate Google MultiSet.
  * 
  * MultiSets allow you to easily count elements within a list
  * 

@@ -6,7 +6,7 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 /**
- * This java snippet will demonstrate how to read input from a keyboard.
+ * This java example will demonstrate how to read input from a keyboard.
  * 
  * @author Justin Musgrove
  * @see <a href='http://www.leveluplunch.com/java/'></a>

@@ -7,7 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- * This java snippet will demonstrate reversing the elements in an array.
+ * This java example will demonstrate reversing the elements in an array.
  * 
  * @author Justin Musgrove
  * @see <a href='http://www.leveluplunch.com/java/'></a>

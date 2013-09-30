@@ -12,7 +12,7 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Multimap;
 
 /**
- * This java snippet will demonstrate examples of 
+ * This java example will demonstrate examples of 
  * Google Guava Joiner
  * 
  * @author Justin Musgrove
