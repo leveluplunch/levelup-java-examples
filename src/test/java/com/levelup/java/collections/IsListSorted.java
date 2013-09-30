@@ -51,6 +51,25 @@ public class IsListSorted {
 	}
 	
 	@Test
+	public void is_list_of_strings_sorted_decending_in_java_with_guava () {
+
+		List<String> secConferenceEastDecending = Lists.newArrayList(
+				"Vanderbilt",
+				"Tennessee",
+				"South Carolina",
+				"Missouri",
+				"Georgia",
+				"Florida");
+		
+		boolean isSorted = Ordering.natural().reverse().isOrdered(secConferenceEastDecending);
+		
+		assertTrue(isSorted);
+
+	}
+
+	
+	
+	@Test
 	public void is_list_of_strings_sorted_case_insensitive_in_java_with_guava () {
 
 		List<String> secConferenceEast = Lists.newArrayList(
