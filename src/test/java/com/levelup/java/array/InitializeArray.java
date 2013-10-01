@@ -2,7 +2,6 @@ package com.levelup.java.array;
 
 import static org.junit.Assert.assertTrue;
 
-import org.apache.commons.lang3.ArrayUtils;
 import org.junit.Test;
 
 import com.google.common.collect.ObjectArrays;
