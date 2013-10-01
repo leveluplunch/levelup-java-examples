@@ -1,5 +1,6 @@
 package com.levelup.java.array;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import java.util.Arrays;
@@ -7,6 +8,9 @@ import java.util.Arrays;
 import org.apache.commons.lang3.ArrayUtils;
 import org.junit.Test;
 
+import com.google.common.base.Optional;
+import com.google.common.base.Predicate;
+import com.google.common.collect.Iterators;
 import com.google.common.primitives.Ints;
 
 /**
@@ -85,6 +89,32 @@ public class FindElementInArray {
 		
 		assertTrue(yearExists);
 	}
+	
+	@Test
+	public void find__element_in_array_java_with_guava() {
+
+		Integer[] vikQueensLosingSeasons = { 1962, 1967, 1984, 2011, 1966,
+				1963, 1982, 2001, 1990, 2002, 2006, 2010, 1965, 1972, 1979,
+				1981, 1985 };
+
+		Optional<Integer> contains = Iterators.tryFind(
+				Iterators.forArray(vikQueensLosingSeasons),
+				new Predicate<Integer>() {
+
+					public boolean apply(Integer input) {
+						if (input == 1962) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+		
+		assertTrue(contains.isPresent());
+		assertEquals(new Integer(1962), contains.get());
+
+	}
+	
 	
 	@Test
 	public void array_contains_element_java_with_apache_commons () {
