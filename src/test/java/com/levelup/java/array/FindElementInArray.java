@@ -91,7 +91,7 @@ public class FindElementInArray {
 	}
 	
 	@Test
-	public void find__element_in_array_java_with_guava() {
+	public void find_element_in_array_java_with_guava() {
 
 		Integer[] vikQueensLosingSeasons = { 1962, 1967, 1984, 2011, 1966,
 				1963, 1982, 2001, 1990, 2002, 2006, 2010, 1965, 1972, 1979,
