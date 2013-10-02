@@ -13,11 +13,10 @@ import com.google.common.primitives.Ints;
 
 
 /**
- * This java example will demonstrate concating, 
- * combining, joining or merging two arrays.
+ * This java example will demonstrate combining or joining two arrays.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/examples/merge-two-arrays/'>Merge two arrays</a>
+ * @see <a href='http://www.leveluplunch.com/java/'></a>
  * 
  */
 public class CombineTwoArrays {
