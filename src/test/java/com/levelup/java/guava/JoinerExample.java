@@ -51,28 +51,28 @@ public class JoinerExample {
 	
 	@Test
 	public void join_key_values_map () {
-		Multimap<String, String> coulds = ArrayListMultimap.create();
+		Multimap<String, String> clouds = ArrayListMultimap.create();
 		
-		coulds.put("Cirrus", "Cirrus");
-		coulds.put("Cirrus", "Cirrostratus");
-		coulds.put("Cirrus", "Cirrocumulus");
+		clouds.put("Cirrus", "Cirrus");
+		clouds.put("Cirrus", "Cirrostratus");
+		clouds.put("Cirrus", "Cirrocumulus");
 		
-		coulds.put("Alto", "Altostratus");
-		coulds.put("Alto", "Altocumulus");
+		clouds.put("Alto", "Altostratus");
+		clouds.put("Alto", "Altocumulus");
 		
-		coulds.put("Stratus", "Stratus");
-		coulds.put("Stratus", "Stratocumulus");
-		coulds.put("Stratus", "Nimbostratus");
+		clouds.put("Stratus", "Stratus");
+		clouds.put("Stratus", "Stratocumulus");
+		clouds.put("Stratus", "Nimbostratus");
 		
-		coulds.put("Vertical Growth", "Cumulus");
-		coulds.put("Vertical Growth", "Cumulonimbus");
+		clouds.put("Vertical Growth", "Cumulus");
+		clouds.put("Vertical Growth", "Cumulonimbus");
 		
-		coulds.put("Special Clouds", "Mammatus");
-		coulds.put("Special Clouds", "Lenticular");
-		coulds.put("Special Clouds", "Fog");
-		coulds.put("Special Clouds", "Contrails");
+		clouds.put("Special Clouds", "Mammatus");
+		clouds.put("Special Clouds", "Lenticular");
+		clouds.put("Special Clouds", "Fog");
+		clouds.put("Special Clouds", "Contrails");
 		
-		String keysAndValuesJoined = Joiner.on(", ").withKeyValueSeparator(" has type ").join(coulds.entries());
+		String keysAndValuesJoined = Joiner.on(", ").withKeyValueSeparator(" has type ").join(clouds.entries());
 		
 		assertEquals("Cirrus has type Cirrus, Cirrus has type Cirrostratus, Cirrus has type Cirrocumulus, Vertical Growth has type Cumulus, Vertical Growth has type Cumulonimbus, Alto has type Altostratus, Alto has type Altocumulus, Stratus has type Stratus, Stratus has type Stratocumulus, Stratus has type Nimbostratus, Special Clouds has type Mammatus, Special Clouds has type Lenticular, Special Clouds has type Fog, Special Clouds has type Contrails", 
 				keysAndValuesJoined);
