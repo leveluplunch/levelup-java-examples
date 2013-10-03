@@ -1,5 +1,6 @@
 package com.levelup.java.array;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
@@ -100,14 +101,14 @@ public class InitializeArray {
 
 		String[] nflStadiums = {""};
 
-		String[] nflNorthStadiums = ObjectArrays.newArray(nflStadiums, 10);
+		String[] nflNorthStadiums = ObjectArrays.newArray(nflStadiums, 4);
 		
 		nflNorthStadiums[0] = "Lambeau Field";
         nflNorthStadiums[1] = "Soldier Field";
         nflNorthStadiums[2] = "Mall of America Fielddagger";
         nflNorthStadiums[3] = "Ford Fielddagger";
         
-        assertTrue(nflNorthStadiums.length == 4);
+        assertEquals(4, nflNorthStadiums.length );
 
 	}
 	
