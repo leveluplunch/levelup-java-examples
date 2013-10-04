@@ -15,8 +15,26 @@ import com.google.common.base.Strings;
  * @see <a href='http://www.leveluplunch.com/java/examples/common-prefix-between-strings/'>Common prefix</a>
  * 
  */
-public class CommonPrefixBetweenStrings {
+public class CommonPrefixStrings {
 
+	
+	@Test
+	public void find_common_prefix_between_strings_java () {
+
+		String phrase1 = "semicircle";
+		String phrase2 = "semiconductor";
+
+		String prefix = "";
+	    int minLength = Math.min(phrase1.length(), phrase2.length());
+	    for (int i = 0; i < minLength; i++) {
+	        if (phrase1.charAt(i) != phrase2.charAt(i)) {
+	        	prefix = phrase1.substring(0, i);
+	        	break;
+	        }
+	    }
+	    
+	    assertEquals("semic", prefix);
+	}
 	
 	@Test
 	public void find_common_prefix_between_strings_guava (){
