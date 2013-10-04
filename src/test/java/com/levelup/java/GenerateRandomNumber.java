@@ -11,7 +11,7 @@ import org.junit.Test;
  * This java example will demonstrate generating a random number with java.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/'></a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/generate-random-number/'>Generate random number</a>
  * 
  */
 public class GenerateRandomNumber {
