@@ -3,6 +3,7 @@ package com.levelup.java.hamcrest;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.hasItem;
 import static org.hamcrest.CoreMatchers.hasItems;
+import static org.hamcrest.CoreMatchers.endsWith;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.not;
 import static org.hamcrest.collection.IsArray.array;
@@ -141,7 +142,6 @@ public class CollectionMatchers {
 		
 		List<String> fruit = Lists.newArrayList("apple", "banana", "pear", "blackberry", "grape");
 	    assertThat(fruit, hasItems("apple"));
-		
 	}
 	
 	@Test
@@ -171,6 +171,17 @@ public class CollectionMatchers {
 	
 		List<String> fruit = Lists.newArrayList("apple", "banana", "pear", "blackberry", "grape");
 	    assertThat(fruit, not(empty()));
+	}
+	
+	@Test
+	public void each_element_ends_with () { 
+	
+		List<String> cereal = Lists.newArrayList(
+				"mini wheats", "corn flakes",
+				"honey smacks", "apple jacks", 
+				"lucky charms");
+	    
+		assertThat(cereal, hasItem(endsWith("s")));
 	}
 	
 	// Maps
