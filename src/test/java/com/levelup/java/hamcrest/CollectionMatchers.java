@@ -32,8 +32,8 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 
 /**
- * This java example will demonstrate junit 
- * test while using hamcrest matchers.
+ * This java example will demonstrate testing
+ * collections with junit hamcrest matchers.
  * 
  * @author Justin Musgrove
  * @see <a href='http://www.leveluplunch.com/java/examples/junit-test-collections-hamcrest/'>Unit test collections</a>

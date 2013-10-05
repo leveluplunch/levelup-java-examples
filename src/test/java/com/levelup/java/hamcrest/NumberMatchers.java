@@ -15,8 +15,8 @@ import org.junit.Test;
 import com.google.common.collect.Lists;
 
 /**
- * This java example will demonstrate junit 
- * test while using hamcrest matchers.
+ * This java example will demonstrate testing
+ * numbers with junit hamcrest matchers.
  * 
  * @author Justin Musgrove
  * @see <a href='http://www.leveluplunch.com/java/examples/junit-test-numbers-hamcrest/'>Unit test numbers</a>
