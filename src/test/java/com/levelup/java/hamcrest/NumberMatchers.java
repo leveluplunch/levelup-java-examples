@@ -19,7 +19,7 @@ import com.google.common.collect.Lists;
  * numbers with junit hamcrest matchers.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/examples/junit-test-numbers-hamcrest/'>Unit test numbers</a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/junit-number-testing-hamcrest/'>Unit test numbers</a>
  * 
  */
 public class NumberMatchers {

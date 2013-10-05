@@ -18,7 +18,7 @@ import static org.junit.Assert.assertThat;
  * strings with junit hamcrest matchers.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/examples/junit-test-text-hamcrest/'>Unit test text</a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/junit-text-testing-hamcrest/'>Unit test text</a>
  * 
  */
 public class TextMatchers {

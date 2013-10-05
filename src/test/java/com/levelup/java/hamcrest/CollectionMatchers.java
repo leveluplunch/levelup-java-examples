@@ -37,7 +37,7 @@ import com.google.common.collect.Maps;
  * collections with junit hamcrest matchers.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/examples/junit-test-collections-hamcrest/'>Unit test collections</a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/junit-collections-testing-hamcrest/'>Unit test collections</a>
  * 
  */
 public class CollectionMatchers {
