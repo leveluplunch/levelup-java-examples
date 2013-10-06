@@ -24,7 +24,6 @@ public class SpecifyOrderOfTests {
 	public void c_three () {
 		executionOrder += "three";
 	}
-
 	
 	@Test
 	public void a_one () {
