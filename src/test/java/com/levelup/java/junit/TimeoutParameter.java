@@ -13,7 +13,7 @@ import org.junit.Test;
  * @see <a href='http://www.leveluplunch.com/java/example/junit-limit-length-of-test/'>Limit length of test</a>
  * 
  */
-public class TimeoutParameterTest {
+public class TimeoutParameter {
 
 	@Ignore("Test will always fail")
 	@Test(timeout=100)
