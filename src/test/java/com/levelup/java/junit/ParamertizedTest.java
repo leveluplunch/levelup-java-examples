@@ -5,6 +5,7 @@ import static org.junit.Assert.assertEquals;
 import java.util.Arrays;
 import java.util.Collection;
 
+import org.apache.log4j.Logger;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -21,6 +22,8 @@ import org.junit.runners.Parameterized.Parameters;
  */
 @RunWith(Parameterized.class)
 public class ParamertizedTest {
+	
+	private static final Logger logger = Logger.getLogger(ParamertizedTest.class);
 
 	static class Calculator {
 
@@ -54,12 +57,12 @@ public class ParamertizedTest {
 	
 	@Test
 	public void test_calculator_add () {
+		
+		logger.info("a=" + a + " b " + b + " = c " + expected);
+		
 		int calculatedValue = Calculator.add(a,  b);
 		assertEquals(expected, calculatedValue);
 		
 		
 	}	
-	
-	
-	
 }
