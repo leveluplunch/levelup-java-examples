@@ -32,8 +32,6 @@ public class BeanMatchers {
 			this.year = year;
 		}
 
-//		public Truck () {}
-
 		public String getModel() {
 			return model;
 		}
