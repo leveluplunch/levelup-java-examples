@@ -15,7 +15,7 @@ import static org.junit.Assert.assertThat;
 
 /**
  * This java example will demonstrate testing
- * strings with junit hamcrest matchers.
+ * strings with junit and hamcrest matchers.
  * 
  * @author Justin Musgrove
  * @see <a href='http://www.leveluplunch.com/java/examples/junit-text-testing-hamcrest/'>Unit test text</a>
