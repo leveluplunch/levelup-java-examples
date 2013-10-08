@@ -9,7 +9,7 @@ import org.junit.Test;
  * test using Junit
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/examples/junit-test/'>Simple Test Junit</a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/junit-create-test-case/'>Simple Test Junit</a>
  * 
  */
 public class SimpleTest {
