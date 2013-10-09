@@ -53,7 +53,11 @@
 			<artifactId>commons-codec</artifactId>
 			<version>1.8</version>
 		</dependency>
-
+		<dependency>
+		  <groupId>commons-configuration</groupId>
+		  <artifactId>commons-configuration</artifactId>
+		  <version>1.9</version>
+		</dependency>
 		<dependency>
 			<groupId>joda-time</groupId>
 			<artifactId>joda-time</artifactId>
