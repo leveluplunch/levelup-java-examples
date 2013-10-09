@@ -11,7 +11,7 @@ import com.google.common.base.Strings;
  * common suffix between two strings.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/examples/common-suffix-between-strings/'>Common prefix</a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/common-suffix-between-strings/'>Common suffix</a>
  * 
  */
 public class CommonSuffixStrings {
@@ -23,9 +23,9 @@ public class CommonSuffixStrings {
 		String phrase1 = "fix";
 		String phrase2 = "six";
 		
-		String prefix = Strings.commonSuffix(phrase1, phrase2); 
+		String suffix = Strings.commonSuffix(phrase1, phrase2); 
 		
-		assertEquals("ix", prefix);
+		assertEquals("ix", suffix);
 	}
 
 }
