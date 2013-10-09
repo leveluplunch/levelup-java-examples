@@ -26,7 +26,7 @@ import com.google.common.io.Resources;
  * a properties file.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/examples/read-properties-files/'>Read properties file</a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/read-properties-file/'>Read properties file</a>
  * 
  */
 public class ReadPropertiesFile {
