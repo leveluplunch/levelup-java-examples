@@ -79,11 +79,12 @@ public class ReadPropertiesFile {
 	}
 
 	/**
-	 * This is just one way to get properties in the springframework
-	 * @throws IOException 
+	 * This is just one way to get properties in the springframework and 
+	 * could be based on environment, xml configuration, java config, etc.
 	 * 		
 	 * @see PropertyPlaceholderConfigurer
 	 * @see PropertySourcesPlaceholderConfigurer
+	 * @throws IOException
 	 */
 	@Test
 	public void read_properties_file_springframework () throws IOException {
