@@ -32,8 +32,7 @@ import com.google.common.io.Resources;
 public class ReadPropertiesFile {
 	
 	private static final Logger logger = Logger.getLogger(ReadPropertiesFile.class);
-
-	private static final String PROPERTY_FILE_NAME = "read.properties";
+	private static final String PROPERTY_FILE_NAME = "com/levelup/java/util/read.properties";
 	
 	@Test
 	public void read_properties_file_java() throws FileNotFoundException,
