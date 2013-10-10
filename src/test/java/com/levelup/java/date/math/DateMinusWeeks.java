@@ -44,7 +44,7 @@ public class DateMinusWeeks {
 	}
 
 	@Test
-	public void subtract_weeks_from_date_in_java_with_yoda () {
+	public void subtract_weeks_from_date_in_java_with_joda () {
 		
 		DateTime newYearsDay = new DateTime(2013, 1, 1, 0, 0, 0, 0);
 		DateTime xmas = newYearsDay.minusWeeks(1);

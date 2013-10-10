@@ -32,7 +32,7 @@ public class ParseDate {
 	}
 
 	@Test
-	public void parse_date_string_in_java_with_yoda () {
+	public void parse_date_string_in_java_with_joda () {
 		
 	    String superBowlIIAsString = "January 14, 1968";
 

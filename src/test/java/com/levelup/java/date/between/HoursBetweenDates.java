@@ -19,7 +19,7 @@ public class HoursBetweenDates {
 	// number-of-hours-between-dates
 	
 	@Test
-	public void hours_between_two_dates_in_java_with_yoda () {
+	public void hours_between_two_dates_in_java_with_joda () {
 		
 		// start day is 1 day in the past
 		DateTime startDate = new DateTime().minusDays(1);

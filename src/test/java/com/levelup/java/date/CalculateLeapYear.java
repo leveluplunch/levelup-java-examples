@@ -36,7 +36,7 @@ public class CalculateLeapYear {
 	}
 
 	@Test
-	public void calculate_leap_year_in_java_with_yoda () {
+	public void calculate_leap_year_in_java_with_joda () {
 		
 		DateTime dateTime = new DateTime();
 		boolean isLeapYear = dateTime.withYear(2007).year().isLeap();

@@ -57,7 +57,7 @@ public class FormatDate {
 	
 	
 	@Test
-	public void format_date_in_java_with_yoda () {
+	public void format_date_in_java_with_joda () {
 		
 		DateTime dateFirstSuperBowlWasPlayed = new DateTime(1967, 1, 15, 0, 0);
 

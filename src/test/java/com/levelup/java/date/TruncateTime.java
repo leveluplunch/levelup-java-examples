@@ -42,7 +42,7 @@ public class TruncateTime {
 	}
 
 	@Test
-	public void truncate_time_in_java_with_yoda () {
+	public void truncate_time_in_java_with_joda () {
 		
 		DateTime dt = new DateTime().dayOfMonth().roundFloorCopy();
 

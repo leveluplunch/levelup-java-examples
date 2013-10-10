@@ -44,7 +44,7 @@ public class DatePlusYears {
 	}
 	
 	@Test
-	public void add_years_to_date_in_java_yoda () {
+	public void add_years_to_date_in_java_joda () {
 
 		DateTime superBowlXLV = new DateTime(2011, 2, 6, 0, 0, 0, 0);
 		DateTime fortyNinersSuck = superBowlXLV.plusYears(2);

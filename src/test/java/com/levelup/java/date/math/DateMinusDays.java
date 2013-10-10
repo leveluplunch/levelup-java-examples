@@ -46,7 +46,7 @@ public class DateMinusDays {
 	}
 
 	@Test
-	public void subtract_days_from_date_in_java_yoda () {
+	public void subtract_days_from_date_in_java_joda () {
 		
 		DateTime superBowlXLV = new DateTime(2011, 2, 6, 0, 0, 0, 0);
 		DateTime pregame = superBowlXLV.minusDays(1);

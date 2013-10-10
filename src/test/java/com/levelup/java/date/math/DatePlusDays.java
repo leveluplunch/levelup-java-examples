@@ -47,7 +47,7 @@ public class DatePlusDays {
 
 	
 	@Test
-	public void add_days_to_date_in_java_with_yoda () {
+	public void add_days_to_date_in_java_with_joda () {
 
 		DateTime superBowlXLV = new DateTime(2011, 2, 6, 0, 0, 0, 0);
 		DateTime celebration = superBowlXLV.plusDays(1);

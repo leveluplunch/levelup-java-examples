@@ -25,11 +25,11 @@ public class CaculateDateTimeDifference {
 	
 	@Test
 	public void difference_between_two_dates_java () {
-		// not recommended, use YODA
+		// not recommended, use JODA
 	}
 	
 	@Test
-	public void difference_between_two_dates_yoda () {
+	public void difference_between_two_dates_joda () {
 		
 		DateTime sinceGraduation = new DateTime(1984, 6, 4, 0, 0, GregorianChronology.getInstance());
 		DateTime currentDate = new DateTime(); //current date
@@ -52,7 +52,7 @@ public class CaculateDateTimeDifference {
 	}
 
 	@Test
-	public void difference_between_two_dates_yoda_duration () {
+	public void difference_between_two_dates_joda_duration () {
 
 		DateTime sinceGraduation = new DateTime(1984, 6, 4, 0, 0, GregorianChronology.getInstance());
 		DateTime currentDate = new DateTime(); //current date

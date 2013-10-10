@@ -44,7 +44,7 @@ public class DatePlusHours {
 	}
 
 	@Test
-	public void add_hours_to_date_in_java_with_yoda () {
+	public void add_hours_to_date_in_java_with_joda () {
 
 		DateTime newYearsEve = new DateTime(2012, 12, 31, 23, 0, 0, 0);
 		DateTime newYearsDay = newYearsEve.plusHours(1);

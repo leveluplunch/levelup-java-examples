@@ -17,7 +17,7 @@ import org.junit.Test;
 public class DaysBetweenDates {
 
 	@Test
-	public void days_between_two_dates_in_java_with_yoda () {
+	public void days_between_two_dates_in_java_with_joda () {
 		
 		// start day is 1 day in the past
 		DateTime startDate = new DateTime().minusDays(1);

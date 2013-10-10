@@ -32,7 +32,7 @@ public class CompareTwoDates {
 	}
 	
 	@Test
-	public void compare_two_dates_with_yoda () {
+	public void compare_two_dates_with_joda () {
 		
 		DateTime sinceGraduation = new DateTime(1984, 6, 4, 0, 0, GregorianChronology.getInstance());
 		DateTime today = new DateTime(); //current date

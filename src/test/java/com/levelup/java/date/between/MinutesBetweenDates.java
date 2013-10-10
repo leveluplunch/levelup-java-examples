@@ -18,7 +18,7 @@ public class MinutesBetweenDates {
 
 	
 	@Test
-	public void minutes_between_two_dates_in_java_with_yoda () {
+	public void minutes_between_two_dates_in_java_with_joda () {
 		
 		// start day is 1 day in the past
 		DateTime startDate = new DateTime().minusDays(1);

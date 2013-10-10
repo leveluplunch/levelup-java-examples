@@ -17,7 +17,7 @@ import org.junit.Test;
 public class MonthsBetweenDates {
 
 	@Test
-	public void months_between_two_dates_in_java_with_yoda () {
+	public void months_between_two_dates_in_java_with_joda () {
 
 		DateTime start = new DateTime(2005, 1, 1, 0, 0, 0, 0);
 		DateTime end = new DateTime(2006, 1, 1, 0, 0, 0, 0);

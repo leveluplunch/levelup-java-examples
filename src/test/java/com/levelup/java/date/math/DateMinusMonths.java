@@ -45,7 +45,7 @@ public class DateMinusMonths {
 
 	
 	@Test
-	public void subtract_months_from_date_in_java_yoda () {
+	public void subtract_months_from_date_in_java_joda () {
 
 		DateTime superBowlXLV = new DateTime(2011, 2, 6, 0, 0, 0, 0);
 		DateTime championshipWeekend = superBowlXLV.minusMonths(1);

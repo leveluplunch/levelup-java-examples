@@ -44,7 +44,7 @@ public class DatePlusWeeks {
 	}
 
 	@Test
-	public void add_weeks_to_date_in_java_with_yoda () {
+	public void add_weeks_to_date_in_java_with_joda () {
 
 		DateTime xmas = new DateTime(2012, 12, 25, 0, 0, 0, 0);
 		DateTime newYearsDay = xmas.plusWeeks(1);

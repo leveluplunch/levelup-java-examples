@@ -44,7 +44,7 @@ public class DatePlusSeconds {
 	}
 
 	@Test
-	public void add_seconds_to_date_in_java_with_yoda () {
+	public void add_seconds_to_date_in_java_with_joda () {
 
 		DateTime newYearsEve = new DateTime(2012, 12, 31, 23, 59, 0, 0);
 		DateTime newYearsDay = newYearsEve.plusSeconds(60);

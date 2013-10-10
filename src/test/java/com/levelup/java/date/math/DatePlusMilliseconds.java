@@ -44,7 +44,7 @@ public class DatePlusMilliseconds {
 	}
 
 	@Test
-	public void add_milliseconds_to_date_in_java_with_yoda () {
+	public void add_milliseconds_to_date_in_java_with_joda () {
 
 		DateTime newYearsEve = new DateTime(2012, 12, 31, 23, 59, 59, 0);
 		DateTime newYearsDay = newYearsEve.plusMillis(1000);
