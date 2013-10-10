@@ -16,7 +16,7 @@ import com.google.common.collect.Lists;
  * in list with straight up java and google guava.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/'>Get first element in list.</a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/get-first-element-in-list/'>First element in list</a>
  * 
  */
 public class GetFirstElementInList {
@@ -34,8 +34,6 @@ public class GetFirstElementInList {
 			firstElement = strings.get(0);
 		}
 
-		//firstElement = one
-
 		assertEquals("one", firstElement);
 	}
 	
@@ -46,7 +44,6 @@ public class GetFirstElementInList {
 		
 		String firstElement = Iterables.getFirst(strings, null);
 		
-		//firstElement = one
 		assertEquals("one", firstElement);
 	}
 	
@@ -56,10 +53,7 @@ public class GetFirstElementInList {
 
 		String firstElement = (String) CollectionUtils.get(strings, 0);
 
-		//firstElement = one
-		
 		assertEquals("one", firstElement);
-		
 	}
 	
 	

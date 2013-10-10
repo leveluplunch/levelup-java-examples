@@ -16,7 +16,7 @@ import com.google.common.primitives.Ints;
  * This java example will demonstrate combining or joining two arrays.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/'></a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/join-two-arrays/'>Join two arrays</a>
  * 
  */
 public class CombineTwoArrays {
@@ -162,8 +162,6 @@ public class CombineTwoArrays {
 		Arrays.toString(allStateCapitalsByIndex);
 		assertEquals(50, allStateCapitalsByIndex.length);
 	}
-
-	
 	
 	@Test
 	public void join_two_object_arrays_in_java_with_apache_commons () {
@@ -171,7 +169,6 @@ public class CombineTwoArrays {
 		String[] allStateCapitals = ArrayUtils.addAll(firstHalfStateCapital, secondHalfStateCapital);
 		
 		assertEquals(50, allStateCapitals.length);
-		
 	}
 	
 	@Test

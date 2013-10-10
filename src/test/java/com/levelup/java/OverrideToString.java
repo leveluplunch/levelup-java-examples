@@ -13,7 +13,7 @@ import com.google.common.base.Objects;
  * straight up java, google guava and apache commons.
  * 
  * @author Justin Musgrove
- * @see <a href="http://www.leveluplunch.com/java">Override toString</a>
+ * @see <a href="http://www.leveluplunch.com/java/examples/override-java-object-tostring/">Override toString</a>
  */
 public class OverrideToString {
 
@@ -70,8 +70,6 @@ public class OverrideToString {
 		
 	}
 	
-	
-
 	class OverrideToStringWithApacheCommons {
 		
 		private String capital = null;
@@ -94,8 +92,6 @@ public class OverrideToString {
 		public void setStateCode(String stateCode) {
 			this.stateCode = stateCode;
 		}
-		
-		
 	}
 	
 	
