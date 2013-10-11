@@ -16,7 +16,7 @@ import org.junit.Test;
  * This java example will demonstrate finding the difference between two dates.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/'></a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/calculate-time-difference/'>Calculate time differnece</a>
  * 
  */
 public class CalculateDateTimeDifference {
@@ -68,8 +68,6 @@ public class CalculateDateTimeDifference {
 		assertTrue(duration.getStandardHours() >= 256747);
 		assertTrue(duration.getStandardMinutes() >= 15404876);
 		assertTrue(duration.getStandardSeconds() >= 924292577);
-		
 	}
 
-	
 }
