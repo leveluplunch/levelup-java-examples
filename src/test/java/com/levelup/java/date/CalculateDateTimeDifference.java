@@ -19,9 +19,9 @@ import org.junit.Test;
  * @see <a href='http://www.leveluplunch.com/java/'></a>
  * 
  */
-public class CaculateDateTimeDifference {
+public class CalculateDateTimeDifference {
 
-	private static final Logger logger = Logger.getLogger(CaculateDateTimeDifference.class);
+	private static final Logger logger = Logger.getLogger(CalculateDateTimeDifference.class);
 	
 	@Test
 	public void difference_between_two_dates_java () {
