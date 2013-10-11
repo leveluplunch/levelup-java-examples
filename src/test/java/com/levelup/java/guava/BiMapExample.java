@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import org.apache.log4j.Logger;
 import org.junit.Test;
 
 import com.google.common.collect.BiMap;
@@ -15,12 +16,14 @@ import com.google.common.collect.HashBiMap;
  * BiMap allows you have a set of entries that you can easily inverse the keys/values
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/example/guava-bi-map-example/'>BiMap Example</a>
+ * @see <a href='http://www.leveluplunch.com/java/example/guava-bimap-example/'>Guava BiMap Example</a>
  */
 public class BiMapExample {
 
+	private static final Logger logger = Logger.getLogger(BiMapExample.class);
+	
 	@Test
-	public void inverse_map_with_guava () {
+	public void bidirectional_map_with_guava () {
 		
 		BiMap<String, String> dialectConverterForWisconsinites = 
 				HashBiMap.create();
@@ -33,15 +36,14 @@ public class BiMapExample {
 
 		BiMap<String, String> dialectConverterForEveryoneElse = dialectConverterForWisconsinites.inverse();
 
-		//dialectConverterForEveryoneElse = {bubbler=drinking fountain, brat=bratwurst, iet=alright, dat=that, pop=soda}
+		logger.info(dialectConverterForEveryoneElse);
 		
 		assertNotNull(dialectConverterForEveryoneElse.get("brat"));
 	}
 
 	@Test
-	public void inverse_map_with_java () {
+	public void bidirectional_map_with_java () {
 		
-		// this is just for illustration - you could create a generic method that handles the inverse
 		Map<String,String> dialectConverterForWisconsinites = new HashMap<String,String>();
 		dialectConverterForWisconsinites.put("bratwurst", "brat");
 		dialectConverterForWisconsinites.put("drinking fountain", "bubbler");
@@ -54,7 +56,7 @@ public class BiMapExample {
 			dialectConverterForEveryoneElse.put(entry.getValue(), entry.getKey());
 		}
 
-		//dialectConverterForEveryoneElse = {bubbler=drinking fountain, brat=bratwurst, iet=alright, dat=that, pop=soda}
+		logger.info(dialectConverterForEveryoneElse);
 
 		assertNotNull(dialectConverterForEveryoneElse.get("brat"));
 	}
