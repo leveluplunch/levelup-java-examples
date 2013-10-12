@@ -14,7 +14,7 @@ import com.google.common.base.Strings;
  * of size 10 with spaces and zeros.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/'></a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/left-pad-string/'>Left pad string</a>
  * 
  */
 public class LeftPadString {
@@ -24,6 +24,7 @@ public class LeftPadString {
 
 		String leftPaddedString = String.format("%10s", "levelup").replace(' ', '0');
 
+		assertEquals("000levelup", leftPaddedString);
 		assertEquals(10, leftPaddedString.length());
 		assertThat(leftPaddedString, startsWith("0"));
 	}
@@ -33,6 +34,7 @@ public class LeftPadString {
 
 		String leftPaddedString = String.format("%10s", "levelup").replace(' ', ' ');
 
+		assertEquals("   levelup", leftPaddedString);
 		assertEquals(10, leftPaddedString.length());
 		assertThat(leftPaddedString, startsWith(" "));
 	}
@@ -42,6 +44,7 @@ public class LeftPadString {
 		
 		String leftPaddedString = Strings.padStart("levelup", 10, '0');
 		
+		assertEquals("000levelup", leftPaddedString);
 		assertEquals(10, leftPaddedString.length());
 		assertThat(leftPaddedString, startsWith("0"));
 	}
@@ -51,6 +54,7 @@ public class LeftPadString {
 
 		String leftPaddedString = Strings.padStart("levelup", 10, ' ');
 		
+		assertEquals("   levelup", leftPaddedString);
 		assertEquals(10, leftPaddedString.length());
 		assertThat(leftPaddedString, startsWith(" "));
 	}
@@ -59,6 +63,7 @@ public class LeftPadString {
 	public void left_pad_string_with_zeros_apache_commons () {
 		String leftPaddedString = StringUtils.leftPad("levelup", 10, "0");
 		
+		assertEquals("000levelup", leftPaddedString);
 		assertEquals(10, leftPaddedString.length());
 		assertThat(leftPaddedString, startsWith("0"));
 	}
@@ -67,6 +72,7 @@ public class LeftPadString {
 	public void left_pad_string_with_spaces_apache_commons () {
 		String leftPaddedString = StringUtils.leftPad("levelup", 10, " ");
 		
+		assertEquals("   levelup", leftPaddedString);
 		assertEquals(10, leftPaddedString.length());
 		assertThat(leftPaddedString, startsWith(" "));
 	}
