@@ -8,12 +8,17 @@ import org.springframework.web.util.HtmlUtils;
 
 import com.google.common.html.HtmlEscapers;
 
+/**
+ * This java example will demonstrate escaping html
+ * using java methods
+ * 
+ * @author Justin Musgrove
+ * @see <a href='http://www.leveluplunch.com/java/examples/escape-html/'>Escape Html</a>
+ * 
+ */
 public class EscapeHtml {
 
 	private static final String HTML_TO_ESCAPE = "<html><p>Escape this</p></html>";
-	
-	// HTML escaping is ABC.  There are debates that escaping <> ' " is not enough the http://wonko.com/post/html-escaping. 
-	// Before using any of the listed library please read the java docs
 	
 	@Test
 	public void escape_html_with_straight_java () {

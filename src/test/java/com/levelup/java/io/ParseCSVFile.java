@@ -18,13 +18,12 @@ import au.com.bytecode.opencsv.CSVReader;
  * one is <a href="http://opencsv.sourceforge.net/">OpenCSV</a>.   
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/examples'></a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/read-csv-file/'>Read CSV file</a>
  * 
  */
 public class ParseCSVFile {
 
 	private static final Logger logger = Logger.getLogger(ParseCSVFile.class);
-	private CSVReader reader;
 	
 	@Test
 	public void read_CSV_File_With_OpenCSV () {
@@ -33,16 +32,16 @@ public class ParseCSVFile {
 		InputStream in = this.getClass().getClassLoader().getResourceAsStream("planets.csv");
 		
 	    try {
-			reader = new CSVReader(new InputStreamReader(in), '\t');
+	    	CSVReader reader = new CSVReader(new InputStreamReader(in), '\t');
 			
 			List<String[]> rows = reader.readAll();
 			for (int x=0; x < rows.size(); x ++) {
 				
 				String[] columns = rows.get(x);
 				for (int y=0; y < columns.length; y++) {
-					System.out.print(columns[y]);
+					logger.info(columns[y]);
 				}
-				System.out.println("");
+				logger.info("");
 			}
 			
 //			Output
