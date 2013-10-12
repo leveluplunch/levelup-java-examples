@@ -11,7 +11,7 @@ import org.junit.Test;
  * strings.  Check out http://en.wikipedia.org/wiki/String_intern_pool
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/'></a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/compare-strings-java/'>Compare strings</a>
  * 
  */
 public class CompareStrings {
