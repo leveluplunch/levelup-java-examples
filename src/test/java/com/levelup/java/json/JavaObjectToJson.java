@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -17,10 +18,12 @@ import com.google.gson.Gson;
  * This java example will demonstrate marshalling java object and java list to json
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/'></a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/java-object-to-json/'>Java object to json</a>
  * 
  */
 public class JavaObjectToJson {
+
+	private static final Logger logger = Logger.getLogger(JavaObjectToJson.class);
 	
 	class Plane {
 		private String planeType;
@@ -62,8 +65,9 @@ public class JavaObjectToJson {
 	public void marshall_java_object_to_json_with_gson () {
 		Gson gson = new Gson();
 		String json = gson.toJson(seaPlane);
+
+		logger.info(json);
 		
-		// json = {"planeType":"Sea Planes"}
 		assertEquals(JSON_OBJECT, json);
 	}
 	
@@ -71,6 +75,9 @@ public class JavaObjectToJson {
 	public void marshall_java_list_to_json_with_gson () {
 		Gson gson = new Gson();
 		String json = gson.toJson(planes);
+		
+		logger.info(json);
+		
 		assertEquals(JSON_ARRAY, json);
 	}
 
@@ -79,8 +86,8 @@ public class JavaObjectToJson {
 		ObjectMapper objectMapper = new ObjectMapper();
 		String json = objectMapper.writeValueAsString(seaPlane);
 
-		// json = {"planeType":"Sea Planes"}
-
+		logger.info(json);
+		
 		assertEquals(JSON_OBJECT, json);
 	}
 
@@ -89,6 +96,9 @@ public class JavaObjectToJson {
 	public void marshall_java_list_to_json_with_jackson () throws JsonProcessingException {
 		ObjectMapper objectMapper = new ObjectMapper();
 		String json = objectMapper.writeValueAsString(planes);
+		
+		logger.info(json);
+		
 		assertEquals(JSON_ARRAY, json);
 	}
 
