@@ -14,7 +14,7 @@ import com.google.common.base.Strings;
  * of size 10 with spaces and 0
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/'></a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/right-pad-string/'>Right pad string</a>
  * 
  */
 public class RightPadString {
@@ -24,6 +24,7 @@ public class RightPadString {
 
 		String rightPaddedString = String.format("%-10s", "levelup").replace(' ', '0');
 
+		assertEquals("levelup000", rightPaddedString);
 		assertEquals(10, rightPaddedString.length());
 		assertThat(rightPaddedString, endsWith("0"));
 	}
@@ -32,7 +33,8 @@ public class RightPadString {
 	public void right_pad_string_with_spaces_java () {
 
 		String rightPaddedString = String.format("%-10s", "levelup").replace(' ', ' ');
-
+		
+		assertEquals("levelup   ", rightPaddedString);
 		assertEquals(10, rightPaddedString.length());
 		assertThat(rightPaddedString, endsWith(" "));
 	}
@@ -42,6 +44,7 @@ public class RightPadString {
 		
 		String rightPaddedString = Strings.padEnd("levelup", 10, '0');
 		
+		assertEquals("levelup000", rightPaddedString);
 		assertEquals(10, rightPaddedString.length());
 		assertThat(rightPaddedString, endsWith("0"));
 	}
@@ -51,22 +54,27 @@ public class RightPadString {
 
 		String rightPaddedString = Strings.padEnd("levelup", 10, ' ');
 		
+		assertEquals("levelup   ", rightPaddedString);
 		assertEquals(10, rightPaddedString.length());
 		assertThat(rightPaddedString, endsWith(" "));
 	}
 	
 	@Test
 	public void right_pad_string_with_zeros_apache_commons () {
+		
 		String rightPaddedString = StringUtils.rightPad("levelup", 10, "0");
 		
+		assertEquals("levelup000", rightPaddedString);
 		assertEquals(10, rightPaddedString.length());
 		assertThat(rightPaddedString, endsWith("0"));
 	}
 
 	@Test
 	public void right_pad_string_with_spaces_apache_commons () {
+		
 		String rightPaddedString = StringUtils.rightPad("levelup", 10, " ");
 		
+		assertEquals("levelup   ", rightPaddedString);
 		assertEquals(10, rightPaddedString.length());
 		assertThat(rightPaddedString, endsWith(" "));
 	}
