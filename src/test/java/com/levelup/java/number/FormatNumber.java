@@ -6,10 +6,18 @@ import java.text.NumberFormat;
 
 import org.junit.Test;
 
+/**
+ * This java example will demonstrate formatting
+ * a number.
+ * 
+ * @author Justin Musgrove
+ * @see <a href='http://www.leveluplunch.com/java/examples/format-number/'>Format Number</a>
+ * 
+ */
 public class FormatNumber {
 
 	@Test
-	public void format_a_number_with_Java () {
+	public void format_a_number_with_java () {
 
 		double nflSalaryCap2013 = 123000000;
 		
@@ -36,11 +44,7 @@ public class FormatNumber {
 		double perfectScore = 1.00;
 		String perfectScoreFormatted = formatter.format(perfectScore);
 		
-//		perfectScoreFormatted == 100%
-
 		assertEquals("100%", perfectScoreFormatted);
 	}
-	
-	
 	
 }
