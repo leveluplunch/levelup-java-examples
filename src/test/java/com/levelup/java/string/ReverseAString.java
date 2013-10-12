@@ -9,7 +9,7 @@ import org.junit.Test;
  * This java example will demonstrate reversing a string
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/'></a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/reverse-string/'>Reverse string</a>
  * 
  */
 public class ReverseAString {
@@ -25,7 +25,6 @@ public class ReverseAString {
 		String reversedString = buffer.reverse().toString();
 	
 		assertEquals(PHRASE_REVERSE, reversedString); 
-
 	}
 	
 	@Test
@@ -33,10 +32,7 @@ public class ReverseAString {
 		
 		String reversedString = StringUtils.reverse(PHRASE);
 		
-		assertEquals(PHRASE_REVERSE, reversedString);
-		
+		assertEquals(PHRASE_REVERSE, reversedString);	
 	}
-	
-	
 	
 }
