@@ -12,7 +12,7 @@ import org.junit.Test;
  * the first letter of each word in a sentence.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/'></a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/capitalize-words-in-sentence/'>Capitalize words in sentence</a>
  * 
  */
 public class CapitalizeWordsInSentence {
@@ -21,10 +21,10 @@ public class CapitalizeWordsInSentence {
 	public void capitalize_first_letter_of_sentence () { 
 		
 		String superWhyLyrics = "who’s got the power? The power to read.";
-		String sentenceStartsWithCapital = Character.toUpperCase(superWhyLyrics.charAt(0)) + superWhyLyrics.substring(1);
+		String sentenceStartsWithCapital = Character
+				.toUpperCase(superWhyLyrics.charAt(0)) + superWhyLyrics.substring(1);
 		
-		assertEquals("Who’s got the power? The power to read.", sentenceStartsWithCapital);
-		
+		assertEquals("Who’s got the power? The power to read.", sentenceStartsWithCapital);	
 	}
 
 	/**
@@ -47,7 +47,7 @@ public class CapitalizeWordsInSentence {
 		assertEquals("Come Along With The Super Readers. ", sb.toString());
 	} 
 	
-	public static int nextWordStartAfter(int pos, String text) {
+	private static int nextWordStartAfter(int pos, String text) {
 	     BreakIterator wb = BreakIterator.getWordInstance();
 	     wb.setText(text);
 	     int last = wb.following(pos);
@@ -66,7 +66,8 @@ public class CapitalizeWordsInSentence {
 	@Test
 	public void capitalize_each_word_in_sentence_java_with_BreakIterator () {
 
-		String nineTeenEightyFourQuote = "It was a bright cold day in April, and the clocks were striking thirteen.";
+		String nineTeenEightyFourQuote = "It was a bright cold day in April, "
+				+ "and the clocks were striking thirteen.";
 
 		StringBuffer wordCapitalSentence = new StringBuffer();
 		int startPosition = 0, nextWordPosition = 0;
@@ -90,20 +91,22 @@ public class CapitalizeWordsInSentence {
 			startPosition = nextWordPosition;
 		}
 		
-		assertEquals("It Was A Bright Cold Day In April, And The Clocks Were Striking Thirteen.", wordCapitalSentence.toString());
+		assertEquals("It Was A Bright Cold Day In April, And The Clocks Were Striking Thirteen.", 
+				wordCapitalSentence.toString());
 	}
 
 	
 	@Test
 	public void capitalize_each_word_in_sentence_apache_commons () {
-		String prideAndPrejudiceSentence = "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.";
+		
+		String prideAndPrejudiceSentence = "It is a truth universally acknowledged, "
+				+ "that a single man in possession of a good fortune, must be in want of a wife.";
 		
 		String eachWordCapitalized = WordUtils.capitalizeFully(prideAndPrejudiceSentence);
 		
-		assertEquals("It Is A Truth Universally Acknowledged, That A Single Man In Possession Of A Good Fortune, Must Be In Want Of A Wife.",
+		assertEquals("It Is A Truth Universally Acknowledged, That A Single "
+				+ "Man In Possession Of A Good Fortune, Must Be In Want Of A Wife.",
 				eachWordCapitalized);
-		
-		
 	}
 
 	
