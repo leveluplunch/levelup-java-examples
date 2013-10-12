@@ -15,7 +15,7 @@ import org.junit.rules.ExpectedException;
  * This java example will demonstrate testing for exception with junit.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/examples/junit-exception-testing/'>Junit exception testing</a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/junit-exception-testing/'>Exception testing</a>
  * 
  */
 public class ExceptionTesting {
