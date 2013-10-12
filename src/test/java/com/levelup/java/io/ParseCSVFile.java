@@ -41,7 +41,6 @@ public class ParseCSVFile {
 				for (int y=0; y < columns.length; y++) {
 					logger.info(columns[y]);
 				}
-				logger.info("");
 			}
 			
 //			Output
