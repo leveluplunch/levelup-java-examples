@@ -46,10 +46,12 @@ public class CompareStrings {
 		String rightString = "te" + "st";
 
 		if (leftString == rightString) {
-			logger.info("yes these are true b/c concatenation of string literals happens at compile time resulting in same objects");
+			logger.info("yes these are true b/c concatenation "
+					+ "of string literals happens at compile "
+					+ "time resulting in same objects");
 		}
-		assertEquals(leftString, rightString);
 		
+		assertEquals(leftString, rightString);
 	}
 	
 	@Test
@@ -70,7 +72,6 @@ public class CompareStrings {
 		}
 		
 		assertEquals(leftString, rightString);
-		
 	}
 
 	@SuppressWarnings("null")
@@ -79,11 +80,9 @@ public class CompareStrings {
 		String leftString = null;
 		String rightString = null;
 		
-		logger.info("strings are objects so if access a method on a null object, null pointer exception");
+		logger.info("strings are objects so if "
+				+ "access a method on a null object, null pointer exception");
 		
 		leftString.equals(rightString);
 	}
-	
-	
-	
 }
