@@ -5,11 +5,13 @@ import static org.junit.Assert.assertTrue;
 import java.io.IOException;
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.junit.Test;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.google.common.base.Objects;
+import com.levelup.java.util.ReadPropertiesFile;
 
 /**
  * This java example will demonstrate converting json
@@ -21,7 +23,8 @@ import com.google.common.base.Objects;
  * 
  */
 public class ConvertJSONtoXML {
-
+	
+	private static final Logger logger = Logger.getLogger(ReadPropertiesFile.class);
 	
 	class Browser {
 		private String name;
@@ -58,7 +61,9 @@ public class ConvertJSONtoXML {
 	    
 	    String browsersAsXml = xmlMapper.writeValueAsString(browsers);
 	    
+	    logger.info(browsersAsXml);
+	    
 	    assertTrue(browsersAsXml.length() > 0);
 	}
-	
+	 
 }
