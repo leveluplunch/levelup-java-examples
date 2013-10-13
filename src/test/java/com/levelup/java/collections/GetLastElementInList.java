@@ -16,7 +16,7 @@ import com.google.common.collect.Lists;
  * element in a list with straight up java and google guava.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/'>Get Last Element in List</a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/get-last-element-in-list/'>Get Last Element in List</a>
  * 
  */
 public class GetLastElementInList {
@@ -34,8 +34,6 @@ public class GetLastElementInList {
 			lastElement = strings.get(strings.size() - 1);
 		}
 		
-		// lastElement = three
-		
 		assertEquals("three", lastElement);
 	}
 	
@@ -45,8 +43,6 @@ public class GetLastElementInList {
 		List<String> strings = Lists.newArrayList("one", "two", "three");
 		
 		String lastElement = Iterables.getLast(strings, null);
-		
-		// lastElement = three
 		
 		assertEquals("three", lastElement);
 	}
@@ -58,10 +54,7 @@ public class GetLastElementInList {
 		
 		String lastElement = (String) CollectionUtils.get(strings, (strings.size() - 1));
 		
-		// lastElement = three
-		
 		assertEquals("three", lastElement);
-
 	}
 	
 }
