@@ -19,7 +19,7 @@ import com.google.common.primitives.Ints;
  * to list.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/'></a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/convert-array-to-list/'>Convert array to list</a>
  * 
  */
 public class ConvertArrayToList {
@@ -97,7 +97,8 @@ public class ConvertArrayToList {
 
 		int[] someNotSoRandomAscii = {98, 101, 101, 114, 66, 69, 69, 82};
 
-		List<Integer> someNotSoRandomAsciiAsList = Arrays.asList(ArrayUtils.toObject(someNotSoRandomAscii));
+		List<Integer> someNotSoRandomAsciiAsList = 
+				Arrays.asList(ArrayUtils.toObject(someNotSoRandomAscii));
 
 		assertEquals(8, someNotSoRandomAsciiAsList.size());
 	}
@@ -109,10 +110,10 @@ public class ConvertArrayToList {
 				"Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune" };
 
 		@SuppressWarnings("unchecked")
-		List<String> planetsAsArrayList = org.springframework.util.CollectionUtils.arrayToList(planetsAsStringArray);
+		List<String> planetsAsArrayList = org.springframework.util
+				.CollectionUtils.arrayToList(planetsAsStringArray);
 		
-		assertEquals(9, planetsAsArrayList.size());
-		
+		assertEquals(9, planetsAsArrayList.size());	
 	}
 
 	@Test
@@ -121,10 +122,10 @@ public class ConvertArrayToList {
 		int[] someNotSoRandomAscii = {98, 101, 101, 114, 66, 69, 69, 82};
 		
 		@SuppressWarnings("unchecked")
-		List<Integer> someNotSoRandomAsciiAsList = org.springframework.util.CollectionUtils.arrayToList(someNotSoRandomAscii);
+		List<Integer> someNotSoRandomAsciiAsList = org.springframework.util
+				.CollectionUtils.arrayToList(someNotSoRandomAscii);
 
 		assertEquals(8, someNotSoRandomAsciiAsList.size());
-
 	}
 	
 }
