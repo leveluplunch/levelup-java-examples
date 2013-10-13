@@ -11,7 +11,7 @@ import com.google.common.primitives.Ints;
  * This java example will demonstrate finding the lowest value in array
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/'></a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/minimum-value-in-array/'>Min value in array</a>
  * 
  */
 public class MinValueInArray {
