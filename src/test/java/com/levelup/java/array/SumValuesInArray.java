@@ -9,7 +9,7 @@ import org.junit.Test;
  * This java example will demonstrate summing values in array.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/'></a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/sum-values-in-array/'>Sum values in array</a>
  * 
  */
 public class SumValuesInArray {
@@ -23,7 +23,6 @@ public class SumValuesInArray {
 		for (double element : numbers) {
 			total += element;
 		}
-		
 		assertEquals(389, total, 0);
 	}
 
@@ -40,7 +39,6 @@ public class SumValuesInArray {
 		
 		double total = StatUtils.sum(numbers);
 		assertEquals(389, total, 0);
-		
 	}
 	
 }
