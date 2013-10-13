@@ -11,7 +11,7 @@ import org.junit.Test;
  * string ends with character. 
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/'></a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/string-ends-with/'>String ends with</a>
  * 
  */
 public class StringEndsWith {
@@ -35,17 +35,18 @@ public class StringEndsWith {
 	@Test
 	public void string_ends_with_any_apache_commons () {
 
-		boolean endsWithAnchorOrQ = StringUtils.endsWithAny("http://www.leveluplunch.com", new String[] {"#", "?"});
+		boolean endsWithAnchorOrQ = StringUtils
+				.endsWithAny("http://www.leveluplunch.com", new String[] {"#", "?"});
+		
 		assertFalse(endsWithAnchorOrQ);
-
 	}
 
 	@Test
 	public void string_ends_with_spring () {
 		
 		boolean isAnchor = 
-				org.springframework.util.StringUtils.
-				endsWithIgnoreCase("http://www.leveluplunch.com/#", "#");
+				org.springframework.util.StringUtils
+				.endsWithIgnoreCase("http://www.leveluplunch.com/#", "#");
 		
 		assertTrue(isAnchor);
 	}
