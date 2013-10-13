@@ -12,7 +12,7 @@ import com.google.common.base.CharMatcher;
  * leading and trailing spaces in a string.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/'></a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/trim-string/'>Trim string</a>
  * 
  */
 public class TrimString {
@@ -43,7 +43,9 @@ public class TrimString {
 	@Test
 	public void trim_string_spring () {
 		
-		String trimmedSong = org.springframework.util.StringUtils.trimWhitespace("       You Got Lucky   ");
+		String trimmedSong = org.springframework.util
+				.StringUtils.trimWhitespace("       You Got Lucky   ");
+		
 		assertEquals("You Got Lucky", trimmedSong);
 	}
 
