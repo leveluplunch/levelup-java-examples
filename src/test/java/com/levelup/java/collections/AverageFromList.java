@@ -17,7 +17,7 @@ import com.google.common.math.DoubleMath;
  * from a list of numbers.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/examples'>Average From List Of Numbers</a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/calculate-average-of-list/'>Average from list of numbers</a>
  * 
  */
 public class AverageFromList {
@@ -48,13 +48,12 @@ public class AverageFromList {
 			
 		sum =  sum / NUMBERS_FOR_AVERAGE.size();
 		
-		// sum = 10
 		assertEquals(new Double(10), sum);
-		
 	}
 	
 	@Test
 	public void average_from_list_of_numbers_with_google_guava () {
+
 		double average = DoubleMath.mean(NUMBERS_FOR_AVERAGE);
 		assertEquals(10, average, 0);
 	}
@@ -62,9 +61,12 @@ public class AverageFromList {
 	@Test
 	public void average_from_list_of_numbers_with_apache_commons () {
 
-		double[] elements = ArrayUtils.toPrimitive(NUMBERS_FOR_AVERAGE.toArray(new Double[NUMBERS_FOR_AVERAGE.size()]));
+		double[] elements = ArrayUtils.toPrimitive(
+				NUMBERS_FOR_AVERAGE.toArray(new Double[NUMBERS_FOR_AVERAGE.size()]));
+		
 		Mean mean = new Mean();
 		double average = mean.evaluate(elements);
+		
 		assertEquals(10, average, 0);
 	}
 	
