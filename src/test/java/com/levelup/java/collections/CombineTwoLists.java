@@ -15,7 +15,7 @@ import com.google.common.collect.Lists;
  * This java example will demonstrate combining or joining two lists.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/'></a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/join-two-lists/'>Join two lists</a>
  * 
  */
 public class CombineTwoLists {
@@ -74,31 +74,31 @@ public class CombineTwoLists {
 			"Wisconsin",
 			"Wyoming");
 	
-	
 	@Test
 	public void join_two_lists_in_java () {
 
 		List<String> allStates = new ArrayList<String>(firstHalfStates);
 		allStates.addAll(secondHalfStates);
 		
-		assertTrue(allStates.size() == 50);
-		
+		assertTrue(allStates.size() == 50);		
 	}
 	
 	@Test
 	public void combine_two_lists_in_java_with_guava () {
 
-		List<String> allStates = Lists.newArrayList(Iterables.concat(firstHalfStates, secondHalfStates));
+		List<String> allStates = Lists.newArrayList(
+				Iterables.concat(firstHalfStates, secondHalfStates));
 		
 		assertTrue(allStates.size() == 50);
-
 	}
 
 	@Test
 	public void combine_two_lists_in_java_with_apache_commons () {
 		
 		@SuppressWarnings("unchecked")
-		List<String> allStates = ListUtils.union(firstHalfStates, secondHalfStates);
+		List<String> allStates = ListUtils.union(
+				firstHalfStates, 
+				secondHalfStates);
 		
 		assertTrue(allStates.size() == 50);
 	}
