@@ -33,7 +33,6 @@ public class InitializeArray {
         nflNorthStadiumsCapacity[3] = 65000;
         
         assertTrue(nflNorthStadiumsCapacity.length == 4);
-
 	}
 
 	@Test
@@ -44,7 +43,6 @@ public class InitializeArray {
         		64121, 65000};
 
         assertTrue(nflNorthStadiumsCapacity.length == 4);
-
 	}
 
 	
@@ -64,7 +62,6 @@ public class InitializeArray {
         nflNorthStadiums[3] = "Ford Fielddagger";
         
         assertTrue(nflNorthStadiums.length == 4);
-        
 	}
 
 	@Test
@@ -78,7 +75,6 @@ public class InitializeArray {
         		"Ford Fielddagger"};
 
         assertTrue(nflNorthStadiums.length == 4);
-        
 	}
 
 	
@@ -93,7 +89,6 @@ public class InitializeArray {
         nflNorthStadiums[3] = "Ford Fielddagger";
         
         assertTrue(nflNorthStadiums.length == 4);
-
 	}
 
 	@Test
@@ -108,8 +103,7 @@ public class InitializeArray {
         nflNorthStadiums[2] = "Mall of America Fielddagger";
         nflNorthStadiums[3] = "Ford Fielddagger";
         
-        assertEquals(4, nflNorthStadiums.length );
-
+        assertEquals(4, nflNorthStadiums.length);
 	}
 	
 }
