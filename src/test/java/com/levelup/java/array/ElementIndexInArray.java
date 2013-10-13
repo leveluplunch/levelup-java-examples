@@ -41,7 +41,7 @@ public class ElementIndexInArray {
 	@Test 
 	public void element_index_in_int_array_java () {
 
-		int[] twoQuarters = {1, 2, 3, 4, 5, 6};
+		Integer[] twoQuarters = {1, 2, 3, 4, 5, 6};
 		
 		int endOfFirstQuarter = Arrays.asList(twoQuarters).indexOf(3);
 		
