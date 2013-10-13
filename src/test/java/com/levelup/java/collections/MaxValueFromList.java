@@ -16,14 +16,14 @@ import com.google.common.primitives.Ints;
  * from a list.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/'></a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/max-value-in-list/'>Max value in list</a>
  * 
  */
 public class MaxValueFromList {
 	
 	private static List<Integer> CENTERS_ROOKIE_YEAR = Lists.newArrayList(
 			1946, 1988, 1970, 1931, 1940, 1920, 1980, 1953, 1960, 1974, 1987
-			);
+		);
 	
 	@Test
 	public void find_max_value_from_list_of_integers_java () {
