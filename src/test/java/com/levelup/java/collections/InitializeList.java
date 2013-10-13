@@ -15,7 +15,7 @@ import com.google.common.collect.Lists;
  * to initialize a list
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/'></a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/initialize-list/'>Initialize list</a>
  * 
  */
 public class InitializeList {
@@ -33,13 +33,15 @@ public class InitializeList {
 	@Test
 	public void initialize_list_java_with_arrays () {
 
-		List<String> cheeses = new ArrayList<String>(Arrays.asList("Munster",
-				"Swiss", "Sharp cheddar"));
+		List<String> cheeses = Arrays.asList("Munster",
+				"Swiss", "Sharp cheddar");
+		
 		assertEquals(3, cheeses.size());
 	}
 
 	@Test
 	public void initialize_list_java_with_double_brace_initialziation () {
+		
 		@SuppressWarnings("serial")
 		ArrayList<String> cheeses = new ArrayList<String>() {
 			{
@@ -54,8 +56,10 @@ public class InitializeList {
 	
 	@Test
 	public void initialize_list_with_guava() {
+		
 		List<String> cheeses = Lists.newArrayList("Munster", "Swiss",
 				"Sharp cheddar");
+		
 		assertEquals(3, cheeses.size());
 	}
 
