@@ -10,6 +10,7 @@ import java.util.Map.Entry;
 
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.collections.Predicate;
+import org.apache.log4j.Logger;
 import org.junit.Test;
 
 import com.google.common.collect.HashMultiset;
@@ -22,11 +23,13 @@ import com.google.common.collect.Multisets;
  * of elements in a list.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/'></a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/count-occurrences-in-list/'>Count occurrences in list</a>
  * 
  */
 public class CountElementsInList {
 
+	private static final Logger logger = Logger.getLogger(CountElementsInList.class);
+	
 	@Test
 	public void number_of_occurences_in_list_java () {
 		
@@ -43,7 +46,6 @@ public class CountElementsInList {
 		    add("Elephants");
 		}};
 		
-		// make generic for common use but wouldn't suggest it
 		Map<String, Integer> seussCount = new HashMap<String,Integer>();
 		for(String t: seussCountActivities) {
 		   Integer i = seussCount.get(t);
@@ -52,43 +54,36 @@ public class CountElementsInList {
 		   }
 		   seussCount.put(t, i + 1);
 		}
-		
+
+		logger.info(seussCount);
+
 		int numberOfElephants = seussCount.get("Elephants");
 		assertEquals(2, numberOfElephants);
-		
-		// print out all elements with count
-		StringBuffer sb = new StringBuffer();
-		for (Entry<String, Integer> entry : seussCount.entrySet()) {
-			sb.append(entry.getKey() + ": " + entry.getValue() + "\r");
-		}
-		assertEquals("Boom Bands: 1\rHakken-Kraks: 3\rfindow: 2\rElephants: 2\rBalloons: 1\r", sb.toString());
 	}
 	
 	@Test
 	public void number_of_occurences_in_list_guava () {
 		
 		List<String> seussCountActivities = Lists.newArrayList(
-				"findow", "Balloons", "Elephants", "Boom Bands", "findow", "Hakken-Kraks", "Hakken-Kraks", "Hakken-Kraks", "Elephants");
-		
+				"findow", "Balloons", "Elephants", "Boom Bands", 
+				"findow", "Hakken-Kraks", "Hakken-Kraks", 
+				"Hakken-Kraks", "Elephants");
 		
 		Multiset<String> seussCount = HashMultiset.create(seussCountActivities);
 		int numberOfElephants = seussCount.count("Elephants");
-		assertEquals(2, numberOfElephants);
 		
-		// iterate over all elements in multiset highest to lowest
-		StringBuffer sb = new StringBuffer();
-		for (String countActivity : Multisets.copyHighestCountFirst(seussCount).elementSet()) {
-			sb.append(countActivity + ": " + seussCount.count(countActivity) + "\r");
-		}
+		logger.info(seussCount);
 
-		assertEquals("Hakken-Kraks: 3\rfindow: 2\rElephants: 2\rBoom Bands: 1\rBalloons: 1\r", sb.toString());
+		assertEquals(2, numberOfElephants);
 	}
 
 	@Test
 	public void number_of_occurence_in_list_apache_commons () {
 
 		List<String> seussCountActivities = Lists.newArrayList(
-				"findow", "Balloons", "Elephants", "Boom Bands", "findow", "Hakken-Kraks", "Hakken-Kraks", "Hakken-Kraks", "Elephants");
+				"findow", "Balloons", "Elephants", 
+				"Boom Bands", "findow", "Hakken-Kraks", 
+				"Hakken-Kraks", "Hakken-Kraks", "Elephants");
 		
 		int numberOfElephants = CollectionUtils.countMatches(seussCountActivities, new Predicate() {
 			public boolean evaluate(Object arg0) {
@@ -96,6 +91,8 @@ public class CountElementsInList {
 				return compare.equalsIgnoreCase("Elephants");
 			}
 		});
+		
+		logger.info(numberOfElephants);
 
 		assertEquals(2, numberOfElephants);
 	}
