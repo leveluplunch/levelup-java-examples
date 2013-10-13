@@ -16,7 +16,7 @@ import com.google.common.primitives.Ints;
  * the index of an element in array
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/examples/find-element-in-array/'>Find element index in array</a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/find-element-index-in-array/'>Find element index in array</a>
  * 
  */
 public class ElementIndexInArray {
@@ -35,19 +35,17 @@ public class ElementIndexInArray {
 		
 		int indexOfFlower = Arrays.asList(lilyFlowers).indexOf("Lily Monte Negro");
 		
-		assertEquals(2, indexOfFlower);
-		
+		assertEquals(2, indexOfFlower);	
 	}
 	
 	@Test 
 	public void element_index_in_int_array_java () {
 
-		Integer[] twoQuarters = {1, 2, 3, 4, 5, 6};
+		int[] twoQuarters = {1, 2, 3, 4, 5, 6};
 		
 		int endOfFirstQuarter = Arrays.asList(twoQuarters).indexOf(3);
 		
 		assertEquals(2, endOfFirstQuarter);
-
 	}
 	
 	
@@ -68,17 +66,16 @@ public class ElementIndexInArray {
 			}
 		});
 		
-		assertEquals(1, indexOfFlower);
-		
+		assertEquals(1, indexOfFlower);	
 	}
 	
 	@Test
 	public void element_index_of_ints_in_array_java_with_guava () {
+		
 		int [] twoQuarters = {1, 2, 3, 4, 5, 6};
 		
 		int lastMonthInFirstQuarter = Ints.indexOf(twoQuarters, 3);
 		assertEquals(2, lastMonthInFirstQuarter);
-
 	}
 
 	@Test
@@ -91,7 +88,6 @@ public class ElementIndexInArray {
 		int indexOfFlower = ArrayUtils.indexOf(lilyFlowers, "Lily Elite");
 
 		assertEquals(1, indexOfFlower);
-
 	}
 	
 	@Test
@@ -101,7 +97,6 @@ public class ElementIndexInArray {
 		
 		int lastMonthInFirstQuarter = ArrayUtils.indexOf(twoQuarters, 3);
 		assertEquals(2, lastMonthInFirstQuarter);
-
 	}
 	
 }
