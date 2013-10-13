@@ -2,7 +2,10 @@ package com.levelup.java.array;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.Arrays;
+
 import org.apache.commons.lang3.ArrayUtils;
+import org.apache.log4j.Logger;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -10,10 +13,12 @@ import org.junit.Test;
  * This java example will demonstrate reversing the elements in an array.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/'></a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/reverse-elements-in-array/'>Reverse elements in array</a>
  * 
  */
 public class ReverseElementsInArray {
+	
+	private static final Logger logger = Logger.getLogger(ReverseElementsInArray.class);
 	
 	String[] MONTHS_OF_YEAR_BACKWARDS;
 	
@@ -52,17 +57,20 @@ public class ReverseElementsInArray {
 			// set last to the first
 			MONTHS_OF_YEAR_BACKWARDS[j] = temp;
 		}
-		assertEquals("May", MONTHS_OF_YEAR_BACKWARDS[4]);
 		
+		logger.info(Arrays.toString(MONTHS_OF_YEAR_BACKWARDS));
+		
+		assertEquals("May", MONTHS_OF_YEAR_BACKWARDS[4]);
 	}
 
 	@Test
 	public void reverse_elements_in_array_with_apache_commons () {
+		
 		ArrayUtils.reverse(MONTHS_OF_YEAR_BACKWARDS);
+		
+		logger.info(Arrays.toString(MONTHS_OF_YEAR_BACKWARDS));
+
 		assertEquals("May", MONTHS_OF_YEAR_BACKWARDS[4]);
 	}
-	
-	
 
-	
 }
