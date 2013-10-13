@@ -16,7 +16,7 @@ import com.google.common.primitives.Ints;
  * and string array
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/examples/sort-array'>Sort Array</a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/sort-array/'>Sort Array</a>
  * 
  */
 public class SortArray {
@@ -40,7 +40,6 @@ public class SortArray {
 				1952, 1959, 1962, 1993, 1998, 
 				1999, 2010, 2011, 2012}, 
 				uwConferenceTitles);
-		
 	}
 	
 	@Test
