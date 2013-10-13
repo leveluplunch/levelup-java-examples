@@ -17,7 +17,7 @@ import com.google.common.collect.Lists;
  * with straight up java and google Guava.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/'>Find elements in List</a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/find-element-in-list/'>Find elements in List</a>
  * 
  */
 public class FindElementsInList {
@@ -26,24 +26,27 @@ public class FindElementsInList {
 	@Test
 	public void find_elements_in_list_with_java () {
 
-		List <Integer> numbers = Lists.newArrayList(new Integer(1), new Integer(2), new Integer(3));
+		List <Integer> numbers = Lists.newArrayList(
+				new Integer(1), 
+				new Integer(2), 
+				new Integer(3));
 
 		Integer value = null;
 		for (Integer number : numbers) {
 			if (number == 3) {
-				value = 3;
+				value = number;
 			}
 		}
-
-		// value == 3
-
 		assertEquals(new Integer(3), value);
 	}
 	
 	@Test
 	public void find_elements_in_lists_with_guava () {
 
-		List <Integer> numbers = Lists.newArrayList(new Integer(1), new Integer(2), new Integer(3));
+		List <Integer> numbers = Lists.newArrayList(
+				new Integer(1), 
+				new Integer(2), 
+				new Integer(3));
 		
 		Integer value = Iterables.find(numbers, new Predicate<Integer> () {
 			public boolean apply(Integer number) {
@@ -51,15 +54,16 @@ public class FindElementsInList {
 			}
 		});
 
-		// value == 3
-		
 		assertEquals(new Integer(3), value);
 	}
 	
 	@Test
 	public void find_elements_in_list_with_apachecommons () {
 		
-		List <Integer> numbers = Lists.newArrayList(new Integer(1), new Integer(2), new Integer(3));
+		List <Integer> numbers = Lists.newArrayList(
+				new Integer(1), 
+				new Integer(2), 
+				new Integer(3));
 		
 		Integer value = (Integer) CollectionUtils.find(numbers, new org.apache.commons.collections.Predicate() {
 			public boolean evaluate(Object number) {
