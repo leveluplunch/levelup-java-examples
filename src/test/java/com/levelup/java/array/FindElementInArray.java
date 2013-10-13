@@ -112,7 +112,6 @@ public class FindElementInArray {
 		
 		assertTrue(contains.isPresent());
 		assertEquals(new Integer(1962), contains.get());
-
 	}
 	
 	
