@@ -8,10 +8,10 @@ import org.junit.Test;
 import com.google.common.primitives.Ints;
 
 /**
- * This java example will demonstrate finding the highest value in array
+ * This java example will demonstrate finding the max value in array
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/'></a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/max-value-in-array/'>Max value in array</a>
  * 
  */
 public class MaxValueInArray {
