@@ -14,7 +14,7 @@ import com.google.common.collect.Ordering;
  * a list is sorted.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/examples/check-if-list-is-sorted'>Check if list is sorted</a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/check-if-list-is-sorted/'>Check if list is sorted</a>
  * 
  */
 public class IsListSorted {
@@ -30,7 +30,6 @@ public class IsListSorted {
 		boolean isSorted = Ordering.natural().isOrdered(uwConferenceTitles);
 		
 		assertTrue(isSorted);
-
 	}
 
 	@Test
@@ -47,7 +46,6 @@ public class IsListSorted {
 		boolean isSorted = Ordering.natural().isOrdered(secConferenceEast);
 		
 		assertTrue(isSorted);
-
 	}
 	
 	@Test
@@ -64,11 +62,8 @@ public class IsListSorted {
 		boolean isSorted = Ordering.natural().reverse().isOrdered(secConferenceEastDecending);
 		
 		assertTrue(isSorted);
-
 	}
 
-	
-	
 	@Test
 	public void is_list_of_strings_sorted_case_insensitive_in_java_with_guava () {
 
