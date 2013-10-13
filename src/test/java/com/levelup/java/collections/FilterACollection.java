@@ -7,6 +7,7 @@ import java.util.Collection;
 import java.util.List;
 
 import org.apache.commons.collections.CollectionUtils;
+import org.apache.log4j.Logger;
 import org.junit.Test;
 
 import com.google.common.base.Objects;
@@ -24,71 +25,11 @@ import com.google.common.collect.Lists;
  * 3 - Detroit Lions
  * 
  * @author Justin Musgrove
- * @see <a href="http://www.leveluplunch.com/java">Filter a collection</>
+ * @see <a href="http://www.leveluplunch.com/java/examples/filter-a-collection/">Filter a collection</>
  */
 public class FilterACollection {
 
-	@Test
-	public void filter_items_in_list_with_java () {
-		
-		List<NFLTeam> nflTeams = Lists.newArrayList();
-		nflTeams.add(new NFLTeam("Green Bay Packers", true));
-		nflTeams.add(new NFLTeam("Chicago Bears", true));
-		nflTeams.add(new NFLTeam("Detroit Lions", false));
-
-		Collection<NFLTeam> superBowlWinners = new ArrayList<NFLTeam>();
-		for (NFLTeam team : nflTeams) {
-			if (team.hasWonSuperBowl) {
-				superBowlWinners.add(team);
-			}
-		}
-
-		//  [NFLTeam{name=Green Bay Packers, wonsuperbow=true}, NFLTeam{name=Chicago Bears, wonsuperbow=true}]
-
-		assertTrue(superBowlWinners.size() == 2);
-	}
-	
-	
-	
-	@Test
-	public void filter_items_in_list_with_guava () {
-		
-		List<NFLTeam> nflTeams = Lists.newArrayList();
-		nflTeams.add(new NFLTeam("Green Bay Packers", true));
-		nflTeams.add(new NFLTeam("Chicago Bears", true));
-		nflTeams.add(new NFLTeam("Detroit Lions", false));
-
-		Collection<NFLTeam> superBowlWinners = Collections2.filter(nflTeams, new Predicate<NFLTeam> () {
-			public boolean apply(NFLTeam nflTeam) {
-				return nflTeam.hasWonSuperBowl;
-			}
-		});
-
-		// superBowlWinners = [NFLTeam{name=Green Bay Packers, wonsuperbow=true}, NFLTeam{name=Chicago Bears, wonsuperbow=true}]
-
-		assertTrue(superBowlWinners.size() == 2);
-	}
-	
-	@Test
-	public void filter_items_in_list_with_apache_commons () {
-		
-		List<NFLTeam> nflTeams = Lists.newArrayList();
-		nflTeams.add(new NFLTeam("Green Bay Packers", true));
-		nflTeams.add(new NFLTeam("Chicago Bears", true));
-		nflTeams.add(new NFLTeam("Detroit Lions", false));
-
-		CollectionUtils.filter(nflTeams, new org.apache.commons.collections.Predicate() {
-			public boolean evaluate(Object nflTeam) {
-				return ((NFLTeam) nflTeam).hasWonSuperBowl;
-			}
-		});
-		
-		//superbowl teams = [NFLTeam{name=Green Bay Packers, wonsuperbow=true}, NFLTeam{name=Chicago Bears, wonsuperbow=true}]
-		
-		assertTrue(nflTeams.size() == 2);
-	}
-	
-	
+	private static final Logger logger = Logger.getLogger(CountElementsInList.class);
 	
 	class NFLTeam {
 		
@@ -114,12 +55,67 @@ public class FilterACollection {
 			return name;
 		}
 
-		public boolean isHasWonSuperBowl() {
+		public boolean hasWonSuperBowl() {
 			return hasWonSuperBowl;
 		}
-		
 	}
 	
+	@Test
+	public void filter_items_in_list_with_java () {
+		
+		List<NFLTeam> nflTeams = Lists.newArrayList();
+		nflTeams.add(new NFLTeam("Green Bay Packers", true));
+		nflTeams.add(new NFLTeam("Chicago Bears", true));
+		nflTeams.add(new NFLTeam("Detroit Lions", false));
+
+		Collection<NFLTeam> superBowlWinners = new ArrayList<NFLTeam>();
+		for (NFLTeam team : nflTeams) {
+			if (team.hasWonSuperBowl) {
+				superBowlWinners.add(team);
+			}
+		}
+
+		logger.info(superBowlWinners);
+
+		assertTrue(superBowlWinners.size() == 2);
+	}
 	
+	@Test
+	public void filter_items_in_list_with_guava () {
+		
+		List<NFLTeam> nflTeams = Lists.newArrayList();
+		nflTeams.add(new NFLTeam("Green Bay Packers", true));
+		nflTeams.add(new NFLTeam("Chicago Bears", true));
+		nflTeams.add(new NFLTeam("Detroit Lions", false));
+
+		Collection<NFLTeam> superBowlWinners = Collections2.filter(nflTeams, new Predicate<NFLTeam> () {
+			public boolean apply(NFLTeam nflTeam) {
+				return nflTeam.hasWonSuperBowl;
+			}
+		});
+
+		logger.info(superBowlWinners);
+
+		assertTrue(superBowlWinners.size() == 2);
+	}
+	
+	@Test
+	public void filter_items_in_list_with_apache_commons () {
+		
+		List<NFLTeam> nflTeams = Lists.newArrayList();
+		nflTeams.add(new NFLTeam("Green Bay Packers", true));
+		nflTeams.add(new NFLTeam("Chicago Bears", true));
+		nflTeams.add(new NFLTeam("Detroit Lions", false));
+
+		CollectionUtils.filter(nflTeams, new org.apache.commons.collections.Predicate() {
+			public boolean evaluate(Object nflTeam) {
+				return ((NFLTeam) nflTeam).hasWonSuperBowl;
+			}
+		});
+		
+		logger.info(nflTeams);
+		
+		assertTrue(nflTeams.size() == 2);
+	}
 	
 }
