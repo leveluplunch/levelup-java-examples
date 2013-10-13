@@ -8,9 +8,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.log4j.Logger;
 import org.junit.Test;
 
 import com.google.common.base.Function;
+import com.google.common.base.Objects;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 
@@ -19,9 +21,39 @@ import com.google.common.collect.Maps;
  * straight up java and google guava.
  * 
  * @author Justin Musgrove
- * @see <a href="http://www.leveluplunch.com/java">Convert List To Map</a>
+ * @see <a href="http://www.leveluplunch.com/java/examples/convert-list-to-map/">Convert List To Map</a>
  */
 public class ConvertListToMap {
+	
+	private static final Logger logger = Logger.getLogger(ConvertListToMap.class);
+	
+	class Movie {
+
+		private Integer rank;
+		private String description;
+		
+		public Movie(Integer rank, String description) {
+			super();
+			this.rank = rank;
+			this.description = description;
+		}
+		
+		public Integer getRank() {
+			return rank;
+		}
+
+		public String getDescription() {
+			return description;
+		}
+		
+		@Override
+		public String toString() {
+			return Objects.toStringHelper(this)
+					.add("rank", rank)
+					.add("description", description)
+					.toString();
+		}
+	}
 	
 	@Test
 	public void convert_list_to_map_with_java () {
@@ -35,8 +67,8 @@ public class ConvertListToMap {
 			mappedMovies.put(movie.getRank(), movie);
 		}
 		
-		//mappedMovies = {1=com.levelup.java.collections.ConvertListToMap$Movie@37bd2664, 2=com.levelup.java.collections.ConvertListToMap$Movie@63238bd2}
-		
+		logger.info(mappedMovies);
+
 		assertTrue(mappedMovies.size() == 2);
 		assertEquals("The Shawshank Redemption", mappedMovies.get(1).getDescription());
 	}
@@ -56,32 +88,10 @@ public class ConvertListToMap {
 			    return from.getRank(); // or something else
 		}});
 		
-		//mappedMovies = {1=com.levelup.java.collections.ConvertListToMap$Movie@37bd2664, 2=com.levelup.java.collections.ConvertListToMap$Movie@63238bd2}
+		logger.info(mappedMovies);
 		
 		assertTrue(mappedMovies.size() == 2);
 		assertEquals("The Shawshank Redemption", mappedMovies.get(1).getDescription());
 	}
 	
-	class Movie {
-	
-		private Integer rank;
-		private String description;
-		
-		public Movie(Integer rank, String description) {
-			super();
-			this.rank = rank;
-			this.description = description;
-		}
-		
-		public Integer getRank() {
-			return rank;
-		}
-
-		public String getDescription() {
-			return description;
-		}
-		
-	}
-	
-
 }
