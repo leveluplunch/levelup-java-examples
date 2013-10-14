@@ -72,7 +72,9 @@ public class PrintList {
 	@Test
 	public void join_elements_in_list_spring () {
 		
-		String elementsJoined = org.springframework.util.StringUtils.collectionToDelimitedString(programmingLanguages, ",");
+		String elementsJoined = org.springframework.util
+				.StringUtils.collectionToDelimitedString(programmingLanguages, ",");
+		
 		assertEquals(languagesSeperatedByComma, elementsJoined);
 	}
 }
