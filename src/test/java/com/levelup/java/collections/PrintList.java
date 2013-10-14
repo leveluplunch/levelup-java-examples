@@ -15,7 +15,7 @@ import com.google.common.collect.Lists;
  * with a delimiter.  AKA pretty printing a list.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/'></a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/print-list/'>Print list</a>
  * 
  */
 public class PrintList {
@@ -50,29 +50,29 @@ public class PrintList {
 	
 	@Test
 	public void join_elements_in_list_java () {
+		
 		String elementsJoined = join(",", programmingLanguages.toArray(new String[programmingLanguages.size()]));
 		assertEquals(languagesSeperatedByComma, elementsJoined);
 	}
 
 	@Test
 	public void join_elements_in_list_guava () {
+		
 		String elementsJoined = Joiner.on(",").join(programmingLanguages);
 		assertEquals(languagesSeperatedByComma, elementsJoined);
 	}
 
 	@Test
 	public void join_elements_in_list_apache_commons () {
+		
 		String elementsJoined = StringUtils.join(programmingLanguages, ",");
 		assertEquals(languagesSeperatedByComma, elementsJoined);
 	}
 
 	@Test
 	public void join_elements_in_list_spring () {
+		
 		String elementsJoined = org.springframework.util.StringUtils.collectionToDelimitedString(programmingLanguages, ",");
 		assertEquals(languagesSeperatedByComma, elementsJoined);
 	}
-	
-	
-	
-
 }
