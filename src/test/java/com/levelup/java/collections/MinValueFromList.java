@@ -16,7 +16,7 @@ import com.google.common.primitives.Ints;
  * from list.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/'></a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/min-value-in-list/'>Min value in list</a>
  * 
  */
 public class MinValueFromList {
