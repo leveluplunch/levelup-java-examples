@@ -14,12 +14,10 @@ import com.google.common.base.Stopwatch;
  * This java example will demonstrate calculating elapsed time in java.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/'></a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/calculate-elapsed-time/'>Calculate elapsed time</a>
  * 
  */
 public class MeasureElapsedTime {
-
-	// keywords = calculate date and time difference,
 
 	private static final Logger logger = Logger.getLogger(MeasureElapsedTime.class);
 	
@@ -32,7 +30,7 @@ public class MeasureElapsedTime {
 		
 		long estimatedTime = System.currentTimeMillis() - startTime;
 
-		logger.info("time: " + estimatedTime); // <time: 4.000>
+		logger.info("time: " + estimatedTime); 
 
 		assertTrue(estimatedTime >= 0);
 	}
@@ -46,7 +44,7 @@ public class MeasureElapsedTime {
 		
 		long estimatedTime = System.nanoTime() - startTime;
 
-		logger.info("time: " + estimatedTime); // <time: 4.000>
+		logger.info("time: " + estimatedTime); 
 		
 		assertTrue(estimatedTime >= 0);
 	}
@@ -62,10 +60,9 @@ public class MeasureElapsedTime {
 
 		long millis = stopwatch.elapsed(TimeUnit.MILLISECONDS);
 
-		logger.info("time: " + stopwatch); // <time: 4.000 μs>
+		logger.info("time: " + stopwatch); 
 		
 		assertTrue(millis >= 0);
-
 	}
 
 	@Test
@@ -78,14 +75,16 @@ public class MeasureElapsedTime {
 		stopWatch.stop();
 		long millis = stopWatch.getNanoTime();
 
-		logger.info("time: " + millis); // <time: 4.000>
+		logger.info("time: " + millis); 
 		
 		assertTrue(millis >= 0);
 	}
 	
 	@Test
 	public void calculate_elapsed_time_in_spring () throws InterruptedException {
-		org.springframework.util.StopWatch stopWatch = new org.springframework.util.StopWatch();
+		
+		org.springframework.util.StopWatch stopWatch = 
+				new org.springframework.util.StopWatch();
 		
 		stopWatch.start("step 1");
 		Thread.sleep(2); // simulate work
@@ -100,13 +99,6 @@ public class MeasureElapsedTime {
 		stopWatch.stop();
 
 		logger.info("time: " + stopWatch.prettyPrint()); 
-		
-//		-----------------------------------------
-//		ms     %     Task name
-//		-----------------------------------------
-//		02001  020%  step 1
-//		05001  050%  step 2
-//		03001  030%  step 3
 		
 		assertTrue(stopWatch.getTotalTimeMillis() >= 0);
 	}

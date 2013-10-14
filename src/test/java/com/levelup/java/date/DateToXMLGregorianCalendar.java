@@ -14,7 +14,7 @@ import org.junit.Test;
  * This java example will demonstrate converting a date to XMLGregorianCalendar
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/'></a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/date-to-xmlgregoriancalendar/'>Date to XMLGregorianCalendar</a>
  * 
  */
 public class DateToXMLGregorianCalendar {
@@ -28,7 +28,6 @@ public class DateToXMLGregorianCalendar {
 		XMLGregorianCalendar xmlGregorianCalendar = DatatypeFactory.newInstance().newXMLGregorianCalendar(gCalendar);
 		
 		assertNotNull(xmlGregorianCalendar);
-
 	}
 	
 }

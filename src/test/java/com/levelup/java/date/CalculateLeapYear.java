@@ -12,7 +12,7 @@ import org.junit.Test;
  * This java example will demonstrates how determine leap year in java.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/'></a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/calculate-leap-year/'>Calculate leap year</a>
  * 
  */
 public class CalculateLeapYear {
@@ -24,7 +24,6 @@ public class CalculateLeapYear {
 		  cal.set(Calendar.YEAR, 2007);
 		  
 		  assertFalse(cal.getActualMaximum(Calendar.DAY_OF_YEAR) > 365);
-
 	}
 	
 	@Test
@@ -32,7 +31,6 @@ public class CalculateLeapYear {
 
 		GregorianCalendar cal = new GregorianCalendar();  
 		assertFalse(cal.isLeapYear(2007));
-
 	}
 
 	@Test
@@ -43,6 +41,5 @@ public class CalculateLeapYear {
 		
 		assertFalse(isLeapYear);
 	}
-
 	
 }

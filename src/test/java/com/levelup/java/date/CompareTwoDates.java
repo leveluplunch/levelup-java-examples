@@ -13,7 +13,7 @@ import org.junit.Test;
  * This java example will demonstrate how to compare two dates
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/'></a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/compare-dates/'>Compare dates</a>
  * 
  */
 public class CompareTwoDates {
@@ -50,8 +50,6 @@ public class CompareTwoDates {
 		
 		Calendar today = Calendar.getInstance();
 
-		// in this instance we will use a truncate
-		
 		int val = DateUtils.truncatedCompareTo(sinceGraduation, today, Calendar.MINUTE);
 		
 		assertTrue(val <= 0);

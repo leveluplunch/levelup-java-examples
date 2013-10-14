@@ -23,6 +23,7 @@ public class ParseDate {
 
 	@Test
 	public void parse_date_string_in_java () throws ParseException {
+		
 		String superBowlIIAsString = "January 14, 1968";
 		
 		SimpleDateFormat formatter = new SimpleDateFormat("MMMM dd, yyyy");
@@ -40,7 +41,6 @@ public class ParseDate {
 	    DateTime superBowlIIAsDate = fmt.parseDateTime(superBowlIIAsString);
 
         assertEquals(-62013600000l, superBowlIIAsDate.getMillis());
-
 	}
 	
 	@Test
@@ -52,6 +52,5 @@ public class ParseDate {
 		
         assertEquals(-62013600000l, superBowlIIAsDate.getTime());
 	}
-
 	
 }
