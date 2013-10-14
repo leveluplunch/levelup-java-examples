@@ -25,21 +25,13 @@ import com.google.common.primitives.Ints;
  * This java example will demonstrate how to sort a collection
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/'></a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/sort-a-collection/'>Sort a collection</a>
  * 
  */
 public class SortACollection {
 	
 	private static final Logger logger = Logger.getLogger(SortACollection.class);
 
-//	In this exercise we are going to sort a list of transaction by
-//	transactions decending.  While a collection maintains order
-//	it may be important sort on a web page or process nulls first.
-
-// keywords: sort a collection in java, how to order a collection list in java	
-//	http://www.polygenelubricants.com/2010/10/elegant-comparison-logic-with-guava.html
-	
-	
 	public class Wrestler {
 
 		private String name;
@@ -71,7 +63,6 @@ public class SortACollection {
 					.add("weightClass", weightClass).add("wins", wins)
 					.toString();
 		}
-
 	}
 	
 	private List<Wrestler> wrestlers = Lists.newArrayList();
@@ -91,8 +82,9 @@ public class SortACollection {
 
 	}
 	
-	
-	// display wrestlers by weight class
+	/**
+	 * Display wrestlers by weight class
+	 */
 	@Test
 	public void sort_collection_with_java () {
 		
@@ -106,12 +98,10 @@ public class SortACollection {
 		
 		logger.info(wrestlers);
 		
+		Wrestler wrestler = wrestlers.get(0);
+		assertEquals(119, wrestler.weightClass,0);
 	}
 	
-//	The ordering class is an enhanced comparator, with additional methods to support common operations. 
-//	If are familiar with the FluentIterable, FluentIterable is to Iterable as Ordering is to comparator.
-	
-	// Lets first create a couple of comparators
 	static final Ordering<Wrestler> byWeightClass = new Ordering<Wrestler>() {
 		public int compare(Wrestler left, Wrestler right) {
 			return Doubles.compare(left.getWeightClass(),
@@ -131,50 +121,47 @@ public class SortACollection {
 		}
 	};
 	
-	
-	// display wrestlers by weight class
+	/**
+	 * Display wrestlers by weight class
+	 */
 	@Test
 	public void sort_collection_with_guava () {
 		
 		Collections.sort(wrestlers, byWeightClass);
 		
-		//wrestlers = [Wrestler{name=Harry, weightClass=119.0}, Wrestler{name=Sally, weightClass=119.0}, Wrestler{name=Abe, weightClass=151.0}, Wrestler{name=Steve, weightClass=151.0}, Wrestler{name=Jack, weightClass=151.0}, Wrestler{name=Jim, weightClass=215.0}, Wrestler{name=Jack, weightClass=215.0}, Wrestler{name=Joe, weightClass=215.0}]
+		logger.info(wrestlers);
 		
 		Wrestler aWrestlerWithLowestWeight  = Iterables.getFirst(wrestlers, null);
-
+		
 		assertNotNull(aWrestlerWithLowestWeight);
 		assertEquals(119, aWrestlerWithLowestWeight.getWeightClass(), 0);
 	}
 	
-	// Display a wrestlers by name and show weight class
+	/**
+	 * Display a wrestlers by name and show weight class
+	 */
 	@Test
 	public void display_wrestlers_by_weightclass_and_in_alphabetical_order () {
 
 		Collections.sort(wrestlers, byName);
 		
-		for (Wrestler wrestler : wrestlers) {
-			logger.info(wrestler.toString());
-		}
+		logger.info(wrestlers);
 		
-//		Abe : 151.0
-//		Steve : 151.0
-//		Jack : 151.0
-//		Jim : 215.0
-//		Jack : 215.0
-//		Joe : 215.0
-//		Harry : 119.0
-//		Sally : 119.0
+		Wrestler firstAlphabetically  = Iterables.getFirst(wrestlers, null);
 		
+		assertNotNull(firstAlphabetically);
+		assertEquals("Abe", firstAlphabetically.getName());
 	}
 
-
-	// Display wrestlers from highest weight class to lowest
+	/**
+	 * Display wrestlers from highest weight class to lowest 
+	 */
 	@Test
 	public void sort_collection_in_reverse_with_guava () {
 		
 		Collections.sort(wrestlers, byWeightClass.reverse());
 		
-		//wrestlers = [Wrestler{name=Harry, weightClass=119.0}, Wrestler{name=Sally, weightClass=119.0}, Wrestler{name=Abe, weightClass=151.0}, Wrestler{name=Steve, weightClass=151.0}, Wrestler{name=Jack, weightClass=151.0}, Wrestler{name=Jim, weightClass=215.0}, Wrestler{name=Jack, weightClass=215.0}, Wrestler{name=Joe, weightClass=215.0}]
+		logger.info(wrestlers);
 		
 		Wrestler aWrestlerWithHighestWeightClass  = Iterables.getFirst(wrestlers, null);
 
@@ -182,21 +169,15 @@ public class SortACollection {
 		assertEquals(215, aWrestlerWithHighestWeightClass.getWeightClass(), 0);
 	}
 
-	// display a list of wrestlers by order of weight class and wins
+	/**
+	 * display a list of wrestlers by order of weight class and wins
+	 */
 	@Test
 	public void sort_collection_with_multiple_comparables_guava () {
 		
 		Collections.sort(wrestlers, byWeightClass.compound(byWins));
-		
-//		wrestlers = 
-//		[Wrestler{name=Sally, weightClass=119.0, wins=9}, 
-//		 Wrestler{name=Harry, weightClass=119.0, wins=6}, 
-//		 Wrestler{name=Steve, weightClass=151.0, wins=7}, 
-//		 Wrestler{name=Abe, weightClass=151.0, wins=5}, 
-//		 Wrestler{name=Jack, weightClass=151.0, wins=1}, 
-//		 Wrestler{name=Jim, weightClass=215.0, wins=15}, 
-//		 Wrestler{name=Joe, weightClass=215.0, wins=8}, 
-//		 Wrestler{name=Jack, weightClass=215.0, wins=1}]
+
+		logger.info(wrestlers);
 		
 		Wrestler aLowestWeightClassWrestler  = Iterables.getFirst(wrestlers, null);
 
@@ -205,7 +186,9 @@ public class SortACollection {
 		
 	}
 	
-	// Display top wrestlers in each weight class
+	/**
+	 * Display top wrestlers in each weight class
+	 */
 	@Test
 	public void sort_collection_with_multiple_comparables_guava_getfirstElement () {
 	
@@ -218,10 +201,7 @@ public class SortACollection {
 			    return new Double(from.getWeightClass()); 
 		}});
 
-//		wrestlersMappedByWeightClass = 
-//		{119.0=[Wrestler{name=Sally, weightClass=119.0, wins=9}, Wrestler{name=Harry, weightClass=119.0, wins=6}], 
-//		 151.0=[Wrestler{name=Steve, weightClass=151.0, wins=7}, Wrestler{name=Abe, weightClass=151.0, wins=5}, Wrestler{name=Jack, weightClass=151.0, wins=1}], 
-//		 215.0=[Wrestler{name=Jim, weightClass=215.0, wins=15}, Wrestler{name=Joe, weightClass=215.0, wins=8}, Wrestler{name=Jack, weightClass=215.0, wins=1}]}
+		logger.info(wrestlersMappedByWeightClass);
 
 		// for each weight class get the first element which should be wrestler with most wins
 		for (Double weightClass : wrestlersMappedByWeightClass.keySet()) {
@@ -229,12 +209,6 @@ public class SortACollection {
 			List<Wrestler> weightClassWrestlers = wrestlersMappedByWeightClass.get(weightClass);
 			logger.info(weightClass + " - " + Iterables.getFirst(weightClassWrestlers, null));
 		}
-		
-//		119.0 - Wrestler{name=Sally, weightClass=119.0, wins=9}
-//		151.0 - Wrestler{name=Steve, weightClass=151.0, wins=7}
-//		215.0 - Wrestler{name=Jim, weightClass=215.0, wins=15}
 	}
-	
-	
 	
 }
