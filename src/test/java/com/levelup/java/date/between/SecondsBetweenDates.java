@@ -11,7 +11,7 @@ import org.junit.Test;
  * number of seconds between two dates.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/examples/number-of-seconds-between-dates/'>Number of seconds between dates</a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/number-of-seconds-between-two-dates/'>Number of seconds between dates</a>
  * 
  */
 public class SecondsBetweenDates {
@@ -28,7 +28,6 @@ public class SecondsBetweenDates {
 		int secondsInDay = seconds.getSeconds();
 		
 		assertEquals(86400, secondsInDay);
-		
 	}
 
 }

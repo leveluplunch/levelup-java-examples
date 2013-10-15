@@ -11,13 +11,11 @@ import org.junit.Test;
  * number of hours between two dates.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/examples/number-of-hours-between-dates/'>Number of hours between dates</a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/number-of-hours-between-two-dates/'>Number of hours between dates</a>
  * 
  */
 public class HoursBetweenDates {
 
-	// number-of-hours-between-dates
-	
 	@Test
 	public void hours_between_two_dates_in_java_with_joda () {
 		
@@ -29,7 +27,6 @@ public class HoursBetweenDates {
 		int numberOfHours = hours.getHours();
 		
 		assertEquals(24, numberOfHours);
-		
 	}
 
 	

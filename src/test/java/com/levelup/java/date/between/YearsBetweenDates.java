@@ -11,7 +11,7 @@ import org.junit.Test;
  * number of years between two dates.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/examples/number-of-years-between-dates/'>Number of years between dates</a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/number-of-years-between-two-dates/'>Number of years between dates</a>
  * 
  */
 public class YearsBetweenDates {
@@ -27,8 +27,6 @@ public class YearsBetweenDates {
 		int numberOfYears = years.getYears();
 		
 		assertEquals(1, numberOfYears);
-
 	}
 
-	
 }

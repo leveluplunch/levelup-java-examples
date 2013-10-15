@@ -11,7 +11,7 @@ import org.junit.Test;
  * number of minutes between two dates.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/examples/number-of-minutes-between-dates/'>Number of minutes between dates</a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/number-of-minutes-between-two-dates/'>Number of minutes between dates</a>
  * 
  */
 public class MinutesBetweenDates {
@@ -29,7 +29,6 @@ public class MinutesBetweenDates {
 		int numberOfMinutesInDay = minutes.getMinutes();
 		
 		assertEquals(1440, numberOfMinutesInDay);
-		
 	}
 	
 }

@@ -11,7 +11,7 @@ import org.junit.Test;
  * number of weeks between two dates.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/examples/number-of-weeks-between-dates/'>Number of weeks between dates</a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/number-of-weeks-between-two-dates/'>Number of weeks between dates</a>
  * 
  */
 public class WeeksBetweenDates {

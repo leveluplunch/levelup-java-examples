@@ -27,7 +27,6 @@ public class DaysBetweenDates {
 		int days = d.getDays();
 		
 		assertEquals(1, days);
-		
 	}
 
 }

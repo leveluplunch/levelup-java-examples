@@ -11,7 +11,7 @@ import org.junit.Test;
  * number of months between two dates.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/examples/number-of-months-between-dates/'>Number of months between dates</a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/number-of-months-between-two-dates/'>Number of months between dates</a>
  * 
  */
 public class MonthsBetweenDates {
