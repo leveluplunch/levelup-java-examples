@@ -18,14 +18,13 @@ import com.google.common.collect.Lists;
  * using a {@link FluentIterable}
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/examples/guava-fluent-iterableterable-example'>Fluentiterable example</a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/guava-fluentiterable-example/'>FluentIterable example</a>
  * 
  */
 public class FluentIterableExample {
 	
 	private static final Logger logger = Logger.getLogger(FluentIterableExample.class);
 
-	
 	class State {
 		
 		private String stateAbbreviation;
@@ -84,7 +83,6 @@ public class FluentIterableExample {
 		}
 	}
 	
-	
 	List<State> states = Lists.newArrayList(
 			new State("MT", false),
 			new State("ID", false),
@@ -136,8 +134,6 @@ public class FluentIterableExample {
 		logger.info(stateMessages);
 		
 		assertEquals(6, stateMessages.size());
-		
 	}
 	
-
 }

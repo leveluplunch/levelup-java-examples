@@ -2,6 +2,7 @@ package com.levelup.java.guava;
 
 import static org.junit.Assert.assertEquals;
 
+import org.apache.log4j.Logger;
 import org.junit.Test;
 
 import com.google.common.collect.HashMultiset;
@@ -13,10 +14,12 @@ import com.google.common.collect.Multiset;
  * MultiSets allow you to easily count elements within a list
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/'>Multi Set Example</a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/guava-multiset-example/'>Multi Set Example</a>
  * 
  */
 public class MultisetExample {
+	
+	private static final Logger logger = Logger.getLogger(MultisetExample.class);
 
 	@Test
 	public void multiset_example () {
@@ -29,9 +32,9 @@ public class MultisetExample {
 		camouflage.add("Mossy Oak New Break-Up");
 		camouflage.add("Realtree APG");
 		
+		logger.info(camouflage);
+
 		int numberOfRealTrees = camouflage.count("Realtree APG");
-		
-		// numberOfRealTrees = 3
 		
 		assertEquals(3, numberOfRealTrees);
 	}

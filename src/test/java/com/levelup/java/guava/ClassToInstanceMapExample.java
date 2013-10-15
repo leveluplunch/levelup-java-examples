@@ -2,8 +2,10 @@ package com.levelup.java.guava;
 
 import static org.junit.Assert.assertEquals;
 
+import org.apache.log4j.Logger;
 import org.junit.Test;
 
+import com.google.common.base.Objects;
 import com.google.common.collect.ClassToInstanceMap;
 import com.google.common.collect.MutableClassToInstanceMap;
 
@@ -15,11 +17,13 @@ import com.google.common.collect.MutableClassToInstanceMap;
  * lets say you have a person, a person has addresses,  a person has jobs.  
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/'>ClassToInstanceMap Example</a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/guava-classtoinstancemap-example/'>ClassToInstanceMap Example</a>
  * 
  */
 public class ClassToInstanceMapExample {
 
+	private static final Logger logger = Logger.getLogger(ClassToInstanceMapExample.class);
+	
 	class Person {
 		private String name;
 		
@@ -30,6 +34,13 @@ public class ClassToInstanceMapExample {
 
 		public String getName() {
 			return name;
+		}
+		
+		@Override
+		public String toString() {
+			return Objects.toStringHelper(this)
+					.add("name", name)
+					.toString();
 		}
 	}
 	
@@ -44,6 +55,13 @@ public class ClassToInstanceMapExample {
 		public String getJobName() {
 			return jobName;
 		}
+
+		@Override
+		public String toString() {
+			return Objects.toStringHelper(this)
+					.add("jobName", jobName)
+					.toString();
+		}
 	}
 	
 	class Address {
@@ -56,6 +74,13 @@ public class ClassToInstanceMapExample {
 
 		public String getStreetName() {
 			return streetName;
+		}
+		
+		@Override
+		public String toString() {
+			return Objects.toStringHelper(this)
+					.add("streetName", streetName)
+					.toString();
 		}
 	}
 	
@@ -71,10 +96,9 @@ public class ClassToInstanceMapExample {
 		classToInstanceMap.put(Jobs.class, jobs);
 		classToInstanceMap.put(Address.class, address);
 		
-		// classToInstanceMap = {class com.levelup.java.guava.ClassToInstanceMapExample$Address=com.levelup.java.guava.ClassToInstanceMapExample$Address@7a148bd3, class com.levelup.java.guava.ClassToInstanceMapExample$Person=com.levelup.java.guava.ClassToInstanceMapExample$Person@5ae80842, class com.levelup.java.guava.ClassToInstanceMapExample$Jobs=com.levelup.java.guava.ClassToInstanceMapExample$Jobs@377653ae}
+		logger.info(classToInstanceMap);
+		
 		assertEquals("IT person", classToInstanceMap.getInstance(Jobs.class).getJobName());
 	}
-	
-	
 	
 }

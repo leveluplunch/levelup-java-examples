@@ -12,7 +12,7 @@ import com.google.common.base.Optional;
  * Optional.  
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/'></a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/guava-optional-example/'>Optional example</a>
  * 
  */
 public class OptionalExample {
@@ -43,7 +43,6 @@ public class OptionalExample {
 		public String getComments() {
 			return comments;
 		}
-		
 	}
 	
 	private PullRequest getPullRequestReturningNull () {
@@ -66,9 +65,9 @@ public class OptionalExample {
 	 */
 	@SuppressWarnings("unused")
 	private Optional<PullRequest> getPullRequestUsingGuavaOptional () {
+	
 		PullRequest pr = null; // make some data access call, if it isn't there return null
 	
-		
 		if (pr == null) {
 			return Optional.absent();
 		} else {

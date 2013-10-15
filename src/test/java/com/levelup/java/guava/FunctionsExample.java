@@ -17,7 +17,7 @@ import com.google.common.collect.Lists;
  * be sure to read Caveats <a href="https://code.google.com/p/guava-libraries/wiki/FunctionalExplained">Functional Explained</a>
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/examples/google-guava-functions-example'>Guava functions example</a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/guava-functions-example/'>Guava functions example</a>
  * 
  */
 public class FunctionsExample {
@@ -92,6 +92,9 @@ public class FunctionsExample {
 		}
 	};
 
+	/**
+	 * Map a list of persons to jobs
+	 */
 	@Test
 	public void map_obects_with_guava_function () {
 		
@@ -108,7 +111,6 @@ public class FunctionsExample {
 		logger.info(jobs);
 		
 		assertEquals(5, jobs.size());
-		
 	}
 	
 }

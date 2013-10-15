@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.log4j.Logger;
 import org.junit.Test;
 
 import com.google.common.collect.ArrayListMultimap;
@@ -23,11 +24,12 @@ import com.google.common.collect.Multimap;
  * LinkedHashMultimap, TreeMultimap, ImmutableListMultimap and associated behaviors
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/'>MultiMap Example</a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/guava-multimap-example/'>MultiMap Example</a>
  * 
  */
 public class MultiMapExample {
-
+	
+	private static final Logger logger = Logger.getLogger(MultiMapExample.class);
 	
 	@Test
 	public void multipleMapExample_with_guava () {
@@ -43,7 +45,8 @@ public class MultiMapExample {
 		outdoorElements.put("tree", "birch");
 		
 		Collection<String> fishies = outdoorElements.get("fish");
-		// fishies = [walleye, muskellunge, bass]
+		
+		logger.info(fishies);
 
 		assertTrue(fishies.size() == 3);
 	}
@@ -62,8 +65,9 @@ public class MultiMapExample {
 		putObjects (outdoorElements, "tree", "birch");
 		
 		Collection<String> fishies = outdoorElements.get("fish");
-		// fishies = [walleye, muskellunge, bass]
-		
+
+		logger.info(fishies);
+
 		assertTrue(fishies.size() == 3);
 	}
 

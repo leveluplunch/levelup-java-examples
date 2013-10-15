@@ -20,7 +20,7 @@ import com.google.common.primitives.Ints;
  * capabilities of Guava's Ordering
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/'></a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/guava-ordering-example/'>Ordering example</a>
  * 
  */
 public class OrderingExample {
@@ -31,13 +31,16 @@ public class OrderingExample {
 	public void order_list_of_strings_alphabetically_case_insensitive () {
 		
 		List<String> TOP_RATED_CENTERS = Lists.newArrayList(
-				"Dawson", "Gatski", "Langer", "Hein", "Frankie Baggadonuts", "Turner", "Trafton", "Stephenson", "Ringo", "Otto", "Webster");
+				"Dawson", "Gatski", "Langer", "Hein", 
+				"Frankie Baggadonuts", "Turner", "Trafton", 
+				"Stephenson", "Ringo", "Otto", "Webster");
 
 		
-		String topNameAlphabetically = Ordering.from(String.CASE_INSENSITIVE_ORDER).min(TOP_RATED_CENTERS);
+		String topNameAlphabetically = Ordering
+					.from(String.CASE_INSENSITIVE_ORDER)
+					.min(TOP_RATED_CENTERS);
 		
 		assertEquals("Dawson", topNameAlphabetically);
-
 	}
 	
 	class GlassWare {
@@ -65,19 +68,20 @@ public class OrderingExample {
 	public void order_by_object_field () {
 		
 		List<GlassWare> beerGlasses = Lists.newArrayList(
-				new GlassWare("Flute Glass", "Enhances and showcases carbonation. Releases volatiles quickly for a more intense upfront aroma."),
-				new GlassWare("Pilsner Glass (or Pokal)", "showcases color, clarity and carbonation. Promotes head retention. Enhances volatiles."),
-				new GlassWare("Pint Glass", "cheap to make. Easy to store. Easy to drink out of. "),
-				new GlassWare("Goblet (or Chalice)", "Eye candy. Designed to maintain head. Wide-mouthed for deep sips. "),
-				new GlassWare("Mug (or Seidel, Stein)", "Easy to drink out of. Holds plenty of volume. "),
+				new GlassWare("Flute Glass", "Enhances and showcases..."),
+				new GlassWare("Pilsner Glass (or Pokal)", "showcases color, ..."),
+				new GlassWare("Pint Glass", "cheap to make..."),
+				new GlassWare("Goblet (or Chalice)", "Eye candy..."),
+				new GlassWare("Mug (or Seidel, Stein)", "Easy to drink..."),
 				new GlassWare(null, null)
 			);
 		
-		Ordering<GlassWare> byGlassWareName = Ordering.natural().nullsFirst().onResultOf(new Function <GlassWare, String> () {
-			  public String apply(GlassWare glassWare) {
-			    return glassWare.getName();
-			  }
-			});
+		Ordering<GlassWare> byGlassWareName = Ordering.natural().nullsFirst()
+				.onResultOf(new Function<GlassWare, String>() {
+					public String apply(GlassWare glassWare) {
+						return glassWare.getName();
+					}
+				});
 		
 		GlassWare firstBeerGlass = byGlassWareName.min(beerGlasses);
 		
@@ -86,7 +90,6 @@ public class OrderingExample {
 
 		GlassWare lastBeerGlass = byGlassWareName.max(beerGlasses);
 		assertEquals("Pint Glass", lastBeerGlass.getName());
-
 	}
 	
 	@Test
@@ -123,7 +126,8 @@ public class OrderingExample {
 		Collections.sort(famousBridges,
 				byLength.nullsFirst());
 
-		//[null, Chapel Bridge, Ponte Vecchio, Brooklyn Bridge, Chengyang Bridge, Great Belt Bridge]
+		logger.info(famousBridges);
+
 		assertEquals("Great Belt Bridge", famousBridges.get(5));
 	}
 	
@@ -149,9 +153,9 @@ public class OrderingExample {
 		Collections.sort(famousBridges,
 				byLength.nullsFirst().reverse());
 		
-		logger.info(famousBridges); //[Great Belt Bridge, Chengyang Bridge, Brooklyn Bridge, Chapel Bridge, Ponte Vecchio, null]
+		logger.info(famousBridges); 
+		
 		assertEquals("Great Belt Bridge", famousBridges.get(0));
-
 	}
 	
 	@Test
@@ -161,12 +165,13 @@ public class OrderingExample {
 				73, 58, 66, 57, 32, 88, 90, 12, 15, 99, 11
 			);
 		
-		List<Integer> startingLineUpInOrder = Ordering.natural().leastOf(startingLineUp, startingLineUp.size());
+		List<Integer> startingLineUpInOrder = Ordering
+				.natural()
+				.leastOf(startingLineUp, startingLineUp.size());
 		
-		logger.info(startingLineUpInOrder); 		//		[11, 12, 15, 32, 57, 58, 66, 73, 88, 90, 99]
+		logger.info(startingLineUpInOrder); 		
 		
 		assertEquals(new Integer(11), startingLineUpInOrder.get(0));
-
 	}
 	
 	@Test
@@ -176,12 +181,13 @@ public class OrderingExample {
 				73, 58, 66, 57, 32, 88, 90, 12, 15, 99, 11
 			);
 		
-		List<Integer> startingLineUpGreatestToLeast = Ordering.natural().greatestOf(startingLineUp, startingLineUp.size());
+		List<Integer> startingLineUpGreatestToLeast = Ordering
+				.natural()
+				.greatestOf(startingLineUp, startingLineUp.size());
 		
-		logger.info(startingLineUpGreatestToLeast); 		//		[11, 12, 15, 32, 57, 58, 66, 73, 88, 90, 99]
+		logger.info(startingLineUpGreatestToLeast); 
 		
 		assertEquals(new Integer(99), startingLineUpGreatestToLeast.get(0));
-
 	}	
 	
 	@Test
@@ -192,10 +198,11 @@ public class OrderingExample {
 				1952, 1959, 1962, 1993, 1998, 
 				1999, 2010, 2011, 2012);
 		
-		boolean isSorted = Ordering.natural().isOrdered(uwConferenceTitles);
+		boolean isSorted = Ordering
+				.natural()
+				.isOrdered(uwConferenceTitles);
 		
 		assertTrue(isSorted);
-
 	}
 
 	@Test
@@ -209,10 +216,11 @@ public class OrderingExample {
 				"Tennessee",
 				"Vanderbilt");
 		
-		boolean isSorted = Ordering.natural().isOrdered(secConferenceEast);
+		boolean isSorted = Ordering
+				.natural()
+				.isOrdered(secConferenceEast);
 		
 		assertTrue(isSorted);
-
 	}
 	
 	@Test
@@ -223,10 +231,11 @@ public class OrderingExample {
 				"Alabama",
 				"ALABAMA");
 		
-		boolean isSorted = Ordering.from(String.CASE_INSENSITIVE_ORDER).isOrdered(secConferenceEast);
+		boolean isSorted = Ordering
+				.from(String.CASE_INSENSITIVE_ORDER)
+				.isOrdered(secConferenceEast);
 		
 		assertTrue(isSorted);
-
 	}
 
 
