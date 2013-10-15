@@ -40,7 +40,6 @@ public class DatePlusMonths {
 		logger.info(dateFormatter.format(sippinFruityDrinksInMexico.getTime()));
 
 		assertTrue(sippinFruityDrinksInMexico.after(superBowlXLV));
-
 	}
 
 	
@@ -56,7 +55,6 @@ public class DatePlusMonths {
 		logger.info(sippinFruityDrinksInMexico.toString(fmt));
 
 		assertTrue(sippinFruityDrinksInMexico.isAfter(superBowlXLV));
-
 	}
 	
 	@Test

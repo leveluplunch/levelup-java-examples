@@ -40,7 +40,6 @@ public class DatePlusYears {
 		logger.info(dateFormatter.format(fortyNinersSuck.getTime()));
 
 		assertTrue(fortyNinersSuck.after(superBowlXLV));
-		
 	}
 	
 	@Test
@@ -55,7 +54,6 @@ public class DatePlusYears {
 		logger.info(fortyNinersSuck.toString(fmt));
 
 		assertTrue(fortyNinersSuck.isAfter(superBowlXLV));
-	
 	}
 
 	@Test
@@ -72,8 +70,6 @@ public class DatePlusYears {
 		logger.info(dateFormatter.format(fortyNinersSuck));
 
 		assertTrue(fortyNinersSuck.after(superBowlXLV.getTime()));
-		
 	}
-
 
 }

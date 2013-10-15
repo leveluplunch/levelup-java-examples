@@ -40,7 +40,6 @@ public class DatePlusWeeks {
 		logger.info(dateFormatter.format(newYearsDay.getTime()));
 
 		assertTrue(newYearsDay.after(xmas));
-		
 	}
 
 	@Test
@@ -71,7 +70,6 @@ public class DatePlusWeeks {
 		logger.info(dateFormatter.format(newYearsDay));
 
 		assertTrue(newYearsDay.after(xmas.getTime()));
-
 	}
 
 	

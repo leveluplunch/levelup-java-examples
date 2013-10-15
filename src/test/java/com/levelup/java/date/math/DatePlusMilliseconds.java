@@ -40,7 +40,6 @@ public class DatePlusMilliseconds {
 		logger.info(dateFormatter.format(newYearsDay.getTime()));
 
 		assertTrue(newYearsDay.after(newYearsEve));
-		
 	}
 
 	@Test
@@ -71,8 +70,6 @@ public class DatePlusMilliseconds {
 		logger.info(dateFormatter.format(newYearsDay));
 
 		assertTrue(newYearsDay.after(newYearsEve.getTime()));
-
 	}
-
 
 }

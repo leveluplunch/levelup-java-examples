@@ -17,7 +17,7 @@ import org.junit.Test;
  * This java example will demonstrate adding days to date
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/'></a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/add-days-to-date/'>Add days to date</a>
  * 
  */
 public class DatePlusDays {
@@ -42,7 +42,6 @@ public class DatePlusDays {
 		logger.info(dateFormatter.format(celebration.getTime()));
 
 		assertTrue(celebration.after(superBowlXLV));
-		
 	}
 
 	
@@ -75,7 +74,6 @@ public class DatePlusDays {
 		logger.info(dateFormatter.format(celebration));
 
 		assertTrue(celebration.after(superBowlXLV.getTime()));
-
 	}
 
 	
