@@ -32,15 +32,14 @@ public class DateMinusMilliseconds {
 		
 		Calendar newYearsEve = Calendar.getInstance();
 		newYearsEve.setTimeInMillis(newYearsDay.getTimeInMillis());
-		newYearsEve.add(Calendar.MILLISECOND, -100);		
+		newYearsEve.add(Calendar.MILLISECOND, -1000);		
 		
-		SimpleDateFormat dateFormatter = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss z");
+		SimpleDateFormat dateFormatter = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss S z");
 
 		logger.info(dateFormatter.format(newYearsDay.getTime()));
 		logger.info(dateFormatter.format(newYearsEve.getTime()));
 
 		assertTrue(newYearsEve.before(newYearsDay));
-		
 	}
 	
 	@Test
@@ -55,7 +54,6 @@ public class DateMinusMilliseconds {
 		logger.info(newYearsEve.toString(fmt));
 
 		assertTrue(newYearsEve.isBefore(newYearsDay));
-		
 	}
 	
 	@Test
@@ -72,7 +70,6 @@ public class DateMinusMilliseconds {
 		logger.info(dateFormatter.format(newYearsEve));
 
 		assertTrue(newYearsEve.before(newYearsDay.getTime()));
-
 	}
 	
 }

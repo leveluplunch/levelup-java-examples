@@ -40,7 +40,6 @@ public class DateMinusSeconds {
 		logger.info(dateFormatter.format(newYearsEve.getTime()));
 
 		assertTrue(newYearsEve.before(newYearsDay));
-		
 	}
 	
 	@Test
@@ -55,7 +54,6 @@ public class DateMinusSeconds {
 		logger.info(newYearsEve.toString(fmt));
 
 		assertTrue(newYearsEve.isBefore(newYearsDay));
-		
 	}
 	
 	@Test
@@ -72,7 +70,6 @@ public class DateMinusSeconds {
 		logger.info(dateFormatter.format(newYearsEve));
 
 		assertTrue(newYearsEve.before(newYearsDay.getTime()));
-
 	}
 	
 }

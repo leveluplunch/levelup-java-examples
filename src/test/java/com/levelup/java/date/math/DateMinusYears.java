@@ -40,7 +40,6 @@ public class DateMinusYears {
 		logger.info(dateFormatter.format(numberFour.getTime()));
 
 		assertTrue(numberFour.before(superBowlXLV));
-
 	}
 
 	@Test
@@ -55,7 +54,6 @@ public class DateMinusYears {
 		logger.info(numberFour.toString(fmt));
 
 		assertTrue(numberFour.isBefore(superBowlXLV));
-		
 	}
 
 	
@@ -73,7 +71,6 @@ public class DateMinusYears {
 		logger.info(dateFormatter.format(numberFour));
 
 		assertTrue(numberFour.before(superBowlXLV.getTime()));		
-		
 	}
 
 	

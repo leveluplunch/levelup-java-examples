@@ -23,8 +23,7 @@ import org.junit.Test;
 public class DateMinusMonths {
 	
 	private static final Logger logger = Logger.getLogger(DateMinusMonths.class);
-	
-	
+		
 	@Test
 	public void subtract_months_from_date_in_java () {
 		
@@ -42,7 +41,6 @@ public class DateMinusMonths {
 
 		assertTrue(championshipWeekend.before(superBowlXLV));
 	}
-
 	
 	@Test
 	public void subtract_months_from_date_in_java_joda () {
@@ -56,7 +54,6 @@ public class DateMinusMonths {
 		logger.info(championshipWeekend.toString(fmt));
 
 		assertTrue(championshipWeekend.isBefore(superBowlXLV));
-
 	}
 
 	@Test
@@ -73,7 +70,6 @@ public class DateMinusMonths {
 		logger.info(dateFormatter.format(championshipWeekend));
 
 		assertTrue(championshipWeekend.before(superBowlXLV.getTime()));
-		
 	}
 
 

@@ -42,7 +42,6 @@ public class DateMinusDays {
 		logger.info(dateFormatter.format(pregame.getTime()));
 
 		assertTrue(pregame.before(superBowlXLV));
-		
 	}
 
 	@Test
@@ -57,7 +56,6 @@ public class DateMinusDays {
 		logger.info(pregame.toString(fmt));
 
 		assertTrue(pregame.isBefore(superBowlXLV));
-		
 	}
 	
 	@Test
@@ -74,9 +72,6 @@ public class DateMinusDays {
 		logger.info(dateFormatter.format(pregame));
 
 		assertTrue(pregame.before(superBowlXLV.getTime()));
-
 	}
-
-
 	
 }

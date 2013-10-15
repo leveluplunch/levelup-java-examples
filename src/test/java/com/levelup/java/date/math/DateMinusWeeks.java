@@ -40,7 +40,6 @@ public class DateMinusWeeks {
 		logger.info(dateFormatter.format(xmas.getTime()));
 
 		assertTrue(xmas.before(newYearsDay));
-		
 	}
 
 	@Test
@@ -55,7 +54,6 @@ public class DateMinusWeeks {
 		logger.info(xmas.toString(fmt));
 
 		assertTrue(xmas.isBefore(newYearsDay));
-		
 	}
 
 	@Test
@@ -72,7 +70,6 @@ public class DateMinusWeeks {
 		logger.info(dateFormatter.format(xmas));
 
 		assertTrue(xmas.before(newYearsDay.getTime()));
-
 	}
 
 	
