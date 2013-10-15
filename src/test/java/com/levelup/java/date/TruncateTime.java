@@ -15,7 +15,7 @@ import org.junit.Test;
  * This java example will demonstrate truncating time in java
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/'></a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/truncate-time/'>Truncate time</a>
  * 
  */
 public class TruncateTime {
@@ -25,20 +25,19 @@ public class TruncateTime {
 	@Test
 	public void truncate_time_in_java () {
 
-		Calendar cal = Calendar.getInstance(); // locale-specific
+		Calendar cal = Calendar.getInstance(); 
 		cal.set(Calendar.HOUR_OF_DAY, 0);
 		cal.set(Calendar.MINUTE, 0);
 		cal.set(Calendar.SECOND, 0);
 		cal.set(Calendar.MILLISECOND, 0);
 		
 		// format object
-		SimpleDateFormat dateFormatter = new SimpleDateFormat("MM/dd/yyyy hh:mm:ss z");
+		SimpleDateFormat dateFormatter = new SimpleDateFormat("MM/dd/yyyy hh:mm:ss");
 		String randomTruncatedDateFormatted = dateFormatter.format(cal.getTimeInMillis());
 
 		logger.info("Truncated date: " + randomTruncatedDateFormatted);
 		
 		assertTrue(randomTruncatedDateFormatted.contains("12:00:00"));
-
 	}
 
 	@Test
@@ -46,11 +45,12 @@ public class TruncateTime {
 		
 		DateTime dt = new DateTime().dayOfMonth().roundFloorCopy();
 
-		logger.info("Truncated date: " + dt);
-
 		// just for formatting purposes
-		SimpleDateFormat dateFormatter = new SimpleDateFormat("MM/dd/yyyy hh:mm:ss z");
+		SimpleDateFormat dateFormatter = new SimpleDateFormat("MM/dd/yyyy hh:mm:ss");
 		String randomTruncatedDateFormatted = dateFormatter.format(dt.getMillis());
+
+		logger.info("Truncated date: " + randomTruncatedDateFormatted);
+
 		
 		assertTrue(randomTruncatedDateFormatted.contains("12:00:00"));
 	}
@@ -70,7 +70,4 @@ public class TruncateTime {
 		assertTrue(randomTruncatedDateFormatted.contains("12:00:00"));
 	}
 
-	
-	
-	
 }

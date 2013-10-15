@@ -16,7 +16,7 @@ import org.junit.Test;
  * This java example will demonstrate parsing a date strings
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/examples/parse-date-with-java/'>Parse date</a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/parse-date/'>Parse date</a>
  * 
  */
 public class ParseDate {
