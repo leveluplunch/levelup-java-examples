@@ -20,7 +20,7 @@ import com.google.common.collect.Lists;
  * be sure to read Caveats <a href="https://code.google.com/p/guava-libraries/wiki/FunctionalExplained">Functional Explained</a>
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/'></a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/guava-predicates-example/'>Predicates example</a>
  * 
  */
 public class PredicatesExample {
@@ -75,7 +75,6 @@ public class PredicatesExample {
 		logger.info(anchors);
 		
 		assertEquals(6, anchors.size());
-
 	}
 
 	/**
@@ -84,7 +83,9 @@ public class PredicatesExample {
 	@Test
 	public void charmatcher_implements_predicate () {
 
-		String theDigits = CharMatcher.DIGIT.retainFrom("ACB 132, ABC 123"); // only the digits
+		String theDigits = CharMatcher
+				.DIGIT
+				.retainFrom("ACB 132, ABC 123"); // only the digits
 
 		assertEquals("132123", theDigits);
 	}

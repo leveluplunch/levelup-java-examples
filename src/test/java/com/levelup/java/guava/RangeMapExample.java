@@ -13,7 +13,7 @@ import com.google.common.collect.TreeRangeMap;
  * demonstrate grade scale.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/'>Range Map Example</a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/guava-rangemap-example/'>Range Map Example</a>
  * 
  */
 public class RangeMapExample {
@@ -30,9 +30,7 @@ public class RangeMapExample {
 		
 		String grade = gradeScale.get(77);
 		
-		//gradeScale = C 
 		assertEquals("C", grade);
-		
 	}
 	
 }
