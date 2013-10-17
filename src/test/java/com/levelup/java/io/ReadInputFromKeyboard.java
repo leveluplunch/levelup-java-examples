@@ -9,7 +9,7 @@ import org.junit.Test;
  * This java example will demonstrate how to read input from a keyboard.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/'></a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/read-keyboard-input/'>Read keyboard input</a>
  * 
  */
 public class ReadInputFromKeyboard {

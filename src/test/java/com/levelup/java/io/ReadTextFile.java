@@ -25,12 +25,13 @@ import com.google.common.io.Files;
  * library such as Google Guava or Apache Commons.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/'>Read a Text File With Java</a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/read-text-file/'>Read text file</a>
  * 
  */
 public class ReadTextFile {
 
 	private static final Logger logger = Logger.getLogger(ReadTextFile.class);
+	
 	private static final String FILE_PATH = "youaremysunshine.txt";
 	
 	
