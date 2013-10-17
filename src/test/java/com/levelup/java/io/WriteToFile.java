@@ -1,5 +1,12 @@
 package com.levelup.java.io;
 
+/**
+ * This java example will demonstrate
+ * 
+ * @author Justin Musgrove
+ * @see <a href='http://www.leveluplunch.com/java/examples/write-to-text-file/'>Write to text file</a>
+ * 
+ */
 public class WriteToFile {
 
 	

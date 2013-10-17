@@ -3,8 +3,10 @@ package com.levelup.java.json;
 import static org.junit.Assert.assertEquals;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.junit.Test;
 
 import com.fasterxml.jackson.core.JsonParseException;
@@ -18,11 +20,13 @@ import com.google.gson.Gson;
  * This java example will demonstrate converting json to a java object.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/'></a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/java-object-to-json/'>JSON to java object</a>
  * 
  */
 public class JsontoJavaObject {
 
+	private static final Logger logger = Logger.getLogger(JsontoJavaObject.class);
+	
 	static class Plane {
 		private String planeType;
 
@@ -50,6 +54,8 @@ public class JsontoJavaObject {
 
 		Plane plane = gson.fromJson(JSON_OBJECT, Plane.class);
 		
+		logger.info(plane);
+		
 		assertEquals("Sea Planes", plane.getPlaneType());
 	}
 	
@@ -62,7 +68,7 @@ public class JsontoJavaObject {
 		@SuppressWarnings("serial")
 		List<Plane> planes = gson.fromJson(ARRAY_AS_JSON, new TypeToken<List<Plane>>(){}.getType());
 		
-//		[Plane{plane type: =Commercial Transport Planes}, Plane{plane type: =General Aviation Planes}, Plane{plane type: =Military Planes}, Plane{plane type: =Sea Planes}, Plane{plane type: =Special Purpose Planes}]
+		logger.info(planes);
 		
 		assertEquals(5, planes.size());
 	}
@@ -74,10 +80,9 @@ public class JsontoJavaObject {
 		
 		Plane[] planes = gson.fromJson(ARRAY_AS_JSON, Plane[].class);
 		
-//		[Plane{plane type: =Commercial Transport Planes}, Plane{plane type: =General Aviation Planes}, Plane{plane type: =Military Planes}, Plane{plane type: =Sea Planes}, Plane{plane type: =Special Purpose Planes}]
+		logger.info(Arrays.toString(planes));
 		
 		assertEquals(5, planes.length);
-		
 	}
 	
 	@Test
@@ -85,6 +90,8 @@ public class JsontoJavaObject {
 		ObjectMapper objectMapper = new ObjectMapper();
 		
 		Plane plane = objectMapper.readValue(JSON_OBJECT, Plane.class);
+		
+		logger.info(plane);
 		
 		assertEquals("Sea Planes", plane.getPlaneType());
 	}
@@ -98,7 +105,7 @@ public class JsontoJavaObject {
 		List<Plane> planes = objectMapper.readValue(ARRAY_AS_JSON, 
 				objectMapper.getTypeFactory().constructCollectionType(List.class, Plane.class));
 		
-//		[Plane{plane type: =Commercial Transport Planes}, Plane{plane type: =General Aviation Planes}, Plane{plane type: =Military Planes}, Plane{plane type: =Sea Planes}, Plane{plane type: =Special Purpose Planes}]
+		logger.info(planes);
 
 		assertEquals(5, planes.size());
 	}
@@ -110,7 +117,7 @@ public class JsontoJavaObject {
 		
 		Plane[] planes = objectMapper.readValue(ARRAY_AS_JSON, JsontoJavaObject.Plane[].class);
 		
-//		[Plane{plane type: =Commercial Transport Planes}, Plane{plane type: =General Aviation Planes}, Plane{plane type: =Military Planes}, Plane{plane type: =Sea Planes}, Plane{plane type: =Special Purpose Planes}]
+		logger.info(Arrays.toString(planes));
 
 		assertEquals(5, planes.length);
 	}

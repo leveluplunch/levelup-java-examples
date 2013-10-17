@@ -66,51 +66,50 @@ public class PrettyPrintJson {
 		}
 	}
 	
-	
 	@Test
-	public void pretty_print_json_gson () {
-		
-		String GITHUB_MEMBER_JSON = "[\n  {\n    \"login\": \"octocat\",\n    \"id\": \"1\",\n    \"avatar_url\": \"https://github.com/images/error/octocat_happy.gif\",\n    \"gravatar_id\": \"somehexcode\",\n    \"url\": \"https://api.github.com/users/octocat\"\n  }\n]";
-		
-		
-		List<GitHubMember> members = Lists.newArrayList(
-				new GitHubMember(
-						"octocat", 
-						"1", 
-						"https://github.com/images/error/octocat_happy.gif", 
-						"somehexcode", 
-						"https://api.github.com/users/octocat"));
-		
+	public void pretty_print_json_gson() {
+
+		String GITHUB_MEMBER_JSON = "[\n  {\n    \"login\": \"octocat\",\n    \"id\": \"1\",\n    "
+				+ "\"avatar_url\": \"https://github.com/images/error/octocat_happy.gif\",\n    "
+				+ "\"gravatar_id\": \"somehexcode\",\n    \"url\": "
+				+ "\"https://api.github.com/users/octocat\"\n  }\n]";
+
+		List<GitHubMember> members = Lists.newArrayList(new GitHubMember(
+				"octocat", "1",
+				"https://github.com/images/error/octocat_happy.gif",
+				"somehexcode", "https://api.github.com/users/octocat"));
+
 		Gson gson = new GsonBuilder().setPrettyPrinting().create();
-		
+
 		String prettyJson = gson.toJson(members);
-		
+
 		logger.info(prettyJson);
-		
+
 		assertEquals(GITHUB_MEMBER_JSON, prettyJson);
 	}
 
 	@Test
-	public void pretty_print_json_jackson () throws IOException {
+	public void pretty_print_json_jackson() throws IOException {
 
-		String GITHUB_MEMBER_JSON = "[ {\n  \"login\" : \"octocat\",\n  \"id\" : \"1\",\n  \"avatar_url\" : \"https://github.com/images/error/octocat_happy.gif\",\n  \"gravatar_id\" : \"somehexcode\",\n  \"url\" : \"https://api.github.com/users/octocat\"\n} ]";
-		
+		String GITHUB_MEMBER_JSON = "[ {\n  \"login\" : \"octocat\",\n  \"id\" : "
+				+ "\"1\",\n  \"avatar_url\" : \"https://github.com/images/error/octocat_happy.gif\","
+				+ "\n  \"gravatar_id\" : \"somehexcode\",\n  \"url\" : "
+				+ "\"https://api.github.com/users/octocat\"\n} ]";
 
-		List<GitHubMember> members = Lists.newArrayList(
-				new GitHubMember("octocat", 
-						"1", 
-						"https://github.com/images/error/octocat_happy.gif", 
-						"somehexcode", 
-						"https://api.github.com/users/octocat"));
+		List<GitHubMember> members = Lists.newArrayList(new GitHubMember(
+				"octocat", "1",
+				"https://github.com/images/error/octocat_happy.gif",
+				"somehexcode", "https://api.github.com/users/octocat"));
 
 		ObjectMapper objectMapper = new ObjectMapper();
-		ObjectWriter writer = objectMapper.writer().with(SerializationFeature.INDENT_OUTPUT);
-		
+		ObjectWriter writer = objectMapper.writer().with(
+				SerializationFeature.INDENT_OUTPUT);
+
 		String prettyJson = writer.writeValueAsString(members);
-		
+
 		logger.info(prettyJson);
-		
-		assertEquals(GITHUB_MEMBER_JSON, prettyJson);		
+
+		assertEquals(GITHUB_MEMBER_JSON, prettyJson);
 	}
 
 	
