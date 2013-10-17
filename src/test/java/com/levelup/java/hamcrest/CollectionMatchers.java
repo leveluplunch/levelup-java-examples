@@ -37,7 +37,7 @@ import com.google.common.collect.Maps;
  * collections with junit hamcrest matchers.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/examples/junit-collections-testing-hamcrest/'>Unit test collections</a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/hamcrest-collection-matchers-junit-testing/'>Collection matchers</a>
  * 
  */
 public class CollectionMatchers {
@@ -110,52 +110,65 @@ public class CollectionMatchers {
 	@Test
 	public void check_size_of_collection () {
 		
-		List<String> fruit = Lists.newArrayList("apple", "banana", "pear", "blackberry", "grape");
+		List<String> fruit = Lists.newArrayList(
+				"apple", "banana", "pear", "blackberry", "grape");
+		
 		assertThat(fruit, hasSize(5));
 	}
 	
 	@Test
 	public void collection_contains_elements_in_order () {
 		
-		List<String> fruit = Lists.newArrayList("apple", "banana", "pear", "blackberry", "grape");
-	    assertThat(fruit, contains("apple", "banana", "pear", "blackberry", "grape"));
+		List<String> fruit = Lists.newArrayList(
+				"apple", "banana", "pear", "blackberry", "grape");
 		
+	    assertThat(fruit, contains(
+	    		"apple", "banana", "pear", "blackberry", "grape"));
 	}
 
 	@Test
 	public void collection_contains_elements_in_any_order () {
 		
-		List<String> fruit = Lists.newArrayList("apple", "banana", "pear", "blackberry", "grape");
-	    assertThat(fruit, containsInAnyOrder("banana", "apple", "blackberry", "grape", "pear"));
+		List<String> fruit = Lists.newArrayList(
+				"apple", "banana", "pear", "blackberry", "grape");
+		
+	    assertThat(fruit, containsInAnyOrder(
+	    		"banana", "apple", "blackberry", "grape", "pear"));
 	}
 	
 	@Test
 	public void collection_contains_element () {
 		
-		List<String> fruit = Lists.newArrayList("apple", "banana", "pear", "blackberry", "grape");
-	    assertThat(fruit, hasItem("apple"));
-		
+		List<String> fruit = Lists.newArrayList(
+				"apple", "banana", "pear", "blackberry", "grape");
+	    
+		assertThat(fruit, hasItem("apple"));
 	}
 
 	@Test
 	public void collection_contains_elements () {
 		
-		List<String> fruit = Lists.newArrayList("apple", "banana", "pear", "blackberry", "grape");
-	    assertThat(fruit, hasItems("apple"));
+		List<String> fruit = Lists.newArrayList(
+				"apple", "banana", "pear", "blackberry", "grape");
+		
+	    assertThat(fruit, hasItems("apple", "pear"));
 	}
 	
 	@Test
 	public void element_in_collection () { 
 
-		List<String> fruit = Lists.newArrayList("apple", "banana", "pear", "blackberry", "grape");
+		List<String> fruit = Lists.newArrayList(
+				"apple", "banana", "pear", "blackberry", "grape");
+		
 	    assertThat("apple", isIn(fruit));
-	    
 	}
 	
 	@Test
 	public void element_in_one_of () { 
 	
-		List<String> fruit = Lists.newArrayList("apple", "banana", "pear", "blackberry", "grape");
+		List<String> fruit = Lists.newArrayList(
+				"apple", "banana", "pear", "blackberry", "grape");
+		
 	    assertThat("apple", isOneOf(fruit.toArray()));
 	}
 
@@ -169,7 +182,8 @@ public class CollectionMatchers {
 	@Test
 	public void collection_is_not_empty () { 
 	
-		List<String> fruit = Lists.newArrayList("apple", "banana", "pear", "blackberry", "grape");
+		List<String> fruit = Lists.newArrayList(
+				"apple", "banana", "pear", "blackberry", "grape");
 	    assertThat(fruit, not(empty()));
 	}
 	

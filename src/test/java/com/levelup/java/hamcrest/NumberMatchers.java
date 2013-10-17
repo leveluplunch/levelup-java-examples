@@ -19,7 +19,7 @@ import com.google.common.collect.Lists;
  * numbers with junit hamcrest matchers.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/examples/junit-number-testing-hamcrest/'>Unit test numbers</a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/hamcrest-number-matchers-junit-testing/'>Numbers matcher</a>
  * 
  */
 public class NumberMatchers {
@@ -69,8 +69,8 @@ public class NumberMatchers {
 		BigDecimal seniorCitizen = new BigDecimal(65);
 		
 		// is close to retirement 
-		assertThat(new BigDecimal(60), is(closeTo(seniorCitizen, new BigDecimal(5))));
-	
+		assertThat(new BigDecimal(60), 
+				is(closeTo(seniorCitizen, new BigDecimal(5))));
 	}
 	
 	

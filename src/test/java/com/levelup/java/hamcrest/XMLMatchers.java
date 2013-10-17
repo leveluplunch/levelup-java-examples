@@ -18,7 +18,7 @@ import org.w3c.dom.Document;
  * xml with junit and hamcrest matchers.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/examples/junit-xml-testing-hamcrest/'>XML testing</a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/hamcrest-xml-matchers-junit-testing/'>XML matchers</a>
  * 
  */
 public class XMLMatchers {

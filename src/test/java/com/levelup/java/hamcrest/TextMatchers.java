@@ -7,6 +7,7 @@ import com.google.common.collect.Lists;
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.CoreMatchers.endsWith;
 import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.startsWith;
 import static org.hamcrest.text.IsEmptyString.*;
 import static org.hamcrest.text.IsEqualIgnoringCase.*;
 import static org.hamcrest.text.IsEqualIgnoringWhiteSpace.*;
@@ -18,7 +19,7 @@ import static org.junit.Assert.assertThat;
  * strings with junit and hamcrest matchers.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/examples/junit-text-testing-hamcrest/'>Unit test text</a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/hamcrest-text-matchers-junit-testing/'>Text matchers</a>
  * 
  */
 public class TextMatchers {
@@ -75,7 +76,7 @@ public class TextMatchers {
 	public void string_starts_with () {
 
 		String cereal = "honey smacks";
-		assertThat(cereal, containsString("honey"));
+		assertThat(cereal, startsWith("honey"));
 	}
 
 	@Test

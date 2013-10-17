@@ -14,7 +14,7 @@ import org.junit.Test;
  * beans with junit hamcrest matchers.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/examples/hamcrest-bean-matchers-junit-testing/'>Bean testing</a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/hamcrest-bean-matchers-junit-testing/'>Bean matchers</a>
  * 
  */
 public class BeanMatchers {

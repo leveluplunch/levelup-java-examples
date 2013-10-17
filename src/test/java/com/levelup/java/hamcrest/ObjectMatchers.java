@@ -18,7 +18,7 @@ import com.google.common.base.Objects;
  * hamcrest object matcher to test java objects
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/examples/junit-object-testing-hamcrest/'>Object testing</a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/hamcrest-object-matchers-junit-testing/'>Object matchers</a>
  * 
  */
 public class ObjectMatchers {
@@ -90,13 +90,15 @@ public class ObjectMatchers {
 		}
 		
 	}
-	
+
 	@Test
 	public void test_object_toString () {
-		
+
 		Drink softDrink = new Drink("Pepsi", "Mountain Dew", "Soft Drink");
-		
-		assertThat(softDrink, hasToString("Drink{=Pepsi, Mountain Dew=Mountain Dew, Mountain Dew=Soft Drink}"));
+
+		assertThat(
+				softDrink,
+				hasToString("Drink{=Pepsi, Mountain Dew=Mountain Dew, Mountain Dew=Soft Drink}"));
 	}
 	
 	@Test
