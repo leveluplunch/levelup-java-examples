@@ -12,7 +12,7 @@ import org.junit.runners.MethodSorters;
  * execution order of junit tests. 
  *  
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/example/junit-specify-order-of-tests/'>Specify order of tests</a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/junit-specify-order-of-tests/'>Specify order of tests</a>
  * 
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)

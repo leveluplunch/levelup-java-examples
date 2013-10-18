@@ -17,7 +17,7 @@ import org.junit.runners.Parameterized.Parameters;
  * are interested in running the same test with different test data.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/examples/junit-paramertize-test/'>Junit Paramertized Test</a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/junit-parameterized-test/'>Junit Paramertized Test</a>
  * 
  */
 @RunWith(Parameterized.class)
@@ -30,7 +30,6 @@ public class ParamertizedTest {
 		public static int add(int a, int b) {
 			return a + b;
 		}
-		
 	}
 
 	@Parameters
@@ -62,7 +61,6 @@ public class ParamertizedTest {
 		
 		int calculatedValue = Calculator.add(a,  b);
 		assertEquals(expected, calculatedValue);
-		
-		
 	}	
+	
 }

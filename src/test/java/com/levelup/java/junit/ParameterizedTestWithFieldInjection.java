@@ -19,7 +19,7 @@ import org.junit.runners.Parameterized.Parameters;
  * are interested in running the same test with different test data.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/examples/junit-paramertize-test-field-injection/'>Junit Paramertized Test Field Injection</a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/junit-parameterized-test-with-field-injection/'>Junit Paramertized Test Field Injection</a>
  * 
  */
 @RunWith(Parameterized.class)
@@ -32,7 +32,6 @@ public class ParameterizedTestWithFieldInjection {
 		public static int add(int a, int b) {
 			return a + b;
 		}
-		
 	}
 
 	@Parameters

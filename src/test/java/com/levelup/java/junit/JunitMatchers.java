@@ -18,10 +18,6 @@ import com.google.common.collect.Lists;
  */
 public class JunitMatchers {
 
-//	Per release notes https://github.com/junit-team/junit/blob/master/doc/ReleaseNotes4.11.md
-//	Most of the matchers in JUnitMatchers have been deprecated. Please use org.hamcrest.CoreMatchers directly.
-//	http://junit-team.github.io/junit/javadoc/latest/org/junit/matchers/JUnitMatchers.html
-	
 	@SuppressWarnings("deprecation")
 	@Test
 	public void test_string_contains_two_elements () {
