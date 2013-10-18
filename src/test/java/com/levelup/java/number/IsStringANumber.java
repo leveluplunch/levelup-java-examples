@@ -17,7 +17,7 @@ import com.google.common.primitives.Doubles;
  * checking if a string is a number.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/'></a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/is-string-numeric/'>Is string numeric</a>
  * 
  */
 public class IsStringANumber {
@@ -80,6 +80,7 @@ public class IsStringANumber {
 
 	@Test
 	public void is_string_a_number_guava () {
+		
 		Double parsedString = Doubles.tryParse("123234.54");
 		
 		assertEquals(new Double(123234.54), parsedString);

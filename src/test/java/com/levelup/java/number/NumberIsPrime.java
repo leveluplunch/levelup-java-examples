@@ -17,7 +17,7 @@ import org.junit.Test;
  * number is prime.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/'></a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/determine-prime-number/'>Is prime number</a>
  * 
  */
 public class NumberIsPrime {
@@ -44,6 +44,7 @@ public class NumberIsPrime {
 
 	@Test
 	public void determine_if_number_is_prime_java () {
+		
 		boolean isPrimeNumber = isPrime(5779);
 		assertTrue(isPrimeNumber);
 	}
@@ -79,8 +80,6 @@ public class NumberIsPrime {
 		assertTrue(isPrimeNumber);
 	}
 	
-	
-	
 	@Test
 	public void find_next_prime_number_with_apache_commons () {
 		
@@ -91,10 +90,9 @@ public class NumberIsPrime {
 	
 	@Test
 	public void determine_prime_factors_of_a_number_with_apache_commons () {
+		
 		List<Integer> primeFactors = Primes.primeFactors(5782);
 		
-		//[2, 7, 7, 59]
-
 		assertThat(primeFactors, hasItems(2, 7, 7, 59));
 	}
 	

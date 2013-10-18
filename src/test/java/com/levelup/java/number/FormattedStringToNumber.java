@@ -12,7 +12,7 @@ import org.junit.Test;
  * a formatted string to a number
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/'></a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/formatted-string-to-number/'>Formatted string to number</a>
  * 
  */
 public class FormattedStringToNumber {
