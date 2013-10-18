@@ -23,14 +23,14 @@ public class TimeoutRule {
 
 	@Ignore("Test will always fail")
 	@Test
-	public void infinate_while_loop() {
+	public void infinite_while_loop() {
 		while (true) {
 		}
 	}
 
 	@Ignore("Test will always fail")
 	@Test
-	public void infinate_for_loop() {
+	public void infinite_for_loop() {
 		for (;;) {
 		}
 	}
