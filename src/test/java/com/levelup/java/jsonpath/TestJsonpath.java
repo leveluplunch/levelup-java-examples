@@ -21,13 +21,12 @@ import com.jayway.jsonpath.JsonPath;
  * json with jsonpath and junit
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/examples/junit-test-json-with-jsonpath-hamcrest/'>Test Json</a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/test-json-with-jsonpath-junit-hamcrest/'>Test Json</a>
  * 
  */
 public class TestJsonpath {
 
 	private static final Logger logger = Logger.getLogger(JsonPathExample.class);
-
 	
 	/**
 	 * Test fields
