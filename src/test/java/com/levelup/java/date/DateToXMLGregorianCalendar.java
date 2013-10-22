@@ -8,7 +8,10 @@ import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
 
+import org.apache.log4j.Logger;
 import org.junit.Test;
+
+import com.levelup.java.date.format.PredefinedDateFormats;
 
 /**
  * This java example will demonstrate converting a date to XMLGregorianCalendar
@@ -19,14 +22,19 @@ import org.junit.Test;
  */
 public class DateToXMLGregorianCalendar {
 
+	private static final Logger logger = Logger.getLogger(DateToXMLGregorianCalendar.class);
 	
 	@Test
-	public void convert_date_to_XMLGregorianCalendar () throws DatatypeConfigurationException { 
+	public void convert_date_to_XMLGregorianCalendar()
+			throws DatatypeConfigurationException {
 
 		GregorianCalendar gCalendar = new GregorianCalendar();
 
-		XMLGregorianCalendar xmlGregorianCalendar = DatatypeFactory.newInstance().newXMLGregorianCalendar(gCalendar);
-		
+		XMLGregorianCalendar xmlGregorianCalendar = DatatypeFactory
+				.newInstance().newXMLGregorianCalendar(gCalendar);
+
+		logger.info(xmlGregorianCalendar);
+
 		assertNotNull(xmlGregorianCalendar);
 	}
 	
