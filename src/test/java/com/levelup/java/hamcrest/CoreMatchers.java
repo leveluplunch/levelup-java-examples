@@ -49,7 +49,6 @@ public class CoreMatchers {
 		String microBrew = "Lake Louie Brewery Company";
 		
 		assertThat(microBrew, allOf(startsWith("Lake"), containsString("Brew")));
-
 	}
 	
 	@Test
