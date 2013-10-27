@@ -20,7 +20,7 @@ import com.google.common.io.Files;
  */
 public class AppendTextToFile {
 	
-	private String OUTPUT_FILE_NAME = "bin/AppendTextToFile.txt";
+	private static final String OUTPUT_FILE_NAME = "AppendTextToFile.txt";
 
 	@Test
 	public void append_to_file_java () throws IOException {
