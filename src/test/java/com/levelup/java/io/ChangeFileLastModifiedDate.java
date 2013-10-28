@@ -23,7 +23,7 @@ public class ChangeFileLastModifiedDate {
 
 	private static final Logger logger = Logger.getLogger(ChangeFileLastModifiedDate.class);
 	
-	private static final String OUTPUT_FILE_NAME = "ChangeFileLastModifiedDate.txt";
+	private static final String OUTPUT_FILE_NAME = "output/ChangeFileLastModifiedDate.txt";
 	
 	@Test
 	public void change_last_modified_date_java () {

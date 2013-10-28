@@ -25,7 +25,7 @@ public class AppendTextToFile {
 	
 	private static final Logger logger = Logger.getLogger(AppendTextToFile.class);
 	
-	private static final String OUTPUT_FILE_NAME = "AppendTextToFile.txt";
+	private static final String OUTPUT_FILE_NAME = "output/AppendTextToFile.txt";
 
 	@Test
 	public void append_to_file_java () throws IOException {
