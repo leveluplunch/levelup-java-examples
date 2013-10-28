@@ -1,6 +1,12 @@
 package com.levelup.java.io;
 
+import static org.junit.Assert.assertFalse;
+
 import java.io.File;
+import java.nio.file.Files;
+import java.nio.file.LinkOption;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 import org.apache.log4j.Logger;
 import org.junit.Test;
@@ -28,5 +34,16 @@ public class CheckIfFileExists {
 			logger.info("File not found");
 		}
 	}
+	
+	@Test
+	public void check_if_file_exist_java_files () {
+		
+		Path filePath = Paths.get("/readme.md");
+		
+		boolean fileExists = Files.exists(filePath, LinkOption.NOFOLLOW_LINKS);
+		
+		assertFalse(fileExists);
+	}
+	
 
 }
