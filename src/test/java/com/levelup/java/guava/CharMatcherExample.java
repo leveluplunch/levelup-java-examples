@@ -101,4 +101,22 @@ public class CharMatcherExample {
 		assertEquals("1234567890", teleNumber);
 	}
 	
+	@Test
+	public void count_number_of_matching_chars () {
+		
+		int numberOfDigits = CharMatcher.DIGIT.countIn("123-LevelUpLunch");
+		
+		assertEquals(3, numberOfDigits);
+	}
+	
+	@Test
+	public void collapse_whitespace_dash () {
+	
+		String address = "505 Williams Street";
+ 
+		String addressWithDash = CharMatcher.WHITESPACE.collapseFrom(address, '-');
+		
+		assertEquals("505-Williams-Street", addressWithDash);
+	}
+	
 }
