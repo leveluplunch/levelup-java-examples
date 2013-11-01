@@ -5,6 +5,7 @@ import static org.junit.Assert.assertEquals;
 import java.util.Collections;
 import java.util.List;
 
+import org.apache.commons.lang3.ObjectUtils;
 import org.junit.Test;
 
 import com.google.common.collect.Lists;
@@ -52,6 +53,16 @@ public class MaxValueFromList {
 
 		Integer maxElement = Ordering.natural().max(CENTERS_ROOKIE_YEAR);
 		
+		assertEquals(new Integer (1988), maxElement);
+	}
+	
+	@Test
+	public void find_max_value_from_list_of_integers_apache () {
+
+		Integer maxElement = ObjectUtils.max(
+				CENTERS_ROOKIE_YEAR.toArray(
+						new Integer[CENTERS_ROOKIE_YEAR.size()]));
+
 		assertEquals(new Integer (1988), maxElement);
 	}
 	

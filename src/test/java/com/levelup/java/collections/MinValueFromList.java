@@ -5,6 +5,7 @@ import static org.junit.Assert.assertEquals;
 import java.util.Collections;
 import java.util.List;
 
+import org.apache.commons.lang3.ObjectUtils;
 import org.junit.Test;
 
 import com.google.common.collect.Lists;
@@ -29,9 +30,9 @@ public class MinValueFromList {
 	@Test
 	public void find_min_value_from_list_of_integers_java () {
 
-		Integer maxElement = Collections.min(CENTERS_ROOKIE_YEAR);
+		Integer minElement = Collections.min(CENTERS_ROOKIE_YEAR);
 		
-		assertEquals(new Integer (1920), maxElement);
+		assertEquals(new Integer (1920), minElement);
 	}
 
 	
@@ -51,10 +52,21 @@ public class MinValueFromList {
 	@Test
 	public void find_min_value_from_list_of_integers_guava_ordering_shorthand () {
 
-		Integer maxElement = Ordering.natural().min(CENTERS_ROOKIE_YEAR);
+		Integer minElement = Ordering.natural().min(CENTERS_ROOKIE_YEAR);
 		
-		assertEquals(new Integer (1920), maxElement);
+		assertEquals(new Integer (1920), minElement);
 	}
+	
+	@Test
+	public void find_min_value_from_list_of_integers_apache () {
+		
+		Integer minElement = ObjectUtils.min(
+					CENTERS_ROOKIE_YEAR.toArray(
+							new Integer[CENTERS_ROOKIE_YEAR.size()]));
+
+		assertEquals(new Integer (1920), minElement);
+	}
+
 
 	
 }
