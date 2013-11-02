@@ -1,5 +1,6 @@
 package com.levelup.java.guava;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 
 import org.apache.log4j.Logger;
@@ -95,6 +96,13 @@ public class OptionalExample {
 		assertFalse(pr.isPresent());
 	}
 	
-	
+	@Test
+	public void get_first_non_null_object () {
+		
+		Optional<String> first = Optional.absent();
+		Optional<String> second = Optional.of("Game Day!");
+		
+		assertEquals(second.get(), first.or(second).get());
+	}
 	
 }
