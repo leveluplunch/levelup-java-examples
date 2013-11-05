@@ -1,17 +1,21 @@
 package com.levelup.java.guava;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
 
 import java.util.Collection;
 import java.util.List;
 
 import org.apache.log4j.Logger;
+import org.hamcrest.collection.IsIterableContainingInOrder;
 import org.junit.Test;
 
 import com.google.common.base.CharMatcher;
 import com.google.common.base.Objects;
 import com.google.common.base.Predicate;
+import com.google.common.base.Predicates;
 import com.google.common.collect.Collections2;
+import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 
 /**
@@ -77,6 +81,35 @@ public class PredicatesExample {
 		assertEquals(6, anchors.size());
 	}
 
+	@Test
+	public void filter_empty_null_elements() {
+
+		List<String> words = Lists.newArrayList(
+				"", null, "do", "not", "cry",
+				null, "over", "spilt", "beer");
+
+		Predicate<String> NOT_EMPTY = new Predicate<String>() {
+			@Override
+			public boolean apply(String arg0) {
+				return !arg0.isEmpty();
+			}
+		};
+
+		Iterable<String> filteredWords = 
+				Iterables.filter(words,
+						Predicates.
+						and(Predicates.notNull(), 
+								NOT_EMPTY));
+
+		logger.info(filteredWords);
+		
+		assertThat(filteredWords, IsIterableContainingInOrder.
+				<String>contains("do", "not", "cry",
+						"over", "spilt", "beer"));
+
+	}
+	
+	
 	/**
 	 * {@link CharMatcher} implements predicate but has special syntax.
 	 */
