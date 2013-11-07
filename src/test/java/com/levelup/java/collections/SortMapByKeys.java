@@ -28,7 +28,6 @@ import com.google.common.collect.Ordering;
 public class SortMapByKeys {
 
 	private static final Logger logger = Logger.getLogger(SortMapByKeys.class);
-
 	
 	Map<Integer, String> CALORIES_BURNED;
 	
