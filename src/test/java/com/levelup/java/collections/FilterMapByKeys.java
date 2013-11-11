@@ -17,9 +17,9 @@ import com.google.common.collect.Maps;
 /**
  * This java example will demonstrate how to filter
  * a map by keys.
- * 
+ *  
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/'></a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/filter-map-by-key/'>Filter map by key</a>
  * 
  */
 public class FilterMapByKeys {
