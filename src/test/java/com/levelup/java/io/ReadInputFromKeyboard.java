@@ -39,5 +39,7 @@ public class ReadInputFromKeyboard {
 		year = keyboard.nextInt();
 		
 		System.out.println(month + "/" + day + "/" + year);
+		
+		keyboard.close();
 	}
 }

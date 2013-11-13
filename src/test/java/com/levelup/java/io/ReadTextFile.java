@@ -72,7 +72,8 @@ public class ReadTextFile {
 		while (fileScanner.hasNextLine()){
 			lines.add(fileScanner.nextLine());
 		}
-
+		fileScanner.close();
+		
 		assertTrue(lines.size() == 28);
 	}
 	

@@ -32,6 +32,7 @@ public class ParseCSVFile {
 		InputStream in = this.getClass().getClassLoader().getResourceAsStream("planets.csv");
 		
 	    try {
+	    	
 	    	CSVReader reader = new CSVReader(new InputStreamReader(in), '\t');
 			
 			List<String[]> rows = reader.readAll();
@@ -43,11 +44,7 @@ public class ParseCSVFile {
 				}
 			}
 			
-//			Output
-//			Star,Constellation,Age (Gyr)
-//			HD 142,Phoenix,5.931
-//			WASP-44,Cetus,0.911
-//			WASP-32,Pisces,4.728
+			reader.close();
 			
 		} catch (FileNotFoundException e) {
 			logger.error(e);
