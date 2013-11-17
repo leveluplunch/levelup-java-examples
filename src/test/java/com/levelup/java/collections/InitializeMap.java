@@ -29,6 +29,14 @@ public class InitializeMap {
 	}
 
 	@Test
+	public void create_new_map_java_diamond_operator () {
+		
+		Map<String, String> newMap = new HashMap<>();
+		
+		assertNotNull(newMap);
+	}
+	
+	@Test
 	public void create_new_map_guava () {
 
 		Map<String, String> newMap = Maps.newHashMap();

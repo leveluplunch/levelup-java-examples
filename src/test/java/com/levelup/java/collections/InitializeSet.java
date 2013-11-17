@@ -27,6 +27,14 @@ public class InitializeSet {
 		
 		assertNotNull(newSet);
 	}
+	
+	@Test
+	public void create_new_set_java_diamond_operator () {
+		
+		Set<String> newSet = new HashSet<>();
+		
+		assertNotNull(newSet);
+	}
 
 	@Test
 	public void create_new_set_guava () {
