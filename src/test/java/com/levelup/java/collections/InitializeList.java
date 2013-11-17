@@ -21,7 +21,7 @@ import com.google.common.collect.Lists;
 public class InitializeList {
 
 	@Test
-	public void initialize_list_java() {
+	public void initialize_list_java () {
 		List<String> cheeses = new ArrayList<String>();
 		cheeses.add("Munster");
 		cheeses.add("Swiss");
@@ -29,6 +29,18 @@ public class InitializeList {
 
 		assertEquals(3, cheeses.size());
 	}
+	
+	@Test
+	public void initialize_list_java_diamond_operator () {
+		
+		List<String> cheeses = new ArrayList<>();
+		cheeses.add("Munster");
+		cheeses.add("Swiss");
+		cheeses.add("Sharp cheddar");
+
+		assertEquals(3, cheeses.size());
+	}
+	
 
 	@Test
 	public void initialize_list_java_with_arrays () {
