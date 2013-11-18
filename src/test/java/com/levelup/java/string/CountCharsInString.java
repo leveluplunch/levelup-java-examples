@@ -13,7 +13,7 @@ import com.google.common.collect.Iterables;
  * characters in a string
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/'>Count number of occurrences in string</a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/count-occurrences-of-char-in-string/'>Count number of occurrences in string</a>
  * 
  */
 public class CountCharsInString {
