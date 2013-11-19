@@ -5,6 +5,7 @@ import static org.junit.Assert.assertEquals;
 import java.util.Collections;
 import java.util.List;
 
+import org.apache.commons.collections.CollectionUtils;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -57,4 +58,13 @@ public class FrequencyOfObjectInCollection {
 		
 		assertEquals(2, numberOfOccurences);
 	}
+	
+	@Test
+	public void frequency_of_object_in_collection_apache () {
+		
+		int numberOfOccurences = CollectionUtils.cardinality("me", words);
+		
+		assertEquals(2, numberOfOccurences);
+	}
+	
 }
