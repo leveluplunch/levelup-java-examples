@@ -18,7 +18,7 @@ import com.google.common.collect.Sets;
  * the cartesian product of two sets.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/examples/create-generate-cartesian-product/'>Cartesian product</a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/cartesian-product/'>Cartesian product</a>
  */
 public class CartesianProduct {
 
