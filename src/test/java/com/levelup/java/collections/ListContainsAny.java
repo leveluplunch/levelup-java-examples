@@ -18,7 +18,7 @@ import com.google.common.collect.Lists;
  * containing any element.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/examples/where-list-contains-any-elements/'>List contains any element</a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/list-contains-any-elements/'>List contains any element</a>
  */
 public class ListContainsAny {
 
