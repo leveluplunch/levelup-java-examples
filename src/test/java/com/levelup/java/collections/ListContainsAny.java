@@ -88,14 +88,14 @@ public class ListContainsAny {
 	@Test
 	public void list_contains_any_apache_commons () {
 
-		int numberOfYukons = CollectionUtils.countMatches(vehicles, new org.apache.commons.collections.Predicate() {
+		boolean vehiclesContainYukon = CollectionUtils.exists(vehicles, new org.apache.commons.collections.Predicate() {
 			public boolean evaluate(Object object) {
 				Vehicle vehicle = (Vehicle) object;
 				return vehicle.model.contains("YUKON");
 			}
 		});
 		
-		assertTrue(numberOfYukons != 0);
+		assertTrue(vehiclesContainYukon);
 	}
 	
 }
