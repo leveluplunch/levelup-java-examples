@@ -17,16 +17,6 @@ import org.junit.Test;
  */
 public class CapitalizeWordsInSentence {
 
-	@Test
-	public void capitalize_first_letter_of_sentence () { 
-		
-		String superWhyLyrics = "who’s got the power? The power to read.";
-		String sentenceStartsWithCapital = Character
-				.toUpperCase(superWhyLyrics.charAt(0)) + superWhyLyrics.substring(1);
-		
-		assertEquals("Who’s got the power? The power to read.", sentenceStartsWithCapital);	
-	}
-
 	/**
 	 * There is gaps w/ this method such as, what if there is multiple 
 	 * spaces between each, it automatically adds a space at the end, 
