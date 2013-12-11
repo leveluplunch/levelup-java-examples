@@ -94,18 +94,18 @@ public class MapsExample {
 	 * Convert a list to a map keying off object's field
 	 */
 	@Test
-	public void maps_unique_index () {
-		
-		Map<String, State> statesKeyByCode = Maps.uniqueIndex(states, new Function <State, String> () {
-			  public String apply(State from) {
-			    return from.code;
-		}});
+	public void maps_unique_index() {
+
+		Map<String, State> statesKeyByCode = Maps.uniqueIndex(states,
+				new Function<State, String>() {
+					public String apply(State from) {
+						return from.code;
+					}
+				});
 
 		logger.info(statesKeyByCode);
-		
-		assertThat(statesKeyByCode, 
-				hasKey("WI"));
-		
+
+		assertThat(statesKeyByCode, hasKey("WI"));
 	}
 	
 	/**
