@@ -22,7 +22,7 @@ import com.google.common.collect.Maps;
  * This java example will demonstrate Google Guava's {@link MapDifference}.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/examples/google-guava-map-difference-example/'>Map Difference Example</a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/guava-map-difference-example/'>Map Difference Example</a>
  */
 public class MapDifferenceExample {
 
