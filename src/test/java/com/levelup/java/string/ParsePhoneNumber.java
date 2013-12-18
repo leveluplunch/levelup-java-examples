@@ -8,6 +8,9 @@ import org.junit.Test;
 import com.google.common.base.CharMatcher;
 import com.google.common.base.Splitter;
 import com.google.common.collect.Iterables;
+import com.google.i18n.phonenumbers.NumberParseException;
+import com.google.i18n.phonenumbers.PhoneNumberUtil;
+import com.google.i18n.phonenumbers.Phonenumber.PhoneNumber;
 
 /**
  * This java example will demonstrate splitting, parsing
@@ -67,6 +70,19 @@ public class ParsePhoneNumber {
 		assertEquals("123", areaCode);
 		assertEquals("456", prefix);
 		assertEquals("7890", lineNumber);
+	}
+	
+	@Test
+	public void parse_phone_number_google_libphonenumber () throws NumberParseException {
+		
+		String formattedPhoneNumber = "(123) 456-7890 x 1234";
+
+		PhoneNumberUtil phoneUtil = PhoneNumberUtil.getInstance();
+		PhoneNumber phonenumber = phoneUtil.parse(formattedPhoneNumber, "US");
+		
+		assertEquals(1, phonenumber.getCountryCode());
+		assertEquals("1234", phonenumber.getExtension());
+		assertEquals(1234567890, phonenumber.getNationalNumber());
 	}
 	
 }
