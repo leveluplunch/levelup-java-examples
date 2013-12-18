@@ -1,5 +1,8 @@
-levelup-java-examples
+[levelup-java-examples](http://www.leveluplunch.com/java/examples/)
 =====================
+
+[![Build Status](https://travis-ci.org/leveluplunch/levelup-java-exercises.png?branch=master)](https://travis-ci.org/leveluplunch/levelup-java-examples)
+
 
 Levelup Java examples is a series of java examples that attempt to cross cut libraries such as straight up java, [Google Guava](https://code.google.com/p/guava-libraries/), [Apache commons](http://commons.apache.org/), [Spring IO](http://spring.io/), [Joda Time](http://www.joda.org/joda-time/), [Hamcrest](https://code.google.com/p/hamcrest/), [Jackson JSON/XML processor](http://wiki.fasterxml.com/JacksonHome), [jsonpath](http://goessner.net/articles/JsonPath/), [Junit](http://junit.org/) and much more...
 
