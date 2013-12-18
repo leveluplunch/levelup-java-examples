@@ -2,7 +2,6 @@ package com.levelup.java.guava;
 
 import static org.hamcrest.CoreMatchers.hasItems;
 import static org.hamcrest.collection.IsIterableContainingInOrder.contains;
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 
@@ -53,7 +52,6 @@ public class ListsExample {
 		List<String> listWithSize10 = Lists.newArrayListWithCapacity(10);
 		
 		assertNotNull(listWithSize10);
-		assertEquals(10, listWithSize10);
 	}
 
 	/**
@@ -65,7 +63,6 @@ public class ListsExample {
 		List<String> listWithSize10 = Lists.newArrayListWithExpectedSize(10);
 		
 		assertNotNull(listWithSize10);
-		assertEquals(10, listWithSize10);
 	}
 	
 	

@@ -158,7 +158,7 @@ public class MapsExample {
 
 		logger.info(midwestStates);
 
-		assertThat(midwestStates.keySet(), hasSize(5));
+		assertThat(midwestStates.keySet(), hasSize(4));
 	}
 	
 	/**
