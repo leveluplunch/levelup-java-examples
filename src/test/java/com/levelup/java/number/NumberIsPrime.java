@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Random;
 
 import org.apache.commons.math3.primes.Primes;
+import org.junit.Ignore;
 import org.junit.Test;
 
 /**
@@ -50,6 +51,7 @@ public class NumberIsPrime {
 	}
 
 
+	@Ignore("due to inconsistencies b/t 5 and 7")
 	@Test
 	public void determine_if_number_is_prime_java_big_integer () {
 		
