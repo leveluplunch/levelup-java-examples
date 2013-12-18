@@ -1,5 +1,6 @@
 package com.levelup.java.guava;
 
+import static org.hamcrest.collection.IsIterableContainingInOrder.contains;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
@@ -10,6 +11,7 @@ import org.hamcrest.collection.IsIterableContainingInAnyOrder;
 import org.junit.Test;
 
 import com.google.common.base.CharMatcher;
+import com.google.common.base.Function;
 import com.google.common.base.Predicate;
 import com.google.common.base.Predicates;
 import com.google.common.base.Splitter;
@@ -225,6 +227,27 @@ public class IterablesExample {
 		String elementAtPos5 = Iterables.get(chars, 5);
 		
 		assertEquals("tri-tip", elementAtPos5);
+	}
+	
+	/**
+	 * Tranform elements in iterable
+	 */
+	@Test
+	public void tranform_elements_in_iterable () {
+		
+		List<String> numbersAsStrings = Lists.newArrayList(
+				"1", "2", "3");
+		
+		Iterable<Double> doubles = Iterables.transform(numbersAsStrings, new Function<String, Double>() {
+			@Override
+			public Double apply(String input) {
+				return new Double(input);
+			}
+		});
+		
+		assertThat(doubles, contains(
+				 new Double(1), new Double(2), 
+				 new Double(3)));
 	}
 	
 }
