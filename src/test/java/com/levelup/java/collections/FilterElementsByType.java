@@ -20,7 +20,7 @@ import com.google.common.collect.Maps;
  * This java example will demonstrate how to filter a collection by type.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/examples/filter-collection-by-type/'>Filter collection by type</a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/filter-collection-by-class-type/'>Filter collection by type</a>
  */
 public class FilterElementsByType {
 
