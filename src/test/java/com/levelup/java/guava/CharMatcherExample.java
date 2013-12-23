@@ -78,7 +78,7 @@ public class CharMatcherExample {
 		
 		boolean failedGrade = CharMatcher
 				.inRange('A', 'C')
-				.apply('F');
+				.matches('F');
 		
 		assertFalse(failedGrade);
 	}
