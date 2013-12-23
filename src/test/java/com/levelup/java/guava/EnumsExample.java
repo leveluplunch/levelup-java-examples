@@ -85,4 +85,30 @@ public class EnumsExample {
 						Day.WEDNESDAY));
 
 	}
+	
+	@Test
+	public void transform_string_to_enum_string_converter () {
+
+		List<String> days = Lists.newArrayList(
+				"WEDNESDAY", 
+				"SUNDAY", 
+				"MONDAY", 
+				"TUESDAY", 
+				"WEDNESDAY");
+		
+	    Function<String, Day> valueOfFunction = Enums.stringConverter(Day.class);
+
+		Iterable<Day> daysAsEnums = Iterables.transform(days, valueOfFunction);
+		
+		assertThat(daysAsEnums, IsIterableWithSize.<Day>iterableWithSize(5));
+		assertThat(daysAsEnums, IsIterableContainingInOrder.
+				<Day>contains(
+						Day.WEDNESDAY, 
+						Day.SUNDAY, 
+						Day.MONDAY, 
+						Day.TUESDAY, 
+						Day.WEDNESDAY));
+	}
+	
+	
 }
