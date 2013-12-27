@@ -24,7 +24,7 @@ import com.google.common.io.Files;
  * into a byte array with Java, Guava and Apache Commons.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/examples/file-to-byte-array/'>File to byte array</a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/convert-file-to-byte-array/'>File to byte array</a>
  * 
  */
 public class FileToByteArray {
