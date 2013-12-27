@@ -16,7 +16,7 @@ import com.google.common.collect.HashBiMap;
  * BiMap allows you have a set of entries that you can easily inverse the keys/values
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/example/guava-bimap-example/'>Guava BiMap Example</a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/guava-bimap-example/'>Guava BiMap Example</a>
  */
 public class BiMapExample {
 
