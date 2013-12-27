@@ -13,7 +13,7 @@ Levelup Java examples is a series of java examples that attempt to cross cut lib
 * [Twitter](https://twitter.com/leveluplunch)
 * [Google plus](https://plus.google.com/+Leveluplunch)
 * [Facebook](https://www.facebook.com/leveluplunch)
-
+* [Youtube channel](https://www.youtube.com/user/LevelUpLunch)
 	
 ## License
 
