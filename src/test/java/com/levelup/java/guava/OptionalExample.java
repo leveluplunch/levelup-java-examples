@@ -2,11 +2,17 @@ package com.levelup.java.guava;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
+
+import java.util.List;
 
 import org.apache.log4j.Logger;
+import org.hamcrest.collection.IsIterableWithSize;
 import org.junit.Test;
 
 import com.google.common.base.Optional;
+import com.google.common.collect.Lists;
 
 /**
  * This java example will demonstrate Google
@@ -105,4 +111,26 @@ public class OptionalExample {
 		assertEquals(second.get(), first.or(second).get());
 	}
 	
+	@Test
+	public void from_nullable() {
+
+		Optional<PullRequest> pullRequest = Optional
+				.fromNullable(new PullRequest("Jack", "summary", "comments"));
+		
+		assertTrue(pullRequest.isPresent());
+	}
+	
+	@Test
+	public void present_instances () {
+		
+		List<Optional<PullRequest>> pullRequests = Lists.newArrayList();
+		pullRequests.add(getPullRequestUsingGuavaOptional());
+		pullRequests.add(Optional.of(new PullRequest("Graham", "a->b summary",  "please merge")));
+		pullRequests.add(getPullRequestUsingGuavaOptional());
+		pullRequests.add(Optional.of(new PullRequest("Jesse", "c->d summary",  "check code")));
+		
+		Iterable<PullRequest> presentInstances = Optional.presentInstances(pullRequests);
+		
+		assertThat(presentInstances, IsIterableWithSize.<PullRequest>iterableWithSize(2));
+	}
 }
