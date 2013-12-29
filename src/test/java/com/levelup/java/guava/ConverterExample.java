@@ -39,9 +39,9 @@ public class ConverterExample {
 
 		Float val = Floats.stringConverter().convert("2.0");
 		
-		assertEquals(new Float(1), val);
+		assertEquals(new Float(2), val);
 		
-		String valAsString = Floats.stringConverter().reverse().convert(new Float(1));
+		String valAsString = Floats.stringConverter().reverse().convert(new Float(2));
 		
 		assertEquals("2.0", valAsString);
 	}
