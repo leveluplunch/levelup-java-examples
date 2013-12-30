@@ -34,7 +34,14 @@ public class GenerateRandomNumber {
 		double randomNumber = random.nextInt(10);
 		
 		assertTrue(randomNumber <=10);
+	}
+	
+	@Test
+	public void generate_single_random_number () {
 
+		int randomNumber = (int)(Math.random() * 10);
+
+		assertTrue(randomNumber < 10);
 	}
 	
 
