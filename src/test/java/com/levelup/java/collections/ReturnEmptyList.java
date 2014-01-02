@@ -13,7 +13,7 @@ import com.google.common.base.Objects;
 import com.google.common.collect.ImmutableList;
 
 /**
- * This java example will demonstrate examples on how to return an empty list.
+ * This java example will demonstrate how to return an empty list.
  * 
  * @author Justin Musgrove
  * @see <a href='http://www.leveluplunch.com/java/examples/return-empty-list-instead-of-null/'>Return empty list</a>

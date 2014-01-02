@@ -12,7 +12,7 @@ import com.google.common.base.Objects;
 import com.google.common.collect.ImmutableMap;
 
 /**
- * This java example will demonstrate examples on how to return an empty map.
+ * This java example will demonstrate how to return an empty map.
  * 
  * @author Justin Musgrove
  * @see <a href='http://www.leveluplunch.com/java/examples/return-empty-map-instead-of-null/'>Return empty map</a>

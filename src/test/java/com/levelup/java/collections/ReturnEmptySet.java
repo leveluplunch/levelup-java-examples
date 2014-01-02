@@ -13,7 +13,7 @@ import com.google.common.base.Objects;
 import com.google.common.collect.ImmutableSet;
 
 /**
- * This java example will demonstrate examples on how to return an empty set.
+ * This java example will demonstrate how to return an empty set.
  * 
  * @author Justin Musgrove
  * @see <a href='http://www.leveluplunch.com/java/examples/return-empty-set-instead-of-null/'>Return empty set</a>
