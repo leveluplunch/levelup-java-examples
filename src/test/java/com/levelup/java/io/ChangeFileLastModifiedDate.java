@@ -7,6 +7,7 @@ import java.text.SimpleDateFormat;
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
 import org.joda.time.DateTime;
+import org.junit.Before;
 import org.junit.Test;
 
 import com.google.common.io.Files;
@@ -24,6 +25,14 @@ public class ChangeFileLastModifiedDate {
 	private static final Logger logger = Logger.getLogger(ChangeFileLastModifiedDate.class);
 	
 	private static final String OUTPUT_FILE_NAME = "output/ChangeFileLastModifiedDate.txt";
+	
+	@Before
+	public void setUp () throws IOException {
+		
+		// create new empty file
+		File file = new File(OUTPUT_FILE_NAME);
+		file.createNewFile();	
+	}
 	
 	@Test
 	public void change_last_modified_date_java () {
