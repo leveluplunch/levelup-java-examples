@@ -10,7 +10,7 @@ import org.junit.Test;
  * you have long running tests.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/example/junit-limit-length-of-test/'>Limit length of test</a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/junit-limit-length-of-test/'>Limit length of test</a>
  * 
  */
 public class TimeoutParameter {

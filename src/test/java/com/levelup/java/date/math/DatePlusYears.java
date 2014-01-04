@@ -17,7 +17,7 @@ import org.junit.Test;
  * This java example will demonstrate adding years to a date
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/example/add-years-to-date/'>Add years to date</a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/add-years-to-date/'>Add years to date</a>
  * 
  */
 public class DatePlusYears {
