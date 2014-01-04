@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.TimeZone;
 
 import org.apache.commons.lang3.time.DateFormatUtils;
 import org.joda.time.DateTime;
@@ -45,6 +46,7 @@ public class FormatDate {
 		cal.set(Calendar.SECOND, 0);
 		cal.set(Calendar.MINUTE, 0);
 		cal.set(Calendar.MILLISECOND, 0);
+		cal.setTimeZone(TimeZone.getTimeZone("GMT-0600"));
 
 		String str = String.format("Current Date/Time : %tc", cal.getTime());
 		
