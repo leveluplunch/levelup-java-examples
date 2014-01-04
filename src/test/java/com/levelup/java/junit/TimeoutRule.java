@@ -12,7 +12,7 @@ import org.junit.rules.Timeout;
  * you have long running tests.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/example/junit-limit-length-of-all-tests/'>Limit length of all tests</a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/junit-limit-length-of-all-tests/'>Limit length of all tests</a>
  * 
  */
 public class TimeoutRule {
