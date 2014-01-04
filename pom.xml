@@ -194,7 +194,10 @@
 		          <includes>
 		            <include>**/*.java</include>
 		          </includes>
-		        </configuration>
+ 				  <excludes>
+		            <exclude>com/levelup/java/io/*.java</exclude>
+		          </excludes>
+        		</configuration>
 				<dependencies>
 					<dependency>
 						<groupId>org.apache.maven.surefire</groupId>
