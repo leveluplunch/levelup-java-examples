@@ -36,7 +36,10 @@ public class ByteArrayToFile {
 		
 		// create new empty file
 		File file = new File(OUTPUT_FILE_NAME);
-		file.createNewFile();	
+		
+		Files.createParentDirs(file);
+		
+		file.createNewFile();
 	}
 	
 	@Test
