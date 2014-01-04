@@ -38,8 +38,14 @@ public class CopyFile {
 	private URI sourceFileURI;
 
 	@Before
-	public void setUp() throws URISyntaxException {
+	public void setUp() throws URISyntaxException, IOException {
+		
 		sourceFileURI = this.getClass().getClassLoader().getResource(SOURCE).toURI();
+		
+		// create new empty file as 
+		// examples may or may not create the file
+		File file = new File(DEST);
+		file.createNewFile();	
 	}
 	
 	@Test

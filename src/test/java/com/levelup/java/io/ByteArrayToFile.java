@@ -8,6 +8,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 import org.apache.commons.io.FileUtils;
+import org.junit.Before;
 import org.junit.Test;
 
 import com.google.common.io.Files;
@@ -30,6 +31,13 @@ public class ByteArrayToFile {
 	
 	private static final String OUTPUT_FILE_NAME = "output/ByteArrayToFile.txt";
 
+	@Before
+	public void setUp () throws IOException {
+		
+		// create new empty file
+		File file = new File(OUTPUT_FILE_NAME);
+		file.createNewFile();	
+	}
 	
 	@Test
 	public void convert_byte_array_to_file_java () throws IOException {
