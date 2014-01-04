@@ -13,7 +13,7 @@ import org.junit.Test;
  * that {@link StringBuffer} is synchronized. 
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/'></a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/concatenate-strings-java/'>Concatenate strings</a>
  * 
  */
 public class ConcatenateStrings {
