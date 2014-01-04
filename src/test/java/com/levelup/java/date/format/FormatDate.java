@@ -38,7 +38,7 @@ public class FormatDate {
 	@Test
 	public void format_date_in_java_using_string_format() {
 
-		Calendar cal = Calendar.getInstance();
+		Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("GMT-0600"));
 		cal.set(Calendar.MONTH, Calendar.JANUARY);
 		cal.set(Calendar.DAY_OF_MONTH, 15);
 		cal.set(Calendar.YEAR, 1967);
@@ -46,13 +46,11 @@ public class FormatDate {
 		cal.set(Calendar.SECOND, 0);
 		cal.set(Calendar.MINUTE, 0);
 		cal.set(Calendar.MILLISECOND, 0);
-		cal.setTimeZone(TimeZone.getTimeZone("GMT-0600"));
 
 		String str = String.format("Current Date/Time : %tc", cal.getTime());
 		
 		assertEquals("Current Date/Time : Sun Jan 15 12:00:00 CST 1967", str);
 	}
-	
 	
 	@Test
 	public void format_date_in_java_with_joda () {
@@ -74,7 +72,5 @@ public class FormatDate {
 		String dateFirstSuperBowlWasPlayed = DateFormatUtils.format(cal, "MM/dd/yyyy");
 		assertEquals("01/15/1967", dateFirstSuperBowlWasPlayed);
 	}
-	
-	
 
 }
