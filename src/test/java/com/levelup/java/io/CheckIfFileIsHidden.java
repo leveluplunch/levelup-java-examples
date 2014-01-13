@@ -1,8 +1,16 @@
 package com.levelup.java.io;
 
+import static org.junit.Assert.assertFalse;
+
 import java.io.File;
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 import org.apache.log4j.Logger;
+import org.junit.Before;
 import org.junit.Test;
 
 /**
@@ -15,9 +23,19 @@ import org.junit.Test;
  */
 public class CheckIfFileIsHidden {
 
-	
 	private static final Logger logger = Logger.getLogger(CheckIfFileIsHidden.class);
 
+	private static final String SOURCE = "com/levelup/java/io/file-is-hidden.txt";
+	
+	Path source;
+	
+	@Before
+	public void setUp () throws IOException, URISyntaxException {
+	
+		source = Paths.get(this.getClass().getClassLoader().getResource(SOURCE).toURI());	
+	}
+
+	
 	/**
 	 * Tests whether the file named by this abstract pathname 
 	 * is a hidden file. The exact definition of hidden 
@@ -28,14 +46,22 @@ public class CheckIfFileIsHidden {
 	 * hidden if it has been marked as such in the filesystem.
 	 */
 	@Test
-	public void check_if_file_exists_java () {
+	public void check_if_file_is_hidden_java () {
 		
-		File file = new File("/readme.md");
+		File file = source.toFile();
 
 		if (file.isHidden()) {
-			logger.info("File existed");
+			logger.info("File is hidden");
 		} else {
-			logger.info("File not found");
+			logger.info("File not hidden");
 		}
+	}
+	
+	@Test
+	public void check_if_file_is_hidden_nio () throws IOException {
+		
+		boolean isHidden = Files.isHidden(source);
+		
+		assertFalse(isHidden);
 	}
 }
