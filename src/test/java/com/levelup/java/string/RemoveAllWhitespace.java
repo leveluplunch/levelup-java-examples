@@ -12,7 +12,7 @@ import com.google.common.base.CharMatcher;
  * remove all whitespace from a string
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/examples/remove-all-whitespace-from-string/'>Remove all whitespace from string</a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/remove-whitespace-from-string/'>Remove all whitespace from string</a>
  * 
  */
 public class RemoveAllWhitespace {
