@@ -1,0 +1,1 @@
+Tells whether the file is something other than a regular file, directory, or symbolic link.
