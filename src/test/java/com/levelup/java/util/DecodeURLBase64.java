@@ -14,7 +14,7 @@ import com.google.common.io.BaseEncoding;
  * This java example will demonstrate decoding a base64 url.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/examples/decode-url-to-base64/'>Decode URL Base64</a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/decode-base64-url/'>Decode URL Base64</a>
  */
 public class DecodeURLBase64 {
 
