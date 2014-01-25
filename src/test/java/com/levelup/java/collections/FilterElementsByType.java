@@ -6,6 +6,7 @@ import static org.junit.Assert.assertThat;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.apache.commons.collections.CollectionUtils;
 import org.junit.Before;
@@ -51,6 +52,20 @@ public class FilterElementsByType {
 				strings.add((String) obj); 
 			}
 		}
+		
+		assertThat(strings, contains(
+	    		"hello", "world"));
+	}
+	
+	@Test
+	public void filter_elements_by_type_java8_lambda () {
+		
+		List<String> strings = objects
+				.stream()
+				.filter(p -> p.getClass() == String.class)
+				.collect(Collectors.toList());
+
+		System.out.println(strings);
 		
 		assertThat(strings, contains(
 	    		"hello", "world"));
