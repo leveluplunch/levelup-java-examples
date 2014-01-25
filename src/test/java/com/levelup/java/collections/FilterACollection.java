@@ -82,7 +82,7 @@ public class FilterACollection {
 	}
 	
 	@Test
-	public void filter_items_in_list_with_lambda () {
+	public void filter_items_in_list_with_java8_lambda () {
 		
 		List<NFLTeam> nflTeams = Lists.newArrayList();
 		nflTeams.add(new NFLTeam("Green Bay Packers", true));

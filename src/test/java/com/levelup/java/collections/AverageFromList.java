@@ -53,7 +53,7 @@ public class AverageFromList {
 	}
 	
 	@Test
-	public void calculate_average_from_list_with_lambda () {
+	public void calculate_average_from_list_with_java8_lambda () {
 		
 	    OptionalDouble average = NUMBERS_FOR_AVERAGE
 	    		.stream()

@@ -36,7 +36,7 @@ public class CountBooleansInList {
 	}
 	
 	@Test
-	public void count_booleans_arraylist_lambda () {
+	public void count_booleans_arraylist_java8_lambda () {
 
 		List<Boolean> values = Lists.newArrayList(true, true, false, true, false);
 		
