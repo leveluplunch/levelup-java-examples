@@ -6,6 +6,7 @@ import static org.junit.Assert.assertThat;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.stream.Collectors;
 
 import org.apache.log4j.Logger;
 import org.junit.Before;
@@ -60,6 +61,19 @@ public class FilterMapByEntries {
 		
 		assertThat(monthsWithLengthFour.values(), contains("June", "July"));
 	}
+
+	@Test
+	public void filter_map_by_entries_java8_lambda () {
+		
+		Map<Integer, String> monthsWithLengthFour = 
+				MONTHS.entrySet()
+				.stream()
+				.filter(p -> p.getValue().length() == 4)
+				.collect(Collectors.toMap(p -> p.getKey(), p -> p.getValue()));
+		
+		assertThat(monthsWithLengthFour.values(), contains("June", "July"));
+	}
+
 	
 	
 	@Test
