@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.OptionalDouble;
 
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.math3.stat.descriptive.moment.Mean;
@@ -50,6 +51,18 @@ public class AverageFromList {
 		
 		assertEquals(new Double(10), sum);
 	}
+	
+	@Test
+	public void calculate_average_from_list_with_lambda () {
+		
+	    OptionalDouble average = NUMBERS_FOR_AVERAGE
+	    		.stream()
+	    		.mapToDouble(a -> a)
+                .average();
+
+		assertEquals(10, average.getAsDouble(), 0);
+	}
+	
 	
 	@Test
 	public void average_from_list_of_numbers_with_google_guava () {
