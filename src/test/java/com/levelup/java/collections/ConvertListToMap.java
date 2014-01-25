@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import org.apache.log4j.Logger;
 import org.junit.Test;
@@ -18,7 +19,7 @@ import com.google.common.collect.Maps;
 
 /**
  * This java example will demonstrate converting a list to map with 
- * straight up java and google guava.
+ * straight up java, lambda and google guava.
  * 
  * @author Justin Musgrove
  * @see <a href="http://www.leveluplunch.com/java/examples/convert-list-to-map/">Convert List To Map</a>
@@ -73,6 +74,21 @@ public class ConvertListToMap {
 		assertEquals("The Shawshank Redemption", mappedMovies.get(1).getDescription());
 	}
 	
+	@Test
+	public void convert_list_to_map_with_lambda () {
+		
+		List<Movie> movies = new ArrayList<Movie>();
+		movies.add(new Movie(1, "The Shawshank Redemption"));
+		movies.add(new Movie(2, "The Godfather"));
+
+		Map<Integer, Movie> mappedMovies = movies.stream().collect(
+				Collectors.toMap(Movie::getRank, (p) -> p));
+
+		logger.info(mappedMovies);
+
+		assertTrue(mappedMovies.size() == 2);
+		assertEquals("The Shawshank Redemption", mappedMovies.get(1).getDescription());
+	}
 	
 	@Test
 	public void convert_list_to_map_with_guava () {
