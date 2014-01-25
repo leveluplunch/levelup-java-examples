@@ -60,6 +60,24 @@ public class CountElementsInList {
 	}
 	
 	@Test
+	public void number_of_occurences_in_list_java8_lambda () {
+
+		List<String> seussCountActivities = Lists.newArrayList(
+				"findow", "Balloons", "Elephants", "Boom Bands", 
+				"findow", "Hakken-Kraks", "Hakken-Kraks", 
+				"Hakken-Kraks", "Elephants");
+
+		long numberOfElephants = seussCountActivities
+				.stream()
+				.filter(p -> p.equals("Elephants"))
+				.count();
+		
+		logger.info(numberOfElephants);
+
+		assertEquals(2, numberOfElephants);
+	}
+	
+	@Test
 	public void number_of_occurences_in_list_guava () {
 		
 		List<String> seussCountActivities = Lists.newArrayList(
