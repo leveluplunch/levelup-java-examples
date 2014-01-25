@@ -5,6 +5,7 @@ import static org.junit.Assert.assertTrue;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.log4j.Logger;
@@ -77,6 +78,23 @@ public class FilterACollection {
 
 		logger.info(superBowlWinners);
 
+		assertTrue(superBowlWinners.size() == 2);
+	}
+	
+	@Test
+	public void filter_items_in_list_with_lambda () {
+		
+		List<NFLTeam> nflTeams = Lists.newArrayList();
+		nflTeams.add(new NFLTeam("Green Bay Packers", true));
+		nflTeams.add(new NFLTeam("Chicago Bears", true));
+		nflTeams.add(new NFLTeam("Detroit Lions", false));
+
+	
+		List<NFLTeam> superBowlWinners = nflTeams
+				.stream()
+				.filter(p -> p.hasWonSuperBowl)
+				.collect(Collectors.toList());
+		
 		assertTrue(superBowlWinners.size() == 2);
 	}
 	
