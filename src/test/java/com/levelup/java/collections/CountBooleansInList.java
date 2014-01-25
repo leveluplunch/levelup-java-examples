@@ -36,6 +36,16 @@ public class CountBooleansInList {
 	}
 	
 	@Test
+	public void count_booleans_arraylist_lambda () {
+
+		List<Boolean> values = Lists.newArrayList(true, true, false, true, false);
+		
+		long count = values.stream().filter(p -> p == true).count();
+
+		assertEquals(3, count);
+	}
+	
+	@Test
 	public void count_booleans_arraylist_guava () {
 		
 		List<Boolean> values = Lists.newArrayList(true, true, false, true, false);
