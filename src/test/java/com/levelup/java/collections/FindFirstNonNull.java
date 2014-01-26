@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.apache.commons.lang3.ObjectUtils;
 import org.junit.Test;
@@ -42,6 +43,24 @@ public class FindFirstNonNull {
 		assertEquals("Hello", firstNonNull);
 	}
 
+	@Test
+	public void find_first_non_null_list_java8_lambda () {
+
+		List<String> strings = Lists.newArrayList(
+				null, 
+				"Hello",
+				null,
+				"World");
+
+		Optional<String> firstNonNull = strings
+				.stream()
+				.filter(p -> p != null)
+				.findFirst();
+		
+		assertEquals("Hello", firstNonNull.get());
+	}
+
+	
 	@Test
 	public void find_first_non_null_list_guava () {
 
