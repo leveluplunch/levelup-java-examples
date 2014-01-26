@@ -3,6 +3,7 @@ package com.levelup.java.collections;
 import static org.junit.Assert.assertEquals;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.apache.commons.collections.CollectionUtils;
 import org.junit.Test;
@@ -14,7 +15,7 @@ import com.google.common.collect.Lists;
 
 /**
  * This java example will demonstrate finding an element in lists 
- * with straight up java and google Guava.
+ * with straight up java, java 8 lambda expression and google Guava.
  * 
  * @author Justin Musgrove
  * @see <a href='http://www.leveluplunch.com/java/examples/find-element-in-list/'>Find elements in List</a>
@@ -39,6 +40,23 @@ public class FindElementsInList {
 		}
 		assertEquals(new Integer(3), value);
 	}
+	
+	@Test
+	public void find_elements_in_list_with_java8_lambda () {
+
+		List <Integer> numbers = Lists.newArrayList(
+				new Integer(1), 
+				new Integer(2), 
+				new Integer(3));
+
+		Optional<Integer> value = numbers
+				.stream()
+				.filter(a -> a == 3)
+				.findFirst();
+				
+		assertEquals(new Integer(3), value.get());
+	}
+	
 	
 	@Test
 	public void find_elements_in_lists_with_guava () {
