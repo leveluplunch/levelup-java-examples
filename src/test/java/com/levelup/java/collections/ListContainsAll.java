@@ -71,6 +71,15 @@ public class ListContainsAll {
 		
 		assertTrue(allCamerasOfMediumTelephoto);
 	}
+
+	@Test
+	public void list_contains_all_java8_lambda () {
+		
+		boolean allCamerasOfMediumTelephoto = 
+				cameras.stream().allMatch(p -> p.focalLength >= 80);
+		
+		assertTrue(allCamerasOfMediumTelephoto);
+	}
 	
 	@Test
 	public void list_contains_all_guava () {
