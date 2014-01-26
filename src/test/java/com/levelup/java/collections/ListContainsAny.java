@@ -74,6 +74,16 @@ public class ListContainsAny {
 	}
 	
 	@Test
+	public void list_contains_any_java8_lambda () {
+		
+		boolean vehiclesContainDodge = vehicles
+				.stream()
+				.anyMatch(p -> p.manufacturer.equals("Dodge"));
+		
+		assertTrue(vehiclesContainDodge);
+	}
+	
+	@Test
 	public void list_contains_any_guava () {
 
 		boolean vehiclesContainDodge = Iterables.any(vehicles, new Predicate<Vehicle>() {
