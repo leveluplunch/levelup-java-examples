@@ -50,6 +50,17 @@ public class FrequencyOfObjectInCollection {
 		
 		assertEquals(2, numberOfOccurences);
 	}
+
+	@Test
+	public void frequency_of_object_in_collection_java8_lambda () {
+	
+		long numberOfOccurences = words
+				.stream()
+				.filter(p -> p.equalsIgnoreCase("me"))
+				.count();
+
+		assertEquals(2, numberOfOccurences);
+	}
 	
 	@Test
 	public void frequency_of_object_in_collection_guava () {
