@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.apache.commons.collections.CollectionUtils;
 import org.hamcrest.collection.IsIterableWithSize;
@@ -42,6 +43,21 @@ public class FilterNullFromCollection {
 		strings.removeAll(Collections.singleton(null));
 		
 		assertEquals(3, strings.size());
+	}
+	
+	@Test
+	public void remove_null_from_list_java8_lambda () {
+		
+		List<String> strings = Lists.newArrayList(
+				null, "www", null, 
+				"leveluplunch", "com", null);
+
+		List<String> filterStrings = strings
+				.stream()
+				.filter(p -> p != null)
+				.collect(Collectors.toList());
+		
+		assertEquals(3, filterStrings.size());
 	}
 
 	
