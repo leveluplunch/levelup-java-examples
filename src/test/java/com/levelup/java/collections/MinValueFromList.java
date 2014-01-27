@@ -1,9 +1,12 @@
 package com.levelup.java.collections;
 
+import static java.lang.Integer.min;
 import static org.junit.Assert.assertEquals;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
+import java.util.OptionalInt;
 
 import org.apache.commons.lang3.ObjectUtils;
 import org.junit.Test;
@@ -35,6 +38,20 @@ public class MinValueFromList {
 		assertEquals(new Integer (1920), minElement);
 	}
 
+	@Test
+	public void find_max_value_from_list_of_integers_java8 () {
+	
+		OptionalInt maxElement = CENTERS_ROOKIE_YEAR.stream().mapToInt(p -> p).min();
+		
+		assertEquals(1920, maxElement.getAsInt());
+		
+		// or 
+
+		Optional<Integer> maxElement2 = CENTERS_ROOKIE_YEAR.stream().reduce(Integer::min);
+
+		assertEquals(new Integer (1920), maxElement2.get());
+	
+	}
 	
 	@Test
 	public void find_min_value_from_list_of_integers_guava_ordering() {
