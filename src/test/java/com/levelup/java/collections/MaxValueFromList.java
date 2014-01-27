@@ -4,6 +4,8 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
+import java.util.OptionalInt;
 
 import org.apache.commons.lang3.ObjectUtils;
 import org.junit.Test;
@@ -34,6 +36,19 @@ public class MaxValueFromList {
 		assertEquals(new Integer (1988), maxElement);
 	}
 
+	@Test
+	public void find_max_value_from_list_of_integers_java8 () {
+		
+		OptionalInt maxElement = CENTERS_ROOKIE_YEAR.stream().mapToInt(p -> p).max();
+		
+		assertEquals(1988, maxElement.getAsInt());
+		
+		// or 
+
+		Optional<Integer> maxElement2 = CENTERS_ROOKIE_YEAR.stream().reduce(Integer::max);
+
+		assertEquals(new Integer (1988), maxElement2.get());
+	}
 	
 	@Test
 	public void find_max_value_from_list_of_integers_guava_ordering() {
