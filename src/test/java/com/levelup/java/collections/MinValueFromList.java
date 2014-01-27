@@ -1,6 +1,5 @@
 package com.levelup.java.collections;
 
-import static java.lang.Integer.min;
 import static org.junit.Assert.assertEquals;
 
 import java.util.Collections;
