@@ -60,7 +60,7 @@ public class CountElementsInList {
 	}
 	
 	@Test
-	public void number_of_occurences_in_list_java8_lambda () {
+	public void number_of_occurences_in_list_java8 () {
 
 		List<String> seussCountActivities = Lists.newArrayList(
 				"findow", "Balloons", "Elephants", "Boom Bands", 
