@@ -34,4 +34,21 @@ public class RemoveElementFromList {
 		assertTrue(daysOfWeekAsList.size() == 6);
 	}
 	
+	@Test
+	public void remove_element_from_array_to_arraylist_java8 () {
+		
+		String[] daysOfWeek = {"Sunday", "Monday", "Tuesday", "Wednesday", 
+				"Thursday", "Friday", "Saturday"};
+	
+		
+		List<String> daysOfWeekAsList = Lists.newArrayList(daysOfWeek);
+
+		boolean removed = daysOfWeekAsList.removeIf(p -> p.equalsIgnoreCase("Monday"));
+		
+		logger.info(daysOfWeekAsList);
+
+		assertTrue(removed);
+		assertTrue(daysOfWeekAsList.size() == 6);
+	}	
+	
 }
