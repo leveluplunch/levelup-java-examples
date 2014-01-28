@@ -3,6 +3,7 @@ package com.levelup.java.collections;
 import static org.junit.Assert.assertEquals;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
@@ -55,6 +56,16 @@ public class PrintList {
 		assertEquals(languagesSeperatedByComma, elementsJoined);
 	}
 
+	@Test
+	public void join_elements_in_list_java8 () {
+		
+		String elementsJoined = programmingLanguages
+				.stream()
+				.collect(Collectors.joining(","));
+		
+		assertEquals(languagesSeperatedByComma, elementsJoined);
+	}
+	
 	@Test
 	public void join_elements_in_list_guava () {
 		
