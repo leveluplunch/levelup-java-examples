@@ -2,6 +2,9 @@ package com.levelup.java.array;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.Arrays;
+import java.util.stream.DoubleStream;
+
 import org.apache.commons.math3.stat.StatUtils;
 import org.junit.Test;
 
@@ -26,13 +29,19 @@ public class SumValuesInArray {
 		assertEquals(389, total, 0);
 	}
 
-	//TODO
-//	@Test
-//	@Ignore
-//	public void sum_values_in_array_with_java_8 () {
-//		int total = IntStream.of(numbers).sum();
-//		assertEquals(389, total);
-//	}
+	@Test
+	public void sum_values_in_array_with_java_8 () {
+		
+		double total = DoubleStream.of(numbers).sum();
+		
+		assertEquals(389, total, 0);
+	
+		// or
+		
+		double total2 = Arrays.stream(numbers).sum();
+		
+		assertEquals(389, total2, 0);
+	}
 
 	@Test
 	public void sum_values_in_array_with_apache_commons () {
