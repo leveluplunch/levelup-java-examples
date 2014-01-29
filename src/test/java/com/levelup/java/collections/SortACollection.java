@@ -6,6 +6,8 @@ import static org.junit.Assert.assertNotNull;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.apache.log4j.Logger;
 import org.junit.Before;
@@ -101,6 +103,64 @@ public class SortACollection {
 		Wrestler wrestler = wrestlers.get(0);
 		assertEquals(119, wrestler.weightClass,0);
 	}
+	
+	@Test
+	public void sort_collection_with_java8_byweight () {
+	
+		wrestlers.sort((w1, w2) -> Double.compare(w1.getWeightClass(), w2.getWeightClass()));
+		
+		logger.info(wrestlers);
+
+		Optional<Wrestler> wrestler = wrestlers.stream().findFirst();
+		
+		assertEquals(119, wrestler.get().getWeightClass(), 0);
+	}
+
+	@Test
+	public void sort_collection_with_java8_byweight_reverse() {
+
+		Comparator<Wrestler> normal = ((w1, w2) -> Double.compare(
+				w1.getWeightClass(), w2.getWeightClass()));
+		
+		Comparator<Wrestler> reversed = normal.reversed();
+
+		wrestlers.sort(reversed);
+
+		logger.info(wrestlers);
+
+		Optional<Wrestler> wrestler = wrestlers.stream().findFirst();
+
+		assertEquals(215, wrestler.get().getWeightClass(), 0);
+	}
+	
+	@Test
+	public void sort_collection_with_java8_byname () {
+		
+		wrestlers.sort((w1, w2) -> w1.getName().compareTo(w2.getName()));
+
+		logger.info(wrestlers);
+
+		Optional<Wrestler> wrestler = wrestlers.stream().findFirst();
+		
+		assertEquals("Abe", wrestler.get().getName());
+	}
+
+	@Test
+	public void sort_collection_with_java8_byweight_wins () {
+		
+		List<Wrestler> sorted = wrestlers.stream()
+			.sorted((w1, w2) -> Double.compare(w1.getWeightClass(), w2.getWeightClass()))
+			.sorted((w1, w2) -> Integer.compare(w1.getWins(), w2.getWins()))
+			.collect(Collectors.toList());
+		
+		logger.info(sorted);
+
+		Optional<Wrestler> wrestler = sorted.stream().findFirst();
+		
+		assertEquals(151, wrestler.get().getWeightClass(), 0);
+	}
+
+	
 	
 	static final Ordering<Wrestler> byWeightClass = new Ordering<Wrestler>() {
 		public int compare(Wrestler left, Wrestler right) {
