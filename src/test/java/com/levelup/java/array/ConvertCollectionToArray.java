@@ -57,6 +57,27 @@ public class ConvertCollectionToArray {
 	}
 
 	@Test
+	public void convert_collection_of_primitives_to_array_with_java8 () {
+		
+		List<Double> searchEngineMarketShare = Lists.newArrayList();
+		searchEngineMarketShare.add(67.1);
+		searchEngineMarketShare.add(16.9);
+		searchEngineMarketShare.add(11.8);
+		searchEngineMarketShare.add(2.7);
+		searchEngineMarketShare.add(1.6);
+
+		double [] searchEngineMarketShareArray = searchEngineMarketShare
+				.stream()
+				.mapToDouble(Double::doubleValue)
+				.toArray();
+		
+		logger.info(Arrays.toString(searchEngineMarketShareArray));
+
+		assertEquals(5, searchEngineMarketShareArray.length);
+	}
+
+	
+	@Test
 	public void convert_collection_of_objects_to_primitive_array_with_guava () {
 		
 		List<Double> searchEngineMarketShare = Lists.newArrayList();
