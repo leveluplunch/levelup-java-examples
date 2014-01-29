@@ -10,12 +10,21 @@ import org.junit.Test;
  * a for loop.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com//'></a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/iterate-looping-for-each-statement/'>Iterate using for Loop</a>
  */
 public class IterateForLoop {
 
 	double[] numbers = {55, 29, 68, 21, 48, 36,	92,	56,	88,	96};
 	
+	@Ignore
+	@Test
+	public void loop_for_infinite () {
+		
+		for ( ; ; ) {
+			System.out.println("don't run this code");
+		}
+	}
+
 	@Test
 	public void loop_for_java_1_4 () {
 		
@@ -23,7 +32,8 @@ public class IterateForLoop {
 			System.out.println(numbers[x]);
 		}
 	}
-
+	
+	
 	@Test
 	public void loop_for_java_1_5 () {
 		
@@ -39,14 +49,7 @@ public class IterateForLoop {
 		
 	}
 	
-	@Ignore
-	@Test
-	public void loop_for_infinite () {
-		
-		for ( ; ; ) {
-			System.out.println("don't run this code");
-		}
-	}
+	
 	
 
 	
