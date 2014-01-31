@@ -3,6 +3,7 @@ package com.levelup.java;
 import static org.junit.Assert.assertTrue;
 
 import java.security.SecureRandom;
+import java.util.OptionalInt;
 import java.util.Random;
 
 import org.junit.Test;
@@ -15,8 +16,6 @@ import org.junit.Test;
  * 
  */
 public class GenerateRandomNumber {
-	
-//	Describe the differenc between securrandom and random
 	
 	@Test
 	public void generate_random_number_with_java () {
@@ -42,6 +41,16 @@ public class GenerateRandomNumber {
 		int randomNumber = (int)(Math.random() * 10);
 
 		assertTrue(randomNumber < 10);
+	}
+	
+	@Test
+	public void generate_random_number_java8 () {
+
+		Random random = new Random(10);
+
+		OptionalInt randomNumber = random.ints(0, 10).findFirst();
+		
+		assertTrue(randomNumber.getAsInt() < 10);
 	}
 	
 
