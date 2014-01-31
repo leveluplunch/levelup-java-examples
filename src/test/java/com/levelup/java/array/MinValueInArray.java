@@ -2,6 +2,10 @@ package com.levelup.java.array;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.Arrays;
+import java.util.OptionalInt;
+import java.util.stream.IntStream;
+
 import org.apache.commons.lang3.math.NumberUtils;
 import org.junit.Test;
 
@@ -30,6 +34,21 @@ public class MinValueInArray {
 		assertEquals(1, lowest);
 	}
 
+	@Test
+	public void find_min_value_in_numeric_array_with_java8 () {
+		
+		OptionalInt lowest = Arrays.stream(numbers).min();
+		
+		assertEquals(1, lowest.getAsInt());
+		
+		// or 
+
+		OptionalInt lowest2 = IntStream.of(numbers).min();
+		
+		assertEquals(1, lowest2.getAsInt());
+	}
+
+	
 	@Test
 	public void find_min_value_in_numeric_array_with_guava () {
 		int lowest = Ints.min(numbers);
