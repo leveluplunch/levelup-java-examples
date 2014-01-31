@@ -4,6 +4,8 @@ import static org.junit.Assert.assertArrayEquals;
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
+import java.util.stream.IntStream;
 
 import org.apache.log4j.Logger;
 import org.junit.Test;
@@ -88,7 +90,76 @@ public class SortArray {
 				wiStateParks);
 	
 	}
+	
+	
+	@Test
+	public void sort_numeric_array_in_java8 () {
+		
+		int[] uwConferenceTitles = {
+				1896, 2011, 1901, 1912, 1952, 
+				1959, 1962, 1999, 1897, 1906, 
+				1993, 1998,  2010,  2012};
 
+		
+		int[] sortedTitles = IntStream.of(uwConferenceTitles).sorted().toArray();
+		
+		logger.info(Arrays.toString(uwConferenceTitles));
+		
+		assertArrayEquals(new int[] {
+				1896, 1897, 1901, 1906, 1912, 
+				1952, 1959, 1962, 1993, 1998, 
+				1999, 2010, 2011, 2012}, 
+				sortedTitles);
+	}
+
+	@Test
+	public void sort_numeric_array_decending_in_java8 () {
+		
+		Integer[] uwConferenceTitles = {
+				1896, 2011, 1901, 1912, 1952, 
+				1959, 1962, 1999, 1897, 1906, 
+				1993, 1998,  2010,  2012};
+
+		Comparator<Integer> normal = Integer::compare;
+		Comparator<Integer> reversed = normal.reversed(); 
+		
+		Arrays.sort(uwConferenceTitles, reversed);
+
+		assertArrayEquals(new Integer[] {
+				2012, 2011, 2010, 1999, 1998, 
+				1993, 1962, 1959, 1952, 1912, 
+				1906, 1901, 1897, 1896}, 
+				uwConferenceTitles);
+	}
+	
+	@Test
+	public void sort_string_array_in_java8 () {
+
+		String[] wiStateParks = {
+				"Mill Bluff State Park",
+				"Amnicon Falls State Park",
+				"Wyalusing State Park",
+				"Big Foot Beach State Park",
+				"Willow River State Park",
+				"Roche-A-Cri State Park"
+			};
+		
+		Object[] sorted = Arrays.stream(wiStateParks).sorted().toArray();
+		
+		logger.info(Arrays.toString(sorted));
+		
+		assertArrayEquals(new String[] {
+				"Amnicon Falls State Park",
+				"Big Foot Beach State Park",
+				"Mill Bluff State Park",
+				"Roche-A-Cri State Park",
+				"Willow River State Park",
+				"Wyalusing State Park"}, 
+				sorted);
+	
+	}
+	
+	
 	@Test
 	public void sort_numeric_array_decending_in_java_with_guava () {
 		
