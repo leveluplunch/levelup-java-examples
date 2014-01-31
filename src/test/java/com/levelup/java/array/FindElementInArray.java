@@ -77,6 +77,24 @@ public class FindElementInArray {
 	}
 	
 	@Test
+	public void array_contains_element_java8 () {
+
+		Integer[] vikQueensLosingSeasons = {
+				1962, 1967, 1984, 2011, 1966,
+				1963, 1982, 2001, 1990, 2002,
+				2006, 2010, 1965, 1972, 1979,
+				1981, 1985};
+
+		java.util.Optional<Integer> yearExists = 
+				Arrays.stream(vikQueensLosingSeasons)
+				.filter(p -> p == 1972)
+				.findAny();
+		
+		assertTrue(yearExists.isPresent());
+	}
+	
+	
+	@Test
 	public void array_contains_element_java_with_guava () {
 
 		int[] vikQueensLosingSeasons = {
