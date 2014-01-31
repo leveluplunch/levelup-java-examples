@@ -2,6 +2,10 @@ package com.levelup.java.array;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.Arrays;
+import java.util.OptionalInt;
+import java.util.stream.IntStream;
+
 import org.apache.commons.lang3.math.NumberUtils;
 import org.junit.Test;
 
@@ -28,6 +32,20 @@ public class MaxValueInArray {
 			}
 		}
 		assertEquals(91, highest);
+	}
+	
+	@Test
+	public void find_max_value_in_numeric_array_with_java8 () {
+
+		OptionalInt highest = Arrays.stream(numbers).max();
+		
+		assertEquals(91, highest.getAsInt());
+		
+		// or 
+		
+		OptionalInt highest2 = IntStream.of(numbers).max();
+		
+		assertEquals(91, highest2.getAsInt());
 	}
 
 	@Test
