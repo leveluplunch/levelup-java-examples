@@ -2,6 +2,8 @@ package com.levelup.java.date;
 
 import static org.junit.Assert.assertFalse;
 
+import java.time.LocalDate;
+import java.time.Year;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
@@ -32,7 +34,21 @@ public class CalculateLeapYear {
 		GregorianCalendar cal = new GregorianCalendar();  
 		assertFalse(cal.isLeapYear(2007));
 	}
+	
+	@Test
+	public void calculate_leap_year_in_java_with_java8_date_time () {
+	
+		boolean validLeapYear = Year.of(2007).isLeap();
+		
+		assertFalse(validLeapYear);
 
+		// or 
+		
+		boolean isLeapYear = LocalDate.ofYearDay(2007, 1).isLeapYear();
+
+		assertFalse(isLeapYear);
+	}
+	
 	@Test
 	public void calculate_leap_year_in_java_with_joda () {
 		
