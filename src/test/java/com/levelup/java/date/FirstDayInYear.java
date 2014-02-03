@@ -2,6 +2,10 @@ package com.levelup.java.date;
 
 import static org.junit.Assert.assertEquals;
 
+import java.time.LocalDate;
+import java.time.Month;
+import java.time.temporal.TemporalAdjusters;
+
 import org.apache.log4j.Logger;
 import org.joda.time.DateTime;
 import org.junit.Test;
@@ -18,7 +22,17 @@ public class FirstDayInYear {
 	private static final Logger logger = Logger.getLogger(GenerateRandomDate.class);
 	
 	@Test
-	public void first_day_in_year_current_year () {
+	public void first_day_in_year_current_year_java8 () {
+		
+		LocalDate date = LocalDate.of(2014, Month.FEBRUARY, 01);
+
+		LocalDate firstDayOfYear = date.with(TemporalAdjusters.firstDayOfYear());
+		
+		assertEquals(1, firstDayOfYear.getDayOfMonth());
+	}
+	
+	@Test
+	public void first_day_in_year_current_year_joda () {
 		
 		DateTime dateTime = new DateTime(2012, 1, 1, 0, 0, 0, 0);
 
@@ -33,9 +47,8 @@ public class FirstDayInYear {
 		assertEquals(2, firstDayOfTheFirstWeek.getDayOfMonth());
 	}
 
-	
 	@Test
-	public void first_day_in_year_prior_year () {
+	public void first_day_in_year_prior_year_joda () {
 		
 		DateTime dateTime = new DateTime(2013, 1, 1, 0, 0, 0, 0);
 
