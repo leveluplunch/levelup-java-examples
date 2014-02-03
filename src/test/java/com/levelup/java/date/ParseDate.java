@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.TimeZone;
 
@@ -35,6 +36,20 @@ public class ParseDate {
 
         assertEquals(-62013600000l, superBowlIIAsDate.getTime());
 	}
+	
+	@Test
+	public void parse_date_string_in_java8 () {
+		
+		java.time.format.DateTimeFormatter formatter =
+                java.time.format.DateTimeFormatter.ofPattern("MMMM dd, yyyy");
+		
+		String superBowlIIAsString = "January 14, 1968";
+
+		LocalDate superBowlIIAsDate = LocalDate.parse(superBowlIIAsString, formatter);
+		
+        assertEquals(1968, superBowlIIAsDate.getYear());
+	}
+	
 
 	@Test
 	public void parse_date_string_in_java_with_joda () {
