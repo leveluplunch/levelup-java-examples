@@ -2,6 +2,8 @@ package com.levelup.java.date;
 
 import static org.junit.Assert.assertTrue;
 
+import java.time.LocalDate;
+import java.time.Month;
 import java.util.Calendar;
 
 import org.apache.commons.lang3.time.DateUtils;
@@ -30,6 +32,16 @@ public class CompareTwoDates {
 		
 		assertTrue(today.after(sinceGraduation));
 	}
+	
+	@Test
+	public void compare_two_dates_java8 () {
+		
+		LocalDate sinceGraduation = LocalDate.of(1984, Month.JUNE, 4);
+		LocalDate today = LocalDate.now();
+
+		assertTrue(today.isAfter(sinceGraduation));
+	}
+	
 	
 	@Test
 	public void compare_two_dates_with_joda () {
