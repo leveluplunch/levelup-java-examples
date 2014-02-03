@@ -1,6 +1,14 @@
 package com.levelup.java.date;
 
 import static org.junit.Assert.assertTrue;
+import static org.mockito.Matchers.anyInt;
+import static org.mockito.Matchers.anyLong;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.Month;
+import java.time.Period;
+import java.time.temporal.ChronoUnit;
 
 import org.apache.log4j.Logger;
 import org.joda.time.DateTime;
@@ -25,7 +33,108 @@ public class CalculateDateTimeDifference {
 	
 	@Test
 	public void difference_between_two_dates_java () {
-		// not recommended, use JODA
+		// not recommended, use JODA or java 8 time
+	}
+
+	@Test
+	public void difference_between_two_dates_java8_period() {
+
+		LocalDate sinceGraduation = LocalDate.of(1984, Month.JUNE, 4);
+		LocalDate currentDate = LocalDate.now();
+
+		Period betweenDates = Period.between(sinceGraduation, currentDate);
+
+		int diffInDays = betweenDates.getDays();
+		int diffInMonths = betweenDates.getMonths();
+		int diffInYears = betweenDates.getYears();
+
+		logger.info(diffInDays);
+		logger.info(diffInMonths);
+		logger.info(diffInYears);
+
+		assertTrue(diffInDays >= anyInt());
+		assertTrue(diffInMonths >= anyInt());
+		assertTrue(diffInYears >= anyInt());
+	}
+
+	
+	@Test
+	public void difference_between_two_dates_java8_chrono_period() {
+
+		LocalDate sinceGraduation = LocalDate.of(1984, Month.JUNE, 4);
+		LocalDate currentDate = LocalDate.now();
+
+		long diffInDays = ChronoUnit.DAYS.between(sinceGraduation, currentDate);
+		long diffInMonths = ChronoUnit.MONTHS.between(sinceGraduation,
+				currentDate);
+		long diffInYears = ChronoUnit.YEARS.between(sinceGraduation,
+				currentDate);
+
+		logger.info(diffInDays);
+		logger.info(diffInMonths);
+		logger.info(diffInYears);
+
+		assertTrue(diffInDays >= anyLong());
+		assertTrue(diffInMonths >= anyLong());
+		assertTrue(diffInYears >= anyLong());
+	}
+
+	@Test
+	public void difference_between_two_dates_java8_duration() {
+
+		LocalDateTime dateTime = LocalDateTime.of(1984, 6, 4, 0, 0);
+		LocalDateTime dateTime2 = LocalDateTime.now();
+
+		int diffInNano = java.time.Duration.between(dateTime, dateTime2)
+				.getNano();
+		long diffInSeconds = java.time.Duration.between(dateTime, dateTime2)
+				.getSeconds();
+
+		long diffInMilli = java.time.Duration.between(dateTime, dateTime2)
+				.toMillis();
+		long diffInMinutes = java.time.Duration.between(dateTime, dateTime2)
+				.toMinutes();
+		long diffInHours = java.time.Duration.between(dateTime, dateTime2)
+				.toHours();
+
+		logger.info(diffInNano);
+		logger.info(diffInSeconds);
+		logger.info(diffInMilli);
+		logger.info(diffInMinutes);
+		logger.info(diffInHours);
+
+		assertTrue(diffInNano >= anyLong());
+		assertTrue(diffInSeconds >= anyLong());
+		assertTrue(diffInMilli >= anyLong());
+		assertTrue(diffInMinutes >= anyLong());
+		assertTrue(diffInHours >= anyLong());
+	}
+
+	@Test
+	public void difference_between_two_dates_java8_chrono_duration() {
+
+		LocalDateTime dateTime = LocalDateTime.of(1984, 6, 4, 0, 0);
+		LocalDateTime dateTime2 = LocalDateTime.now();
+
+		long diffInNano = ChronoUnit.NANOS.between(dateTime, dateTime2);
+		long diffInSeconds = ChronoUnit.SECONDS.between(dateTime, dateTime2);
+
+		long diffInMilli = ChronoUnit.MILLIS.between(dateTime, dateTime2);
+		long diffInMinutes = ChronoUnit.MINUTES.between(dateTime, dateTime2);
+		long diffInHours = ChronoUnit.HOURS.between(dateTime, dateTime2);
+
+		logger.info(diffInNano);
+		logger.info(diffInSeconds);
+		logger.info(diffInMilli);
+		logger.info(diffInMinutes);
+		logger.info(diffInHours);
+
+		assertTrue(diffInNano >= anyLong());
+		assertTrue(diffInSeconds >= anyLong());
+		assertTrue(diffInMilli >= anyLong());
+		assertTrue(diffInMinutes >= anyLong());
+		assertTrue(diffInHours >= anyLong());
+
 	}
 	
 	@Test
