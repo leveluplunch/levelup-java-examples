@@ -2,6 +2,10 @@ package com.levelup.java.date.between;
 
 import static org.junit.Assert.assertEquals;
 
+import java.time.Duration;
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
+
 import org.joda.time.DateTime;
 import org.joda.time.Hours;
 import org.junit.Test;
@@ -16,6 +20,22 @@ import org.junit.Test;
  */
 public class HoursBetweenDates {
 
+	@Test
+	public void hours_between_two_dates_in_java_with_java8 () {
+		
+		LocalDateTime startDate = LocalDateTime.now().minusDays(1);
+		LocalDateTime endDate = LocalDateTime.now();
+		
+		long numberOfHours = Duration.between(startDate, endDate).toHours();
+		assertEquals(24, numberOfHours);
+		
+		// or
+		
+		long numberOfHours2 = ChronoUnit.HOURS.between(startDate, endDate);
+		assertEquals(24, numberOfHours2);
+	}
+
+	
 	@Test
 	public void hours_between_two_dates_in_java_with_joda () {
 		
