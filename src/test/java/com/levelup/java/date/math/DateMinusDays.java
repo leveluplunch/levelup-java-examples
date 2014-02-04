@@ -3,6 +3,8 @@ package com.levelup.java.date.math;
 import static org.junit.Assert.assertTrue;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.Month;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -24,7 +26,6 @@ public class DateMinusDays {
 
 	private static final Logger logger = Logger.getLogger(DateMinusDays.class);
 
-
 	@Test
 	public void subtract_days_from_date_in_java () {
 		
@@ -44,6 +45,21 @@ public class DateMinusDays {
 		assertTrue(pregame.before(superBowlXLV));
 	}
 
+	@Test
+	public void subtract_days_from_date_in_java8 () {
+		
+		LocalDate superBowlXLV = LocalDate.of(2011, Month.FEBRUARY, 6);
+		LocalDate pregame = superBowlXLV.minusDays(1);
+		
+		java.time.format.DateTimeFormatter formatter = 
+				 java.time.format.DateTimeFormatter.ofPattern("MM/dd/yyyy");
+
+		logger.info(superBowlXLV.format(formatter));
+		logger.info(pregame.format(formatter));
+
+		assertTrue(pregame.isBefore(superBowlXLV));
+	}
+	
 	@Test
 	public void subtract_days_from_date_in_java_joda () {
 		
