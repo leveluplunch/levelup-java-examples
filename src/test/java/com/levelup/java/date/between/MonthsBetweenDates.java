@@ -2,6 +2,10 @@ package com.levelup.java.date.between;
 
 import static org.junit.Assert.assertEquals;
 
+import java.time.LocalDate;
+import java.time.Month;
+import java.time.temporal.ChronoUnit;
+
 import org.joda.time.DateTime;
 import org.joda.time.Months;
 import org.junit.Test;
@@ -16,6 +20,17 @@ import org.junit.Test;
  */
 public class MonthsBetweenDates {
 
+	@Test
+	public void months_between_two_dates_in_java_with_java8 () {
+		
+		LocalDate startDate = LocalDate.of(2004, Month.JANUARY, 1);
+		LocalDate endDate = LocalDate.of(2005, Month.JANUARY, 1);
+		
+		long monthsInYear2 = ChronoUnit.MONTHS.between(startDate, endDate);
+
+		assertEquals(12, monthsInYear2);
+	}
+	
 	@Test
 	public void months_between_two_dates_in_java_with_joda () {
 
