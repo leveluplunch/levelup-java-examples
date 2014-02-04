@@ -3,6 +3,9 @@ package com.levelup.java.date.math;
 import static org.junit.Assert.assertTrue;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.Month;
+import java.time.temporal.ChronoField;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -41,6 +44,24 @@ public class DateMinusMilliseconds {
 
 		assertTrue(newYearsEve.before(newYearsDay));
 	}
+	
+	@Test
+	public void subtract_milliseconds_from_date_in_java8() {
+
+		LocalDateTime newYearsDay = LocalDateTime.of(2013, Month.JANUARY, 1, 0,
+				0, 0, 0);
+		LocalDateTime newYearsEve = newYearsDay.minus(1,
+				ChronoField.MILLI_OF_DAY.getBaseUnit());
+
+		java.time.format.DateTimeFormatter formatter = java.time.format.DateTimeFormatter
+				.ofPattern("MM/dd/yyyy HH:mm:ss S");
+
+		logger.info(newYearsDay.format(formatter));
+		logger.info(newYearsEve.format(formatter));
+
+		assertTrue(newYearsEve.isBefore(newYearsDay));
+	}
+
 	
 	@Test
 	public void subtract_milliseconds_from_date_in_java_with_joda () {
