@@ -3,6 +3,8 @@ package com.levelup.java.date.math;
 import static org.junit.Assert.assertTrue;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.Month;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -40,6 +42,21 @@ public class DatePlusWeeks {
 		logger.info(dateFormatter.format(newYearsDay.getTime()));
 
 		assertTrue(newYearsDay.after(xmas));
+	}
+
+	@Test
+	public void add_weeks_to_date_in_java8() {
+
+		LocalDateTime xmas = LocalDateTime.of(2012, Month.DECEMBER, 25, 0, 0);
+		LocalDateTime newYearsDay = xmas.plusWeeks(1);
+
+		java.time.format.DateTimeFormatter formatter = java.time.format.DateTimeFormatter
+				.ofPattern("MM/dd/yyyy HH:mm:ss S");
+
+		logger.info(xmas.format(formatter));
+		logger.info(newYearsDay.format(formatter));
+
+		assertTrue(newYearsDay.isAfter(xmas));
 	}
 
 	@Test
