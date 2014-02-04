@@ -3,6 +3,8 @@ package com.levelup.java.date.math;
 import static org.junit.Assert.assertTrue;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.Month;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -40,6 +42,22 @@ public class DatePlusYears {
 		logger.info(dateFormatter.format(fortyNinersSuck.getTime()));
 
 		assertTrue(fortyNinersSuck.after(superBowlXLV));
+	}
+	
+	@Test
+	public void add_years_to_date_in_java8() {
+
+		LocalDateTime superBowlXLV = LocalDateTime.of(2011, Month.FEBRUARY, 6,
+				0, 0);
+		LocalDateTime fortyNinersSuck = superBowlXLV.plusYears(2);
+
+		java.time.format.DateTimeFormatter formatter = java.time.format.DateTimeFormatter
+				.ofPattern("MM/dd/yyyy HH:mm:ss S");
+
+		logger.info(superBowlXLV.format(formatter));
+		logger.info(fortyNinersSuck.format(formatter));
+
+		assertTrue(fortyNinersSuck.isAfter(superBowlXLV));
 	}
 	
 	@Test
