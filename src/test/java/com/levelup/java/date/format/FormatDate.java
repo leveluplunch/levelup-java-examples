@@ -3,6 +3,8 @@ package com.levelup.java.date.format;
 import static org.junit.Assert.assertEquals;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.Month;
 import java.util.Calendar;
 import java.util.TimeZone;
 
@@ -52,6 +54,19 @@ public class FormatDate {
 		String str = String.format("Current Date/Time : %tc", cal.getTime());
 		
 		assertEquals("Current Date/Time : Sun Jan 15 12:00:00 CST 1967", str);
+	}
+
+	@Test
+	public void format_date_in_java8 () {
+		
+		java.time.format.DateTimeFormatter formatter = 
+				 java.time.format.DateTimeFormatter.ofPattern("MM/dd/yyyy");
+		 
+		LocalDate localDate = LocalDate.of(1967, Month.JANUARY, 15);
+		
+		String dateFirstSuperBowlWasPlayed = localDate.format(formatter);
+		
+		assertEquals("01/15/1967", dateFirstSuperBowlWasPlayed);
 	}
 	
 	@Test
