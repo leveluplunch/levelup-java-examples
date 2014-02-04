@@ -3,6 +3,8 @@ package com.levelup.java.date.math;
 import static org.junit.Assert.assertTrue;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.Month;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -40,6 +42,22 @@ public class DatePlusSeconds {
 		logger.info(dateFormatter.format(newYearsDay.getTime()));
 
 		assertTrue(newYearsDay.after(newYearsEve));
+	}
+	
+	@Test
+	public void add_seconds_to_date_in_java8() {
+
+		LocalDateTime newYearsEve = LocalDateTime.of(2012, Month.DECEMBER, 31,
+				23, 59);
+		LocalDateTime newYearsDay = newYearsEve.plusSeconds(60);
+
+		java.time.format.DateTimeFormatter formatter = java.time.format.DateTimeFormatter
+				.ofPattern("MM/dd/yyyy HH:mm:ss S");
+
+		logger.info(newYearsEve.format(formatter));
+		logger.info(newYearsDay.format(formatter));
+
+		assertTrue(newYearsDay.isAfter(newYearsEve));
 	}
 
 	@Test
