@@ -3,6 +3,8 @@ package com.levelup.java.date.math;
 import static org.junit.Assert.assertTrue;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.Month;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -41,6 +43,23 @@ public class DateMinusMonths {
 
 		assertTrue(championshipWeekend.before(superBowlXLV));
 	}
+
+	@Test
+	public void subtract_months_from_date_in_java8() {
+
+		LocalDateTime superBowlXLV = LocalDateTime.of(2011, Month.FEBRUARY, 6,
+				0, 0);
+		LocalDateTime championshipWeekend = superBowlXLV.minusMonths(1);
+
+		java.time.format.DateTimeFormatter formatter = java.time.format.DateTimeFormatter
+				.ofPattern("MM/dd/yyyy HH:mm:ss");
+
+		logger.info(superBowlXLV.format(formatter));
+		logger.info(championshipWeekend.format(formatter));
+
+		assertTrue(championshipWeekend.isBefore(superBowlXLV));
+	}
+	
 	
 	@Test
 	public void subtract_months_from_date_in_java_joda () {
