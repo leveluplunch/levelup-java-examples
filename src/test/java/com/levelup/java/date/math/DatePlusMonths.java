@@ -3,6 +3,8 @@ package com.levelup.java.date.math;
 import static org.junit.Assert.assertTrue;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.Month;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -42,6 +44,22 @@ public class DatePlusMonths {
 		assertTrue(sippinFruityDrinksInMexico.after(superBowlXLV));
 	}
 
+	@Test
+	public void add_months_to_date_in_java8() {
+
+		LocalDateTime superBowlXLV = LocalDateTime.of(2011, Month.FEBRUARY, 6,
+				0, 0);
+		LocalDateTime sippinFruityDrinksInMexico = superBowlXLV.plusMonths(1);
+
+		java.time.format.DateTimeFormatter formatter = java.time.format.DateTimeFormatter
+				.ofPattern("MM/dd/yyyy HH:mm:ss S");
+
+		logger.info(superBowlXLV.format(formatter));
+		logger.info(sippinFruityDrinksInMexico.format(formatter));
+
+		assertTrue(sippinFruityDrinksInMexico.isAfter(superBowlXLV));
+	}
+	
 	
 	@Test
 	public void add_months_to_date_in_java_joda () {
