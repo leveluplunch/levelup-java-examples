@@ -2,6 +2,10 @@
 
 import static org.junit.Assert.assertEquals;
 
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.temporal.ChronoUnit;
+
 import org.joda.time.DateTime;
 import org.joda.time.Days;
 import org.junit.Test;
@@ -16,6 +20,22 @@ import org.junit.Test;
  */
 public class DaysBetweenDates {
 
+	@Test
+	public void days_between_two_dates_in_java_with_java8 () {
+		
+		LocalDate startDate = LocalDate.now().minusDays(1);
+		LocalDate endDate = LocalDate.now();
+		
+		long days = Period.between(startDate, endDate).getDays();
+		assertEquals(1, days);
+		
+		// or 
+		
+		long days2 = ChronoUnit.DAYS.between(startDate, endDate);
+		assertEquals(1, days2);
+	}
+	
+	
 	@Test
 	public void days_between_two_dates_in_java_with_joda () {
 		
