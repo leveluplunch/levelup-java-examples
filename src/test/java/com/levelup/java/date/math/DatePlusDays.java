@@ -3,6 +3,8 @@ package com.levelup.java.date.math;
 import static org.junit.Assert.assertTrue;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.Month;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -44,6 +46,21 @@ public class DatePlusDays {
 		assertTrue(celebration.after(superBowlXLV));
 	}
 
+	@Test
+	public void add_days_to_date_in_java8() {
+
+		LocalDateTime superBowlXLV = LocalDateTime.of(2011, Month.FEBRUARY, 6,
+				0, 0);
+		LocalDateTime celebration = superBowlXLV.plusDays(1);
+
+		java.time.format.DateTimeFormatter formatter = java.time.format.DateTimeFormatter
+				.ofPattern("MM/dd/yyyy HH:mm:ss S");
+
+		logger.info(superBowlXLV.format(formatter));
+		logger.info(celebration.format(formatter));
+
+		assertTrue(celebration.isAfter(superBowlXLV));
+	}
 	
 	@Test
 	public void add_days_to_date_in_java_with_joda () {
