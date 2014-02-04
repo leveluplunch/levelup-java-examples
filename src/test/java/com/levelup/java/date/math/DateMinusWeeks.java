@@ -3,6 +3,8 @@ package com.levelup.java.date.math;
 import static org.junit.Assert.assertTrue;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.Month;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -40,6 +42,22 @@ public class DateMinusWeeks {
 		logger.info(dateFormatter.format(xmas.getTime()));
 
 		assertTrue(xmas.before(newYearsDay));
+	}
+	
+	@Test
+	public void subtract_weeks_from_date_in_java8() {
+
+		LocalDateTime newYearsDay = LocalDateTime.of(2013, Month.JANUARY, 1, 0,
+				0);
+		LocalDateTime xmas = newYearsDay.minusWeeks(1);
+
+		java.time.format.DateTimeFormatter formatter = java.time.format.DateTimeFormatter
+				.ofPattern("MM/dd/yyyy HH:mm:ss S");
+
+		logger.info(newYearsDay.format(formatter));
+		logger.info(xmas.format(formatter));
+
+		assertTrue(xmas.isBefore(newYearsDay));
 	}
 
 	@Test
