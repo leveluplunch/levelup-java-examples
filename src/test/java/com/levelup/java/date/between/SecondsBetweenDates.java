@@ -2,6 +2,10 @@ package com.levelup.java.date.between;
 
 import static org.junit.Assert.assertEquals;
 
+import java.time.Duration;
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
+
 import org.joda.time.DateTime;
 import org.joda.time.Seconds;
 import org.junit.Test;
@@ -15,6 +19,21 @@ import org.junit.Test;
  * 
  */
 public class SecondsBetweenDates {
+	
+	@Test
+	public void seconds_between_two_dates_in_java_with_java8 () {
+		
+		LocalDateTime startDate = LocalDateTime.now().minusDays(1);
+		LocalDateTime endDate = LocalDateTime.now();
+		
+		long secondsInDay = Duration.between(startDate, endDate).toMinutes();
+		assertEquals(1440, secondsInDay);
+
+		// or
+		
+		long secondsInDay2 = ChronoUnit.SECONDS.between(startDate, endDate);
+		assertEquals(86400, secondsInDay2);
+	}
 	
 	@Test
 	public void seconds_between_two_dates_in_java_with_joda () {
