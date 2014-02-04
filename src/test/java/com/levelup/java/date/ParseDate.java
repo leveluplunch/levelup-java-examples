@@ -49,7 +49,6 @@ public class ParseDate {
 		
         assertEquals(1968, superBowlIIAsDate.getYear());
 	}
-	
 
 	@Test
 	public void parse_date_string_in_java_with_joda () {
