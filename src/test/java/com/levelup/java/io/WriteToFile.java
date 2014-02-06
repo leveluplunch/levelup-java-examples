@@ -21,7 +21,7 @@ import com.google.common.io.Files;
  * This java example will demonstrate writing text to a file
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/examples/write-to-text-file/'>Write to file</a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/write-to-file/'>Write to file</a>
  * 
  */
 public class WriteToFile {
