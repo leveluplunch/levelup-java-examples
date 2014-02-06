@@ -13,7 +13,7 @@ import org.junit.Test;
  * adjusters.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com//'></a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/predefined-java-8-year-adjusters/'>Predefined year adjusters</a>
  */
 public class YearAdjusters {
 
