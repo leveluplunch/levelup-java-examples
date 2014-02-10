@@ -19,7 +19,7 @@ import org.junit.Test;
  * @author Justin Musgrove
  * @see <a href='http://www.leveluplunch.com/java/examples/first-day-of-quarter-java8-adjuster/'>First day of quarter</a>
  */
-public class FirstDayOfQuarter implements TemporalAdjuster {
+public class FirstDayOfQuarterAdjuster implements TemporalAdjuster {
 
 	@Override
 	public Temporal adjustInto(Temporal temporal) {
@@ -55,7 +55,7 @@ public class FirstDayOfQuarter implements TemporalAdjuster {
 		
 		LocalDate date = LocalDate.of(2009, Month.FEBRUARY, 1);
 		
-		LocalDate firstQuarter = date.with(new FirstDayOfQuarter());
+		LocalDate firstQuarter = date.with(new FirstDayOfQuarterAdjuster());
 		
 		assertEquals(
 				LocalDate.of(2009, Month.JANUARY, 1), 
@@ -67,7 +67,7 @@ public class FirstDayOfQuarter implements TemporalAdjuster {
 		
 		LocalDate date = LocalDate.of(2009, Month.JUNE, 1);
 		
-		LocalDate secondQuarter = date.with(new FirstDayOfQuarter());
+		LocalDate secondQuarter = date.with(new FirstDayOfQuarterAdjuster());
 		
 		assertEquals(
 				LocalDate.of(2009, Month.APRIL, 1), 
@@ -79,7 +79,7 @@ public class FirstDayOfQuarter implements TemporalAdjuster {
 
 		LocalDate date = LocalDate.of(2009, Month.SEPTEMBER, 1);
 		
-		LocalDate thirdQuarter = date.with(new FirstDayOfQuarter());
+		LocalDate thirdQuarter = date.with(new FirstDayOfQuarterAdjuster());
 		
 		assertEquals(
 				LocalDate.of(2009, Month.JULY, 1), 
@@ -91,7 +91,7 @@ public class FirstDayOfQuarter implements TemporalAdjuster {
 
 		LocalDate date = LocalDate.of(2009, Month.NOVEMBER, 1);
 		
-		LocalDate fourthQuarter = date.with(new FirstDayOfQuarter());
+		LocalDate fourthQuarter = date.with(new FirstDayOfQuarterAdjuster());
 		
 		assertEquals(
 				LocalDate.of(2009, Month.OCTOBER, 1), 

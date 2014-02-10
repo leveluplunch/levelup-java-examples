@@ -18,7 +18,7 @@ import org.junit.Test;
  * @author Justin Musgrove
  * @see <a href='http://www.leveluplunch.com/java/examples/last-day-of-quarter-java8-adjuster/'>Last day of quarter</a>
  */
-public class LastDayOfQuarter implements TemporalAdjuster {
+public class LastDayOfQuarterAdjuster implements TemporalAdjuster {
 
 	@Override
 	public Temporal adjustInto(Temporal temporal) {
@@ -55,7 +55,7 @@ public class LastDayOfQuarter implements TemporalAdjuster {
 
 		LocalDate date = LocalDate.of(2009, Month.FEBRUARY, 1);
 
-		LocalDate firstQuarter = date.with(new LastDayOfQuarter());
+		LocalDate firstQuarter = date.with(new LastDayOfQuarterAdjuster());
 
 		assertEquals(LocalDate.of(2009, Month.MARCH, 31), firstQuarter);
 	}
@@ -65,7 +65,7 @@ public class LastDayOfQuarter implements TemporalAdjuster {
 
 		LocalDate date = LocalDate.of(2009, Month.MAY, 1);
 
-		LocalDate secondQuarter = date.with(new LastDayOfQuarter());
+		LocalDate secondQuarter = date.with(new LastDayOfQuarterAdjuster());
 
 		assertEquals(LocalDate.of(2009, Month.JUNE, 30), secondQuarter);
 	}
@@ -75,7 +75,7 @@ public class LastDayOfQuarter implements TemporalAdjuster {
 
 		LocalDate date = LocalDate.of(2009, Month.AUGUST, 1);
 
-		LocalDate thirdQuarter = date.with(new LastDayOfQuarter());
+		LocalDate thirdQuarter = date.with(new LastDayOfQuarterAdjuster());
 
 		assertEquals(LocalDate.of(2009, Month.SEPTEMBER, 30), thirdQuarter);
 	}
@@ -85,7 +85,7 @@ public class LastDayOfQuarter implements TemporalAdjuster {
 
 		LocalDate date = LocalDate.of(2009, Month.NOVEMBER, 1);
 
-		LocalDate fourthQuarter = date.with(new LastDayOfQuarter());
+		LocalDate fourthQuarter = date.with(new LastDayOfQuarterAdjuster());
 
 		assertEquals(LocalDate.of(2009, Month.DECEMBER, 31), fourthQuarter);
 	}
