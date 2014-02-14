@@ -15,7 +15,7 @@ import com.google.common.math.DoubleMath;
  * average of elements in array.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com//'></a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/calculate-average-of-array/'>Calculate average of array</a>
  */
 public class AverageFromArray {
 
