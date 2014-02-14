@@ -156,10 +156,32 @@ public class SortArray {
 				"Willow River State Park",
 				"Wyalusing State Park"}, 
 				sorted);
-	
 	}
 	
-	
+	@Test
+	public void sort_string_array_in_java8_by_length () {
+		
+		String[] wiStateParks = {
+				"Mill Bluff State Park",
+				"Amnicon Falls State Park",
+				"Wyalusing State Park",
+				"Big Foot Beach State Park",
+				"Willow River State Park",
+				"Roche-A-Cri State Park"
+			};
+
+		Arrays.sort(wiStateParks, (s1, s2) -> s1.length() - s2.length());
+
+		logger.info(Arrays.toString(wiStateParks));
+
+		//or Arrays.sort(wiStateParks, (String s1, String s2) -> s1.length() - s2.length());
+
+		assertArrayEquals(new String[] { "Wyalusing State Park",
+				"Mill Bluff State Park", "Roche-A-Cri State Park",
+				"Willow River State Park", "Amnicon Falls State Park",
+				"Big Foot Beach State Park" }, wiStateParks);
+	}
+
 	@Test
 	public void sort_numeric_array_decending_in_java_with_guava () {
 		
