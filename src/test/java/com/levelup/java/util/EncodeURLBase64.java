@@ -3,7 +3,6 @@ package com.levelup.java.util;
 import static org.junit.Assert.assertEquals;
 
 import org.apache.commons.codec.binary.Base64;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import com.google.common.io.BaseEncoding;
@@ -17,10 +16,17 @@ import com.google.common.io.BaseEncoding;
  */
 public class EncodeURLBase64 {
 
-	// TODO: http://download.java.net/jdk8/docs/api/java/util/Base64.html
-	@Ignore("Java 8 not yet released")
 	@Test
 	public void string_base64_encode_java_8() {
+
+		String levelUpLunchURL = "http://leveluplunch.com/examples/?parm=This parameter";
+
+		String encodedURL = java.util.Base64.getEncoder().encodeToString(
+				levelUpLunchURL.getBytes());
+
+		assertEquals(
+				"aHR0cDovL2xldmVsdXBsdW5jaC5jb20vZXhhbXBsZXMvP3Bhcm09VGhpcyBwYXJhbWV0ZXI=",
+				encodedURL);
 	}
 
 	@Test

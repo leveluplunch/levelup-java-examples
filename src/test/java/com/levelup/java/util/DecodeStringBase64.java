@@ -4,7 +4,6 @@ import static org.junit.Assert.assertEquals;
 
 import java.io.UnsupportedEncodingException;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 import com.google.common.io.BaseEncoding;
@@ -18,10 +17,18 @@ import com.sun.jersey.core.util.Base64;
  */
 public class DecodeStringBase64 {
 
-	// TODO: http://download.java.net/jdk8/docs/api/java/util/Base64.html
-	@Ignore("Java 8 not yet released")
 	@Test
-	public void string_base64_decode_java_8() {
+	public void string_base64_decode_java_8()
+			throws UnsupportedEncodingException {
+
+		String encodedPhrase = "TGVhcm4uIEVhdC4gQ29kZS4=";
+
+		byte[] decodedPhraseAsBytes = java.util.Base64.getDecoder().decode(
+				encodedPhrase);
+
+		String phraseDecodedToString = new String(decodedPhraseAsBytes, "utf-8");
+
+		assertEquals("Learn. Eat. Code.", phraseDecodedToString);
 	}
 
 	@Test
