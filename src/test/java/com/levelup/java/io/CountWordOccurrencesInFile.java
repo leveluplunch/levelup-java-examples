@@ -6,7 +6,9 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.nio.charset.Charset;
 import java.nio.file.Paths;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -76,6 +78,19 @@ public class CountWordOccurrencesInFile {
 		logger.info(wordOccurrences);
 
 		assertEquals(80, wordOccurrences.size());
+	}
+	
+	@Test
+	public void count_distinct_words_java8() throws IOException {
+
+		File file = new File(sourceFileURI);
+
+		long uniqueWords = java.nio.file.Files
+				.lines(Paths.get(file.toURI()), Charset.defaultCharset())
+				.flatMap(line -> Arrays.stream(line.split(" ."))).distinct()
+				.count();
+
+		assertEquals(80, uniqueWords);
 	}
 
 	/**
