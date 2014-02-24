@@ -14,7 +14,7 @@ import org.junit.Test;
  * java.util.Optional.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com//'></a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/java-util-optional-example/'>Optional example</a>
  */
 public class OptionalExample {
 
