@@ -1,5 +1,8 @@
 package com.levelup.java.util.stream;
 
+import static java.lang.Double.max;
+import static java.lang.Double.min;
+import static java.lang.Double.sum;
 import static org.junit.Assert.assertEquals;
 
 import java.time.LocalDate;
@@ -15,7 +18,9 @@ import org.junit.Test;
  * This java example will demonstrate .
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/examples/java-util-stream-reduce-example/'>Stream reduce</a>
+ * @see <a href=
+ *      'http://www.leveluplunch.com/java/examples/java-util-stream-reduce-example/'>Stream
+ *      reduce</a>
  */
 public class StreamReduce {
 
@@ -63,15 +68,17 @@ public class StreamReduce {
 
 		// or
 		OptionalDouble totalPrecipYear2 = precip.stream()
-				.mapToDouble(Precipitation::getAmount).reduce(Double::max);
+				.mapToDouble(Precipitation::getAmount).reduce(Double::sum);
 
 		assertEquals(1.94, totalPrecipYear2.getAsDouble(), 0);
-		
-		// or 
+
+		// or
 		double totalPrecipYear3 = precip.stream()
-				.mapToDouble(Precipitation::getAmount).reduce(0, (a, b) -> a + b);
-		
+				.mapToDouble(Precipitation::getAmount)
+				.reduce(0, (a, b) -> a + b);
+
 		assertEquals(1.94, totalPrecipYear3, 0);
+
 	}
 
 	@Test
