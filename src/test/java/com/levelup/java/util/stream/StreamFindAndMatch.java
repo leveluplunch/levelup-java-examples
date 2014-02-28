@@ -21,7 +21,7 @@ import com.google.common.base.Objects;
  * methods.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com//'></a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/java-util-stream-find-match-example/'>Stream find and match</a>
  */
 public class StreamFindAndMatch {
 
