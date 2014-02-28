@@ -14,14 +14,15 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 /**
- * This java example will demonstrate common ways
- * to create a string in java 8.
+ * This java example will demonstrate common ways to create a string in java 8.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/examples/how-to-build-java-util-stream/'>Build a stream</a>
+ * @see <a href=
+ *      'http://www.leveluplunch.com/java/examples/how-to-build-java-util-stream/'>Build
+ *      a stream</a>
  */
 public class BuildStream {
-	
+
 	@Test
 	public void stream_from_values() {
 
@@ -67,12 +68,17 @@ public class BuildStream {
 		assertEquals(80, uniqueWords);
 	}
 
-	
 	@Test
 	public void stream_from_function() {
 
 		Stream.iterate(0, n -> n + 3).limit(10).forEach(System.out::println);
 
+	}
+
+	@Test
+	public void stream_from_random() {
+
+		Stream.generate(Math::random).limit(10).forEach(System.out::println);
 	}
 
 }
