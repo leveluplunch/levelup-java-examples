@@ -19,8 +19,8 @@ import org.junit.Test;
  * 
  * @author Justin Musgrove
  * @see <a href=
- *      'http://www.leveluplunch.com/java/examples/java-util-stream-reduce-example/'>Stream
- *      reduce</a>
+ *      'http://www.leveluplunch.com/java/examples/java-util-stream-reduce-example/'>Strea
+ *      m reduce</a>
  */
 public class StreamReduce {
 
@@ -111,6 +111,24 @@ public class StreamReduce {
 				.mapToDouble(Precipitation::getAmount).reduce(Double::min);
 
 		assertEquals(.1, min2.getAsDouble(), 0);
+	}
+
+	@Test
+	public void average_of_elements() {
+
+		OptionalDouble average = precip.stream()
+				.mapToDouble(Precipitation::getAmount).average();
+		
+		assertEquals(0.48499999999999993, average.getAsDouble(), 0);
+	}
+
+	@Test
+	public void count_elements() {
+
+		long numberOfElements = precip.stream()
+				.mapToDouble(Precipitation::getAmount).count();
+		
+		assertEquals(4.0, numberOfElements, 0);
 	}
 
 }
