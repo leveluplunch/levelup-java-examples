@@ -11,7 +11,6 @@ import org.junit.Test;
 
 import com.google.common.base.Objects;
 import com.google.common.collect.Lists;
-import com.levelup.java.guava.FunctionsExample;
 
 /**
  * This java example will demonstrate common uses of the
