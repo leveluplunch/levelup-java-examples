@@ -17,8 +17,6 @@ import org.junit.Test;
  */
 public class PredicateExample {
 
-	// show different ways to show a predicate
-
 	Predicate<String> hasLengthOf10 = new Predicate<String>() {
 		@Override
 		public boolean test(String t) {
