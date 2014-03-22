@@ -12,7 +12,6 @@ import org.junit.Test;
 import com.google.common.collect.ContiguousSet;
 import com.google.common.collect.DiscreteDomain;
 import com.google.common.collect.Range;
-import com.levelup.java.array.ConvertCollectionToArray;
 
 /**
  * This java example will demonstrate return a range of numbers.
@@ -23,7 +22,7 @@ import com.levelup.java.array.ConvertCollectionToArray;
 public class GenerateRangeOfSequentialNumbers {
 
 	private static final Logger logger = Logger
-			.getLogger(ConvertCollectionToArray.class);
+			.getLogger(GenerateRangeOfSequentialNumbers.class);
 
 	@Test
 	public void range_sequential_numbers_java8() {

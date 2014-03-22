@@ -15,7 +15,6 @@ import com.google.common.collect.ContiguousSet;
 import com.google.common.collect.DiscreteDomain;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Range;
-import com.levelup.java.array.ConvertCollectionToArray;
 
 /**
  * This java example will demonstrate returning all even
@@ -26,7 +25,7 @@ import com.levelup.java.array.ConvertCollectionToArray;
  */
 public class GenerateEvenNumbers {
 
-	private static final Logger logger = Logger.getLogger(ConvertCollectionToArray.class);
+	private static final Logger logger = Logger.getLogger(GenerateEvenNumbers.class);
 
 	@Test
 	public void generate_even_numbers_in_range_java8() {

@@ -17,7 +17,7 @@ import com.google.common.collect.Range;
  * @see <a href='http://www.leveluplunch.com/java/examples/check-if-number-in-within-range/'>Number within range</a>
  */
 public class CheckIfNumberInBetween {
-
+	
 	@Test
 	public void number_between_java8() {
 

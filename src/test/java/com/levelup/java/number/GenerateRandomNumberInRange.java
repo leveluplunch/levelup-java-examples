@@ -10,8 +10,6 @@ import java.util.stream.Collectors;
 import org.apache.log4j.Logger;
 import org.junit.Test;
 
-import com.levelup.java.array.ConvertCollectionToArray;
-
 /**
  * This java example will demonstrate how to generate 
  * random numbers from a range.
@@ -22,7 +20,7 @@ import com.levelup.java.array.ConvertCollectionToArray;
 public class GenerateRandomNumberInRange {
 
 	private static final Logger logger = Logger
-			.getLogger(ConvertCollectionToArray.class);
+			.getLogger(GenerateRandomNumberInRange.class);
 
 	@Test
 	public void generate_random_number_in_range_java() {
