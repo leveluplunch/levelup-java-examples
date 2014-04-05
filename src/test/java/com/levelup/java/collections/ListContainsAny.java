@@ -14,11 +14,12 @@ import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 
 /**
- * This java example will demonstrate if a list 
- * containing any element.
+ * This java example will demonstrate if a list containing any element.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/examples/list-contains-any-elements/'>List contains any element</a>
+ * @see <a href=
+ *      'http://www.leveluplunch.com/java/examples/list-contains-any-elements/'>List
+ *      contains any element</a>
  */
 public class ListContainsAny {
 
@@ -27,28 +28,26 @@ public class ListContainsAny {
 		String manufacturer;
 		String model;
 		int year;
-		
+
 		public Vehicle(String manufacturer, String model, int year) {
 			super();
 			this.manufacturer = manufacturer;
 			this.model = model;
 			this.year = year;
 		}
-		
+
 		@Override
 		public String toString() {
 			return Objects.toStringHelper(this)
-					.add("manufacturer", manufacturer)
-					.add("model", model)
-					.add("year", year)
-					.toString();
+					.add("manufacturer", manufacturer).add("model", model)
+					.add("year", year).toString();
 		}
 	}
-	
+
 	List<Vehicle> vehicles;
-	
+
 	@Before
-	public void setUp () {
+	public void setUp() {
 		vehicles = Lists.newArrayList();
 		vehicles.add(new Vehicle("Dodge", "CHARGER", 1965));
 		vehicles.add(new Vehicle("Dodge", "VIPER CONVERTIBLE", 2006));
@@ -57,14 +56,14 @@ public class ListContainsAny {
 		vehicles.add(new Vehicle("GMC", "K1500 YUKON 4WD", 2013));
 		vehicles.add(new Vehicle("Chrysler", "PT Cruiser", 2006));
 	}
-	
+
 	@Test
-	public void list_contains_any_java () {
-		
+	public void list_contains_any_java() {
+
 		// assuming 2013
 		boolean vehiclesFiveYearOrOlder = false;
 		for (Vehicle vehicle : vehicles) {
-			if ( (vehicle.year - 5) <= 2008) {
+			if ((vehicle.year - 5) <= 2008) {
 				vehiclesFiveYearOrOlder = true;
 				break;
 			}
@@ -72,40 +71,41 @@ public class ListContainsAny {
 
 		assertTrue(vehiclesFiveYearOrOlder);
 	}
-	
-	@Test
-	public void list_contains_any_java8_lambda () {
-		
-		boolean vehiclesContainDodge = vehicles
-				.stream()
-				.anyMatch(p -> p.manufacturer.equals("Dodge"));
-		
-		assertTrue(vehiclesContainDodge);
-	}
-	
-	@Test
-	public void list_contains_any_guava () {
 
-		boolean vehiclesContainDodge = Iterables.any(vehicles, new Predicate<Vehicle>() {
-			public boolean apply(Vehicle input) {
-				return input.manufacturer.equals("Dodge");
-			}
-		});
-		
+	@Test
+	public void list_contains_any_java8_lambda() {
+
+		boolean vehiclesContainDodge = vehicles.stream().anyMatch(
+				p -> p.manufacturer.equals("Dodge"));
+
 		assertTrue(vehiclesContainDodge);
 	}
 
 	@Test
-	public void list_contains_any_apache_commons () {
+	public void list_contains_any_guava() {
 
-		boolean vehiclesContainYukon = CollectionUtils.exists(vehicles, new org.apache.commons.collections.Predicate() {
-			public boolean evaluate(Object object) {
-				Vehicle vehicle = (Vehicle) object;
-				return vehicle.model.contains("YUKON");
-			}
-		});
-		
+		boolean vehiclesContainDodge = Iterables.any(vehicles,
+				new Predicate<Vehicle>() {
+					public boolean apply(Vehicle input) {
+						return input.manufacturer.equals("Dodge");
+					}
+				});
+
+		assertTrue(vehiclesContainDodge);
+	}
+
+	@Test
+	public void list_contains_any_apache_commons() {
+
+		boolean vehiclesContainYukon = CollectionUtils.exists(vehicles,
+				new org.apache.commons.collections.Predicate() {
+					public boolean evaluate(Object object) {
+						Vehicle vehicle = (Vehicle) object;
+						return vehicle.model.contains("YUKON");
+					}
+				});
+
 		assertTrue(vehiclesContainYukon);
 	}
-	
+
 }
