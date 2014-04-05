@@ -58,16 +58,16 @@
 			<version>1.8</version>
 		</dependency>
 		<dependency>
-		  <groupId>commons-configuration</groupId>
-		  <artifactId>commons-configuration</artifactId>
-		  <version>1.9</version>
+			<groupId>commons-configuration</groupId>
+			<artifactId>commons-configuration</artifactId>
+			<version>1.9</version>
 		</dependency>
 		<dependency>
-		  <groupId>commons-validator</groupId>
-		  <artifactId>commons-validator</artifactId>
-		  <version>1.4.0</version>
-		</dependency>		
-		
+			<groupId>commons-validator</groupId>
+			<artifactId>commons-validator</artifactId>
+			<version>1.4.0</version>
+		</dependency>
+
 		<dependency>
 			<groupId>joda-time</groupId>
 			<artifactId>joda-time</artifactId>
@@ -78,7 +78,7 @@
 			<artifactId>opencsv</artifactId>
 			<version>2.0</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-web</artifactId>
@@ -94,7 +94,7 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>${org.springframework.version}</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.hamcrest</groupId>
 			<artifactId>hamcrest-all</artifactId>
@@ -106,7 +106,7 @@
 			<artifactId>servlet-api</artifactId>
 			<version>2.5</version>
 		</dependency>
-            
+
 
 		<!-- the core, which includes Streaming API, shared low-level abstractions 
 			(but NOT data-binding) -->
@@ -122,32 +122,40 @@
 			<artifactId>jackson-databind</artifactId>
 			<version>${com.fasterxml.jackson.version}</version>
 		</dependency>
-		
-		<!-- databinding; Xml-->
+
+		<!-- databinding; Xml -->
 		<dependency>
-		  <groupId>com.fasterxml.jackson.dataformat</groupId>
-		  <artifactId>jackson-dataformat-xml</artifactId>
-		  <version>${com.fasterxml.jackson.version}</version>
+			<groupId>com.fasterxml.jackson.dataformat</groupId>
+			<artifactId>jackson-dataformat-xml</artifactId>
+			<version>${com.fasterxml.jackson.version}</version>
 		</dependency>
-		
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.datatype</groupId>
+			<artifactId>jackson-datatype-guava</artifactId>
+			<version>2.2.0</version>
+		</dependency>
+
+
+
 		<dependency>
 			<groupId>com.jayway.jsonpath</groupId>
 			<artifactId>json-path</artifactId>
 			<version>0.8.1</version>
 		</dependency>
-		            		
+
 		<dependency>
-		    <groupId>com.sun.jersey</groupId>
-		    <artifactId>jersey-client</artifactId>
-		    <version>1.12</version>
+			<groupId>com.sun.jersey</groupId>
+			<artifactId>jersey-client</artifactId>
+			<version>1.12</version>
 		</dependency>
-		
+
 		<dependency>
-		  <groupId>org.apache.httpcomponents</groupId>
-		  <artifactId>httpclient</artifactId>
-		  <version>4.3</version>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>4.3</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
@@ -197,13 +205,13 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>2.16</version>
 				<configuration>
-		          <includes>
-		            <include>**/*.java</include>
-		          </includes>
- 				  <excludes>
-		            <exclude>com/levelup/java/io/*.java</exclude>
-		          </excludes>
-        		</configuration>
+					<includes>
+						<include>**/*.java</include>
+					</includes>
+					<excludes>
+						<exclude>com/levelup/java/io/*.java</exclude>
+					</excludes>
+				</configuration>
 				<dependencies>
 					<dependency>
 						<groupId>org.apache.maven.surefire</groupId>
