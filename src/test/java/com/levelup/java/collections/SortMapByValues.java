@@ -8,6 +8,8 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Optional;
 
 import org.apache.log4j.Logger;
 import org.junit.Before;
@@ -67,14 +69,31 @@ public class SortMapByValues {
 		
 		assertEquals("ALMOND JOY", candyBars.get(0).getValue());
 	}
-	
+
+	@Test
+	public void sort_map_by_values_java8() {
+
+		Comparator<Entry<Integer, String>> byValue = (entry1, entry2) -> entry1.getValue().compareTo(
+				entry2.getValue());
+		
+		Optional<Entry<Integer, String>> val = CANDY_BARS
+				.entrySet()
+				.stream()
+				.sorted(byValue.reversed())
+				.findFirst();
+		
+		logger.info(val);
+		
+		assertEquals("YORK PEPPERMINT PATTIE", val.get().getValue());
+	}
+
 	Ordering<Map.Entry<Integer, String>> byMapValues = new Ordering<Map.Entry<Integer, String>>() {
        @Override
        public int compare(Map.Entry<Integer, String> left, Map.Entry<Integer, String> right) {
 			return left.getValue().compareTo(right.getValue());
        }
     };
-	
+    
 	@Test
 	public void sort_map_by_values_guava () {
 		 
