@@ -11,46 +11,47 @@ import com.google.common.base.Strings;
  * This java example will demonstrate repeating a string
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/examples/repeat-string/'>Repeat string</a>
+ * @see <a
+ *      href='http://www.leveluplunch.com/java/examples/repeat-string/'>Repeat
+ *      string</a>
  * 
  */
 public class RepeatString {
 
 	@Test
-	public void repeat_a_string_java_with_char_array () {
-		
+	public void repeat_a_string_java_with_char_array() {
+
 		int numberOfTimesToRepeat = 3;
-		String uppityup = new String(new char[numberOfTimesToRepeat]).replace("\0", "up");
-		
+		String uppityup = new String(new char[numberOfTimesToRepeat]).replace(
+				"\0", "up");
+
 		assertEquals("upupup", uppityup);
 	}
-	
+
 	@Test
-	public void repeat_a_string_java_with_loop () {
-		
+	public void repeat_a_string_java_with_loop() {
+
 		int numberOfTimesToRepeat = 3;
 		StringBuilder uppityup = new StringBuilder();
 		for (int x = 0; x < numberOfTimesToRepeat; x++) {
 			uppityup.append("up");
 		}
-		
+
 		assertEquals("upupup", uppityup.toString());
 	}
-	
+
 	@Test
-	public void repeat_a_string_with_guava () {
-		
+	public void repeat_a_string_with_guava() {
+
 		String uppityup = Strings.repeat("up", 3);
 		assertEquals("upupup", uppityup);
 	}
 
 	@Test
-	public void repeat_a_string_with_apache_commons () {
+	public void repeat_a_string_with_apache_commons() {
 
 		String uppityup = StringUtils.repeat("up", 3);
 		assertEquals("upupup", uppityup);
 	}
 
-	
-	
 }

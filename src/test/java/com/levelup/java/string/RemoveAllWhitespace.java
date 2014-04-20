@@ -28,6 +28,17 @@ public class RemoveAllWhitespace {
 	}
 	
 	@Test
+	public void remove_all_whitespace_regex() {
+
+		String dsmAUG = "Des Moines, IA Atlassian User Group";
+
+		String removeAllSpaces = dsmAUG.replaceAll("\\s", "");
+
+		assertEquals("DesMoines,IAAtlassianUserGroup", removeAllSpaces);
+	}
+	
+	
+	@Test
 	public void remove_all_whitespace_guava () {
 		
 		String cijug = "Central Iowa Java Users Group";
