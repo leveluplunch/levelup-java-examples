@@ -13,7 +13,7 @@ import org.junit.Test;
 import com.levelup.java.date.query.WeekendQuery;
 
 /**
- * This java example will demonstrate ninty .
+ * This java example will demonstrate ninety business days.
  * 
  * @author Justin Musgrove
  * @see <a href='http://www.leveluplunch.com/java/examples/ninety-day-weekend-java8-adjuster/'>90 Day Weekend Adjuster</a>
