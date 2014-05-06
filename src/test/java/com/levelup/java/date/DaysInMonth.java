@@ -14,7 +14,7 @@ import org.junit.Test;
  * the number days in a month.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com//'></a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/find-number-of-days-in-month/'>Days in month</a>
  */
 public class DaysInMonth {
 
