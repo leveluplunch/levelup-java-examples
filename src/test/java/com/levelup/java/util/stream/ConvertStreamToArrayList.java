@@ -12,7 +12,7 @@ import org.junit.Test;
  * This java example will demonstrate how to convert a stream to a list.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/examples/convert-java-util-stream-into-arraylist/'>Stream to list</a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/convert-java-util-stream-to-arraylist/'>Stream to list</a>
  */
 public class ConvertStreamToArrayList {
 
