@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 import org.apache.commons.collections.CollectionUtils;
@@ -58,6 +59,14 @@ public class FilterNullFromCollection {
 				.collect(Collectors.toList());
 		
 		assertEquals(3, filterStrings.size());
+		
+		// or
+		List<String> filterStrings2 = strings
+				.stream()
+				.filter(Objects::nonNull)
+				.collect(Collectors.toList());
+		
+		assertEquals(3, filterStrings2.size());
 	}
 
 	
