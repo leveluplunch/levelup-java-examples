@@ -14,6 +14,13 @@ import org.junit.Test;
 
 import com.google.common.base.Splitter;
 
+/**
+ * This java example will demonstrate how to convert each 
+ * line in a text file to an object
+ * 
+ * @author Justin Musgrove
+ * @see <a href='http://www.leveluplunch.com/java/examples/transform-text-file-to-arraylist-objects/'>Transform text file to Objects</a>
+ */
 public class TransformTextFileToObjects {
 	
 	private static final Logger logger = Logger.getLogger(TransformTextFileToObjects.class);
