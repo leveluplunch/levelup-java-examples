@@ -16,7 +16,7 @@ import com.google.common.base.Splitter;
  * This java example will demonstrate how to split a string by a comma.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com//'></a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/split-string-by-comma-delimiter/'>Split string by comma</a>
  */
 public class SplitStringByComma {
 
