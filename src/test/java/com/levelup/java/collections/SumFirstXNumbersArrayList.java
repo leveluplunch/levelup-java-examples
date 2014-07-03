@@ -8,6 +8,13 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * This java example will demonstrate taking the sum from the first
+ * part of an arraylist .
+ * 
+ * @author Justin Musgrove
+ * @see <a href='http://www.leveluplunch.com/java/examples/sum-first-n-numbers-in-arraylist/'>Sum first elements in list</a>
+ */
 public class SumFirstXNumbersArrayList {
 
 	List<Integer> numbers;
