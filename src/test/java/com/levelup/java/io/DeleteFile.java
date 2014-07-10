@@ -44,10 +44,10 @@ public class DeleteFile {
 		
 		File fileToDelete = new File(DEST);
 		
-		fileToDelete.delete();
+		boolean hasBeenDeleted = fileToDelete.delete();
 		
 		//check that files doesn't exists
-		assertFalse(fileToDelete.exists());
+		assertFalse(hasBeenDeleted);
 	}
 
 	@Test
