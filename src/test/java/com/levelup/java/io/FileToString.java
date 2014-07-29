@@ -13,6 +13,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 import org.apache.commons.io.FileUtils;
 import org.junit.Before;
@@ -22,11 +23,12 @@ import com.google.common.base.Charsets;
 import com.google.common.io.Files;
 
 /**
- * This java example will demonstrate reading a file into
- * a String. 
+ * This java example will demonstrate reading a file into a String.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/examples/read-file-into-string/'>Read file into string</a>
+ * @see <a href=
+ *      'http://www.leveluplunch.com/java/examples/read-file-into-string/'>Read
+ *      file into string</a>
  * 
  */
 public class FileToString {
@@ -36,73 +38,96 @@ public class FileToString {
 
 	@Before
 	public void setUp() throws URISyntaxException {
-		fileLocation = this.getClass().getClassLoader().getResource(FILE_PATH).toURI();
+		fileLocation = this.getClass().getClassLoader().getResource(FILE_PATH)
+				.toURI();
 	}
-	
+
 	@Test
-	public void convert_file_to_string_java_bufferedreader () throws IOException {
-		 
+	public void convert_file_to_string_java_bufferedreader() throws IOException {
+
 		File file = new File(fileLocation);
 
 		BufferedReader br = new BufferedReader(new FileReader(file));
-	    StringBuffer fileContents = new StringBuffer();
-	    String line = br.readLine();
-	    while (line != null)
-	    {
-	    	fileContents.append(line);
-	        line = br.readLine();
-	    }
-	    
-	    br.close();
-	    
+		StringBuffer fileContents = new StringBuffer();
+		String line = br.readLine();
+		while (line != null) {
+			fileContents.append(line);
+			line = br.readLine();
+		}
+
+		br.close();
+
 		assertEquals("File to string example", fileContents.toString());
 	}
-	
+
 	@Test
-	public void convert_file_to_string_java_scanner () throws FileNotFoundException {
-		
+	public void convert_file_to_string_java_scanner()
+			throws FileNotFoundException {
+
 		File file = new File(fileLocation);
-		
+
 		Scanner scanner = new Scanner(file);
-		
+
 		String fileContents = scanner.nextLine(); // only reads line
-		
+
 		scanner.close();
-		
-		assertEquals("File to string example", fileContents);
-	}
-	
-	@Test
-	public void convert_file_to_string_java_nio () throws IOException {
-		
-		Path path = Paths.get(fileLocation);
-		
-		List<String> file = java.nio.file.Files.readAllLines(path, Charsets.UTF_8);
-		
-		String fileContents = file.get(0);
-		
-		assertEquals("File to string example", fileContents);
-	}
-	
-	
-	@Test
-	public void convert_file_to_string_guava () throws IOException {
-		
-		File file = new File(fileLocation);
-		
-		String fileContents = Files.toString(file, Charsets.UTF_8);
-	
+
 		assertEquals("File to string example", fileContents);
 	}
 
 	@Test
-	public void convert_file_to_string_apache_commons () throws IOException {
-		
-		File file = new File(fileLocation);
-		
-		String fileContents = FileUtils.readFileToString(file);
-		
+	public void convert_file_to_string_java_nio() throws IOException {
+
+		Path path = Paths.get(fileLocation);
+
+		List<String> file = java.nio.file.Files.readAllLines(path,
+				Charsets.UTF_8);
+
+		String fileContents = file.get(0);
+
 		assertEquals("File to string example", fileContents);
 	}
-	
+
+	@Test
+	public void convert_file_to_string_java_nio_readbytes() throws IOException {
+
+		Path path = Paths.get(fileLocation);
+
+		String stringFromFile = new String(
+				java.nio.file.Files.readAllBytes(path));
+
+		assertEquals("File to string example", stringFromFile);
+	}
+
+	@Test
+	public void convert_file_to_string_java8() throws IOException {
+
+		Path path = Paths.get(fileLocation);
+
+		String stringFromFile = java.nio.file.Files.lines(path).collect(
+				Collectors.joining());
+
+		assertEquals("File to string example", stringFromFile);
+	}
+
+	@Test
+	public void convert_file_to_string_guava() throws IOException {
+
+		File file = new File(fileLocation);
+
+		String fileContents = Files.toString(file, Charsets.UTF_8);
+
+		assertEquals("File to string example", fileContents);
+	}
+
+	@Test
+	public void convert_file_to_string_apache_commons() throws IOException {
+
+		File file = new File(fileLocation);
+
+		String fileContents = FileUtils.readFileToString(file);
+
+		assertEquals("File to string example", fileContents);
+	}
+
 }
