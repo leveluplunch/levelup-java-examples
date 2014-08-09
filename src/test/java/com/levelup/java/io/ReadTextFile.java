@@ -7,9 +7,12 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
@@ -21,27 +24,28 @@ import com.google.common.io.Files;
 /**
  * This java example will demonstrate how to read a text file.
  * 
- * Effective Java Item 47: Know and use the libraries recommends using
- * library such as Google Guava or Apache Commons.
+ * Effective Java Item 47: Know and use the libraries recommends using library
+ * such as Google Guava or Apache Commons.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/examples/read-text-file/'>Read text file</a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/read-text-file/'>Read
+ *      text file</a>
  * 
  */
 public class ReadTextFile {
 
 	private static final Logger logger = Logger.getLogger(ReadTextFile.class);
-	
+
 	private static final String FILE_PATH = "youaremysunshine.txt";
-	
-	
+
 	@Test
 	public void read_file_with_bufferedreader() {
 
-		InputStream in = this.getClass().getClassLoader().getResourceAsStream(FILE_PATH);
-		
+		InputStream in = this.getClass().getClassLoader()
+				.getResourceAsStream(FILE_PATH);
+
 		BufferedReader reader = new BufferedReader(new InputStreamReader(in));
-		
+
 		List<String> lines = new ArrayList<String>();
 		String line = null;
 		try {
@@ -57,30 +61,46 @@ public class ReadTextFile {
 				logger.error(e);
 			}
 		}
-		
+
 		assertTrue(lines.size() == 28);
 	}
-	
+
 	@Test
-	public void read_text_file_with_scanner () {
-		
-		InputStream in = this.getClass().getClassLoader().getResourceAsStream(FILE_PATH);
-		
-		ArrayList<String> lines = new ArrayList<String>();    
+	public void read_text_file_with_scanner() {
+
+		InputStream in = this.getClass().getClassLoader()
+				.getResourceAsStream(FILE_PATH);
+
+		ArrayList<String> lines = new ArrayList<String>();
 		Scanner fileScanner = new Scanner(new InputStreamReader(in));
 
-		while (fileScanner.hasNextLine()){
+		while (fileScanner.hasNextLine()) {
 			lines.add(fileScanner.nextLine());
 		}
 		fileScanner.close();
-		
+
 		assertTrue(lines.size() == 28);
 	}
-	
-	@Test
-	public void read_text_file_with_google_guava () {
 
-		String filePath = this.getClass().getClassLoader().getResource(FILE_PATH).getFile();
+	@Test
+	public void read_text_file_with_java8() throws IOException {
+
+		String filePathAsString = this.getClass().getClassLoader()
+				.getResource(FILE_PATH).getFile();
+
+		Path filePath = Paths.get(filePathAsString);
+
+		List<String> lines = java.nio.file.Files.lines(filePath).collect(
+				Collectors.toList());
+
+		assertTrue(lines.size() == 28);
+	}
+
+	@Test
+	public void read_text_file_with_google_guava() {
+
+		String filePath = this.getClass().getClassLoader()
+				.getResource(FILE_PATH).getFile();
 
 		List<String> lines = null;
 		try {
@@ -90,21 +110,21 @@ public class ReadTextFile {
 		}
 		assertTrue(lines.size() == 28);
 	}
-	
-	@Test
-	public void read_file_with_apache_commons () {
 
-		String filePath = this.getClass().getClassLoader().getResource(FILE_PATH).getFile();
+	@Test
+	public void read_file_with_apache_commons() {
+
+		String filePath = this.getClass().getClassLoader()
+				.getResource(FILE_PATH).getFile();
 
 		List<String> lines = null;
 		try {
-			 lines = FileUtils.readLines(new File(filePath));
+			lines = FileUtils.readLines(new File(filePath));
 		} catch (IOException e) {
 			logger.error(e);
 		}
-		
+
 		assertTrue(lines.size() == 28);
 	}
-	
-	
+
 }
