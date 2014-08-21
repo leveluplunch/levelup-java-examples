@@ -11,7 +11,6 @@ import org.junit.Test;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.google.common.base.Objects;
-import com.levelup.java.util.ReadPropertiesFile;
 
 /**
  * This java example will demonstrate converting json
@@ -24,7 +23,7 @@ import com.levelup.java.util.ReadPropertiesFile;
  */
 public class ConvertJSONtoXML {
 	
-	private static final Logger logger = Logger.getLogger(ReadPropertiesFile.class);
+	private static final Logger logger = Logger.getLogger(ConvertJSONtoXML.class);
 	
 	class Browser {
 		private String name;
