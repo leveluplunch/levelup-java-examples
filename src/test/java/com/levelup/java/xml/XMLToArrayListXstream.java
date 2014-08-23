@@ -91,6 +91,7 @@ public class XMLToArrayListXstream {
 
 		XStream xStream = new XStream();
 
+		@SuppressWarnings("unchecked")
 		List<Funeral> funeral2 = (List<Funeral>) xStream.fromXML(rawXML);
 
 		logger.info(funeral2);
