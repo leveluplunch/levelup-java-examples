@@ -13,6 +13,12 @@ import org.junit.Test;
 import com.google.common.collect.Maps;
 import com.thoughtworks.xstream.XStream;
 
+/**
+ * This java example will demonstrate converting xml to map with xstream.
+ * 
+ * @author Justin Musgrove
+ * @see <a href='http://www.leveluplunch.com/java/examples/convert-xml-to-from-hashmap-object-xstream/'>Convert xml to hashmap using xstream</a>
+ */
 public class XMLToMapXstream {
 
 	private static final Logger logger = Logger
