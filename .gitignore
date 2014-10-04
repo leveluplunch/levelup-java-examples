@@ -27,3 +27,4 @@ local.properties
 .buildpath
 /target
 output
+.idea
