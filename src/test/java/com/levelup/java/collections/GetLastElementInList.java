@@ -30,7 +30,7 @@ public class GetLastElementInList {
 		strings.add("three");
 		
 		String lastElement = null;
-		if (!strings.isEmpty() && strings.size() > 0) {
+		if (!strings.isEmpty()) {
 			lastElement = strings.get(strings.size() - 1);
 		}
 		
