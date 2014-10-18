@@ -15,7 +15,7 @@ import com.google.common.collect.Maps;
  * new Map with straight up java, guava and apache commons.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/'>Initialize map</a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/initialize-map/'>Initialize map</a>
  * 
  */
 public class InitializeMap {

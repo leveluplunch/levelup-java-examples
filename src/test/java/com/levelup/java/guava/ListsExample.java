@@ -17,7 +17,7 @@ import com.google.common.collect.Lists;
  * Google Guava Lists Utility.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com//'></a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/guava-lists-utility-example/'>Guava Lists Example</a>
  */
 public class ListsExample {
 	
