@@ -17,7 +17,7 @@ import com.thoughtworks.xstream.XStream;
  * This java example will demonstrate converting xml to java and back.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/examples/convert-xml-to-arraylist-xstream/'>Convert xml to arraylist using xstream</a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/convert-xml-to-from-arraylist-object-xstream/'>Convert xml to arraylist using xstream</a>
  */
 public class XMLToArrayListXstream {
 
