@@ -16,7 +16,7 @@ import com.google.common.collect.Ordering;
  * This java example will demonstrate how to sort an enum.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/examples/sort-enum/'>Sort Enum</a>
+ * @see <a href='http://www.leveluplunch.com/java/examples/sorting-enum/'>Sort Enum</a>
  */
 public class SortEnum {
 
