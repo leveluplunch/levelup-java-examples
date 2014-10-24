@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<locations>
+	<location>
+		<long>Boulder, CO, United States</long>
+		<city>Boulder</city>
+		<state>Colorado</state>
+		<country>United States</country>
+		<lat>40.0149856</lat>
+		<lng>-105.27054559999999</lng>
+	</location>
+	<location>
+		<long>Janesville, WI, United States</long>
+		<city>Janesville</city>
+		<state>Wisconsin</state>
+		<country>United States</country>
+		<lat>42.682788500000000000</lat>
+		<lng>-89.018722200000010000</lng>
+	</location>
+</locations>
