@@ -14,6 +14,12 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
+/**
+ * This java example will demonstrate how to read XML file with DOM parser.
+ * 
+ * @author Justin Musgrove
+ * @see <a href='http://www.leveluplunch.com/java/examples/parse-xml-from-file-string-with-dom-parser/'></a>
+ */
 public class ReadXMLFileDomParser {
 
 	@Test
@@ -30,35 +36,30 @@ public class ReadXMLFileDomParser {
 		Document document = builder.parse(xmlFilePath.toFile());
 		document.getDocumentElement().normalize();
 
-        System.out.println("Root element :" + document.getDocumentElement().getNodeName());
-
-		
-		NodeList nodeList = document.getElementsByTagName("locations");
+		NodeList nodeList = document.getElementsByTagName("*");
 		for (int i = 0; i < nodeList.getLength(); i++) {
 			Node node = nodeList.item(i);
-			
-			System.out.println(node);
+
 			if (node.getNodeType() == Node.ELEMENT_NODE) {
 				String content = node.getLastChild().getTextContent().trim();
 
 				switch (node.getNodeName()) {
 				case "long":
 					System.out.println("Long name:" + content);
+					break;
 				case "city":
 					System.out.println("city name:" + content);
+					break;
 				case "state":
 					System.out.println("state name:" + content);
+					break;
 				case "country":
 					System.out.println("country name:" + content);
+					break;
 
 				}
 			}
 		}
-	}
-
-	@Test
-	public void parse_xml_string_with_dom_parser() {
-
 	}
 
 }
