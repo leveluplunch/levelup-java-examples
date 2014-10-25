@@ -21,7 +21,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  */
 public class JsonArrayToObjectArray {
 
-	private static final Logger logger = Logger.getLogger(JsontoJavaObject.class);
+	private static final Logger logger = Logger.getLogger(JsonArrayToObjectArray.class);
 	
 	String jsonString = "[ { \"key\":\"Level up lunch\", \"url\":\"www.leveluplunch.com\" }, { \"key\":\"Java examples\", \"url\":\"www.leveluplunch.com/java/examples/\" }, { \"key\":\"Java exercises\", \"url\":\"www.leveluplunch.com/java/exercises/\" }, { \"key\":\"Java tutorials\", \"url\":\"www.leveluplunch.com/java/tutorials/\" }]";
 
