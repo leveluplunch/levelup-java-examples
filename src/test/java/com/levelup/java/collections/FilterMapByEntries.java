@@ -87,11 +87,11 @@ public class FilterMapByEntries {
 			}
 		};
 
-		Map<Integer, String> monthsWithLengthFour = Maps.filterEntries(MONTHS,
-				monthLenthFour);
-
-		logger.info(monthsWithLengthFour);
-
-		assertThat(monthsWithLengthFour.values(), contains("June", "July"));
+//		Map<Integer, String> monthsWithLengthFour = Maps.filterEntries(MONTHS,
+//				monthLenthFour);
+//
+//		logger.info(monthsWithLengthFour);
+//
+//		assertThat(monthsWithLengthFour.values(), contains("June", "July"));
 	}
 }
