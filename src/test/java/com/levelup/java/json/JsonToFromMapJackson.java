@@ -45,6 +45,9 @@ public class JsonToFromMapJackson {
 				new TypeReference<HashMap<String, Object>>() {
 				});
 
+//		OR map = mapper.readValue(sampleJson, HashMap.class);
+
+		
 		logger.info(sampleJson);
 
 		assertThat(map.keySet(),
