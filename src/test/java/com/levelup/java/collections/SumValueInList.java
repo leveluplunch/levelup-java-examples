@@ -19,10 +19,11 @@ import org.junit.Test;
  */
 public class SumValueInList {
 
-	private static List<Double> NUMBERS_FOR_SUM = new ArrayList<Double>();
+	private static List<Double> NUMBERS_FOR_SUM;
 	
 	@Before
 	public void setup () {
+		NUMBERS_FOR_SUM = new ArrayList<Double>();
 		NUMBERS_FOR_SUM.add(new Double(10));
 		NUMBERS_FOR_SUM.add(new Double(10));
 		NUMBERS_FOR_SUM.add(new Double(10));
