@@ -73,6 +73,7 @@ public class ObjectsExample {
 		}
 	}
 
+	@Ignore
 	@Test
 	public void objects_hashcode () {
 		
