@@ -5,6 +5,8 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
@@ -16,7 +18,9 @@ import com.google.common.base.Splitter;
  * This java example will demonstrate how to split a string by a comma.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/examples/split-string-by-comma-delimiter/'>Split string by comma</a>
+ * @see <a href=
+ *      'http://www.leveluplunch.com/java/examples/split-string-by-comma-delimiter/'>
+ *      S p l i t string by comma</a>
  */
 public class SplitStringByComma {
 
@@ -30,6 +34,18 @@ public class SplitStringByComma {
 		logger.info(Arrays.toString(elementsInString));
 
 		assertTrue(elementsInString.length == 4);
+	}
+
+	@Test
+	public void split_string_comma_java8() {
+
+		List<String> splitByComma = Stream.of("Yo,Gabba, Gabba, Keep Trying")
+				.map(w -> w.split(",")).flatMap(Arrays::stream)
+				.collect(Collectors.toList());
+
+		logger.info(splitByComma);
+
+		assertTrue(splitByComma.size() == 4);
 	}
 
 	@Test
