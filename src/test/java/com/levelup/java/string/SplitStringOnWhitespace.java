@@ -5,6 +5,8 @@ import static org.junit.Assert.assertTrue;
 import java.util.Arrays;
 import java.util.List;
 import java.util.StringTokenizer;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
@@ -17,7 +19,9 @@ import com.google.common.collect.Lists;
  * This java example will demonstrate how to split string by whitespace.
  * 
  * @author Justin Musgrove
- * @see <a href='http://www.leveluplunch.com/java/examples/split-string-on-whitespace-chars/'>Split string on whitespace</a>
+ * @see <a href=
+ *      'http://www.leveluplunch.com/java/examples/split-string-on-whitespace-chars/'>Sp
+ *      l i t string on whitespace</a>
  */
 public class SplitStringOnWhitespace {
 
@@ -46,6 +50,19 @@ public class SplitStringOnWhitespace {
 		logger.info(Arrays.toString(tokens));
 
 		assertTrue(tokens.length == 8);
+	}
+
+	@Test
+	public void split_string_whitespace_java8() {
+
+		List<String> splitOnWhitespace = Stream
+				.of("The snow glows white on the mountain tonight")
+				.map(w -> w.split("\\s+")).flatMap(Arrays::stream)
+				.collect(Collectors.toList());
+
+		logger.info(splitOnWhitespace);
+
+		assertTrue(splitOnWhitespace.size() == 8);
 	}
 
 	@Test

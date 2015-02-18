@@ -5,6 +5,8 @@ import static org.junit.Assert.assertTrue;
 import java.util.Arrays;
 import java.util.List;
 import java.util.StringTokenizer;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
@@ -54,6 +56,18 @@ public class SplitStrings {
 		logger.info(Arrays.toString(tokens));
 
 		assertTrue(tokens.length == 16);
+	}
+
+	@Test
+	public void split_string_using_string_split_java8() {
+
+		List<String> splitString = Stream.of(CONSTANT_STRING)
+				.map(w -> w.split("[ ]+")).flatMap(Arrays::stream)
+				.collect(Collectors.toList());
+
+		logger.info(splitString);
+
+		assertTrue(splitString.size() == 16);
 	}
 
 	@Test
