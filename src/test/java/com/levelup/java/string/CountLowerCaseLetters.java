@@ -1,6 +1,5 @@
 package com.levelup.java.string;
 
-import static java.lang.Character.isLowerCase;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
