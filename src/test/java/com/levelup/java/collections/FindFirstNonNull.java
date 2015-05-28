@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 import org.apache.commons.lang3.ObjectUtils;
@@ -55,6 +56,7 @@ public class FindFirstNonNull {
 		Optional<String> firstNonNull = strings
 				.stream()
 				.filter(p -> p != null)
+//				.filter(Objects::nonNull)
 				.findFirst();
 		
 		assertEquals("Hello", firstNonNull.get());
