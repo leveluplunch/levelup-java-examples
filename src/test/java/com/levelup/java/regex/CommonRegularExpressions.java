@@ -1,4 +1,4 @@
-package com.levelup.java.util;
+package com.levelup.java.regex;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
