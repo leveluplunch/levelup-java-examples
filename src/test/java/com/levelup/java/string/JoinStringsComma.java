@@ -16,7 +16,6 @@ import com.google.common.base.Joiner;
  * @author Justin Musgrove
  * @see <a href='http://www.leveluplunch.com/java/examples/join-strings-with-comma/'>Join strings with comma</a>
  */
-
 public class JoinStringsComma {
 
 	@Test
