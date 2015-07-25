@@ -10,10 +10,10 @@ import org.junit.Test;
  * 
  * @author Justin Musgrove
  * @see <a href=
- *      'http://www.leveluplunch.com/java/examples/convert-string-to-int/'>String
+ *      'http://www.leveluplunch.com/java/examples/convert-string-to-int-integer/'>String
  *      to primitive value</a>
  */
-public class StringToInt {
+public class StringToInteger {
 
 	@Test
 	public void string_to_int() {
@@ -48,5 +48,20 @@ public class StringToInt {
 
 		assertEquals(2, Integer.parseInt(builder.toString()));
 	}
-
+	
+	@Test
+	public void integer_to_string() {
+		
+		Integer integerToString = Integer.valueOf("2");
+		
+		assertEquals("2", integerToString.toString());
+	}
+	
+	@Test
+	public void string_to_integer() {
+		
+		Integer converted = Integer.valueOf("2");
+		
+		assertEquals(new Integer(2), converted);
+	}
 }
