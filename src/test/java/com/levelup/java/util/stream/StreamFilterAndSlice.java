@@ -96,7 +96,9 @@ public class StreamFilterAndSlice {
 				.map(Post::getTags)
 				.flatMap(
 						tag -> Arrays.stream(tag.split(",")).map(String::trim)
-								.map(String::toLowerCase)).distinct()
+								.map(String::toLowerCase))
+				.map(Object::toString)
+				.distinct()
 				.collect(Collectors.toList());
 
 		assertThat(
