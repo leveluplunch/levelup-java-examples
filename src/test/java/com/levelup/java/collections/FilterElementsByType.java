@@ -62,7 +62,8 @@ public class FilterElementsByType {
 		
 		List<String> strings = objects
 				.stream()
-				.filter(p -> p.getClass() == String.class)
+				.filter(p -> p instanceof String)
+				.map(p -> (String) p)
 				.collect(Collectors.toList());
 
 		System.out.println(strings);
