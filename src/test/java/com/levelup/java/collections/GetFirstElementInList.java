@@ -48,7 +48,7 @@ public class GetFirstElementInList {
 		
 		Optional<String> firstElement = strings.stream().findFirst();
 		
-		assertEquals("one", firstElement.get());		
+		assertEquals("one", firstElement.orElse("two"));		
 	}
 	
 	@Test
