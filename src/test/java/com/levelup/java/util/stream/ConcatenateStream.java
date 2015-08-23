@@ -7,6 +7,15 @@ import java.util.stream.Stream;
 
 import org.junit.Test;
 
+/**
+ * This java example will demonstrate joining streams .
+ * 
+ * @author Justin Musgrove
+ * @see <a href=
+ *      'http://www.leveluplunch.com/java/examples/concatenate-stream-java8/'>Concatenate
+ *      java 8 stream</a>
+ */
+
 public class ConcatenateStream {
 
 	@Test
