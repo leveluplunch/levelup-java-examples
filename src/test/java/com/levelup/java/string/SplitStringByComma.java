@@ -19,12 +19,13 @@ import com.google.common.base.Splitter;
  * 
  * @author Justin Musgrove
  * @see <a href=
- *      'http://www.leveluplunch.com/java/examples/split-string-by-comma-delimiter/'>
- *      S p l i t string by comma</a>
+ *      'http://www.leveluplunch.com/java/examples/split-string-by-comma-delimiter/'
+ *      > S p l i t string by comma</a>
  */
 public class SplitStringByComma {
 
-	private static final Logger logger = Logger.getLogger(SplitStrings.class);
+	private static final Logger logger = Logger
+			.getLogger(SplitStringByComma.class);
 
 	@Test
 	public void split_string_comma_java() {
@@ -61,7 +62,7 @@ public class SplitStringByComma {
 	}
 
 	@Test
-	public void split_string_white_space_using_apache_commons() {
+	public void split_string_comma_space_using_apache_commons() {
 
 		String[] elementsInString = StringUtils.split(
 				"Yo,Gabba, Gabba, Keep Trying", ",");
