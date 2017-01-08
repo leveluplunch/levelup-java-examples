@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
@@ -27,11 +28,12 @@ import com.google.common.collect.Lists;
  * @author Justin Musgrove
  * @see <a href='http://www.leveluplunch.com/java/examples/remove-filter-null-references-from-collection-list/'>Filter null from collection</a>
  */
+@SuppressWarnings("SuspiciousMethodCalls")
 public class FilterNullFromCollection {
 
 
 	@Test
-	public void remove_null_from_list_java () {
+	public void remove_null_from_mutable_list_java() {
 
 		List<String> strings = new ArrayList<>();
 		strings.add(null);
@@ -45,28 +47,43 @@ public class FilterNullFromCollection {
 		
 		assertEquals(3, strings.size());
 	}
+
+
+	@Test(expected = UnsupportedOperationException.class)
+	public void try_remove_null_from_immutable_list_java() {
+
+		List<String> strings = Arrays.asList(null, "www", null, "leveluplunch", "com", null);
+
+		strings.removeAll(Collections.singleton(null));
+	}
+
+    @Test
+    public void remove_null_from_immutable_list_java() {
+
+        List<String> strings = Arrays.asList(null, "www", null, "leveluplunch", "com", null);
+
+        List<String> filterStrings = new ArrayList<String>(strings) {
+            {
+                removeAll(Collections.singleton(null));
+            }
+        };
+
+        assertEquals(3, filterStrings.size());
+    }
 	
 	@Test
 	public void remove_null_from_list_java8_lambda () {
 		
 		List<String> strings = Lists.newArrayList(
-				null, "www", null, 
+				null, "www", null,
 				"leveluplunch", "com", null);
 
 		List<String> filterStrings = strings
 				.stream()
-				.filter(p -> p != null)
-				.collect(Collectors.toList());
-		
-		assertEquals(3, filterStrings.size());
-		
-		// or
-		List<String> filterStrings2 = strings
-				.stream()
 				.filter(Objects::nonNull)
 				.collect(Collectors.toList());
 		
-		assertEquals(3, filterStrings2.size());
+		assertEquals(3, filterStrings.size());
 	}
 
 	
