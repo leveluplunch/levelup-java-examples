@@ -150,21 +150,47 @@ public class SortACollection {
 		assertEquals("Abe", wrestler.get().getName());
 	}
 
+    @Test
+    public void sort_collection_with_java8_byweight_wins_lambda() {
+        Comparator<Wrestler> byWeightByWins = (o1, o2) -> {
+            if (Double.compare(o1.weightClass, o2.weightClass) != 0) {
+                return Double.compare(o1.weightClass, o2.weightClass);
+            } else {
+                return Integer.compare(o1.wins, o2.wins);
+            }
+        };
+        List<Wrestler> sorted = wrestlers
+                .stream()
+                .sorted(byWeightByWins)
+                .collect(Collectors.toList());
+        logger.info(sorted);
+
+        Optional<Wrestler> wrestler = sorted.stream().findFirst();
+
+        assertEquals(119, wrestler.get().getWeightClass(), 0);
+        assertEquals(6, wrestler.get().getWins());
+
+    }
+
 	@Test
 	public void sort_collection_with_java8_byweight_wins() {
+//				List<Wrestler> sorted = wrestlers
+//						.stream()
+//						.sorted((w1, w2) -> Double.compare(w1.getWeightClass(),
+//								w2.getWeightClass()))
+//						.sorted((w1, w2) -> Integer.compare(w1.getWins(), w2.getWins()))
+//						.collect(Collectors.toList());
 
 		List<Wrestler> sorted = wrestlers
 				.stream()
-				.sorted((w1, w2) -> Double.compare(w1.getWeightClass(),
-						w2.getWeightClass()))
-				.sorted((w1, w2) -> Integer.compare(w1.getWins(), w2.getWins()))
+				.sorted(Comparator.comparingDouble(Wrestler::getWeightClass).thenComparingInt(Wrestler::getWins))
 				.collect(Collectors.toList());
-
 		logger.info(sorted);
 
 		Optional<Wrestler> wrestler = sorted.stream().findFirst();
 
-		assertEquals(151, wrestler.get().getWeightClass(), 0);
+		assertEquals(119, wrestler.get().getWeightClass(), 0);
+		assertEquals(6, wrestler.get().getWins());
 	}
 
 	static final Ordering<Wrestler> byWeightClass = new Ordering<Wrestler>() {

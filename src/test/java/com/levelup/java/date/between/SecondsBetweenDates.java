@@ -26,8 +26,8 @@ public class SecondsBetweenDates {
 		LocalDateTime startDate = LocalDateTime.now().minusDays(1);
 		LocalDateTime endDate = LocalDateTime.now();
 		
-		long secondsInDay = Duration.between(startDate, endDate).toMinutes();
-		assertEquals(1440, secondsInDay);
+		long secondsInDay = Duration.between(startDate, endDate).toMinutes()*60;
+		assertEquals(86400, secondsInDay);
 
 		// or
 		

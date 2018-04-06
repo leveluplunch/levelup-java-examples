@@ -4,9 +4,12 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.stream.Collectors;
 
 import org.apache.log4j.Logger;
 import org.junit.Test;
+
+import com.google.common.collect.ImmutableList;
 
 /**
  * This java example will demonstrate how to iterate or loop
@@ -31,6 +34,16 @@ public class IterateLoopAMap {
 			logger.info("Key : " + entry.getKey() + " Value : " + entry.getValue());
 		}
 
+	}
+
+	@Test
+	public void iterate_or_loop_over_a_map_entryset_java8 () {
+
+		Map<Integer, String> numbers = new HashMap<>();
+		numbers.put(new Integer(1), "one");
+		numbers.put(new Integer(2), "two");
+
+		numbers.forEach((key, value) -> logger.info("Key : " + key + " Value : " + value));
 	}
 	
 	@Test
