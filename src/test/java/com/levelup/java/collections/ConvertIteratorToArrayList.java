@@ -49,12 +49,18 @@ public class ConvertIteratorToArrayList {
 	@Test
 	public void convert_iterator_to_list_java8() {
 
-		Iterator<String> iteratorToCollection = collection.iterator();
+		List<String> convertedIterator = StreamSupport.stream(Spliterators.spliteratorUnknownSize(collection.iterator(), Spliterator.ORDERED), false)
+				.collect(Collectors.<String> toList());
 
-		List<String> convertedIterator = StreamSupport.stream(
-				Spliterators.spliteratorUnknownSize(iteratorToCollection,
-						Spliterator.ORDERED), false).collect(
-				Collectors.<String> toList());
+		assertTrue(convertedIterator.size() == 4);
+
+	}
+
+	@Test
+	public void convert_iterator_to_list_using_splitIterator_java8() {
+
+		List<String> convertedIterator = StreamSupport.stream(collection.spliterator(), false)
+				.collect(Collectors.toList());
 
 		assertTrue(convertedIterator.size() == 4);
 
