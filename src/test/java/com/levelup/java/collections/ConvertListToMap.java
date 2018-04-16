@@ -7,13 +7,16 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.stream.Collectors;
 
+import org.apache.commons.lang3.tuple.Pair;
 import org.apache.log4j.Logger;
 import org.junit.Test;
 
 import com.google.common.base.Function;
 import com.google.common.base.Objects;
+import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 
@@ -89,7 +92,23 @@ public class ConvertListToMap {
 		assertTrue(mappedMovies.size() == 2);
 		assertEquals("The Shawshank Redemption", mappedMovies.get(1).getDescription());
 	}
-	
+
+	@Test
+	public void convert_list_to_map_with_java8_pair() {
+		List<Movie> movies = new ArrayList<Movie>();
+		movies.add(new Movie(1, "The Shawshank Redemption"));
+		movies.add(new Movie(2, "The Godfather"));
+
+		Map<Integer, Movie> mappedMovies = movies.stream()
+				.map(s -> Pair.of(s.getRank(), s))
+				.collect(Collectors.toMap(Pair::getKey, Pair::getValue));
+
+		logger.info(mappedMovies);
+		assertTrue(mappedMovies.size() == 2);
+		assertEquals("The Shawshank Redemption", mappedMovies.get(1).getDescription());
+
+	}
+
 	@Test
 	public void convert_list_to_map_with_guava () {
 
