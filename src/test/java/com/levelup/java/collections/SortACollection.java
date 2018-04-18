@@ -174,13 +174,6 @@ public class SortACollection {
 
 	@Test
 	public void sort_collection_with_java8_byweight_wins() {
-//				List<Wrestler> sorted = wrestlers
-//						.stream()
-//						.sorted((w1, w2) -> Double.compare(w1.getWeightClass(),
-//								w2.getWeightClass()))
-//						.sorted((w1, w2) -> Integer.compare(w1.getWins(), w2.getWins()))
-//						.collect(Collectors.toList());
-
 		List<Wrestler> sorted = wrestlers
 				.stream()
 				.sorted(Comparator.comparingDouble(Wrestler::getWeightClass).thenComparingInt(Wrestler::getWins))

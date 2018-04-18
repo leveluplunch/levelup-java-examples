@@ -4,7 +4,10 @@ import static org.hamcrest.collection.IsIterableContainingInOrder.contains;
 import static org.junit.Assert.assertThat;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
+import java.util.TreeSet;
+import java.util.stream.Collectors;
 
 import org.apache.log4j.Logger;
 import org.junit.Test;
@@ -28,6 +31,17 @@ public class SortEnum {
 
 	List<Fruit> RANDOM_FRUIT = Lists.newArrayList(Fruit.CHERRIES, Fruit.ORANGE,
 			Fruit.APPLE, Fruit.CHERRIES, Fruit.BANANAS, Fruit.ORANGE);
+
+	@Test
+	public void sort_enum_with_java() {
+		TreeSet<Fruit> sorted = new TreeSet<>(Comparator.comparing(Enum::name));
+		sorted.addAll(RANDOM_FRUIT);
+
+        logger.info(sorted);
+		assertThat(
+				sorted,
+				contains(Fruit.APPLE, Fruit.BANANAS, Fruit.CHERRIES, Fruit.ORANGE));
+	}
 
 	@Test
 	public void create_drop_down() {
