@@ -119,7 +119,7 @@ public class ObjectMatchers {
 	}
 
 	@Test
-	public void test_object_isComatiable_with () {
+	public void test_object_isCompatible_with() {
 
 		assertThat(Drink.class, not(typeCompatibleWith(Number.class)));
 		
