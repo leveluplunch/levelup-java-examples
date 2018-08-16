@@ -8,16 +8,14 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 import org.apache.commons.lang3.tuple.Pair;
 import org.apache.log4j.Logger;
 import org.junit.Test;
 
-import com.google.common.base.Function;
 import com.google.common.base.Objects;
-import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 
@@ -104,11 +102,11 @@ public class ConvertListToMap {
                 "CheckoutApproved",
                 "OnlineProductIds");
 
-        Map<String, Integer> stringIntegerMap = attributes.stream()
-                .collect(Collectors.toMap(java.util.function.Function.identity(), String::length));
+        Map<String, String> kvMap = attributes.stream()
+                .collect(Collectors.toMap(Function.identity(), (attr) -> attr.toUpperCase()));
 
-        logger.info(stringIntegerMap);
-        assertTrue(stringIntegerMap.size() == 7);
+        logger.info(kvMap);
+        assertTrue(kvMap.size() == 7);
 	}
 
 	@Test
@@ -136,7 +134,7 @@ public class ConvertListToMap {
 		movies.add(new Movie(2, "The Godfather"));
 		
 		// convert list to map 
-		Map<Integer,Movie> mappedMovies = Maps.uniqueIndex(movies, new Function <Movie,Integer> () {
+		Map<Integer,Movie> mappedMovies = Maps.uniqueIndex(movies, new com.google.common.base.Function<Movie,Integer> () {
 			  public Integer apply(Movie from) {
 			    return from.getRank(); // or something else
 		}});
