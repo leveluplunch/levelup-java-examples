@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -91,6 +92,23 @@ public class ConvertListToMap {
 
 		assertTrue(mappedMovies.size() == 2);
 		assertEquals("The Shawshank Redemption", mappedMovies.get(1).getDescription());
+	}
+
+	@Test
+	public void convert_list_string_to_map_with_java8_lambda() {
+        List<String> attributes = Arrays.asList("Title",
+                "Price",
+                "Bokey",
+                "LastMatchingChange",
+                "LastShopDataChange",
+                "CheckoutApproved",
+                "OnlineProductIds");
+
+        Map<String, Integer> stringIntegerMap = attributes.stream()
+                .collect(Collectors.toMap(java.util.function.Function.identity(), String::length));
+
+        logger.info(stringIntegerMap);
+        assertTrue(stringIntegerMap.size() == 7);
 	}
 
 	@Test

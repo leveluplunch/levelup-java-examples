@@ -56,9 +56,9 @@ public class IntersectionOfTwoSets {
 	@Test
 	public void intersection_of_sets_guava () {
 
-		Set<String> mutalFriends = Sets.intersection(yourFriends, myFriends);
-		
-		assertEquals(4, mutalFriends.size());
+		Set<String> mutualFriends = Sets.intersection(yourFriends, myFriends);
+
+		assertEquals(4, mutualFriends.size());
 	}
 	
 	@Test
