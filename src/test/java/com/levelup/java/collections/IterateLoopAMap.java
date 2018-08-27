@@ -4,12 +4,9 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.stream.Collectors;
 
 import org.apache.log4j.Logger;
 import org.junit.Test;
-
-import com.google.common.collect.ImmutableList;
 
 /**
  * This java example will demonstrate how to iterate or loop
