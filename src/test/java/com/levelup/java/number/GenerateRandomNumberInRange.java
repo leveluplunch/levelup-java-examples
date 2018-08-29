@@ -5,6 +5,7 @@ import static org.junit.Assert.assertTrue;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Collectors;
 
 import org.apache.log4j.Logger;
@@ -52,6 +53,14 @@ public class GenerateRandomNumberInRange {
 		logger.info(randomNumbers);
 
 		assertTrue(randomNumbers.size() == 10);
+	}
+
+	@Test
+	public void generate_random_number_in_range_java7() {
+	    double rangeMin = 500.0;
+	    double rangeMax = 700.1;
+        double randomInRange = ThreadLocalRandom.current().nextDouble(rangeMin, rangeMax);
+        logger.info(randomInRange);
 	}
 
 }
