@@ -5,7 +5,9 @@ import static org.junit.Assert.assertTrue;
 import java.security.SecureRandom;
 import java.util.OptionalInt;
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
+import org.apache.commons.math3.random.RandomDataGenerator;
 import org.junit.Test;
 
 /** 
@@ -21,19 +23,33 @@ public class GenerateRandomNumber {
 	public void generate_random_number_with_java () {
 		Random random = new Random();
 		
-		double randomNumber = random.nextInt(10);
+		int randomNumber = random.nextInt(10);
 		
 		assertTrue(randomNumber <=10);
 	}
-	
+
 	@Test
 	public void generate_secure_random_number_with_java () {
 		SecureRandom random = new SecureRandom();
 
-		double randomNumber = random.nextInt(10);
-		
+        int randomNumber = random.nextInt(10);
+
 		assertTrue(randomNumber <=10);
 	}
+
+    @Test
+    public void generate_random_number_ThreadLocalRandom() {
+        int randomNumber = ThreadLocalRandom.current().nextInt(10);
+        assertTrue(randomNumber <=10);
+    }
+
+    @Test
+    public void generate_random_number_ThreadLocalRandom_in_range() {
+	    int x = 40;
+	    int y = 50;
+        int randomNumber = ThreadLocalRandom.current().nextInt(y - x) + x;
+        assertTrue(randomNumber >= x && randomNumber <= y);
+    }
 	
 	@Test
 	public void generate_single_random_number () {
@@ -52,6 +68,12 @@ public class GenerateRandomNumber {
 		
 		assertTrue(randomNumber.getAsInt() < 10);
 	}
-	
 
+	@Test
+	public void generate_random_integer_range_apache() {
+        int leftLimit = 1;
+        int rightLimit = 10;
+        int randomInt = new RandomDataGenerator().nextInt(leftLimit, rightLimit);
+        assertTrue( randomInt <= rightLimit);
+    }
 }
