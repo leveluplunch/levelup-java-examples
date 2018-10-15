@@ -70,7 +70,7 @@ public class FilterMapByKeys {
 				MONTHS.entrySet()
 				.stream()
 				.filter(p -> p.getKey().intValue() <= 4)
-				.collect(Collectors.toMap(p -> p.getKey(), p -> p.getValue()));
+				.collect(Collectors.toMap(Entry::getKey, Entry::getValue));
 		
 		logger.info(firstQuarter);
 		
@@ -81,19 +81,13 @@ public class FilterMapByKeys {
 	@Test
 	public void filter_map_by_keys_guava () {
 		
-		Predicate<Integer> byFirstQuarter = new Predicate<Integer>() {
-			@Override
-			public boolean apply(Integer input) {
-				return input.intValue() <= 4;
-			}
-		};
+		Predicate<Integer> byFirstQuarter = input -> input.intValue() <= 4;
 		
 		Map<Integer, String> firstQuarter = Maps.filterKeys(MONTHS, byFirstQuarter);
 		
 		logger.info(firstQuarter);
 		
-	    assertThat(firstQuarter.keySet(), contains(
-	    		1, 2, 3, 4));
+	    assertThat(firstQuarter.keySet(), contains(1, 2, 3, 4));
 	}
 
 	

@@ -1,6 +1,9 @@
 package com.levelup.java.number;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.HashSet;
+import java.util.Locale;
 import java.util.Set;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -29,18 +32,27 @@ public class Lotto {
     @Test
     public void lotto6aus49Probability() {
         long sequences = binomialCoefficient(49, 6) * 10;
-        System.out.println("lotto6aus49 combinations: " + sequences);
+        System.out.println("lotto 6 aus 49 combinations: " + format(sequences));
+    }
+
+    private String format(long input) {
+        String pattern = "###,###.###";
+        Locale spanish = new Locale("es", "ES");
+        NumberFormat nf = NumberFormat.getNumberInstance(spanish);
+        DecimalFormat df = (DecimalFormat)nf;
+        df.applyPattern(pattern);
+        return df.format(input);
     }
 
     @Test
     public void eurojackpotProbability() {
         long sequences = binomialCoefficient(50, 5) * binomialCoefficient(10, 2);
-        System.out.println("eurojackpot combinations: " + sequences);
+        System.out.println("eurojackpot combinations: " + format(sequences));
     }
 
     @Test
     public void eurojackpotGenerator() {
-        Integer[] numbers = { 12,16,18,20,23,32,35,42,44,47};
+        Integer[] numbers = {12,16,18,20,23,32,35,42,44,47};
 
         Set<Integer> part1 = new HashSet<>();
 
@@ -52,7 +64,7 @@ public class Lotto {
         }
 
         Set<Integer> part2 = ImmutableSet.of(5,8);
-        System.out.println(part1 + " + "  + part2);
+        System.out.println("eurojackpot: " + part1 + " + "  + part2);
     }
 
     int getRandomIndex() {
