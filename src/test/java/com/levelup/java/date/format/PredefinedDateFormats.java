@@ -4,6 +4,7 @@ import static org.hamcrest.CoreMatchers.containsString;
 import static org.junit.Assert.assertThat;
 
 import java.text.DateFormat;
+import java.time.Instant;
 import java.util.Date;
 
 import org.apache.log4j.Logger;
@@ -27,7 +28,7 @@ public class PredefinedDateFormats {
 		
 		DateFormat dateFormatter = DateFormat.getDateInstance(DateFormat.DEFAULT);
 		
-		Date today = new Date();
+		Date today = Date.from(Instant.now());
 		
 		logger.info(dateFormatter.format(today));
 		
@@ -39,7 +40,7 @@ public class PredefinedDateFormats {
 		
 		DateFormat dateFormatter = DateFormat.getDateInstance(DateFormat.SHORT);
 		
-		Date today = new Date();
+		Date today = Date.from(Instant.now());
 		
 		logger.info(dateFormatter.format(today));
 
@@ -52,7 +53,7 @@ public class PredefinedDateFormats {
 		
 		DateFormat dateFormatter = DateFormat.getDateInstance(DateFormat.MEDIUM);
 		
-		Date today = new Date();
+		Date today = Date.from(Instant.now());
 		
 		logger.info(dateFormatter.format(today));
 		
@@ -64,7 +65,7 @@ public class PredefinedDateFormats {
 		
 		DateFormat dateFormatter = DateFormat.getDateInstance(DateFormat.LONG);
 		
-		Date today = new Date();
+		Date today = Date.from(Instant.now());
 		
 		logger.info(dateFormatter.format(today));
 		
@@ -76,7 +77,7 @@ public class PredefinedDateFormats {
 		
 		DateFormat dateFormatter = DateFormat.getDateInstance(DateFormat.FULL);
 		
-		Date today = new Date();
+		Date today = Date.from(Instant.now());
 		
 		logger.info(dateFormatter.format(today));
 		

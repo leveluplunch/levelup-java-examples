@@ -2,9 +2,9 @@ package com.levelup.java.number;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
-import java.util.HashSet;
 import java.util.Locale;
 import java.util.Set;
+import java.util.TreeSet;
 import java.util.concurrent.ThreadLocalRandom;
 
 import org.junit.Test;
@@ -17,8 +17,9 @@ public class Lotto {
         long res = 1;
 
         // Since C(n, k) = C(n, n-k)
-        if ( k > n - k )
+        if (k > n - k) {
             k = n - k;
+        }
 
         // Calculate value of [n * (n-1) *---* (n-k+1)] / [k * (k-1) *----* 1]
         for (int i = 0; i < k; ++i) {
@@ -39,7 +40,7 @@ public class Lotto {
         String pattern = "###,###.###";
         Locale spanish = new Locale("es", "ES");
         NumberFormat nf = NumberFormat.getNumberInstance(spanish);
-        DecimalFormat df = (DecimalFormat)nf;
+        DecimalFormat df = (DecimalFormat) nf;
         df.applyPattern(pattern);
         return df.format(input);
     }
@@ -52,9 +53,9 @@ public class Lotto {
 
     @Test
     public void eurojackpotGenerator() {
-        Integer[] numbers = {12,16,18,20,23,32,35,42,44,47};
+        Integer[] numbers = { 12, 16, 18, 20, 23, 32, 35, 42, 44, 47 };
 
-        Set<Integer> part1 = new HashSet<>();
+        Set<Integer> part1 = new TreeSet<>();
 
         while (part1.size() < 5) {
             int selected = numbers[getRandomIndex()];
@@ -63,11 +64,15 @@ public class Lotto {
             }
         }
 
-        Set<Integer> part2 = ImmutableSet.of(5,8);
-        System.out.println("eurojackpot: " + part1 + " + "  + part2);
+        Set<Integer> part2 = ImmutableSet.of(5, 8);
+        System.out.println("eurojackpot: " + part1 + " + " + part2);
     }
 
     int getRandomIndex() {
         return ThreadLocalRandom.current().nextInt(10);
     }
+
+    //    int getSecureRandomIndex() {
+    //        return new SecureRandom().nextInt(10);
+    //    }
 }
