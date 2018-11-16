@@ -1,10 +1,13 @@
 package com.levelup.java.string;
 
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.assertTrue;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.StringTokenizer;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -69,6 +72,15 @@ public class SplitStrings {
 
 		assertTrue(splitString.size() == 16);
 	}
+
+	@Test
+	public void g() {
+        String url = "http://www.ebay.de/itm/Dorrgerat-Timer-Stockli-3-Gittern-Neu-OVP-/370098447026#couponcode=ebay-voucher20183";
+        Pattern voucherSuffix = Pattern.compile("#couponcode=");
+
+        String[] parts = voucherSuffix.split(url);
+        assertThat(parts.length, equalTo(2));
+    }
 
 	@Test
 	public void split_string_whitespace_using_guava() {
